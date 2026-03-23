@@ -1,0 +1,377 @@
+[
+  {
+    "id": "casco-tactical",
+    "name": "Casco Tactical Pet Pro",
+    "slug": "casco-tactical",
+    "category": "mascotas",
+    "price": 69.9,
+    "oldPrice": 89.9,
+    "currency": "PEN",
+    "badge": "SEGURIDAD",
+    "images": [
+      "/images/mascotas/casco dog.webp"
+    ],
+    "description": "Seguridad máxima para tus aventuras extremas. Este casco táctico para mascotas está fabricado en polímero de alta resistencia, ideal para paseos en moto o actividades al aire libre que requieran protección adicional.",
+    "specs": [
+      {
+        "label": "Material",
+        "value": "Polímero ABS"
+      },
+      {
+        "label": "Tallas",
+        "value": "Ajustable S/M"
+      }
+    ],
+    "rating": 4.9,
+    "reviews": 124,
+    "colors": [
+      "#000000",
+      "#FFFFFF"
+    ],
+    "stock": 15,
+    "tags": [
+      "mascotas",
+      "casco",
+      "seguridad",
+      "táctico"
+    ],
+    "fragance": [],
+    "isNew": false,
+    "isOnSale": true,
+    "salePercent": 22
+  },
+  {
+    "id": "gafas-aviador-pet",
+    "name": "Gafas Aviador Stealth Pet",
+    "slug": "gafas-aviador-pet",
+    "category": "mascotas",
+    "price": 45.9,
+    "oldPrice": null,
+    "currency": "PEN",
+    "badge": "ESTILO",
+    "images": [
+      "/images/mascotas/gafa_animal_aviador.webp"
+    ],
+    "description": "El look clásico para el piloto más fiel. Gafas tipo aviador con protección UV400 y correa elástica ajustable para asegurar comodidad y firmeza durante la acción.",
+    "specs": [
+      {
+        "label": "Protección",
+        "value": "UV400"
+      },
+      {
+        "label": "Correa",
+        "value": "Elástica"
+      }
+    ],
+    "rating": 4.8,
+    "reviews": 156,
+    "colors": [
+      "#000000"
+    ],
+    "stock": 30,
+    "tags": [
+      "mascotas",
+      "gafas",
+      "aviador",
+      "estilo"
+    ],
+    "fragance": [],
+    "isNew": true,
+    "isOnSale": false,
+    "salePercent": null
+  },
+  {
+    "id": "gafas-retro-pet",
+    "name": "Gafas Retro Round Pet",
+    "slug": "gafas-retro-pet",
+    "category": "mascotas",
+    "price": 39.9,
+    "oldPrice": null,
+    "currency": "PEN",
+    "badge": "VINTAGE",
+    "images": [
+      "/images/mascotas/gafa_animal_redonda.webp"
+    ],
+    "description": "Elegancia vintage para sesiones de fotos inolvidables. Estas gafas redondas aportan un toque intelectual y chic a tu mascota, perfectas para redes sociales.",
+    "specs": [
+      {
+        "label": "Estilo",
+        "value": "Retro Circular"
+      }
+    ],
+    "rating": 4.7,
+    "reviews": 89,
+    "colors": [
+      "#FFD700",
+      "#000000"
+    ],
+    "stock": 25,
+    "tags": [
+      "mascotas",
+      "gafas",
+      "retro",
+      "vintage"
+    ],
+    "fragance": [],
+    "isNew": false,
+    "isOnSale": false,
+    "salePercent": null
+  },
+  {
+    "id": "gafas-urban-pet",
+    "name": "Gafas Urban Style Pet",
+    "slug": "gafas-urban-pet",
+    "category": "mascotas",
+    "price": 42.9,
+    "oldPrice": null,
+    "currency": "PEN",
+    "badge": "TRENDY",
+    "images": [
+      "/images/mascotas/gafa_animal_redondo_va.webp"
+    ],
+    "description": "Diseño moderno para la ciudad. Gafas con montura reforzada que combinan perfectamente con cualquier arnés o collar, ideales para el día a día urbano.",
+    "specs": [
+      {
+        "label": "Montura",
+        "value": "Reforzada"
+      }
+    ],
+    "rating": 4.6,
+    "reviews": 67,
+    "colors": [
+      "#000000"
+    ],
+    "stock": 20,
+    "tags": [
+      "mascotas",
+      "gafas",
+      "urban",
+      "estilo"
+    ],
+    "fragance": [],
+    "isNew": true,
+    "isOnSale": false,
+    "salePercent": null
+  },
+  {
+    "id": "gafas-corazon-pet",
+    "name": "Gafas Corazón Love Pet",
+    "slug": "gafas-corazon-pet",
+    "category": "mascotas",
+    "price": 35.9,
+    "oldPrice": null,
+    "currency": "PEN",
+    "badge": "LOVELY",
+    "images": [
+      "/images/mascotas/gafa_cat_corazon.webp"
+    ],
+    "description": "Derrite corazones con este accesorio súper dulce. Gafas en forma de corazón para las mascotas más cariñosas de la casa, ligeras y muy cómodas.",
+    "specs": [
+      {
+        "label": "Diseño",
+        "value": "Heart Shaped"
+      }
+    ],
+    "rating": 4.9,
+    "reviews": 212,
+    "colors": [
+      "#FFB6C1",
+      "#FF0000"
+    ],
+    "stock": 35,
+    "tags": [
+      "mascotas",
+      "gafas",
+      "corazón",
+      "regalo"
+    ],
+    "fragance": [],
+    "isNew": false,
+    "isOnSale": false,
+    "salePercent": null
+  },
+  {
+    "id": "gafas-espejo-pet",
+    "name": "Gafas Espejo Mirror Pet",
+    "slug": "gafas-espejo-pet",
+    "category": "mascotas",
+    "price": 49.9,
+    "oldPrice": null,
+    "currency": "PEN",
+    "badge": "COOL",
+    "images": [
+      "/images/mascotas/gafa_espejo_animal_redondo.webp"
+    ],
+    "description": "Reflejos de pura onda. Lentes con acabado de espejo multicolor que protegen del sol intenso y ofrecen un look futurista y audaz para tu mascota.",
+    "specs": [
+      {
+        "label": "Lente",
+        "value": "Efecto Espejo"
+      }
+    ],
+    "rating": 4.8,
+    "reviews": 45,
+    "colors": [
+      "#00BCD4"
+    ],
+    "stock": 15,
+    "tags": [
+      "mascotas",
+      "gafas",
+      "espejo",
+      "futurista"
+    ],
+    "fragance": [],
+    "isNew": false,
+    "isOnSale": false,
+    "salePercent": null
+  },
+  {
+    "id": "gafas-moto-pet",
+    "name": "Gafas Moto Biker Pet",
+    "slug": "gafas-moto-pet",
+    "category": "mascotas",
+    "price": 55.9,
+    "oldPrice": 69.9,
+    "currency": "PEN",
+    "badge": "TOP",
+    "images": [
+      "/images/mascotas/gafa_moto_animal.webp"
+    ],
+    "description": "Resistencia total al viento y al polvo. El accesorio indispensable para mascotas que viajan en moto, con acolchado interno para evitar irritaciones.",
+    "specs": [
+      {
+        "label": "Extra",
+        "value": "Acolchado Foam"
+      }
+    ],
+    "rating": 5,
+    "reviews": 78,
+    "colors": [
+      "#000000"
+    ],
+    "stock": 12,
+    "tags": [
+      "mascotas",
+      "gafas",
+      "moto",
+      "biker"
+    ],
+    "fragance": [],
+    "isNew": true,
+    "isOnSale": true,
+    "salePercent": 20
+  },
+  {
+    "id": "sombrero-cowboy-pet",
+    "name": "Sombrero Western Cowboy Pet",
+    "slug": "sombrero-cowboy-pet",
+    "category": "mascotas",
+    "price": 32.9,
+    "oldPrice": null,
+    "currency": "PEN",
+    "badge": "DIVERTIDO",
+    "images": [
+      "/images/mascotas/lente_moto_dog.webp"
+    ],
+    "description": "¡Llegó el sheriff a la ciudad! Sombrero estilo western con cordón ajustable bajo la barbilla, ideal para disfraces o simplemente para lucir diferente.",
+    "specs": [
+      {
+        "label": "Estilo",
+        "value": "Cowboy"
+      },
+      {
+        "label": "Ajuste",
+        "value": "Cordón con Freno"
+      }
+    ],
+    "rating": 4.5,
+    "reviews": 94,
+    "colors": [
+      "#8B4513"
+    ],
+    "stock": 40,
+    "tags": [
+      "mascotas",
+      "sombrero",
+      "cowboy",
+      "divertido"
+    ],
+    "fragance": [],
+    "isNew": false,
+    "isOnSale": false,
+    "salePercent": null
+  },
+  {
+    "id": "sombrero-elegante-pet",
+    "name": "Sombrero Bombín Elegance Pet",
+    "slug": "sombrero-elegante-pet",
+    "category": "mascotas",
+    "price": 29.9,
+    "oldPrice": null,
+    "currency": "PEN",
+    "badge": "GENTLEMAN",
+    "images": [
+      "/images/mascotas/lente_rectangulo mascotas.webp"
+    ],
+    "description": "Para las ocasiones más especiales. Un bombín miniatura que aporta clase y distinción, fabricado en fieltro suave para que tu mascota se sienta cómoda.",
+    "specs": [
+      {
+        "label": "Material",
+        "value": "Fieltro"
+      }
+    ],
+    "rating": 4.8,
+    "reviews": 36,
+    "colors": [
+      "#000000"
+    ],
+    "stock": 15,
+    "tags": [
+      "mascotas",
+      "sombrero",
+      "elegante",
+      "clase"
+    ],
+    "fragance": [],
+    "isNew": true,
+    "isOnSale": false,
+    "salePercent": null
+  },
+  {
+    "id": "sombrero-safari-pet",
+    "name": "Sombrero Safari Explorer Pet",
+    "slug": "sombrero-safari-pet",
+    "category": "mascotas",
+    "price": 34.9,
+    "oldPrice": null,
+    "currency": "PEN",
+    "badge": "EXPLORADOR",
+    "images": [
+      "/images/mascotas/sombreo_medida.webp"
+    ],
+    "description": "Listo para la selva (o el parque). Sombrero tipo safari que protege de la luz solar directa, perfecto para expediciones largas y días soleados.",
+    "specs": [
+      {
+        "label": "Uso",
+        "value": "Protección Solar"
+      }
+    ],
+    "rating": 4.6,
+    "reviews": 52,
+    "colors": [
+      "#D4A574"
+    ],
+    "stock": 18,
+    "tags": [
+      "mascotas",
+      "sombrero",
+      "safari",
+      "protección"
+    ],
+    "fragance": [],
+    "isNew": false,
+    "isOnSale": false,
+    "salePercent": null
+  }
+]

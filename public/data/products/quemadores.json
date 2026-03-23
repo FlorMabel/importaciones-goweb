@@ -1,0 +1,1174 @@
+[
+  {
+    "id": "quemador-zen-38",
+    "name": "Quemador Clarity 38",
+    "slug": "quemador-zen-38",
+    "category": "quemadores",
+    "price": 54.9,
+    "oldPrice": null,
+    "currency": "PEN",
+    "badge": "CLARIDAD",
+    "images": [
+      "/images/quemadores/quemador_7253_38.webp"
+    ],
+    "description": "Despeja tu mente de pensamientos pesados. Su forma abierta y clara invita a la transparencia mental y a la frescura de nuevos comienzos.",
+    "specs": [
+      {
+        "label": "Propósito",
+        "value": "Enfoque Mental"
+      }
+    ],
+    "rating": 4.5,
+    "reviews": 27,
+    "colors": [
+      "#FFFFFF"
+    ],
+    "stock": 30,
+    "tags": [
+      "quemador",
+      "claridad",
+      "mente"
+    ],
+    "fragance": [],
+    "isNew": false,
+    "isOnSale": false,
+    "salePercent": null
+  },
+  {
+    "id": "quemador-zen-42",
+    "name": "Quemador Peace 42",
+    "slug": "quemador-zen-42",
+    "category": "quemadores",
+    "price": 63.9,
+    "oldPrice": null,
+    "currency": "PEN",
+    "badge": "PAZ",
+    "images": [
+      "/images/quemadores/quemador_7253_42.webp"
+    ],
+    "description": "Un monumento a la tranquilidad. Este quemador de gran tamaño es una pieza de declaración que trae paz inmediata a cualquier sala o dormitorio.",
+    "specs": [
+      {
+        "label": "Atributo",
+        "value": "Pieza de Lujo"
+      }
+    ],
+    "rating": 5,
+    "reviews": 18,
+    "colors": [
+      "#000000"
+    ],
+    "stock": 10,
+    "tags": [
+      "quemador",
+      "paz",
+      "grande"
+    ],
+    "fragance": [],
+    "isNew": true,
+    "isOnSale": false,
+    "salePercent": null
+  },
+  {
+    "id": "quemador-aves",
+    "name": "Quemador Cascada Aves Paraíso",
+    "slug": "quemador-aves",
+    "category": "quemadores",
+    "price": 85.9,
+    "oldPrice": null,
+    "currency": "PEN",
+    "badge": "EXCLUSIVO",
+    "images": [
+      "/images/quemadores/cascada_agua_aves.webp"
+    ],
+    "description": "Un santuario de paz en tu hogar. Las aves del paraíso guían el humo en una cascada hipnótica que relaja los sentidos y purifica el ambiente con elegancia artística.",
+    "specs": [
+      {
+        "label": "Diseño",
+        "value": "Aves del Paraíso"
+      }
+    ],
+    "rating": 4.9,
+    "reviews": 45,
+    "colors": [
+      "#8B4513"
+    ],
+    "stock": 12,
+    "tags": [
+      "quemador",
+      "aves",
+      "cascada"
+    ],
+    "fragance": [],
+    "isNew": true,
+    "isOnSale": false,
+    "salePercent": null
+  },
+  {
+    "id": "quemador-elefante-sagrado",
+    "name": "Quemador Elefante Sagrado",
+    "slug": "quemador-elefante-sagrado",
+    "category": "quemadores",
+    "price": 75.9,
+    "oldPrice": null,
+    "currency": "PEN",
+    "badge": "FORTUNA",
+    "images": [
+      "/images/quemadores/cascada_agua_elef.webp"
+    ],
+    "description": "Atrae la buena suerte y la sabiduría. Este majestuoso elefante sagrado crea un flujo de humo zen que simboliza la abundancia y la paz espiritual en cada rincón.",
+    "specs": [
+      {
+        "label": "Símbolo",
+        "value": "Sabiduría y Suerte"
+      }
+    ],
+    "rating": 4.8,
+    "reviews": 112,
+    "colors": [
+      "#808080"
+    ],
+    "stock": 20,
+    "tags": [
+      "quemador",
+      "elefante",
+      "suerte"
+    ],
+    "fragance": [],
+    "isNew": false,
+    "isOnSale": false,
+    "salePercent": null
+  },
+  {
+    "id": "quemador-zen-28",
+    "name": "Quemador Zen Circle 28",
+    "slug": "quemador-zen-28",
+    "category": "quemadores",
+    "price": 59.9,
+    "oldPrice": null,
+    "currency": "PEN",
+    "badge": "ZEN",
+    "images": [
+      "/images/quemadores/quemador_7253_28.webp"
+    ],
+    "description": "Minimalismo terapéutico. Un diseño circular que invita a la introspección y el equilibrio, permitiendo que el incienso fluya en una danza de calma absoluta.",
+    "specs": [
+      {
+        "label": "Estilo",
+        "value": "Minimalista"
+      }
+    ],
+    "rating": 4.7,
+    "reviews": 34,
+    "colors": [
+      "#000000"
+    ],
+    "stock": 25,
+    "tags": [
+      "quemador",
+      "zen",
+      "minimalista"
+    ],
+    "fragance": [],
+    "isNew": true,
+    "isOnSale": false,
+    "salePercent": null
+  },
+  {
+    "id": "quemador-zen-29",
+    "name": "Quemador Loto Mystic 29",
+    "slug": "quemador-zen-29",
+    "category": "quemadores",
+    "price": 62.9,
+    "oldPrice": null,
+    "currency": "PEN",
+    "badge": "MÍSTICO",
+    "images": [
+      "/images/quemadores/quemador_7253_29.webp"
+    ],
+    "description": "La pureza del loto en tu meditación. Este diseño místico captura la esencia de la flor sagrada, creando un ambiente ideal para la relajación profunda.",
+    "specs": [
+      {
+        "label": "Motivo",
+        "value": "Flor de Loto"
+      }
+    ],
+    "rating": 4.8,
+    "reviews": 28,
+    "colors": [
+      "#8B4513"
+    ],
+    "stock": 18,
+    "tags": [
+      "quemador",
+      "loto",
+      "místico"
+    ],
+    "fragance": [],
+    "isNew": false,
+    "isOnSale": false,
+    "salePercent": null
+  },
+  {
+    "id": "quemador-zen-30",
+    "name": "Quemador Harmony 30",
+    "slug": "quemador-zen-30",
+    "category": "quemadores",
+    "price": 58.9,
+    "oldPrice": null,
+    "currency": "PEN",
+    "badge": "ARMONÍA",
+    "images": [
+      "/images/quemadores/quemador_7253_30.webp"
+    ],
+    "description": "Encuentra tu centro energético. El quemador Harmony combina líneas suaves y fluidas para una experiencia de aromaterapia que restaura la paz interior.",
+    "specs": [
+      {
+        "label": "Efecto",
+        "value": "Armonizador"
+      }
+    ],
+    "rating": 4.6,
+    "reviews": 41,
+    "colors": [
+      "#D4A574"
+    ],
+    "stock": 22,
+    "tags": [
+      "quemador",
+      "armonia",
+      "relax"
+    ],
+    "fragance": [],
+    "isNew": false,
+    "isOnSale": false,
+    "salePercent": null
+  },
+  {
+    "id": "quemador-zen-33",
+    "name": "Quemador Flow 33",
+    "slug": "quemador-zen-33",
+    "category": "quemadores",
+    "price": 64.9,
+    "oldPrice": null,
+    "currency": "PEN",
+    "badge": "FLUIDEZ",
+    "images": [
+      "/images/quemadores/quemador_7253_33.webp"
+    ],
+    "description": "Deja que la energía fluya sin obstáculos. Su diseño aerodinámico permite una caída de humo espectacular, perfecta para hipnotizar el estrés diario.",
+    "specs": [
+      {
+        "label": "Diseño",
+        "value": "Aerodinámico"
+      }
+    ],
+    "rating": 4.9,
+    "reviews": 56,
+    "colors": [
+      "#000000"
+    ],
+    "stock": 15,
+    "tags": [
+      "quemador",
+      "flow",
+      "estilo"
+    ],
+    "fragance": [],
+    "isNew": true,
+    "isOnSale": false,
+    "salePercent": null
+  },
+  {
+    "id": "quemador-zen-34",
+    "name": "Quemador Balance 34",
+    "slug": "quemador-zen-34",
+    "category": "quemadores",
+    "price": 61.9,
+    "oldPrice": null,
+    "currency": "PEN",
+    "badge": "EQUILIBRIO",
+    "images": [
+      "/images/quemadores/quemador_7253_34.webp"
+    ],
+    "description": "El equilibrio perfecto entre arte y función. Una pieza sólida que ancla la energía de tus espacios mientras desprende tus aromas favoritos.",
+    "specs": [
+      {
+        "label": "Material",
+        "value": "Cerámica Reforzada"
+      }
+    ],
+    "rating": 4.7,
+    "reviews": 23,
+    "colors": [
+      "#8B4513"
+    ],
+    "stock": 19,
+    "tags": [
+      "quemador",
+      "balance",
+      "arte"
+    ],
+    "fragance": [],
+    "isNew": false,
+    "isOnSale": false,
+    "salePercent": null
+  },
+  {
+    "id": "quemador-zen-37",
+    "name": "Quemador Serenity 37",
+    "slug": "quemador-zen-37",
+    "category": "quemadores",
+    "price": 57.9,
+    "oldPrice": null,
+    "currency": "PEN",
+    "badge": "SERENIDAD",
+    "images": [
+      "/images/quemadores/quemador_7253_37.webp"
+    ],
+    "description": "Silencio visual que perfuma. Serenity es la elección ideal para rincones de lectura o altares personales donde se busca la calma absoluta.",
+    "specs": [
+      {
+        "label": "Uso",
+        "value": "Meditación/Lectura"
+      }
+    ],
+    "rating": 4.8,
+    "reviews": 39,
+    "colors": [
+      "#808080"
+    ],
+    "stock": 24,
+    "tags": [
+      "quemador",
+      "serenidad",
+      "zen"
+    ],
+    "fragance": [],
+    "isNew": true,
+    "isOnSale": false,
+    "salePercent": null
+  },
+  {
+    "id": "quemador-modern-24",
+    "name": "Quemador Modern Art 24",
+    "slug": "quemador-modern-24",
+    "category": "quemadores",
+    "price": 69.9,
+    "oldPrice": null,
+    "currency": "PEN",
+    "badge": "MODERNO",
+    "images": [
+      "/images/quemadores/quemador_7677_24.webp"
+    ],
+    "description": " Vanguardia en el arte del incienso. Una reinterpretación moderna de los quemadores clásicos que encaja perfectamente en lofts y oficinas contemporáneas.",
+    "specs": [
+      {
+        "label": "Estilo",
+        "value": "Contemporáneo"
+      }
+    ],
+    "rating": 4.7,
+    "reviews": 31,
+    "colors": [
+      "#808080"
+    ],
+    "stock": 15,
+    "tags": [
+      "quemador",
+      "moderno",
+      "diseño"
+    ],
+    "fragance": [],
+    "isNew": false,
+    "isOnSale": false,
+    "salePercent": null
+  },
+  {
+    "id": "quemador-minimal-42",
+    "name": "Quemador Minimalist 42",
+    "slug": "quemador-minimal-42",
+    "category": "quemadores",
+    "price": 52.9,
+    "oldPrice": null,
+    "currency": "PEN",
+    "badge": "ESSENCIAL",
+    "images": [
+      "/images/quemadores/quemador_7677_42.webp"
+    ],
+    "description": "Menos es más. El Minimalist 42 ofrece la forma más pura de disfrutar tus fragancias favoritas sin distracciones visuales, solo esencia pura.",
+    "specs": [
+      {
+        "label": "Filosofía",
+        "value": "Minimalismo Puro"
+      }
+    ],
+    "rating": 4.6,
+    "reviews": 22,
+    "colors": [
+      "#D4A574"
+    ],
+    "stock": 35,
+    "tags": [
+      "quemador",
+      "minimal",
+      "esencial"
+    ],
+    "fragance": [],
+    "isNew": true,
+    "isOnSale": false,
+    "salePercent": null
+  },
+  {
+    "id": "quemador-angel-rgb",
+    "name": "Quemador Ángel de Luz RGB",
+    "slug": "quemador-angel-rgb",
+    "category": "quemadores",
+    "price": 119,
+    "oldPrice": 149,
+    "currency": "PEN",
+    "badge": "MÁGICO",
+    "images": [
+      "/images/quemadores/quemador_angel_rgb.webp"
+    ],
+    "description": "Una bendición luminosa para tus sentidos. Este ángel no solo quema tu incienso favorito, sino que ilumina tu espacio con una luz RGB suave y celestial.",
+    "specs": [
+      {
+        "label": "Luz",
+        "value": "RGB Multicolor"
+      },
+      {
+        "label": "Efecto",
+        "value": "Celestial"
+      }
+    ],
+    "rating": 5,
+    "reviews": 64,
+    "colors": [
+      "#FFFFFF"
+    ],
+    "stock": 8,
+    "tags": [
+      "quemador",
+      "ángel",
+      "rgb",
+      "luz"
+    ],
+    "fragance": [],
+    "isNew": true,
+    "isOnSale": true,
+    "salePercent": 20
+  },
+  {
+    "id": "quemador-robot",
+    "name": "Quemador Robot Futurista",
+    "slug": "quemador-robot",
+    "category": "quemadores",
+    "price": 89.9,
+    "oldPrice": null,
+    "currency": "PEN",
+    "badge": "TECH",
+    "images": [
+      "/images/quemadores/quemador_bot.webp"
+    ],
+    "description": "El futuro de la aromaterapia tradicional. Un diseño robótico audaz que fusiona la tecnología visual con el ritual milenario del incienso.",
+    "specs": [
+      {
+        "label": "Estilo",
+        "value": "Futurista/Tech"
+      }
+    ],
+    "rating": 4.8,
+    "reviews": 25,
+    "colors": [
+      "#000000",
+      "#C0C0C0"
+    ],
+    "stock": 14,
+    "tags": [
+      "quemador",
+      "robot",
+      "tech",
+      "original"
+    ],
+    "fragance": [],
+    "isNew": true,
+    "isOnSale": false,
+    "salePercent": null
+  },
+  {
+    "id": "quemador-castillo-dragon",
+    "name": "Quemador Castillo del Dragón",
+    "slug": "quemador-castillo-dragon",
+    "category": "quemadores",
+    "price": 125,
+    "oldPrice": null,
+    "currency": "PEN",
+    "badge": "ÉPICO",
+    "images": [
+      "/images/quemadores/quemador_castillo_dragon.webp"
+    ],
+    "description": "Domina el reino del aroma. Una fortaleza épica donde el dragón custodia el fuego sagrado, creando una escena de fantasía con cada nube de humo.",
+    "specs": [
+      {
+        "label": "Temática",
+        "value": "Fantasía Épica"
+      },
+      {
+        "label": "Detalle",
+        "value": "Alta Precisión"
+      }
+    ],
+    "rating": 4.9,
+    "reviews": 87,
+    "colors": [
+      "#8B4513"
+    ],
+    "stock": 7,
+    "tags": [
+      "quemador",
+      "castillo",
+      "dragón",
+      "épico"
+    ],
+    "fragance": [],
+    "isNew": false,
+    "isOnSale": false,
+    "salePercent": null
+  },
+  {
+    "id": "quemador-dragon-cascada",
+    "name": "Quemador Dragón de Cascada",
+    "slug": "quemador-dragon-cascada",
+    "category": "quemadores",
+    "price": 79.9,
+    "oldPrice": null,
+    "currency": "PEN",
+    "badge": "TOP VENTAS",
+    "images": [
+      "/images/quemadores/quemador_dragon.webp"
+    ],
+    "description": "La esencia del poder. Mira cómo el humo emula el aliento de un dragón fluyendo hacia abajo en una cascada mística que cautiva a todos los presentes.",
+    "specs": [
+      {
+        "label": "Tipo",
+        "value": "Cascada de Humo"
+      }
+    ],
+    "rating": 4.9,
+    "reviews": 265,
+    "colors": [
+      "#8B4513"
+    ],
+    "stock": 20,
+    "tags": [
+      "quemador",
+      "dragón",
+      "cascada"
+    ],
+    "fragance": [],
+    "isNew": false,
+    "isOnSale": false,
+    "salePercent": null
+  },
+  {
+    "id": "quemador-dragon-roca",
+    "name": "Quemador Dragón sobre Roca",
+    "slug": "quemador-dragon-roca",
+    "category": "quemadores",
+    "price": 82.9,
+    "oldPrice": null,
+    "currency": "PEN",
+    "badge": "SALVAJE",
+    "images": [
+      "/images/quemadores/quemador_dragon_roca.webp"
+    ],
+    "description": "La fuerza de la naturaleza en casa. El dragón vigila desde su peñasco rocoso mientras el aroma se expande en una nube mágica y protectora.",
+    "specs": [
+      {
+        "label": "Base",
+        "value": "Efecto Roca"
+      }
+    ],
+    "rating": 4.7,
+    "reviews": 31,
+    "colors": [
+      "#808080"
+    ],
+    "stock": 16,
+    "tags": [
+      "quemador",
+      "dragón",
+      "roca"
+    ],
+    "fragance": [],
+    "isNew": false,
+    "isOnSale": false,
+    "salePercent": null
+  },
+  {
+    "id": "quemador-elefante-vela",
+    "name": "Quemador Elefante Porta Vela",
+    "slug": "quemador-elefante-vela",
+    "category": "quemadores",
+    "price": 49.9,
+    "oldPrice": null,
+    "currency": "PEN",
+    "badge": "CÁLIDO",
+    "images": [
+      "/images/quemadores/quemador_elef_vela.webp"
+    ],
+    "description": "Doble funcionalidad, doble paz. Un tierno elefante que sostiene tu incienso y una vela pequeña, creando una atmósfera de calidez inigualable.",
+    "specs": [
+      {
+        "label": "Extra",
+        "value": "Soporte para Vela"
+      }
+    ],
+    "rating": 4.6,
+    "reviews": 93,
+    "colors": [
+      "#8B4513"
+    ],
+    "stock": 25,
+    "tags": [
+      "quemador",
+      "elefante",
+      "vela"
+    ],
+    "fragance": [],
+    "isNew": false,
+    "isOnSale": false,
+    "salePercent": null
+  },
+  {
+    "id": "quemador-elefante-sabio",
+    "name": "Quemador Elefante Sabio",
+    "slug": "quemador-elefante-sabio",
+    "category": "quemadores",
+    "price": 68.9,
+    "oldPrice": null,
+    "currency": "PEN",
+    "badge": "ZEN",
+    "images": [
+      "/images/quemadores/quemador_elefante.webp"
+    ],
+    "description": "Serenidad en cada inhalación. Deja que la sabiduría del elefante purifique tus pensamientos a través del humo sagrado de tus fragancias favoritas.",
+    "specs": [
+      {
+        "label": "Material",
+        "value": "Cerámica"
+      }
+    ],
+    "rating": 4.8,
+    "reviews": 75,
+    "colors": [
+      "#808080"
+    ],
+    "stock": 30,
+    "tags": [
+      "quemador",
+      "elefante",
+      "oriental"
+    ],
+    "fragance": [],
+    "isNew": false,
+    "isOnSale": false,
+    "salePercent": null
+  },
+  {
+    "id": "quemador-te-zen",
+    "name": "Quemador Té y Meditación",
+    "slug": "quemador-te-zen",
+    "category": "quemadores",
+    "price": 45.9,
+    "oldPrice": null,
+    "currency": "PEN",
+    "badge": "RELAX",
+    "images": [
+      "/images/quemadores/quemador_en_te.webp"
+    ],
+    "description": "El ritual del té transformado. Un diseño que evoca la ceremonia del té, ideal para acompañar tus momentos de lectura y relax con un aroma envolvente.",
+    "specs": [
+      {
+        "label": "Inspiración",
+        "value": "Ceremonia del Té"
+      }
+    ],
+    "rating": 4.7,
+    "reviews": 48,
+    "colors": [
+      "#D4A574"
+    ],
+    "stock": 22,
+    "tags": [
+      "quemador",
+      "té",
+      "meditación"
+    ],
+    "fragance": [],
+    "isNew": true,
+    "isOnSale": false,
+    "salePercent": null
+  },
+  {
+    "id": "quemador-carpa-koi",
+    "name": "Quemador Pez Carpa Koi",
+    "slug": "quemador-carpa-koi",
+    "category": "quemadores",
+    "price": 59.9,
+    "oldPrice": null,
+    "currency": "PEN",
+    "badge": "PROSPERIDAD",
+    "images": [
+      "/images/quemadores/quemador_fish.webp"
+    ],
+    "description": "Fluidez y éxito en tu vida. Se dice que el pez Koi atrae la abundancia; este quemador es un recordatorio visual de la perseverancia y el flujo positivo.",
+    "specs": [
+      {
+        "label": "Significado",
+        "value": "Abundancia"
+      }
+    ],
+    "rating": 4.9,
+    "reviews": 52,
+    "colors": [
+      "#FFD700",
+      "#8B4513"
+    ],
+    "stock": 15,
+    "tags": [
+      "quemador",
+      "pez",
+      "koi"
+    ],
+    "fragance": [],
+    "isNew": false,
+    "isOnSale": false,
+    "salePercent": null
+  },
+  {
+    "id": "quemador-loto-divino",
+    "name": "Quemador Flor de Loto Divina",
+    "slug": "quemador-loto-divino",
+    "category": "quemadores",
+    "price": 44.9,
+    "oldPrice": null,
+    "currency": "PEN",
+    "badge": "SAGRADO",
+    "images": [
+      "/images/quemadores/quemador_flor de loto2.webp"
+    ],
+    "description": "Símbolo de renacimiento ypureza. La flor de loto se abre paso entre el humo para recordarte que la belleza puede florecer en cualquier circunstancia.",
+    "specs": [
+      {
+        "label": "Motivo",
+        "value": "Flor de Loto"
+      }
+    ],
+    "rating": 4.8,
+    "reviews": 67,
+    "colors": [
+      "#E8B4B4"
+    ],
+    "stock": 40,
+    "tags": [
+      "quemador",
+      "loto",
+      "pureza"
+    ],
+    "fragance": [],
+    "isNew": false,
+    "isOnSale": false,
+    "salePercent": null
+  },
+  {
+    "id": "quemador-loto-pure",
+    "name": "Quemador Flor de Loto Pura",
+    "slug": "quemador-loto-pure",
+    "category": "quemadores",
+    "price": 39.9,
+    "oldPrice": null,
+    "currency": "PEN",
+    "badge": "ESENCIAL",
+    "images": [
+      "/images/quemadores/quemador_flor_loto1.webp"
+    ],
+    "description": "Belleza natural y simplificada. Un diseño de loto de líneas puras que aporta una nota de frescura floral y paz a cualquier rincón de tu hogar.",
+    "specs": [
+      {
+        "label": "Diseño",
+        "value": "Loto Abierto"
+      }
+    ],
+    "rating": 4.6,
+    "reviews": 89,
+    "colors": [
+      "#FFFFFF"
+    ],
+    "stock": 50,
+    "tags": [
+      "quemador",
+      "loto",
+      "zen"
+    ],
+    "fragance": [],
+    "isNew": true,
+    "isOnSale": false,
+    "salePercent": null
+  },
+  {
+    "id": "quemador-hojas-otono",
+    "name": "Quemador Hojas de Otoño",
+    "slug": "quemador-hojas-otono",
+    "category": "quemadores",
+    "price": 35.9,
+    "oldPrice": null,
+    "currency": "PEN",
+    "badge": "NATURA",
+    "images": [
+      "/images/quemadores/quemador_hojas.webp"
+    ],
+    "description": "La calma del bosque en casa. Siente la brisa de otoño con este quemador que captura la delicadeza de las hojas caídas en una composición orgánica.",
+    "specs": [
+      {
+        "label": "Estilo",
+        "value": "Nature Inspired"
+      }
+    ],
+    "rating": 4.5,
+    "reviews": 76,
+    "colors": [
+      "#D4A574"
+    ],
+    "stock": 35,
+    "tags": [
+      "quemador",
+      "hojas",
+      "naturaleza"
+    ],
+    "fragance": [],
+    "isNew": false,
+    "isOnSale": false,
+    "salePercent": null
+  },
+  {
+    "id": "quemador-leon-majestuoso",
+    "name": "Quemador León Majestuoso",
+    "slug": "quemador-leon-majestuoso",
+    "category": "quemadores",
+    "price": 85,
+    "oldPrice": null,
+    "currency": "PEN",
+    "badge": "PODER",
+    "images": [
+      "/images/quemadores/quemador_leon.webp"
+    ],
+    "description": "Protector del hogar y símbolo de coraje. El león imperial custodia tus espacios mientras el humo sagrado disipa cualquier sombra de negatividad.",
+    "specs": [
+      {
+        "label": "Símbolo",
+        "value": "Coraje y Fuerza"
+      }
+    ],
+    "rating": 4.9,
+    "reviews": 31,
+    "colors": [
+      "#D4A574",
+      "#8B4513"
+    ],
+    "stock": 11,
+    "tags": [
+      "quemador",
+      "león",
+      "protección"
+    ],
+    "fragance": [],
+    "isNew": true,
+    "isOnSale": false,
+    "salePercent": null
+  },
+  {
+    "id": "quemador-lotus-koi",
+    "name": "Quemador Flor de Loto y Pez",
+    "slug": "quemador-lotus-koi",
+    "category": "quemadores",
+    "price": 55.9,
+    "oldPrice": null,
+    "currency": "PEN",
+    "badge": "EQUILIBRIO",
+    "images": [
+      "/images/quemadores/quemador_lotus_fish.webp"
+    ],
+    "description": "La simbiosis perfecta del estanque zen. La carpa Koi y el loto se funden en esta pieza para traerte serenidad, equilibrio y vitalidad constante.",
+    "specs": [
+      {
+        "label": "Diseño",
+        "value": "Loto y Pez Koi"
+      }
+    ],
+    "rating": 4.8,
+    "reviews": 44,
+    "colors": [
+      "#8B4513"
+    ],
+    "stock": 18,
+    "tags": [
+      "quemador",
+      "loto",
+      "pez"
+    ],
+    "fragance": [],
+    "isNew": false,
+    "isOnSale": false,
+    "salePercent": null
+  },
+  {
+    "id": "quemador-manzana-suerte",
+    "name": "Quemador Manzana de la Suerte",
+    "slug": "quemador-manzana-suerte",
+    "category": "quemadores",
+    "price": 42.9,
+    "oldPrice": null,
+    "currency": "PEN",
+    "badge": "DULCE",
+    "images": [
+      "/images/quemadores/quemador_manzana.webp"
+    ],
+    "description": "Atrae la salud y la vitalidad. Un diseño frutal encantador que simboliza la abundancia y la renovación constante de la energía positiva.",
+    "specs": [
+      {
+        "label": "Forma",
+        "value": "Manzana Orgánica"
+      }
+    ],
+    "rating": 4.6,
+    "reviews": 58,
+    "colors": [
+      "#FF0000",
+      "#228B22"
+    ],
+    "stock": 26,
+    "tags": [
+      "quemador",
+      "manzana",
+      "suerte"
+    ],
+    "fragance": [],
+    "isNew": true,
+    "isOnSale": false,
+    "salePercent": null
+  },
+  {
+    "id": "quemador-mujer-zen",
+    "name": "Quemador Silueta Femenina Zen",
+    "slug": "quemador-mujer-zen",
+    "category": "quemadores",
+    "price": 79.9,
+    "oldPrice": null,
+    "currency": "PEN",
+    "badge": "ELEGANCIA",
+    "images": [
+      "/images/quemadores/quemador_mujer.webp"
+    ],
+    "description": "La gracia y la calma en una pieza. Esta silueta femenina en meditación irradia paz y sofisticación, siendo el centro de atención de cualquier altar personal.",
+    "specs": [
+      {
+        "label": "Estilo",
+        "value": "Escultórico"
+      }
+    ],
+    "rating": 4.9,
+    "reviews": 29,
+    "colors": [
+      "#000000",
+      "#D4A574"
+    ],
+    "stock": 13,
+    "tags": [
+      "quemador",
+      "mujer",
+      "meditación"
+    ],
+    "fragance": [],
+    "isNew": true,
+    "isOnSale": false,
+    "salePercent": null
+  },
+  {
+    "id": "quemador-oracion-calma",
+    "name": "Quemador Oración y Calma",
+    "slug": "quemador-oracion-calma",
+    "category": "quemadores",
+    "price": 65.9,
+    "oldPrice": null,
+    "currency": "PEN",
+    "badge": "REZO",
+    "images": [
+      "/images/quemadores/quemador_ora.webp"
+    ],
+    "description": "Sintoniza con lo divino. Un diseño que invita a la plegaria y la gratitud diaria, creando un ambiente de respeto y profunda conexión espiritual.",
+    "specs": [
+      {
+        "label": "Uso",
+        "value": "Espiritual/Oración"
+      }
+    ],
+    "rating": 4.8,
+    "reviews": 37,
+    "colors": [
+      "#8B4513"
+    ],
+    "stock": 18,
+    "tags": [
+      "quemador",
+      "oración",
+      "paz"
+    ],
+    "fragance": [],
+    "isNew": false,
+    "isOnSale": false,
+    "salePercent": null
+  },
+  {
+    "id": "quemador-pez-abundancia",
+    "name": "Quemador Pez de la Abundancia",
+    "slug": "quemador-pez-abundancia",
+    "category": "quemadores",
+    "price": 52.9,
+    "oldPrice": null,
+    "currency": "PEN",
+    "badge": "SUERTE",
+    "images": [
+      "/images/quemadores/quemador_pez.webp"
+    ],
+    "description": "Navega en aguas de prosperidad. El pez de la abundancia te acompaña en tus momentos de enfoque, asegurando que el flujo de buena fortuna no se detenga.",
+    "specs": [
+      {
+        "label": "Significado",
+        "value": "Prosperidad"
+      }
+    ],
+    "rating": 4.7,
+    "reviews": 41,
+    "colors": [
+      "#8B4513"
+    ],
+    "stock": 21,
+    "tags": [
+      "quemador",
+      "pez",
+      "abundancia"
+    ],
+    "fragance": [],
+    "isNew": false,
+    "isOnSale": false,
+    "salePercent": null
+  },
+  {
+    "id": "quemador-shiva",
+    "name": "Quemador Shiva Meditación",
+    "slug": "quemador-shiva",
+    "category": "quemadores",
+    "price": 72.9,
+    "oldPrice": null,
+    "currency": "PEN",
+    "badge": "POTENCIA",
+    "images": [
+      "/images/quemadores/quemador_shiv.webp"
+    ],
+    "description": "La fuerza del cambio positivo. Shiva en meditación te brinda la determinación necesaria para transformar tu entorno y elevar tu vibración personal.",
+    "specs": [
+      {
+        "label": "Deidad",
+        "value": "Shiva"
+      }
+    ],
+    "rating": 5,
+    "reviews": 54,
+    "colors": [
+      "#808080",
+      "#000000"
+    ],
+    "stock": 15,
+    "tags": [
+      "quemador",
+      "shiva",
+      "meditación"
+    ],
+    "fragance": [],
+    "isNew": true,
+    "isOnSale": false,
+    "salePercent": null
+  },
+  {
+    "id": "quemador-vase-antique",
+    "name": "Quemador Jarrón Antiguo",
+    "slug": "quemador-vase-antique",
+    "category": "quemadores",
+    "price": 48.9,
+    "oldPrice": null,
+    "currency": "PEN",
+    "badge": "CLÁSICO",
+    "images": [
+      "/images/quemadores/quemador_vase.webp"
+    ],
+    "description": "Nostalgia que perfuma. Inspirado en ánforas antiguas, este quemador aporta un toque histórico y rústico que embellece cualquier espacio tradicional.",
+    "specs": [
+      {
+        "label": "Estilo",
+        "value": "Clásico/Antiguo"
+      }
+    ],
+    "rating": 4.5,
+    "reviews": 32,
+    "colors": [
+      "#8B4513"
+    ],
+    "stock": 28,
+    "tags": [
+      "quemador",
+      "jarrón",
+      "antiguo"
+    ],
+    "fragance": [],
+    "isNew": false,
+    "isOnSale": false,
+    "salePercent": null
+  },
+  {
+    "id": "quemador-vela-flor",
+    "name": "Quemador Flor y Vela Artística",
+    "slug": "quemador-vela-flor",
+    "category": "quemadores",
+    "price": 46.9,
+    "oldPrice": null,
+    "currency": "PEN",
+    "badge": "ART",
+    "images": [
+      "/images/quemadores/quemador_vela_flor.webp"
+    ],
+    "description": "Arte que ilumina y calma. Una composición floral que integra un espacio para vela, ideal para crear centros de mesa románticos y aromáticos.",
+    "specs": [
+      {
+        "label": "Uso",
+        "value": "Decorativo/Aromático"
+      }
+    ],
+    "rating": 4.7,
+    "reviews": 29,
+    "colors": [
+      "#E8B4B4"
+    ],
+    "stock": 24,
+    "tags": [
+      "quemador",
+      "flor",
+      "vela"
+    ],
+    "fragance": [],
+    "isNew": true,
+    "isOnSale": false,
+    "salePercent": null
+  }
+]

@@ -1,0 +1,1272 @@
+[
+  {
+    "id": "esencias-florales",
+    "name": "Esencias Premium Florales",
+    "slug": "esencias-florales",
+    "category": "esencias",
+    "price": 15.9,
+    "oldPrice": null,
+    "currency": "PEN",
+    "badge": "AROMATERAPIA",
+    "images": [
+      "/images/esencias_cono/esencias_florales.webp"
+    ],
+    "description": "Un viaje sensorial a través de los jardines más frescos. Nuestras esencias florales están diseñadas para armonizar tu entorno y revitalizar tus sentidos con la pureza de la naturaleza.",
+    "specs": [],
+    "rating": 4.9,
+    "reviews": 142,
+    "colors": [],
+    "stock": 50,
+    "tags": [
+      "esencias",
+      "floral",
+      "aromaterapia"
+    ],
+    "fragance": [],
+    "isNew": true,
+    "isOnSale": false,
+    "salePercent": null
+  },
+  {
+    "id": "esencias-frutales",
+    "name": "Esencias Premium Frutales",
+    "slug": "esencias-frutales",
+    "category": "esencias",
+    "price": 15.9,
+    "oldPrice": null,
+    "currency": "PEN",
+    "badge": "ENERGIZANTE",
+    "images": [
+      "/images/esencias_cono/esencias_frutales.webp"
+    ],
+    "description": "Despierta tu energía con la vibrante selección de frutos maduros. Una explosión de frescura cítrica y dulce que llena cada rincón de vitalidad y alegría.",
+    "specs": [],
+    "rating": 4.8,
+    "reviews": 98,
+    "colors": [],
+    "stock": 45,
+    "tags": [
+      "esencias",
+      "frutal",
+      "energia"
+    ],
+    "fragance": [],
+    "isNew": false,
+    "isOnSale": false,
+    "salePercent": null
+  },
+  {
+    "id": "esencias-maderosas",
+    "name": "Esencias Premium Maderosas",
+    "slug": "esencias-maderosas",
+    "category": "esencias",
+    "price": 15.9,
+    "oldPrice": null,
+    "currency": "PEN",
+    "badge": "ZEN",
+    "images": [
+      "/images/esencias_cono/esencias_maderosas.webp"
+    ],
+    "description": "Conéctate con la tierra y la profundidad del bosque. Toques de cedro y sándalo que proporcionan una base sólida y serena para tus momentos de meditacion y paz.",
+    "specs": [],
+    "rating": 4.7,
+    "reviews": 86,
+    "colors": [],
+    "stock": 40,
+    "tags": [
+      "esencias",
+      "madera",
+      "paz"
+    ],
+    "fragance": [],
+    "isNew": false,
+    "isOnSale": false,
+    "salePercent": null
+  },
+  {
+    "id": "esencias-semillas",
+    "name": "Esencias Semillas y Especias",
+    "slug": "esencias-semillas",
+    "category": "esencias",
+    "price": 15.9,
+    "oldPrice": null,
+    "currency": "PEN",
+    "badge": "MÍSTICO",
+    "images": [
+      "/images/esencias_cono/esencias_semillas y especies.webp"
+    ],
+    "description": "Aromas ancestrales que invocan la sabiduría. Una mezcla equilibrada de semillas sagradas y especias exóticas para potenciar tu enfoque y claridad mental.",
+    "specs": [],
+    "rating": 4.9,
+    "reviews": 54,
+    "colors": [],
+    "stock": 35,
+    "tags": [
+      "esencias",
+      "misterio",
+      "especies"
+    ],
+    "fragance": [],
+    "isNew": true,
+    "isOnSale": false,
+    "salePercent": null
+  },
+  {
+    "id": "esencias-misticas-esotericas",
+    "name": "Esencias Misticas Esotericas",
+    "slug": "esencias-misticas-esotericas",
+    "category": "esencias",
+    "price": 12.9,
+    "oldPrice": null,
+    "currency": "PEN",
+    "badge": "PASIÓN",
+    "images": [
+      "/images/esencias_cono/esencias_misticas esotericas.webp"
+    ],
+    "description": "Pasión y deseo en cada nota. Formulado para aumentar el romanticismo y el deseo en tus encuentros más íntimos.",
+    "specs": [],
+    "rating": 4.6,
+    "reviews": 45,
+    "colors": [],
+    "stock": 35,
+    "tags": [
+      "incienso",
+      "pasion",
+      "kamasutra"
+    ],
+    "fragance": [],
+    "isNew": false,
+    "isOnSale": false,
+    "salePercent": null
+  },
+  {
+    "id": "incienso-abrecaminos",
+    "name": "Incienso Abrecaminos",
+    "slug": "incienso-abrecaminos",
+    "category": "esencias",
+    "price": 12.9,
+    "oldPrice": null,
+    "currency": "PEN",
+    "badge": "NUEVA ENERGÍA",
+    "images": [
+      "/images/esencias_cono/incienso_cono_abrecaminos.webp"
+    ],
+    "description": "Elimina obstáculos y atrae nuevas oportunidades. Este incienso está formulado para despejar tu camino hacia el éxito y la prosperidad.",
+    "specs": [
+      {
+        "label": "Formato",
+        "value": "Cono Cascada"
+      }
+    ],
+    "rating": 5,
+    "reviews": 31,
+    "colors": [],
+    "stock": 60,
+    "tags": [
+      "incienso",
+      "suerte",
+      "exito"
+    ],
+    "fragance": [],
+    "isNew": true,
+    "isOnSale": false,
+    "salePercent": null
+  },
+  {
+    "id": "incienso-antiestres",
+    "name": "Incienso Antiestrés",
+    "slug": "incienso-antiestres",
+    "category": "esencias",
+    "price": 12.9,
+    "oldPrice": null,
+    "currency": "PEN",
+    "badge": "RELAX",
+    "images": [
+      "/images/esencias_cono/incienso_cono_antiestres.webp"
+    ],
+    "description": "Tu refugio de paz tras un día agitado. Notas sedantes que calman el sistema nervioso y restauran el equilibrio emocional en tu hogar.",
+    "specs": [
+      {
+        "label": "Efecto",
+        "value": "Calmante Profundo"
+      }
+    ],
+    "rating": 4.9,
+    "reviews": 112,
+    "colors": [],
+    "stock": 100,
+    "tags": [
+      "incienso",
+      "relax",
+      "paz"
+    ],
+    "fragance": [],
+    "isNew": false,
+    "isOnSale": false,
+    "salePercent": null
+  },
+  {
+    "id": "incienso-buddha",
+    "name": "Incienso Buddha Zen",
+    "slug": "incienso-buddha",
+    "category": "esencias",
+    "price": 12.9,
+    "oldPrice": null,
+    "currency": "PEN",
+    "badge": "MEDITACIÓN",
+    "images": [
+      "/images/esencias_cono/incienso_cono_arbol de la vida.webp"
+    ],
+    "description": "Inspiración divina para tu práctica espiritual. La fragancia del Buddha zen crea una atmósfera de respeto y contemplación profunda.",
+    "specs": [
+      {
+        "label": "Uso",
+        "value": "Meditación/Yoga"
+      }
+    ],
+    "rating": 4.8,
+    "reviews": 45,
+    "colors": [],
+    "stock": 40,
+    "tags": [
+      "incienso",
+      "buddha",
+      "zen"
+    ],
+    "fragance": [],
+    "isNew": false,
+    "isOnSale": false,
+    "salePercent": null
+  },
+  {
+    "id": "incienso-canabis",
+    "name": "Incienso Cannabis Spirit",
+    "slug": "incienso-canabis",
+    "category": "esencias",
+    "price": 12.9,
+    "oldPrice": null,
+    "currency": "PEN",
+    "badge": "HERBAL",
+    "images": [
+      "/images/esencias_cono/incienso_cono_buddha.webp"
+    ],
+    "description": "Relajación absoluta con un toque herbal místico. Una esencia alternativa para quienes buscan una desconexión total y una vibración diferente.",
+    "specs": [
+      {
+        "label": "Aroma",
+        "value": "Herbal/Místico"
+      }
+    ],
+    "rating": 4.6,
+    "reviews": 29,
+    "colors": [],
+    "stock": 25,
+    "tags": [
+      "incienso",
+      "herbal",
+      "relax"
+    ],
+    "fragance": [],
+    "isNew": true,
+    "isOnSale": false,
+    "salePercent": null
+  },
+  {
+    "id": "incienso-canela-manzana",
+    "name": "Incienso Canela y Manzana",
+    "slug": "incienso-canela-manzana",
+    "category": "esencias",
+    "price": 12.9,
+    "oldPrice": null,
+    "currency": "PEN",
+    "badge": "DULZURA",
+    "images": [
+      "/images/esencias_cono/incienso_cono_canabis.webp"
+    ],
+    "description": "El calor de un hogar acogedor. La combinación clásica de canela y manzana que atrae la armonía familiar y la abundancia dulce.",
+    "specs": [
+      {
+        "label": "Aroma",
+        "value": "Gourmand/Cálido"
+      }
+    ],
+    "rating": 4.8,
+    "reviews": 76,
+    "colors": [],
+    "stock": 55,
+    "tags": [
+      "incienso",
+      "canela",
+      "hogar"
+    ],
+    "fragance": [],
+    "isNew": false,
+    "isOnSale": false,
+    "salePercent": null
+  },
+  {
+    "id": "incienso-canela-naranja",
+    "name": "Incienso Canela y Naranja",
+    "slug": "incienso-canela-naranja",
+    "category": "esencias",
+    "price": 12.9,
+    "oldPrice": null,
+    "currency": "PEN",
+    "badge": "VITALIDAD",
+    "images": [
+      "/images/esencias_cono/incienso_cono_canela manzana.webp"
+    ],
+    "description": "Energía cítrica con un toque especiado. Ideal para revitalizar espacios de trabajo y atraer la creatividad con un aroma estimulante.",
+    "specs": [
+      {
+        "label": "Aroma",
+        "value": "Cítrico Especiado"
+      }
+    ],
+    "rating": 4.7,
+    "reviews": 34,
+    "colors": [],
+    "stock": 45,
+    "tags": [
+      "incienso",
+      "naranja",
+      "vitalidad"
+    ],
+    "fragance": [],
+    "isNew": true,
+    "isOnSale": false,
+    "salePercent": null
+  },
+  {
+    "id": "incienso-canela",
+    "name": "Incienso Canela Dulce",
+    "slug": "incienso-canela",
+    "category": "esencias",
+    "price": 12.9,
+    "oldPrice": null,
+    "currency": "PEN",
+    "badge": "PROSPERIDAD",
+    "images": [
+      "/images/esencias_cono/incienso_cono_canela naranja.webp"
+    ],
+    "description": "Atrayente natural de la buena fortuna. La canela pura es conocida por su poder para magnetizar el éxito y proteger la energía personal.",
+    "specs": [
+      {
+        "label": "Uso",
+        "value": "Ritual Abundancia"
+      }
+    ],
+    "rating": 4.9,
+    "reviews": 88,
+    "colors": [],
+    "stock": 70,
+    "tags": [
+      "incienso",
+      "canela",
+      "suerte"
+    ],
+    "fragance": [],
+    "isNew": false,
+    "isOnSale": false,
+    "salePercent": null
+  },
+  {
+    "id": "incienso-coco",
+    "name": "Incienso Tropical Coco",
+    "slug": "incienso-coco",
+    "category": "esencias",
+    "price": 12.9,
+    "oldPrice": null,
+    "currency": "PEN",
+    "badge": "EXÓTICO",
+    "images": [
+      "/images/esencias_cono/incienso_cono_canela.webp"
+    ],
+    "description": "Transporta tu mente a un paraíso tropical. El aroma dulce del coco purifica el ambiente y eleva el ánimo con notas suaves y veraniegas.",
+    "specs": [
+      {
+        "label": "Aroma",
+        "value": "Dulce Tropical"
+      }
+    ],
+    "rating": 4.5,
+    "reviews": 62,
+    "colors": [],
+    "stock": 40,
+    "tags": [
+      "incienso",
+      "coco",
+      "dulce"
+    ],
+    "fragance": [],
+    "isNew": false,
+    "isOnSale": false,
+    "salePercent": null
+  },
+  {
+    "id": "incienso-contra-envidia",
+    "name": "Incienso Contra Envidia",
+    "slug": "incienso-contra-envidia",
+    "category": "esencias",
+    "price": 12.9,
+    "oldPrice": null,
+    "currency": "PEN",
+    "badge": "ESCUDO",
+    "images": [
+      "/images/esencias_cono/incienso_cono_coco.webp"
+    ],
+    "description": "Tu barrera protectora contra energías negativas. Diseñado para neutralizar malos deseos y mantener la paz en tu entorno sagrado.",
+    "specs": [
+      {
+        "label": "Nivel",
+        "value": "Protección Alta"
+      }
+    ],
+    "rating": 4.9,
+    "reviews": 41,
+    "colors": [],
+    "stock": 30,
+    "tags": [
+      "incienso",
+      "proteccion",
+      "envidia"
+    ],
+    "fragance": [],
+    "isNew": true,
+    "isOnSale": false,
+    "salePercent": null
+  },
+  {
+    "id": "incienso-contra-mal",
+    "name": "Incienso Contra Mal Vibras",
+    "slug": "incienso-contra-mal",
+    "category": "esencias",
+    "price": 12.9,
+    "oldPrice": null,
+    "currency": "PEN",
+    "badge": "LIMPIEZA",
+    "images": [
+      "/images/esencias_cono/incienso_cono_contra envidia.webp"
+    ],
+    "description": "Exorciza la negatividad de cualquier espacio. Un incienso de limpieza profunda que corta bloqueos y restaura la luz en tu hogar.",
+    "specs": [
+      {
+        "label": "Efecto",
+        "value": "Descarga Energética"
+      }
+    ],
+    "rating": 4.8,
+    "reviews": 56,
+    "colors": [],
+    "stock": 25,
+    "tags": [
+      "incienso",
+      "limpieza",
+      "purificacion"
+    ],
+    "fragance": [],
+    "isNew": false,
+    "isOnSale": false,
+    "salePercent": null
+  },
+  {
+    "id": "incienso-dulce-hogar",
+    "name": "Incienso Dulce Hogar",
+    "slug": "incienso-dulce-hogar",
+    "category": "esencias",
+    "price": 12.9,
+    "oldPrice": null,
+    "currency": "PEN",
+    "badge": "FAMILIAR",
+    "images": [
+      "/images/esencias_cono/incienso_cono_contra mal.webp"
+    ],
+    "description": "Consolidación del amor y la unión familiar. Crea una atmósfera de ternura y comprensión colectiva en el corazón de tu casa.",
+    "specs": [
+      {
+        "label": "Beneficio",
+        "value": "Armonía Familiar"
+      }
+    ],
+    "rating": 4.7,
+    "reviews": 84,
+    "colors": [],
+    "stock": 50,
+    "tags": [
+      "incienso",
+      "familia",
+      "hogar"
+    ],
+    "fragance": [],
+    "isNew": false,
+    "isOnSale": false,
+    "salePercent": null
+  },
+  {
+    "id": "incienso-eucalipto",
+    "name": "Incienso Eucalipto y Limón",
+    "slug": "incienso-eucalipto",
+    "category": "esencias",
+    "price": 12.9,
+    "oldPrice": null,
+    "currency": "PEN",
+    "badge": "FRESCURA",
+    "images": [
+      "/images/esencias_cono/incienso_cono_dulce hogar.webp"
+    ],
+    "description": "Purificación del aire y revitalización respiratoria. La mezcla perfecta para despejar la mente y el ambiente con un aroma fresco y medicinal.",
+    "specs": [
+      {
+        "label": "Aroma",
+        "value": "Fresco/Cítrico"
+      }
+    ],
+    "rating": 4.9,
+    "reviews": 67,
+    "colors": [],
+    "stock": 48,
+    "tags": [
+      "incienso",
+      "fresco",
+      "salud"
+    ],
+    "fragance": [],
+    "isNew": true,
+    "isOnSale": false,
+    "salePercent": null
+  },
+  {
+    "id": "incienso-fresa",
+    "name": "Incienso Fresa Silvestre",
+    "slug": "incienso-fresa",
+    "category": "esencias",
+    "price": 12.9,
+    "oldPrice": null,
+    "currency": "PEN",
+    "badge": "ALEGRÍA",
+    "images": [
+      "/images/esencias_cono/incienso_cono_eucalipto limon.webp"
+    ],
+    "description": "Dulce tentación para el espíritu. La fresa silvestre atrae el amor propio y la positividad con sus notas frutales y encantadoras.",
+    "specs": [
+      {
+        "label": "Aroma",
+        "value": "Frutal Dulce"
+      }
+    ],
+    "rating": 4.6,
+    "reviews": 45,
+    "colors": [],
+    "stock": 40,
+    "tags": [
+      "incienso",
+      "fruta",
+      "dulce"
+    ],
+    "fragance": [],
+    "isNew": false,
+    "isOnSale": false,
+    "salePercent": null
+  },
+  {
+    "id": "incienso-jasmin",
+    "name": "Incienso Jazmín Místico",
+    "slug": "incienso-jasmin",
+    "category": "esencias",
+    "price": 12.9,
+    "oldPrice": null,
+    "currency": "PEN",
+    "badge": "SADUCCIÓN",
+    "images": [
+      "/images/esencias_cono/incienso_cono_fresa.webp"
+    ],
+    "description": "La flor de la noche en tu habitación. El jazmín atrae el amor espiritual y la belleza, creando un aura de elegancia y sofisticación.",
+    "specs": [
+      {
+        "label": "Efecto",
+        "value": "Atrayente de Amor"
+      }
+    ],
+    "rating": 4.9,
+    "reviews": 92,
+    "colors": [],
+    "stock": 35,
+    "tags": [
+      "incienso",
+      "jazmin",
+      "amor"
+    ],
+    "fragance": [],
+    "isNew": false,
+    "isOnSale": false,
+    "salePercent": null
+  },
+  {
+    "id": "incienso-lavanda",
+    "name": "Incienso Lavanda Dreams",
+    "slug": "incienso-lavanda",
+    "category": "esencias",
+    "price": 12.9,
+    "oldPrice": null,
+    "currency": "PEN",
+    "badge": "SUEÑOS",
+    "images": [
+      "/images/esencias_cono/incienso_cono_jazmin.webp"
+    ],
+    "description": "El descanso definitivo bajo las estrellas. La lavanda es la reina de la relajación, induciendo un sueño reparador y una profunda paz interior.",
+    "specs": [
+      {
+        "label": "Uso",
+        "value": "Dormitorio/Relax"
+      }
+    ],
+    "rating": 5,
+    "reviews": 156,
+    "colors": [],
+    "stock": 120,
+    "tags": [
+      "incienso",
+      "lavanda",
+      "sueño"
+    ],
+    "fragance": [],
+    "isNew": false,
+    "isOnSale": false,
+    "salePercent": null
+  },
+  {
+    "id": "incienso-limpia-casa",
+    "name": "Incienso Limpia Casa",
+    "slug": "incienso-limpia-casa",
+    "category": "esencias",
+    "price": 12.9,
+    "oldPrice": null,
+    "currency": "PEN",
+    "badge": "RENOVACIÓN",
+    "images": [
+      "/images/esencias_cono/incienso_cono_lavanda.webp"
+    ],
+    "description": "Renueva el aire de cada habitación. Un incienso diario para mantener el flujo de energía positiva y la sensación de limpieza total en tu hogar.",
+    "specs": [
+      {
+        "label": "Uso",
+        "value": "Diario"
+      }
+    ],
+    "rating": 4.7,
+    "reviews": 38,
+    "colors": [],
+    "stock": 50,
+    "tags": [
+      "incienso",
+      "hogar",
+      "limpieza"
+    ],
+    "fragance": [],
+    "isNew": false,
+    "isOnSale": false,
+    "salePercent": null
+  },
+  {
+    "id": "incienso-limpieza-pesada",
+    "name": "Incienso Limpieza Pesada",
+    "slug": "incienso-limpieza-pesada",
+    "category": "esencias",
+    "price": 12.9,
+    "oldPrice": null,
+    "currency": "PEN",
+    "badge": "PROFUNDO",
+    "images": [
+      "/images/esencias_cono/incienso_cono_limpia casa.webp"
+    ],
+    "description": "Eliminación radical de cargas energéticas negativas. La descarga definitiva para espacios que se sienten pesados o cargados tras eventos intensos.",
+    "specs": [
+      {
+        "label": "Tipo",
+        "value": "Limpieza Espiritual"
+      }
+    ],
+    "rating": 5,
+    "reviews": 24,
+    "colors": [],
+    "stock": 15,
+    "tags": [
+      "incienso",
+      "descarga",
+      "limpieza"
+    ],
+    "fragance": [],
+    "isNew": true,
+    "isOnSale": false,
+    "salePercent": null
+  },
+  {
+    "id": "incienso-llama-cliente",
+    "name": "Incienso Atrae Clientes",
+    "slug": "incienso-llama-cliente",
+    "category": "esencias",
+    "price": 12.9,
+    "oldPrice": null,
+    "currency": "PEN",
+    "badge": "NEGOCIOS",
+    "images": [
+      "/images/esencias_cono/incienso_cono_limpieza pesada y descarga.webp"
+    ],
+    "description": "Imán para tu emprendimiento. Potencia las ventas y la afluencia de clientes con este incienso diseñado para el éxito comercial y la prosperidad.",
+    "specs": [
+      {
+        "label": "Uso",
+        "value": "Locales/Negocios"
+      }
+    ],
+    "rating": 4.9,
+    "reviews": 52,
+    "colors": [],
+    "stock": 40,
+    "tags": [
+      "incienso",
+      "ventas",
+      "negocio"
+    ],
+    "fragance": [],
+    "isNew": true,
+    "isOnSale": false,
+    "salePercent": null
+  },
+  {
+    "id": "incienso-llama-plata",
+    "name": "Incienso Llama Plata",
+    "slug": "incienso-llama-plata",
+    "category": "esencias",
+    "price": 12.9,
+    "oldPrice": null,
+    "currency": "PEN",
+    "badge": "DINERO",
+    "images": [
+      "/images/esencias_cono/incienso_cono_llama cliente.webp"
+    ],
+    "description": "Conexión con el flujo constante del dinero. Atrae ganancias inesperadas y estabilidad financiera con la vibración argenta de este incienso sagrado.",
+    "specs": [
+      {
+        "label": "Frecuencia",
+        "value": "Atrayente Monetario"
+      }
+    ],
+    "rating": 4.8,
+    "reviews": 46,
+    "colors": [],
+    "stock": 35,
+    "tags": [
+      "incienso",
+      "plata",
+      "dinero"
+    ],
+    "fragance": [],
+    "isNew": false,
+    "isOnSale": false,
+    "salePercent": null
+  },
+  {
+    "id": "incienso-lluvia-oro",
+    "name": "Incienso Lluvia de Oro",
+    "slug": "incienso-lluvia-oro",
+    "category": "esencias",
+    "price": 12.9,
+    "oldPrice": null,
+    "currency": "PEN",
+    "badge": "RIQUEZA",
+    "images": [
+      "/images/esencias_cono/incienso_cono_llama plata.webp"
+    ],
+    "description": "Cascada de bendiciones económicas. El oro simboliza el éxito total; este incienso te envuelve en una vibración de opulencia y abundancia infinita.",
+    "specs": [
+      {
+        "label": "Símbolo",
+        "value": "Éxito Absoluto"
+      }
+    ],
+    "rating": 5,
+    "reviews": 89,
+    "colors": [],
+    "stock": 45,
+    "tags": [
+      "incienso",
+      "oro",
+      "riqueza"
+    ],
+    "fragance": [],
+    "isNew": true,
+    "isOnSale": false,
+    "salePercent": null
+  },
+  {
+    "id": "incienso-lluvia-plata",
+    "name": "Incienso Lluvia de Plata",
+    "slug": "incienso-lluvia-plata",
+    "category": "esencias",
+    "price": 12.9,
+    "oldPrice": null,
+    "currency": "PEN",
+    "badge": "SUERTE",
+    "images": [
+      "/images/esencias_cono/incienso_cono_lluvia de oro.webp"
+    ],
+    "description": "Protege tu patrimonio y atrae la suerte. La lluvia de plata mantiene tus finanzas en movimiento y protege tus ahorros de pérdidas energéticas.",
+    "specs": [
+      {
+        "label": "Aroma",
+        "value": "Fino/Elegante"
+      }
+    ],
+    "rating": 4.7,
+    "reviews": 33,
+    "colors": [],
+    "stock": 40,
+    "tags": [
+      "incienso",
+      "plata",
+      "suerte"
+    ],
+    "fragance": [],
+    "isNew": false,
+    "isOnSale": false,
+    "salePercent": null
+  },
+  {
+    "id": "incienso-manzana-verde",
+    "name": "Incienso Manzana Verde",
+    "slug": "incienso-manzana-verde",
+    "category": "esencias",
+    "price": 12.9,
+    "oldPrice": null,
+    "currency": "PEN",
+    "badge": "SALUD",
+    "images": [
+      "/images/esencias_cono/incienso_cono_lluvia de plata.webp"
+    ],
+    "description": "Vitalidad renovada y salud vibrante. El aroma fresco de la manzana verde despeja el cansancio mental y atrae el bienestar físico a tu vida.",
+    "specs": [
+      {
+        "label": "Aroma",
+        "value": "Frutal Fresco"
+      }
+    ],
+    "rating": 4.8,
+    "reviews": 49,
+    "colors": [],
+    "stock": 42,
+    "tags": [
+      "incienso",
+      "manzana",
+      "salud"
+    ],
+    "fragance": [],
+    "isNew": false,
+    "isOnSale": false,
+    "salePercent": null
+  },
+  {
+    "id": "incienso-miel-rosa",
+    "name": "Incienso Miel y Rosa",
+    "slug": "incienso-miel-rosa",
+    "category": "esencias",
+    "price": 12.9,
+    "oldPrice": null,
+    "currency": "PEN",
+    "badge": "AMOR DULCE",
+    "images": [
+      "/images/esencias_cono/incienso_cono_manzana verde.webp"
+    ],
+    "description": "Endulza tus relaciones y atrae el cariño. La miel y la rosa se funden para crear un clima de suavidad afectiva y atracción romántica.",
+    "specs": [
+      {
+        "label": "Aroma",
+        "value": "Floral Meloso"
+      }
+    ],
+    "rating": 4.9,
+    "reviews": 63,
+    "colors": [],
+    "stock": 30,
+    "tags": [
+      "incienso",
+      "miel",
+      "amor"
+    ],
+    "fragance": [],
+    "isNew": true,
+    "isOnSale": false,
+    "salePercent": null
+  },
+  {
+    "id": "incienso-orquidea",
+    "name": "Incienso Orquídea Exótica",
+    "slug": "incienso-orquidea",
+    "category": "esencias",
+    "price": 12.9,
+    "oldPrice": null,
+    "currency": "PEN",
+    "badge": "LUJO",
+    "images": [
+      "/images/esencias_cono/incienso_cono_miel rosa.webp"
+    ],
+    "description": "Distinción y elegancia en cada ráfaga de humo. La orquídea es símbolo de belleza suprema; este incienso eleva el estatus vibratorio de tus espacios.",
+    "specs": [
+      {
+        "label": "Aroma",
+        "value": "Floral Exótico"
+      }
+    ],
+    "rating": 4.8,
+    "reviews": 27,
+    "colors": [],
+    "stock": 20,
+    "tags": [
+      "incienso",
+      "orquidea",
+      "luxe"
+    ],
+    "fragance": [],
+    "isNew": false,
+    "isOnSale": false,
+    "salePercent": null
+  },
+  {
+    "id": "incienso-pachouli",
+    "name": "Incienso Pachouli Earth",
+    "slug": "incienso-pachouli",
+    "category": "esencias",
+    "price": 12.9,
+    "oldPrice": null,
+    "currency": "PEN",
+    "badge": "PASIÓN",
+    "images": [
+      "/images/esencias_cono/incienso_cono_orquidea.webp"
+    ],
+    "description": "Magnetismo terrenal y espiritual. El pachuli despierta los sentidos y protege el aura, siendo un aliado poderoso para la meditación y la sensualidad.",
+    "specs": [
+      {
+        "label": "Aroma",
+        "value": "Terroso/Especiado"
+      }
+    ],
+    "rating": 4.9,
+    "reviews": 71,
+    "colors": [],
+    "stock": 35,
+    "tags": [
+      "incienso",
+      "pachouli",
+      "poder"
+    ],
+    "fragance": [],
+    "isNew": false,
+    "isOnSale": false,
+    "salePercent": null
+  },
+  {
+    "id": "incienso-palo-santo",
+    "name": "Incienso Palo Santo Sagrado",
+    "slug": "incienso-palo-santo",
+    "category": "esencias",
+    "price": 12.9,
+    "oldPrice": null,
+    "currency": "PEN",
+    "badge": "PURIFICACIÓN",
+    "images": [
+      "/images/esencias_cono/incienso_cono_pachouli.webp"
+    ],
+    "description": "El misticismo de los Andes en tu hogar. Purifica, sana y reconecta con tu ser interior a través del aroma sagrado de la madera milenaria.",
+    "specs": [
+      {
+        "label": "Origen",
+        "value": "Natural/Sagrado"
+      }
+    ],
+    "rating": 5,
+    "reviews": 142,
+    "colors": [],
+    "stock": 65,
+    "tags": [
+      "incienso",
+      "palo santo",
+      "purificacion"
+    ],
+    "fragance": [],
+    "isNew": false,
+    "isOnSale": false,
+    "salePercent": null
+  },
+  {
+    "id": "incienso-ponche-frutas",
+    "name": "Incienso Ponche de Frutas",
+    "slug": "incienso-ponche-frutas",
+    "category": "esencias",
+    "price": 12.9,
+    "oldPrice": null,
+    "currency": "PEN",
+    "badge": "CELEBRACIÓN",
+    "images": [
+      "/images/esencias_cono/incienso_cono_palo santo.webp"
+    ],
+    "description": "Alegría compartida en cada rincón. Un aroma festivo que invita a la celebración y el buen humor en reuniones con seres queridos.",
+    "specs": [
+      {
+        "label": "Aroma",
+        "value": "Mix Frutal"
+      }
+    ],
+    "rating": 4.6,
+    "reviews": 31,
+    "colors": [],
+    "stock": 40,
+    "tags": [
+      "incienso",
+      "fruta",
+      "fiesta"
+    ],
+    "fragance": [],
+    "isNew": true,
+    "isOnSale": false,
+    "salePercent": null
+  },
+  {
+    "id": "incienso-rosa",
+    "name": "Incienso Rosa Real",
+    "slug": "incienso-rosa",
+    "category": "esencias",
+    "price": 12.9,
+    "oldPrice": null,
+    "currency": "PEN",
+    "badge": "AMOR ROYAL",
+    "images": [
+      "/images/esencias_cono/incienso_cono_ponche de frutas.webp"
+    ],
+    "description": "La esencia pura del romance. Abre tu corazón y atrae la ternura con el aroma floral más clásico y poderoso de la historia de la aromaterapia.",
+    "specs": [
+      {
+        "label": "Aroma",
+        "value": "Floral Clásico"
+      }
+    ],
+    "rating": 4.9,
+    "reviews": 85,
+    "colors": [],
+    "stock": 60,
+    "tags": [
+      "incienso",
+      "rosa",
+      "amor"
+    ],
+    "fragance": [],
+    "isNew": false,
+    "isOnSale": false,
+    "salePercent": null
+  },
+  {
+    "id": "incienso-sandalo",
+    "name": "Incienso Sándalo Hindú",
+    "slug": "incienso-sandalo",
+    "category": "esencias",
+    "price": 12.9,
+    "oldPrice": null,
+    "currency": "PEN",
+    "badge": "ESPIRITUAL",
+    "images": [
+      "/images/esencias_cono/incienso_cono_rosa.webp"
+    ],
+    "description": "Serenidad milenaria para el alma. El sándalo es fundamental para la paz mental, el enfoque espiritual y la armonización de centros energéticos.",
+    "specs": [
+      {
+        "label": "Aroma",
+        "value": "Amaderado/Suave"
+      }
+    ],
+    "rating": 5,
+    "reviews": 128,
+    "colors": [],
+    "stock": 85,
+    "tags": [
+      "incienso",
+      "sandalo",
+      "zen"
+    ],
+    "fragance": [],
+    "isNew": false,
+    "isOnSale": false,
+    "salePercent": null
+  },
+  {
+    "id": "incienso-siete-poderes",
+    "name": "Incienso Siete Poderes",
+    "slug": "incienso-siete-poderes",
+    "category": "esencias",
+    "price": 12.9,
+    "oldPrice": null,
+    "currency": "PEN",
+    "badge": "SUPREMO",
+    "images": [
+      "/images/esencias_cono/incienso_cono_salvia blanca.webp"
+    ],
+    "description": "La fuerza absoluta de la espiritualidad. Siete vibraciones combinadas para brindarte protección, salud, amor, dinero, paz, sabiduría y éxito.",
+    "specs": [
+      {
+        "label": "Nivel",
+        "value": "Poder Máximo"
+      }
+    ],
+    "rating": 5,
+    "reviews": 54,
+    "colors": [],
+    "stock": 15,
+    "tags": [
+      "incienso",
+      "poder",
+      "proteccion"
+    ],
+    "fragance": [],
+    "isNew": true,
+    "isOnSale": false,
+    "salePercent": null
+  },
+  {
+    "id": "incienso-violeta-citronela",
+    "name": "Incienso Violeta y Citronela",
+    "slug": "incienso-violeta-citronela",
+    "category": "esencias",
+    "price": 12.9,
+    "oldPrice": null,
+    "currency": "PEN",
+    "badge": "PROTECCIÓN",
+    "images": [
+      "/images/esencias_cono/incienso_cono_sandalo.webp"
+    ],
+    "description": "Transmutación energética con escudo natural. La violeta transmuta lo negativo en positivo mientras la citronela protege tu espacio de influencias externas.",
+    "specs": [
+      {
+        "label": "Doble Efecto",
+        "value": "Transmutar/Proteger"
+      }
+    ],
+    "rating": 4.7,
+    "reviews": 29,
+    "colors": [],
+    "stock": 35,
+    "tags": [
+      "incienso",
+      "violeta",
+      "citronela"
+    ],
+    "fragance": [],
+    "isNew": false,
+    "isOnSale": false,
+    "salePercent": null
+  },
+  {
+    "id": "incienso-violeta",
+    "name": "Incienso Violeta Suave",
+    "slug": "incienso-violeta",
+    "category": "esencias",
+    "price": 12.9,
+    "oldPrice": null,
+    "currency": "PEN",
+    "badge": "TRANSMUTACIÓN",
+    "images": [
+      "/images/esencias_cono/incienso_cono_siete poderes.webp"
+    ],
+    "description": "Cambia tu energía de raíz. La violeta es la llama de la transmutación, ideal para convertir el dolor en sabiduría y la tristeza en esperanza.",
+    "specs": [
+      {
+        "label": "Aroma",
+        "value": "Floral Suave"
+      }
+    ],
+    "rating": 4.8,
+    "reviews": 51,
+    "colors": [],
+    "stock": 42,
+    "tags": [
+      "incienso",
+      "violeta",
+      "paz"
+    ],
+    "fragance": [],
+    "isNew": false,
+    "isOnSale": false,
+    "salePercent": null
+  },
+  {
+    "id": "sahumerio-palo",
+    "name": "Palo Santo Premium x10",
+    "slug": "sahumerio-palo",
+    "category": "esencias",
+    "price": 29.9,
+    "oldPrice": 39.9,
+    "currency": "PEN",
+    "badge": "-25%",
+    "images": [
+      "/images/esencias_cono/incienso_cono_violeta y citronela.webp"
+    ],
+    "description": "Purificación y energía positiva real. Siente la reconexión espiritual con el aroma sagrado del Palo Santo, recolectado de forma sostenible para elevar tu vibración.",
+    "specs": [
+      {
+        "label": "Cantidad",
+        "value": "10 unidades"
+      },
+      {
+        "label": "Origen",
+        "value": "Sudamérica"
+      }
+    ],
+    "rating": 4.5,
+    "reviews": 234,
+    "colors": [],
+    "stock": 45,
+    "tags": [
+      "palo santo",
+      "sahumerio",
+      "oferta"
+    ],
+    "fragance": [],
+    "isNew": false,
+    "isOnSale": true,
+    "salePercent": 25
+  },
+  {
+    "id": "sahumerio-palo-var1",
+    "name": "Palo Santo Premium x10 (Var 1)",
+    "slug": "sahumerio-palo-var1",
+    "category": "esencias",
+    "price": 29.9,
+    "oldPrice": 39.9,
+    "currency": "PEN",
+    "badge": "-25%",
+    "images": [
+      "/images/esencias_cono/incienso_cono_violeta.webp"
+    ],
+    "description": "Purificación y energía positiva real. Siente la reconexión espiritual con el aroma sagrado del Palo Santo, recolectado de forma sostenible para elevar tu vibración.",
+    "specs": [
+      {
+        "label": "Cantidad",
+        "value": "10 unidades"
+      },
+      {
+        "label": "Origen",
+        "value": "Sudamérica"
+      }
+    ],
+    "rating": 4.5,
+    "reviews": 234,
+    "colors": [],
+    "stock": 45,
+    "tags": [
+      "palo santo",
+      "sahumerio",
+      "oferta"
+    ],
+    "fragance": [],
+    "isNew": false,
+    "isOnSale": true,
+    "salePercent": 25
+  }
+]

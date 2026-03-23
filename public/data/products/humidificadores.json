@@ -1,0 +1,946 @@
+[
+  {
+    "id": "humidificador-aura",
+    "name": "Humidificador Aura Mist",
+    "slug": "humidificador-aura",
+    "category": "humidificadores",
+    "price": 129.9,
+    "oldPrice": null,
+    "currency": "PEN",
+    "badge": "MÁS VENDIDO",
+    "images": [
+      "/images/difusores/difusor cesta mt.webp"
+    ],
+    "description": "Crea tu propio oasis de serenidad. Aura Mist purifica tu entorno con tecnología ultrasónica silenciosa y una luz ambiental que danza al ritmo de tu bienestar.",
+    "specs": [
+      {
+        "label": "Capacidad",
+        "value": "4.5 Litros"
+      },
+      {
+        "label": "Cobertura",
+        "value": "Hasta 50 m²"
+      },
+      {
+        "label": "Ruido",
+        "value": "< 26dB"
+      }
+    ],
+    "rating": 4.8,
+    "reviews": 312,
+    "colors": [
+      "#FFFFFF",
+      "#171512"
+    ],
+    "stock": 25,
+    "tags": [
+      "humidificador",
+      "ultrasónico",
+      "led"
+    ],
+    "fragance": [],
+    "isNew": false,
+    "isOnSale": false,
+    "salePercent": null
+  },
+  {
+    "id": "humidificador-nube",
+    "name": "Humidificador Nube 3D",
+    "slug": "humidificador-nube",
+    "category": "humidificadores",
+    "price": 149.9,
+    "oldPrice": null,
+    "currency": "PEN",
+    "badge": "NUEVO",
+    "images": [
+      "/images/difusores/difusor_nube_rosa.webp"
+    ],
+    "description": "Lleva la naturaleza a tu habitación. Experimenta el efecto relajante de la lluvia y la suavidad de una nube en 3D, diseñado para transformar tu descanso en una experiencia mágica.",
+    "specs": [
+      {
+        "label": "Capacidad",
+        "value": "500ml"
+      },
+      {
+        "label": "Efecto",
+        "value": "Lluvia 3D"
+      }
+    ],
+    "rating": 4.7,
+    "reviews": 89,
+    "colors": [
+      "#FFFFFF"
+    ],
+    "stock": 15,
+    "tags": [
+      "humidificador",
+      "nube",
+      "nuevo",
+      "decoración"
+    ],
+    "fragance": [],
+    "isNew": true,
+    "isOnSale": false,
+    "salePercent": null
+  },
+  {
+    "id": "difusor-bambu",
+    "name": "Difusor Bambú Zen",
+    "slug": "difusor-bambu",
+    "category": "humidificadores",
+    "price": 79.9,
+    "oldPrice": 99.9,
+    "currency": "PEN",
+    "badge": "-20%",
+    "images": [
+      "/images/difusores/difusor corona.webp"
+    ],
+    "description": "Equilibrio natural en tu espacio. El acabado en bambú auténtico se une a la aromaterapia de lujo para brindarte un ambiente zen y sofisticado en cualquier rincón.",
+    "specs": [
+      {
+        "label": "Capacidad",
+        "value": "300ml"
+      },
+      {
+        "label": "Material",
+        "value": "Bambú + ABS"
+      }
+    ],
+    "rating": 4.4,
+    "reviews": 156,
+    "colors": [
+      "#D4A574"
+    ],
+    "stock": 30,
+    "tags": [
+      "difusor",
+      "bambú",
+      "oferta"
+    ],
+    "fragance": [],
+    "isNew": false,
+    "isOnSale": true,
+    "salePercent": 20
+  },
+  {
+    "id": "difusor-fuego",
+    "name": "Difusor Fuego Elemental RGB",
+    "slug": "difusor-fuego",
+    "category": "humidificadores",
+    "price": 119.9,
+    "oldPrice": 139.9,
+    "currency": "PEN",
+    "badge": "PROMO",
+    "images": [
+      "/images/difusores/difusor erupcion volcan.webp"
+    ],
+    "description": "Calidez hipnótica en tu hogar. Siente la fuerza del fuego con un efecto de llama ultra-realista que vaporiza tus esencias favoritas, creando un ambiente acogedor y vanguardista.",
+    "specs": [
+      {
+        "label": "Capacidad",
+        "value": "250ml"
+      },
+      {
+        "label": "Luz",
+        "value": "LED Efecto Fuego"
+      }
+    ],
+    "rating": 4.9,
+    "reviews": 56,
+    "colors": [
+      "#000000",
+      "#FFFFFF"
+    ],
+    "stock": 18,
+    "tags": [
+      "difusor",
+      "fuego",
+      "rgb"
+    ],
+    "fragance": [],
+    "isNew": false,
+    "isOnSale": true,
+    "salePercent": 14
+  },
+  {
+    "id": "difusor-corona",
+    "name": "Difusor Corona Royal",
+    "slug": "difusor-corona",
+    "category": "humidificadores",
+    "price": 99.9,
+    "oldPrice": null,
+    "currency": "PEN",
+    "badge": "ELEGANTE",
+    "images": [
+      "/images/difusores/difusor esfera con diseño.webp"
+    ],
+    "description": "La joya de tu bienestar. Un diseño majestuoso que corona tus espacios con pureza y elegancia, transformando cada respiro en un momento de distinción real.",
+    "specs": [
+      {
+        "label": "Capacidad",
+        "value": "200ml"
+      }
+    ],
+    "rating": 4.6,
+    "reviews": 22,
+    "colors": [
+      "#FFFFFF"
+    ],
+    "stock": 25,
+    "tags": [
+      "difusor",
+      "corona",
+      "humidificador"
+    ],
+    "fragance": [],
+    "isNew": false,
+    "isOnSale": false,
+    "salePercent": null
+  },
+  {
+    "id": "difusor-montaña-parlante",
+    "name": "Difusor Montaña Spirit Harmony",
+    "slug": "difusor-montaña-parlante",
+    "category": "humidificadores",
+    "price": 159.9,
+    "oldPrice": null,
+    "currency": "PEN",
+    "badge": "PREMIUM",
+    "images": [
+      "/images/difusores/difusor fuego.webp"
+    ],
+    "description": "Sonido y naturaleza en perfecta armonía. Este difusor de diseño alpino integra un parlante de alta fidelidad para envolver tus sentidos en una experiencia sensorial completa.",
+    "specs": [
+      {
+        "label": "Funciones",
+        "value": "Difusor + Parlante"
+      },
+      {
+        "label": "Luz",
+        "value": "Ambiente Cálido"
+      }
+    ],
+    "rating": 5,
+    "reviews": 12,
+    "colors": [
+      "#FFFFFF"
+    ],
+    "stock": 10,
+    "tags": [
+      "difusor",
+      "montaña",
+      "premium",
+      "musica"
+    ],
+    "fragance": [],
+    "isNew": true,
+    "isOnSale": false,
+    "salePercent": null
+  },
+  {
+    "id": "difusor-multicolor-parlante",
+    "name": "Difusor Multicolor SoundWave",
+    "slug": "difusor-multicolor-parlante",
+    "category": "humidificadores",
+    "price": 139.9,
+    "oldPrice": null,
+    "currency": "PEN",
+    "badge": "FIESTA",
+    "images": [
+      "/images/difusores/difusor gota.webp"
+    ],
+    "description": "Energía vibrante para tu hogar. Combina cromoterapia y tu música favorita con este difusor inteligente que cambia de color al ritmo de tus mejores canciones.",
+    "specs": [
+      {
+        "label": "Conexión",
+        "value": "Bluetooth"
+      },
+      {
+        "label": "Colores",
+        "value": "RGB Dinámico"
+      }
+    ],
+    "rating": 4.8,
+    "reviews": 34,
+    "colors": [
+      "#FFFFFF"
+    ],
+    "stock": 15,
+    "tags": [
+      "difusor",
+      "rgb",
+      "musica"
+    ],
+    "fragance": [],
+    "isNew": false,
+    "isOnSale": false,
+    "salePercent": null
+  },
+  {
+    "id": "difusor-esfera-diseno",
+    "name": "Difusor Esfera Mystic Design",
+    "slug": "difusor-esfera-diseno",
+    "category": "humidificadores",
+    "price": 89.9,
+    "oldPrice": null,
+    "currency": "PEN",
+    "badge": "ESTILO",
+    "images": [
+      "/images/difusores/difusor jarra craquelado.webp"
+    ],
+    "description": "Arte circular que respira. Un diseño esférico con patrones intrincados que proyectan sombras mágicas mientras purifican el aire con elegancia mística.",
+    "specs": [
+      {
+        "label": "Material",
+        "value": "ABS de Lujo"
+      },
+      {
+        "label": "Capacidad",
+        "value": "200ml"
+      }
+    ],
+    "rating": 4.7,
+    "reviews": 41,
+    "colors": [
+      "#FFFFFF"
+    ],
+    "stock": 20,
+    "tags": [
+      "difusor",
+      "esfera",
+      "diseño"
+    ],
+    "fragance": [],
+    "isNew": true,
+    "isOnSale": false,
+    "salePercent": null
+  },
+  {
+    "id": "difusor-gota-zen",
+    "name": "Difusor Gota de Rocío Zen",
+    "slug": "difusor-gota-zen",
+    "category": "humidificadores",
+    "price": 75.9,
+    "oldPrice": null,
+    "currency": "PEN",
+    "badge": "ZEN",
+    "images": [
+      "/images/difusores/difusor jarra epj.webp"
+    ],
+    "description": "Minimalismo en estado puro. La fluidez de una gota de agua capturada en una pieza de diseño que aporta calma inmediata a cualquier rincón de tu hogar.",
+    "specs": [
+      {
+        "label": "Capacidad",
+        "value": "150ml"
+      },
+      {
+        "label": "Ruido",
+        "value": "Silencioso"
+      }
+    ],
+    "rating": 4.9,
+    "reviews": 67,
+    "colors": [
+      "#FFFFFF"
+    ],
+    "stock": 30,
+    "tags": [
+      "difusor",
+      "gota",
+      "minimalista"
+    ],
+    "fragance": [],
+    "isNew": false,
+    "isOnSale": false,
+    "salePercent": null
+  },
+  {
+    "id": "difusor-mini-gota",
+    "name": "Mini Difusor Gota Portable",
+    "slug": "difusor-mini-gota",
+    "category": "humidificadores",
+    "price": 49.9,
+    "oldPrice": null,
+    "currency": "PEN",
+    "badge": "PETIT",
+    "images": [
+      "/images/difusores/difusor jarron .webp"
+    ],
+    "description": "Bienestar que te acompaña. Perfecto para tu escritorio o espacios reducidos, este mini difusor mantiene tu entorno fresco con un tamaño compacto y eficiente.",
+    "specs": [
+      {
+        "label": "Conexión",
+        "value": "USB"
+      },
+      {
+        "label": "Tamaño",
+        "value": "Compacto"
+      }
+    ],
+    "rating": 4.5,
+    "reviews": 112,
+    "colors": [
+      "#FFFFFF"
+    ],
+    "stock": 50,
+    "tags": [
+      "difusor",
+      "portable",
+      "usb"
+    ],
+    "fragance": [],
+    "isNew": true,
+    "isOnSale": false,
+    "salePercent": null
+  },
+  {
+    "id": "difusor-luna-osito",
+    "name": "Difusor Luna Osito Dream",
+    "slug": "difusor-luna-osito",
+    "category": "humidificadores",
+    "price": 95.9,
+    "oldPrice": null,
+    "currency": "PEN",
+    "badge": "KIDS",
+    "images": [
+      "/images/difusores/difusor jarron liso.webp"
+    ],
+    "description": "Dulces sueños garantizados. La luz suave de la luna y la compañía de un tierno osito crean el ambiente perfecto para el descanso de los más pequeños.",
+    "specs": [
+      {
+        "label": "Luz",
+        "value": "Quitamiiedos LED"
+      },
+      {
+        "label": "Seguridad",
+        "value": "Auto-apagado"
+      }
+    ],
+    "rating": 4.9,
+    "reviews": 88,
+    "colors": [
+      "#FFFFFF"
+    ],
+    "stock": 18,
+    "tags": [
+      "difusor",
+      "niños",
+      "luna",
+      "regalo"
+    ],
+    "fragance": [],
+    "isNew": true,
+    "isOnSale": false,
+    "salePercent": null
+  },
+  {
+    "id": "difusor-lampara-rgb",
+    "name": "Difusor Lámpara Circular RGB",
+    "slug": "difusor-lampara-rgb",
+    "category": "humidificadores",
+    "price": 109.9,
+    "oldPrice": null,
+    "currency": "PEN",
+    "badge": "MODERNO",
+    "images": [
+      "/images/difusores/difusor lampara circular rgb.webp"
+    ],
+    "description": "Iluminación circular que inspira. Un anillo de luz infinita rodea este difusor de alta tecnología, permitiéndote personalizar el ambiente con millones de colores.",
+    "specs": [
+      {
+        "label": "Diseño",
+        "value": "Anillo LED"
+      },
+      {
+        "label": "Modos",
+        "value": "8 Colores"
+      }
+    ],
+    "rating": 4.7,
+    "reviews": 29,
+    "colors": [
+      "#FFFFFF"
+    ],
+    "stock": 12,
+    "tags": [
+      "difusor",
+      "lampara",
+      "rgb"
+    ],
+    "fragance": [],
+    "isNew": false,
+    "isOnSale": false,
+    "salePercent": null
+  },
+  {
+    "id": "difusor-oval-mystic",
+    "name": "Difusor Oval Mystic Aura",
+    "slug": "difusor-oval-mystic",
+    "category": "humidificadores",
+    "price": 85.9,
+    "oldPrice": null,
+    "currency": "PEN",
+    "badge": "CHIC",
+    "images": [
+      "/images/difusores/difusor luna osito.webp"
+    ],
+    "description": "Elegancia ovalada. Su forma orgánica y suave retroiluminación RGB lo convierten en el complemento ideal para una decoración moderna y sofisticada.",
+    "specs": [
+      {
+        "label": "Capacidad",
+        "value": "220ml"
+      },
+      {
+        "label": "Luz",
+        "value": "RGB Suave"
+      }
+    ],
+    "rating": 4.6,
+    "reviews": 24,
+    "colors": [
+      "#FFFFFF"
+    ],
+    "stock": 25,
+    "tags": [
+      "difusor",
+      "oval",
+      "chic"
+    ],
+    "fragance": [],
+    "isNew": false,
+    "isOnSale": false,
+    "salePercent": null
+  },
+  {
+    "id": "difusor-rgb-white",
+    "name": "Difusor Pure White RGB",
+    "slug": "difusor-rgb-white",
+    "category": "humidificadores",
+    "price": 79.9,
+    "oldPrice": null,
+    "currency": "PEN",
+    "badge": "TOP",
+    "images": [
+      "/images/difusores/difusor mini-gota.webp"
+    ],
+    "description": "Pureza y color en armonía. Un diseño blanco inmaculado que cobra vida con efectos de luz espectaculares para un ambiente siempre renovado.",
+    "specs": [
+      {
+        "label": "Diseño",
+        "value": "Minimalista"
+      },
+      {
+        "label": "Luz",
+        "value": "Multicolor"
+      }
+    ],
+    "rating": 4.8,
+    "reviews": 52,
+    "colors": [
+      "#FFFFFF"
+    ],
+    "stock": 35,
+    "tags": [
+      "difusor",
+      "blanco",
+      "rgb"
+    ],
+    "fragance": [],
+    "isNew": true,
+    "isOnSale": false,
+    "salePercent": null
+  },
+  {
+    "id": "difusor-cesta-mt",
+    "name": "Difusor Cesta Nature Mist",
+    "slug": "difusor-cesta-mt",
+    "category": "humidificadores",
+    "price": 115.9,
+    "oldPrice": null,
+    "currency": "PEN",
+    "badge": "NATURAL",
+    "images": [
+      "/images/difusores/difusor multicolor con parlante.webp"
+    ],
+    "description": "Texturas que conectan. Inspirado en el tejido artesanal, este difusor combina tecnología ultrasónica con una estética rústica y acogedora.",
+    "specs": [
+      {
+        "label": "Estilo",
+        "value": "Cesta Artística"
+      }
+    ],
+    "rating": 4.9,
+    "reviews": 16,
+    "colors": [
+      "#FFFFFF"
+    ],
+    "stock": 10,
+    "tags": [
+      "difusor",
+      "cesta",
+      "natural"
+    ],
+    "fragance": [],
+    "isNew": true,
+    "isOnSale": false,
+    "salePercent": null
+  },
+  {
+    "id": "difusor-jarron-liso",
+    "name": "Difusor Jarrón Silk Finish",
+    "slug": "difusor-jarron-liso",
+    "category": "humidificadores",
+    "price": 92.9,
+    "oldPrice": null,
+    "currency": "PEN",
+    "badge": "LUJO",
+    "images": [
+      "/images/difusores/difusor oval rgb.webp"
+    ],
+    "description": "Suavidad de seda en tu espacio. Un diseño de jarrón clásico con acabado ultra-liso que encaja perfectamente en los ambientes más exclusivos.",
+    "specs": [
+      {
+        "label": "Material",
+        "value": "Ceramic-Touch"
+      }
+    ],
+    "rating": 4.8,
+    "reviews": 21,
+    "colors": [
+      "#FFFFFF"
+    ],
+    "stock": 15,
+    "tags": [
+      "difusor",
+      "jarron",
+      "lujo"
+    ],
+    "fragance": [],
+    "isNew": false,
+    "isOnSale": false,
+    "salePercent": null
+  },
+  {
+    "id": "difusor-jarra-craquelado",
+    "name": "Difusor Jarra Ancient Craft",
+    "slug": "difusor-jarra-craquelado",
+    "category": "humidificadores",
+    "price": 98.9,
+    "oldPrice": null,
+    "currency": "PEN",
+    "badge": "ARTESANO",
+    "images": [
+      "/images/difusores/difusor y lluvia rgb.webp"
+    ],
+    "description": "Belleza en la imperfección. El acabado craquelado le otorga un aire de reliquia antigua, convirtiéndolo en una pieza decorativa única y funcional.",
+    "specs": [
+      {
+        "label": "Acabado",
+        "value": "Craquelado Especial"
+      }
+    ],
+    "rating": 4.9,
+    "reviews": 14,
+    "colors": [
+      "#FFFFFF"
+    ],
+    "stock": 8,
+    "tags": [
+      "difusor",
+      "jarra",
+      "vintage"
+    ],
+    "fragance": [],
+    "isNew": true,
+    "isOnSale": false,
+    "salePercent": null
+  },
+  {
+    "id": "difusor-jarra-epj",
+    "name": "Difusor Jarra Royal Epj",
+    "slug": "difusor-jarra-epj",
+    "category": "humidificadores",
+    "price": 89.9,
+    "oldPrice": null,
+    "currency": "PEN",
+    "badge": "PRESTIGIO",
+    "images": [
+      "/images/difusores/difusor Y.webp"
+    ],
+    "description": "Diseño real para tu descanso. Una silueta elegante y equilibrada que aporta una nota de distinción clásica a tu ritual de bienestar diario.",
+    "specs": [
+      {
+        "label": "Capacidad",
+        "value": "250ml"
+      }
+    ],
+    "rating": 4.7,
+    "reviews": 19,
+    "colors": [
+      "#FFFFFF"
+    ],
+    "stock": 20,
+    "tags": [
+      "difusor",
+      "jarra",
+      "royal"
+    ],
+    "fragance": [],
+    "isNew": false,
+    "isOnSale": false,
+    "salePercent": null
+  },
+  {
+    "id": "difusor-jarron-dot",
+    "name": "Difusor Jarrón Zen Dot",
+    "slug": "difusor-jarron-dot",
+    "category": "humidificadores",
+    "price": 79.9,
+    "oldPrice": null,
+    "currency": "PEN",
+    "badge": "DISEÑO",
+    "images": [
+      "/images/difusores/difusor_ liso_jarro.jpeg"
+    ],
+    "description": "Puntos de serenidad. Un jarrón con detalles sutiles que marcan la diferencia en tu decoración, ofreciendo un flujo constante de vapor purificador.",
+    "specs": [
+      {
+        "label": "Estilo",
+        "value": "Zen Moderno"
+      }
+    ],
+    "rating": 4.6,
+    "reviews": 31,
+    "colors": [
+      "#FFFFFF"
+    ],
+    "stock": 22,
+    "tags": [
+      "difusor",
+      "jarron",
+      "zen"
+    ],
+    "fragance": [],
+    "isNew": false,
+    "isOnSale": false,
+    "salePercent": null
+  },
+  {
+    "id": "difusor-liso-jarro",
+    "name": "Difusor Jarro Minimal Grey",
+    "slug": "difusor-liso-jarro",
+    "category": "humidificadores",
+    "price": 69.9,
+    "oldPrice": null,
+    "currency": "PEN",
+    "badge": "URBANO",
+    "images": [
+      "/images/difusores/difusor_cilindrico2.webp"
+    ],
+    "description": "Funcionalidad sin complicaciones. Un diseño tipo jarro con líneas limpias y acabado mate, ideal para quienes buscan eficiencia con un toque moderno.",
+    "specs": [
+      {
+        "label": "Material",
+        "value": "ABS Alta Densidad"
+      }
+    ],
+    "rating": 4.5,
+    "reviews": 45,
+    "colors": [
+      "#808080"
+    ],
+    "stock": 25,
+    "tags": [
+      "difusor",
+      "jarro",
+      "gris"
+    ],
+    "fragance": [],
+    "isNew": true,
+    "isOnSale": false,
+    "salePercent": null
+  },
+  {
+    "id": "difusor-liso-jarron-v2",
+    "name": "Difusor Jarrón Pure Line",
+    "slug": "difusor-liso-jarron-v2",
+    "category": "humidificadores",
+    "price": 72.9,
+    "oldPrice": null,
+    "currency": "PEN",
+    "badge": "PURO",
+    "images": [
+      "/images/difusores/difusor_corona.webp"
+    ],
+    "description": "Líneas puras para un aire limpio. Una evolución del diseño clásico de jarrón que prioriza la simplicidad y la potencia de su tecnología ultrasónica.",
+    "specs": [
+      {
+        "label": "Diseño",
+        "value": "Pure Line"
+      }
+    ],
+    "rating": 4.6,
+    "reviews": 27,
+    "colors": [
+      "#FFFFFF"
+    ],
+    "stock": 30,
+    "tags": [
+      "difusor",
+      "jarron",
+      "minimalista"
+    ],
+    "fragance": [],
+    "isNew": false,
+    "isOnSale": false,
+    "salePercent": null
+  },
+  {
+    "id": "difusor-cilindrico-lux",
+    "name": "Difusor Cilíndrico Luxe Edition",
+    "slug": "difusor-cilindrico-lux",
+    "category": "humidificadores",
+    "price": 85.9,
+    "oldPrice": null,
+    "currency": "PEN",
+    "badge": "TOP",
+    "images": [
+      "/images/difusores/difusor_liso_jarron2.jpeg"
+    ],
+    "description": "Solidez y sofisticación. Esta versión premium de nuestro diseño cilíndrico ofrece acabados superiores y una mayor autonomía para tu fragancia favorita.",
+    "specs": [
+      {
+        "label": "Capacidad",
+        "value": "350ml"
+      },
+      {
+        "label": "Material",
+        "value": "Reforzado"
+      }
+    ],
+    "rating": 4.8,
+    "reviews": 39,
+    "colors": [
+      "#FFFFFF"
+    ],
+    "stock": 15,
+    "tags": [
+      "difusor",
+      "cilindrico",
+      "luxe"
+    ],
+    "fragance": [],
+    "isNew": true,
+    "isOnSale": false,
+    "salePercent": null
+  },
+  {
+    "id": "difusor-redondo-basmade",
+    "name": "Difusor Redondo Wood Base",
+    "slug": "difusor-redondo-basmade",
+    "category": "humidificadores",
+    "price": 119.9,
+    "oldPrice": null,
+    "currency": "PEN",
+    "badge": "ESTILO",
+    "images": [
+      "/images/difusores/difusor_redondo_basMade.webp"
+    ],
+    "description": "La esencia de la madera. Un diseño redondo y acogedor con base tipo madera que aporta calidez visual y una aromaterapia envolvente a tu hogar.",
+    "specs": [
+      {
+        "label": "Base",
+        "value": "Efecto Madera"
+      },
+      {
+        "label": "Forma",
+        "value": "Circular"
+      }
+    ],
+    "rating": 4.9,
+    "reviews": 18,
+    "colors": [
+      "#D4A574"
+    ],
+    "stock": 12,
+    "tags": [
+      "difusor",
+      "madera",
+      "redondo"
+    ],
+    "fragance": [],
+    "isNew": false,
+    "isOnSale": false,
+    "salePercent": null
+  },
+  {
+    "id": "difusor-y-mystic",
+    "name": "Difusor Mystic Y-Shape",
+    "slug": "difusor-y-mystic",
+    "category": "humidificadores",
+    "price": 65.9,
+    "oldPrice": null,
+    "currency": "PEN",
+    "badge": "TREND",
+    "images": [
+      "/images/difusores/difusor_rgb_white.webp"
+    ],
+    "description": "Vanguardia geométrica. Su forma única en \"Y\" optimiza la dispersión del vapor, creando una columna de bienestar que se eleva con elegancia arquitectónica.",
+    "specs": [
+      {
+        "label": "Diseño",
+        "value": "Ergonómico Y"
+      }
+    ],
+    "rating": 4.5,
+    "reviews": 31,
+    "colors": [
+      "#FFFFFF"
+    ],
+    "stock": 25,
+    "tags": [
+      "difusor",
+      "vanguardia",
+      "geometria"
+    ],
+    "fragance": [],
+    "isNew": true,
+    "isOnSale": false,
+    "salePercent": null
+  },
+  {
+    "id": "difusor-corona-silver",
+    "name": "Difusor Corona Mystic Silver",
+    "slug": "difusor-corona-silver",
+    "category": "humidificadores",
+    "price": 105.9,
+    "oldPrice": null,
+    "currency": "PEN",
+    "badge": "ROYAL",
+    "images": [
+      "/images/difusores/disufor_montaña_parlante.webp"
+    ],
+    "description": "Majestuosidad plateada. Un diseño de corona con detalles espectaculares que transforma tu habitación en un palacio de relajación y pureza.",
+    "specs": [
+      {
+        "label": "Diseño",
+        "value": "Corona Imperial"
+      }
+    ],
+    "rating": 5,
+    "reviews": 15,
+    "colors": [
+      "#C0C0C0"
+    ],
+    "stock": 10,
+    "tags": [
+      "difusor",
+      "corona",
+      "royal"
+    ],
+    "fragance": [],
+    "isNew": true,
+    "isOnSale": false,
+    "salePercent": null
+  }
+]

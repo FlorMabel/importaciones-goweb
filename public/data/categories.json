@@ -1,0 +1,101 @@
+[
+  {
+    "id": "anillos",
+    "name": "Anillos",
+    "slug": "anillos",
+    "description": "Anillos exclusivos importados con diseños únicos y acabados premium.",
+    "icon": "diamond",
+    "image": "/images/ring/ring_anillo_7pi.webp",
+    "heroImage": "/images/ring/ring_7_chakras.webp",
+    "color": "#c9a34f",
+    "relatedCategories": []
+  },
+  {
+    "id": "humidificadores",
+    "name": "Humidificadores",
+    "slug": "humidificadores",
+    "description": "Humidificadores premium con diseño moderno y tecnología ultrasónica.",
+    "icon": "humidity_mid",
+    "image": "/images/difusores/difusor erupcion volcan.webp",
+    "heroImage": "/images/difusores/disufor_montaña_parlante.webp",
+    "color": "#4B8BBE",
+    "relatedCategories": []
+  },
+  {
+    "id": "alcancias",
+    "name": "Alcancías",
+    "slug": "alcancias",
+    "description": "Alcancías decorativas y funcionales con diseños creativos importados.",
+    "icon": "savings",
+    "image": "/images/alcancias/alcancia_niños.webp",
+    "heroImage": "/images/alcancias/alcancia_niña.webp",
+    "color": "#E8734A",
+    "relatedCategories": []
+  },
+  {
+    "id": "esencias",
+    "name": "Esencias e Inciensos",
+    "slug": "esencias",
+    "description": "Aromaterapia premium: esencias, inciensos y aceites esenciales importados.",
+    "icon": "local_fire_department",
+    "image": "/images/esencias_cono/incienso_cono_lavanda.webp",
+    "heroImage": "/images/esencias_cono/esencias_florales.webp",
+    "color": "#9B59B6",
+    "relatedCategories": []
+  },
+  {
+    "id": "quemadores",
+    "name": "Quemadores",
+    "slug": "quemadores",
+    "description": "Quemadores de incienso artísticos con efecto cascada y diseño zen.",
+    "icon": "fireplace",
+    "image": "/images/quemadores/quemador_dragon.webp",
+    "heroImage": "/images/quemadores/quemador_castillo_dragon.webp",
+    "color": "#D4A574",
+    "relatedCategories": []
+  },
+  {
+    "id": "tecnologia",
+    "name": "Tecnología",
+    "slug": "tecnologia",
+    "description": "Gadgets y accesorios tecnológicos de última generación importados.",
+    "icon": "devices",
+    "image": "/images/tecnologia/astronauta_proyector.webp",
+    "heroImage": "/images/tecnologia/parlante_agua_black.jpeg",
+    "color": "#1E1B14",
+    "relatedCategories": []
+  },
+  {
+    "id": "mascotas",
+    "name": "Accesorios para Mascotas",
+    "slug": "mascotas",
+    "description": "Productos premium para el cuidado y diversión de tus mascotas.",
+    "icon": "pets",
+    "image": "/images/mascotas/sombrero_dog.webp",
+    "heroImage": "/images/mascotas/gafa_moto_animal.webp",
+    "color": "#FF6B9D",
+    "relatedCategories": []
+  },
+  {
+    "id": "hidrogel",
+    "name": "Juguetes de Hidrogel",
+    "slug": "hidrogel",
+    "description": "Juguetes sensoriales de hidrogel — diversión y tendencia importada.",
+    "icon": "water_drop",
+    "image": "/images/hidrogel/hidrogel_scar.webp",
+    "heroImage": "/images/hidrogel/hidrogel_battle_robot.webp",
+    "color": "#00BCD4",
+    "relatedCategories": []
+  },
+  {
+    "id": "novedades",
+    "name": "Novedades",
+    "slug": "novedades",
+    "description": "Lo último en tendencias, tazas coleccionables y artículos exclusivos.",
+    "icon": "new_releases",
+    "image": "/images/novedades/esfera_astronauta_6rgb.webp",
+    "heroImage": "/images/novedades/tulipan_infinito.webp",
+    "color": "#6c5ce7",
+    "relatedCategories": []
+  }
+]

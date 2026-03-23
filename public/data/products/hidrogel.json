@@ -1,0 +1,353 @@
+[
+  {
+    "id": "hidrogel-scar",
+    "name": "Pistola SCAR Battle Edition",
+    "slug": "hidrogel-scar",
+    "category": "hidrogel",
+    "price": 99.9,
+    "oldPrice": null,
+    "currency": "PEN",
+    "badge": "MÁS VENDIDO",
+    "images": [
+      "/images/hidrogel/hidrogel_battle_robot.webp"
+    ],
+    "description": "Domina el campo de batalla con la SCAR de hidrogel. Diseño ergonómico, disparo automático de alta velocidad y una precisión que te hará imparable en cada partida.",
+    "specs": [
+      {
+        "label": "Municiones",
+        "value": "5,000 incluidas"
+      },
+      {
+        "label": "Batería",
+        "value": "7.4V Recargable"
+      },
+      {
+        "label": "Alcance",
+        "value": "15-20 metros"
+      }
+    ],
+    "rating": 4.8,
+    "reviews": 312,
+    "colors": [
+      "#000000",
+      "#D4A574"
+    ],
+    "stock": 25,
+    "tags": [
+      "hidrogel",
+      "scar",
+      "juguete",
+      "pro"
+    ],
+    "fragance": [],
+    "isNew": false,
+    "isOnSale": false,
+    "salePercent": null
+  },
+  {
+    "id": "hidrogel-m416",
+    "name": "Rifle M416 Pro Series",
+    "slug": "hidrogel-m416",
+    "category": "hidrogel",
+    "price": 149.9,
+    "oldPrice": null,
+    "currency": "PEN",
+    "badge": "NUEVO",
+    "images": [
+      "/images/hidrogel/hidrogel_mp5k.webp"
+    ],
+    "description": "La joya de la corona en rifles de hidrogel. El M416 Pro ofrece una experiencia táctica realista con mira ajustable y culata expandible para máxima comodidad.",
+    "specs": [
+      {
+        "label": "Modo",
+        "value": "Automático / Semi"
+      },
+      {
+        "label": "Capacidad",
+        "value": "250 bolitas"
+      },
+      {
+        "label": "Material",
+        "value": "ABS Reforzado"
+      }
+    ],
+    "rating": 4.9,
+    "reviews": 89,
+    "colors": [
+      "#000000",
+      "#808080"
+    ],
+    "stock": 15,
+    "tags": [
+      "hidrogel",
+      "m416",
+      "rifle",
+      "nuevo"
+    ],
+    "fragance": [],
+    "isNew": true,
+    "isOnSale": false,
+    "salePercent": null
+  },
+  {
+    "id": "hidrogel-vector",
+    "name": "Subfusil Vector Vanguard",
+    "slug": "hidrogel-vector",
+    "category": "hidrogel",
+    "price": 129.9,
+    "oldPrice": 159.9,
+    "currency": "PEN",
+    "badge": "-19%",
+    "images": [
+      "/images/hidrogel/hidrogel_mp5Ka.webp"
+    ],
+    "description": "Velocidad de ráfaga inigualable. El diseño compacto del Vector lo hace ideal para enfrentamientos cercanos, proporcionando una agilidad táctica superior.",
+    "specs": [
+      {
+        "label": "Cadencia",
+        "value": "12 disparos/seg"
+      },
+      {
+        "label": "Peso",
+        "value": "1.2 kg"
+      }
+    ],
+    "rating": 4.7,
+    "reviews": 156,
+    "colors": [
+      "#000000"
+    ],
+    "stock": 20,
+    "tags": [
+      "hidrogel",
+      "vector",
+      "subfusil",
+      "oferta"
+    ],
+    "fragance": [],
+    "isNew": false,
+    "isOnSale": true,
+    "salePercent": 19
+  },
+  {
+    "id": "hidrogel-mp7a",
+    "name": "Subfusil MP7A Elite",
+    "slug": "hidrogel-mp7a",
+    "category": "hidrogel",
+    "price": 119.9,
+    "oldPrice": null,
+    "currency": "PEN",
+    "badge": "TACTICAL",
+    "images": [
+      "/images/hidrogel/hidrogel_mp7.webp"
+    ],
+    "description": "Precisión alemana en tus manos. El MP7A combina el tamaño de una pistola con la potencia de un subfusil, perfecto para operaciones de asalto rápidas.",
+    "specs": [
+      {
+        "label": "Diseño",
+        "value": "PDW Modular"
+      },
+      {
+        "label": "Alcance",
+        "value": "18 metros"
+      }
+    ],
+    "rating": 4.9,
+    "reviews": 42,
+    "colors": [
+      "#000000"
+    ],
+    "stock": 12,
+    "tags": [
+      "hidrogel",
+      "mp7",
+      "elite"
+    ],
+    "fragance": [],
+    "isNew": true,
+    "isOnSale": false,
+    "salePercent": null
+  },
+  {
+    "id": "hidrogel-mp7",
+    "name": "Subfusil MP7 Compact",
+    "slug": "hidrogel-mp7",
+    "category": "hidrogel",
+    "price": 89.9,
+    "oldPrice": null,
+    "currency": "PEN",
+    "badge": "ESENCIAL",
+    "images": [
+      "/images/hidrogel/hidrogel_mp7A.webp"
+    ],
+    "description": "Ligereza y potencia. La versión compacta del MP7 es la entrada perfecta al mundo del hidrogel, ofreciendo fiabilidad y facilidad de uso inmejorables.",
+    "specs": [
+      {
+        "label": "Peso",
+        "value": "800g"
+      }
+    ],
+    "rating": 4.6,
+    "reviews": 67,
+    "colors": [
+      "#000000"
+    ],
+    "stock": 30,
+    "tags": [
+      "hidrogel",
+      "mp7",
+      "compact"
+    ],
+    "fragance": [],
+    "isNew": false,
+    "isOnSale": false,
+    "salePercent": null
+  },
+  {
+    "id": "hidrogel-mp5k",
+    "name": "Subfusil MP5K Stealth",
+    "slug": "hidrogel-mp5k",
+    "category": "hidrogel",
+    "price": 105.9,
+    "oldPrice": null,
+    "currency": "PEN",
+    "badge": "POPULAR",
+    "images": [
+      "/images/hidrogel/hidrogel_pistola_m416_rifle.webp"
+    ],
+    "description": "Un clásico táctico. El MP5K Stealth es preferido por veteranos por su equilibrio perfecto entre ráfaga y control, envuelto en un acabado negro mate profesional.",
+    "specs": [
+      {
+        "label": "Motor",
+        "value": "High-Torque"
+      }
+    ],
+    "rating": 4.8,
+    "reviews": 124,
+    "colors": [
+      "#000000"
+    ],
+    "stock": 18,
+    "tags": [
+      "hidrogel",
+      "mp5",
+      "stealth"
+    ],
+    "fragance": [],
+    "isNew": false,
+    "isOnSale": false,
+    "salePercent": null
+  },
+  {
+    "id": "hidrogel-mp5ka",
+    "name": "Subfusil MP5Ka Tactical",
+    "slug": "hidrogel-mp5ka",
+    "category": "hidrogel",
+    "price": 95.9,
+    "oldPrice": null,
+    "currency": "PEN",
+    "badge": "AGIL",
+    "images": [
+      "/images/hidrogel/hidrogel_scar.webp"
+    ],
+    "description": "Personalización al extremo. El MP5Ka ofrece rieles tácticos para añadir tus propios accesorios, adaptándose a cualquier estilo de juego en el campo.",
+    "specs": [
+      {
+        "label": "Accesorios",
+        "value": "Rieles Picatinny"
+      }
+    ],
+    "rating": 4.5,
+    "reviews": 54,
+    "colors": [
+      "#000000"
+    ],
+    "stock": 22,
+    "tags": [
+      "hidrogel",
+      "mp5",
+      "tactical"
+    ],
+    "fragance": [],
+    "isNew": true,
+    "isOnSale": false,
+    "salePercent": null
+  },
+  {
+    "id": "hidrogel-battle-robot",
+    "name": "Robot de Batalla Hidrogel",
+    "slug": "hidrogel-battle-robot",
+    "category": "hidrogel",
+    "price": 179.9,
+    "oldPrice": 199.9,
+    "currency": "PEN",
+    "badge": "EXCLUSIVO",
+    "images": [
+      "/images/hidrogel/hidrogel_vector.webp"
+    ],
+    "description": "El futuro de la diversión. Este tanque robótico lanza ráfagas de hidrogel mientras realiza maniobras de 360°, controlado remotamente para un dominio absoluto del área.",
+    "specs": [
+      {
+        "label": "Movimiento",
+        "value": "360° Omnidireccional"
+      },
+      {
+        "label": "Control",
+        "value": "Remoto 2.4GHz"
+      }
+    ],
+    "rating": 5,
+    "reviews": 28,
+    "colors": [
+      "#00BCD4",
+      "#000000"
+    ],
+    "stock": 8,
+    "tags": [
+      "hidrogel",
+      "robot",
+      "tanque",
+      "tecnologico"
+    ],
+    "fragance": [],
+    "isNew": true,
+    "isOnSale": true,
+    "salePercent": 10
+  },
+  {
+    "id": "hidrogel-water-gun",
+    "name": "Pistola de Agua Hidro-Blast",
+    "slug": "hidrogel-water-gun",
+    "category": "hidrogel",
+    "price": 39.9,
+    "oldPrice": null,
+    "currency": "PEN",
+    "badge": "VERANO",
+    "images": [
+      "/images/hidrogel/pistola_water gun.webp"
+    ],
+    "description": "Diversión refrescante. Potente chorro de agua con diseño deportivo y carga rápida, ideal para las batallas mas intensas bajo el sol de verano.",
+    "specs": [
+      {
+        "label": "Capacidad",
+        "value": "600ml"
+      }
+    ],
+    "rating": 4.4,
+    "reviews": 142,
+    "colors": [
+      "#00BCD4",
+      "#FFFFFF"
+    ],
+    "stock": 50,
+    "tags": [
+      "agua",
+      "pistola",
+      "verano"
+    ],
+    "fragance": [],
+    "isNew": false,
+    "isOnSale": false,
+    "salePercent": null
+  }
+]
