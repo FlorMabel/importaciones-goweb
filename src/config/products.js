@@ -1,36 +1,33 @@
 // Archivo central de productos. Editando este archivo modificarás catálogo, precios e imágenes.
+//********************************************************************//
+//           ALCANCIAS
+//********************************************************************//
 
 export const productsConfig = [
   {
-    "id": "alcancia-gato-suerte",
-    "name": "Alcancía Gato de la Suerte",
-    "slug": "alcancia-gato-suerte",
+    "id": "alcancia-coque",
+    "name": "Alcancía Coqueta", 
+    "slug": "alcancia-coque",
     "category": "alcancias",
-    "price": 45.9,
+    "price": 25.9,
     "oldPrice": null,
     "currency": "PEN",
     "badge": "TOP VENTAS",
     "badgeColor": null,
     "images": [
-      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1/goshopping/alcancias/alcancia_coque_pvc.webp"
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774224555/goshopping/alcancias/alcancia_coque_pvc.webp"
     ],
-    "description": "Ahorrar nunca fue tan tierno. Mira cómo este pequeño felino guarda tus monedas con su patita, convirtiendo la disciplina del ahorro en un momento de alegría para grandes y chicos.",
+    "description": "Ahorrar nunca fue tan tierno. Convierte la disciplina del ahorro en un momento de alegría para grandes y chicos.",
     "specs": [
       {
         "label": "Material",
-        "value": "ABS Premium"
+        "value": "PVC - ABS Premium"
       },
-      {
-        "label": "Baterías",
-        "value": "2x AA"
-      }
     ],
     "rating": 4.9,
     "reviews": 245,
     "colors": [
-      "#FFFFFF",
-      "#FFD700",
-      "#808080"
+      "#0ba9f1ff"
     ],
     "stock": 50,
     "tags": [],
@@ -40,17 +37,17 @@ export const productsConfig = [
     "salePercent": null
   },
   {
-    "id": "alcancia-retro",
-    "name": "Alcancía Máquina Retro",
-    "slug": "alcancia-retro",
+    "id": "alcancia-elec-cat",
+    "name": "Alcancía Eléctrica Cat",
+    "slug": "alcancia-elec-cat",
     "category": "alcancias",
-    "price": 59.9,
-    "oldPrice": 79.9,
+    "price": 29.9,
+    "oldPrice": 39.9,
     "currency": "PEN",
     "badge": "-25%",
     "badgeColor": null,
     "images": [
-      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1/goshopping/alcancias/alcancia_elec_cat.webp"
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774224557/goshopping/alcancias/alcancia_elec_cat.webp"
     ],
     "description": "Nostalgia y diversión en un solo lugar. Revive la emoción de las máquinas retro mientras aseguras tu futuro, un diseño clásico que aporta carácter a cualquier espacio.",
     "specs": [
@@ -60,14 +57,13 @@ export const productsConfig = [
       },
       {
         "label": "Funciones",
-        "value": "Luces y sonidos"
+        "value": "Tacto - Sonido"
       }
     ],
     "rating": 4.3,
     "reviews": 98,
     "colors": [
-      "#FF0000",
-      "#FFD700"
+      "#eba8439c"
     ],
     "stock": 18,
     "tags": [],
@@ -77,17 +73,17 @@ export const productsConfig = [
     "salePercent": 25
   },
   {
-    "id": "alcancia-coque",
-    "name": "Alcancía Coque Premium",
-    "slug": "alcancia-coque",
+    "id": "alcancia-elec-panda",
+    "name": "Alcancía Eléctrica Panda",
+    "slug": "alcancia-elec-panda",
     "category": "alcancias",
-    "price": 35.9,
+    "price": 29.9,
     "oldPrice": null,
     "currency": "PEN",
     "badge": "OFERTA",
     "badgeColor": null,
     "images": [
-      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1/goshopping/alcancias/alcancia_elec_panda.webp"
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774224558/goshopping/alcancias/alcancia_elec_panda.webp"
     ],
     "description": "Resiliencia y estilo para sus primeros ahorros. Fabricada en PVC de alta resistencia, esta alcancía es el regalo perfecto para enseñar el valor del futuro con un diseño divertido y duradero.",
     "specs": [
@@ -99,7 +95,7 @@ export const productsConfig = [
     "rating": 4.5,
     "reviews": 88,
     "colors": [
-      "#FFD700"
+      "#eba8439c"
     ],
     "stock": 60,
     "tags": [],
@@ -109,17 +105,17 @@ export const productsConfig = [
     "salePercent": null
   },
   {
-    "id": "alcancia-sonrisa",
-    "name": "Alcancía Happy Smile",
-    "slug": "alcancia-sonrisa",
+    "id": "alcancia-llorona",
+    "name": "Alcancía Llorona",
+    "slug": "alcancia-llorona",
     "category": "alcancias",
-    "price": 39.9,
+    "price": 29.9,
     "oldPrice": null,
     "currency": "PEN",
     "badge": "NUEVO",
     "badgeColor": null,
     "images": [
-      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1/goshopping/alcancias/alcancia_llorona_pvc.webp"
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774224559/goshopping/alcancias/alcancia_llorona_pvc.webp"
     ],
     "description": "Ahorrar es motivo de alegría. Contagia optimismo a tu espacio mientras protegetus monedas con un diseño icónico que te recordará tus metas con una sonrisa diaria.",
     "specs": [
@@ -131,7 +127,7 @@ export const productsConfig = [
     "rating": 4.7,
     "reviews": 45,
     "colors": [
-      "#FFFF00"
+      "#c2190dff"
     ],
     "stock": 50,
     "tags": [],
@@ -141,17 +137,17 @@ export const productsConfig = [
     "salePercent": null
   },
   {
-    "id": "alcancia-llorona",
-    "name": "Alcancía Llorona Premium",
-    "slug": "alcancia-llorona",
+    "id": "alcancia-niñas",
+    "name": "Alcancía Niñas",
+    "slug": "alcancia-niñas",
     "category": "alcancias",
-    "price": 42.9,
+    "price": 29.9,
     "oldPrice": null,
     "currency": "PEN",
     "badge": "EXCLUSIVO",
     "badgeColor": null,
     "images": [
-      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1/goshopping/alcancias/alcancia_niña.webp"
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774224560/goshopping/alcancias/r0s5sgwcyjkmnd7jwjic.webp"
     ],
     "description": "Expresión y carácter en cada moneda. Un diseño único que captura emociones reales, transformando el ahorro en una pieza de conversación artística para tu hogar.",
     "specs": [
@@ -173,17 +169,17 @@ export const productsConfig = [
     "salePercent": null
   },
   {
-    "id": "alcancia-renegona",
-    "name": "Alcancía Renegona Style",
-    "slug": "alcancia-renegona",
+    "id": "alcancia-niños",
+    "name": "Alcancía Niños",
+    "slug": "alcancia-niños",
     "category": "alcancias",
-    "price": 42.9,
+    "price": 29.9,
     "oldPrice": null,
     "currency": "PEN",
     "badge": "TENDENCIA",
     "badgeColor": null,
     "images": [
-      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1/goshopping/alcancias/alcancia_niños.webp"
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774224562/goshopping/alcancias/bnezvs7qbwlrjpm9d5m9.webp"
     ],
     "description": "Protección con actitud. No dejes que nadie toque tus ahorros con esta alcancía de diseño rebelde y sofisticado, ideal para quienes buscan piezas con personalidad propia.",
     "specs": [
@@ -205,17 +201,17 @@ export const productsConfig = [
     "salePercent": null
   },
   {
-    "id": "alcancia-niños",
-    "name": "Alcancía Kids Story Edition",
-    "slug": "alcancia-niños",
+    "id": "alcancia-renegona",
+    "name": "Alcancía Renegona",
+    "slug": "alcancia-renegona",
     "category": "alcancias",
-    "price": 34.9,
+    "price": 29.9,
     "oldPrice": null,
     "currency": "PEN",
     "badge": "KIDS",
     "badgeColor": null,
     "images": [
-      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1/goshopping/alcancias/alcancia_renegona_pvc.webp"
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774224563/goshopping/alcancias/alcancia_renegona_pvc.webp"
     ],
     "description": "Donde empiezan las grandes historias. Fomenta la imaginación y el hábito del ahorro con un diseño encantador que acompañará el crecimiento y los sueños de los más pequeños.",
     "specs": [
@@ -227,8 +223,7 @@ export const productsConfig = [
     "rating": 4.9,
     "reviews": 115,
     "colors": [
-      "#add8e6",
-      "#FFB6C1"
+      "#fffb0dff"
     ],
     "stock": 45,
     "tags": [],
@@ -238,17 +233,17 @@ export const productsConfig = [
     "salePercent": null
   },
   {
-    "id": "alcancia-niña",
-    "name": "Alcancía Sweet Heart Girl",
-    "slug": "alcancia-niña",
+    "id": "alcancia-sonrisa",
+    "name": "Alcancía Sonrisa",
+    "slug": "alcancia-sonrisa",
     "category": "alcancias",
-    "price": 34.9,
+    "price": 29.9,
     "oldPrice": null,
     "currency": "PEN",
     "badge": "GIRL",
     "badgeColor": null,
     "images": [
-      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1/goshopping/alcancias/alcancia_sonrisa_pvc.webp"
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774224564/goshopping/alcancias/alcancia_sonrisa_pvc.webp"
     ],
     "description": "Dulcedo y seguridad para sus tesoros. Un diseño delicado que aporta una nota de ternura a cualquier habitación infantil, perfecta para guardar momentos y monedas.",
     "specs": [
@@ -260,7 +255,7 @@ export const productsConfig = [
     "rating": 4.8,
     "reviews": 94,
     "colors": [
-      "#FFB6C1"
+      "#ca0c75ff"
     ],
     "stock": 38,
     "tags": [],
@@ -269,6 +264,11 @@ export const productsConfig = [
     "isOnSale": false,
     "salePercent": null
   },
+
+  //********************************************************************//
+  //           ANILLOS
+  //********************************************************************//
+
   {
     "id": "ring-dragon-or",
     "name": "Anillo Dragón Oro Imperial",
@@ -3443,12 +3443,17 @@ export const productsConfig = [
     "isOnSale": false,
     "salePercent": null
   },
+
+  //********************************************************************//
+  //           ESENCIAS - INCIENSOS
+  //********************************************************************//
+
   {
     "id": "esencias-florales",
     "name": "Esencias Premium Florales",
     "slug": "esencias-florales",
     "category": "esencias",
-    "price": 15.9,
+    "price": 5.85,
     "oldPrice": null,
     "currency": "PEN",
     "badge": "AROMATERAPIA",
@@ -3473,7 +3478,7 @@ export const productsConfig = [
     "name": "Esencias Premium Frutales",
     "slug": "esencias-frutales",
     "category": "esencias",
-    "price": 15.9,
+    "price": 5.75,
     "oldPrice": null,
     "currency": "PEN",
     "badge": "ENERGIZANTE",
@@ -3498,7 +3503,7 @@ export const productsConfig = [
     "name": "Esencias Premium Maderosas",
     "slug": "esencias-maderosas",
     "category": "esencias",
-    "price": 15.9,
+    "price": 5.68,
     "oldPrice": null,
     "currency": "PEN",
     "badge": "ZEN",
@@ -3523,7 +3528,7 @@ export const productsConfig = [
     "name": "Esencias Semillas y Especias",
     "slug": "esencias-semillas",
     "category": "esencias",
-    "price": 15.9,
+    "price": 5.96,
     "oldPrice": null,
     "currency": "PEN",
     "badge": "MÍSTICO",
@@ -3548,7 +3553,7 @@ export const productsConfig = [
     "name": "Esencias Misticas Esotericas",
     "slug": "esencias-misticas-esotericas",
     "category": "esencias",
-    "price": 12.9,
+    "price": 5.95,
     "oldPrice": null,
     "currency": "PEN",
     "badge": "PASIÓN",
@@ -3573,7 +3578,7 @@ export const productsConfig = [
     "name": "Incienso Abrecaminos",
     "slug": "incienso-abrecaminos",
     "category": "esencias",
-    "price": 12.9,
+    "price": 5.75,
     "oldPrice": null,
     "currency": "PEN",
     "badge": "NUEVA ENERGÍA",
@@ -3583,6 +3588,10 @@ export const productsConfig = [
     ],
     "description": "Elimina obstáculos y atrae nuevas oportunidades. Este incienso está formulado para despejar tu camino hacia el éxito y la prosperidad.",
     "specs": [
+      {
+        "label": "Cantidad",
+        "value": "10 unidades"
+      },
       {
         "label": "Formato",
         "value": "Cono Cascada"
@@ -3603,7 +3612,7 @@ export const productsConfig = [
     "name": "Incienso Antiestrés",
     "slug": "incienso-antiestres",
     "category": "esencias",
-    "price": 12.9,
+    "price": 5.95,
     "oldPrice": null,
     "currency": "PEN",
     "badge": "RELAX",
@@ -3613,6 +3622,10 @@ export const productsConfig = [
     ],
     "description": "Tu refugio de paz tras un día agitado. Notas sedantes que calman el sistema nervioso y restauran el equilibrio emocional en tu hogar.",
     "specs": [
+      {
+        "label": "Cantidad",
+        "value": "10 unidades"
+      },
       {
         "label": "Efecto",
         "value": "Calmante Profundo"
@@ -3633,16 +3646,20 @@ export const productsConfig = [
     "name": "Incienso Buddha Zen",
     "slug": "incienso-buddha",
     "category": "esencias",
-    "price": 12.9,
+    "price": 5.65,
     "oldPrice": null,
     "currency": "PEN",
     "badge": "MEDITACIÓN",
     "badgeColor": null,
     "images": [
-      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1/goshopping/esencias_cono/incienso_cono_arbol de la vida.webp"
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774224621/goshopping/esencias_cono/incienso_cono_buddha.webp"
     ],
     "description": "Inspiración divina para tu práctica espiritual. La fragancia del Buddha zen crea una atmósfera de respeto y contemplación profunda.",
     "specs": [
+      {
+        "label": "Cantidad",
+        "value": "10 unidades"
+      },
       {
         "label": "Uso",
         "value": "Meditación/Yoga"
@@ -3663,16 +3680,20 @@ export const productsConfig = [
     "name": "Incienso Cannabis Spirit",
     "slug": "incienso-canabis",
     "category": "esencias",
-    "price": 12.9,
+    "price": 5.75,
     "oldPrice": null,
     "currency": "PEN",
     "badge": "HERBAL",
     "badgeColor": null,
     "images": [
-      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1/goshopping/esencias_cono/incienso_cono_buddha.webp"
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774224623/goshopping/esencias_cono/incienso_cono_canabis.webp"
     ],
     "description": "Relajación absoluta con un toque herbal místico. Una esencia alternativa para quienes buscan una desconexión total y una vibración diferente.",
     "specs": [
+      {
+        "label": "Cantidad",
+        "value": "10 unidades"
+      },
       {
         "label": "Aroma",
         "value": "Herbal/Místico"
@@ -3693,16 +3714,20 @@ export const productsConfig = [
     "name": "Incienso Canela y Manzana",
     "slug": "incienso-canela-manzana",
     "category": "esencias",
-    "price": 12.9,
+    "price": 5.93,
     "oldPrice": null,
     "currency": "PEN",
     "badge": "DULZURA",
     "badgeColor": null,
     "images": [
-      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1/goshopping/esencias_cono/incienso_cono_canabis.webp"
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774224624/goshopping/esencias_cono/incienso_cono_canela_manzana.webp"
     ],
     "description": "El calor de un hogar acogedor. La combinación clásica de canela y manzana que atrae la armonía familiar y la abundancia dulce.",
     "specs": [
+      {
+        "label": "Cantidad",
+        "value": "10 unidades"
+      },
       {
         "label": "Aroma",
         "value": "Gourmand/Cálido"
@@ -3723,16 +3748,20 @@ export const productsConfig = [
     "name": "Incienso Canela y Naranja",
     "slug": "incienso-canela-naranja",
     "category": "esencias",
-    "price": 12.9,
+    "price": 5.89,
     "oldPrice": null,
     "currency": "PEN",
     "badge": "VITALIDAD",
     "badgeColor": null,
     "images": [
-      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1/goshopping/esencias_cono/incienso_cono_canela manzana.webp"
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774224625/goshopping/esencias_cono/incienso_cono_canela_naranja.webp"
     ],
     "description": "Energía cítrica con un toque especiado. Ideal para revitalizar espacios de trabajo y atraer la creatividad con un aroma estimulante.",
     "specs": [
+      {
+        "label": "Cantidad",
+        "value": "10 unidades"
+      },
       {
         "label": "Aroma",
         "value": "Cítrico Especiado"
@@ -3753,16 +3782,20 @@ export const productsConfig = [
     "name": "Incienso Canela Dulce",
     "slug": "incienso-canela",
     "category": "esencias",
-    "price": 12.9,
+    "price": 5.92,
     "oldPrice": null,
     "currency": "PEN",
     "badge": "PROSPERIDAD",
     "badgeColor": null,
     "images": [
-      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1/goshopping/esencias_cono/incienso_cono_canela naranja.webp"
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774224626/goshopping/esencias_cono/incienso_cono_canela.webp"
     ],
     "description": "Atrayente natural de la buena fortuna. La canela pura es conocida por su poder para magnetizar el éxito y proteger la energía personal.",
     "specs": [
+      {
+        "label": "Cantidad",
+        "value": "10 unidades"
+      },
       {
         "label": "Uso",
         "value": "Ritual Abundancia"
@@ -3783,16 +3816,20 @@ export const productsConfig = [
     "name": "Incienso Tropical Coco",
     "slug": "incienso-coco",
     "category": "esencias",
-    "price": 12.9,
+    "price": 5.39,
     "oldPrice": null,
     "currency": "PEN",
     "badge": "EXÓTICO",
     "badgeColor": null,
     "images": [
-      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1/goshopping/esencias_cono/incienso_cono_canela.webp"
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774224627/goshopping/esencias_cono/incienso_cono_coco.webp"
     ],
     "description": "Transporta tu mente a un paraíso tropical. El aroma dulce del coco purifica el ambiente y eleva el ánimo con notas suaves y veraniegas.",
     "specs": [
+      {
+        "label": "Cantidad",
+        "value": "10 unidades"
+      },
       {
         "label": "Aroma",
         "value": "Dulce Tropical"
@@ -3813,16 +3850,20 @@ export const productsConfig = [
     "name": "Incienso Contra Envidia",
     "slug": "incienso-contra-envidia",
     "category": "esencias",
-    "price": 12.9,
+    "price": 5.96,
     "oldPrice": null,
     "currency": "PEN",
     "badge": "ESCUDO",
     "badgeColor": null,
     "images": [
-      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1/goshopping/esencias_cono/incienso_cono_coco.webp"
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774224628/goshopping/esencias_cono/incienso_cono_contra_envidia.webp"
     ],
     "description": "Tu barrera protectora contra energías negativas. Diseñado para neutralizar malos deseos y mantener la paz en tu entorno sagrado.",
     "specs": [
+      {
+        "label": "Cantidad",
+        "value": "10 unidades"
+      },
       {
         "label": "Nivel",
         "value": "Protección Alta"
@@ -3843,16 +3884,20 @@ export const productsConfig = [
     "name": "Incienso Contra Mal Vibras",
     "slug": "incienso-contra-mal",
     "category": "esencias",
-    "price": 12.9,
+    "price": 5.88,
     "oldPrice": null,
     "currency": "PEN",
     "badge": "LIMPIEZA",
     "badgeColor": null,
     "images": [
-      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1/goshopping/esencias_cono/incienso_cono_contra envidia.webp"
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774224630/goshopping/esencias_cono/incienso_cono_contra_mal.webp"
     ],
     "description": "Exorciza la negatividad de cualquier espacio. Un incienso de limpieza profunda que corta bloqueos y restaura la luz en tu hogar.",
     "specs": [
+      {
+        "label": "Cantidad",
+        "value": "10 unidades"
+      },
       {
         "label": "Efecto",
         "value": "Descarga Energética"
@@ -3873,16 +3918,20 @@ export const productsConfig = [
     "name": "Incienso Dulce Hogar",
     "slug": "incienso-dulce-hogar",
     "category": "esencias",
-    "price": 12.9,
+    "price": 5.65,
     "oldPrice": null,
     "currency": "PEN",
     "badge": "FAMILIAR",
     "badgeColor": null,
     "images": [
-      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1/goshopping/esencias_cono/incienso_cono_contra mal.webp"
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774224631/goshopping/esencias_cono/incienso_cono_dulce_hogar.webp"
     ],
     "description": "Consolidación del amor y la unión familiar. Crea una atmósfera de ternura y comprensión colectiva en el corazón de tu casa.",
     "specs": [
+      {
+        "label": "Cantidad",
+        "value": "10 unidades"
+      },
       {
         "label": "Beneficio",
         "value": "Armonía Familiar"
@@ -3903,16 +3952,20 @@ export const productsConfig = [
     "name": "Incienso Eucalipto y Limón",
     "slug": "incienso-eucalipto",
     "category": "esencias",
-    "price": 12.9,
+    "price": 5.78,
     "oldPrice": null,
     "currency": "PEN",
     "badge": "FRESCURA",
     "badgeColor": null,
     "images": [
-      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1/goshopping/esencias_cono/incienso_cono_dulce hogar.webp"
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774224632/goshopping/esencias_cono/incienso_cono_eucalipto_limon.webp"
     ],
     "description": "Purificación del aire y revitalización respiratoria. La mezcla perfecta para despejar la mente y el ambiente con un aroma fresco y medicinal.",
     "specs": [
+      {
+        "label": "Cantidad",
+        "value": "10 unidades"
+      },
       {
         "label": "Aroma",
         "value": "Fresco/Cítrico"
@@ -3933,16 +3986,20 @@ export const productsConfig = [
     "name": "Incienso Fresa Silvestre",
     "slug": "incienso-fresa",
     "category": "esencias",
-    "price": 12.9,
+    "price": 5.76,
     "oldPrice": null,
     "currency": "PEN",
     "badge": "ALEGRÍA",
     "badgeColor": null,
     "images": [
-      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1/goshopping/esencias_cono/incienso_cono_eucalipto limon.webp"
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774224634/goshopping/esencias_cono/incienso_cono_fresa.webp"
     ],
     "description": "Dulce tentación para el espíritu. La fresa silvestre atrae el amor propio y la positividad con sus notas frutales y encantadoras.",
     "specs": [
+      {
+        "label": "Cantidad",
+        "value": "10 unidades"
+      },
       {
         "label": "Aroma",
         "value": "Frutal Dulce"
@@ -3963,16 +4020,20 @@ export const productsConfig = [
     "name": "Incienso Jazmín Místico",
     "slug": "incienso-jasmin",
     "category": "esencias",
-    "price": 12.9,
+    "price": 5.8,
     "oldPrice": null,
     "currency": "PEN",
     "badge": "SADUCCIÓN",
     "badgeColor": null,
     "images": [
-      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1/goshopping/esencias_cono/incienso_cono_fresa.webp"
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774224635/goshopping/esencias_cono/incienso_cono_jazmin.webp"
     ],
     "description": "La flor de la noche en tu habitación. El jazmín atrae el amor espiritual y la belleza, creando un aura de elegancia y sofisticación.",
     "specs": [
+      {
+        "label": "Cantidad",
+        "value": "10 unidades"
+      },
       {
         "label": "Efecto",
         "value": "Atrayente de Amor"
@@ -3993,16 +4054,20 @@ export const productsConfig = [
     "name": "Incienso Lavanda Dreams",
     "slug": "incienso-lavanda",
     "category": "esencias",
-    "price": 12.9,
+    "price": 5.85,
     "oldPrice": null,
     "currency": "PEN",
     "badge": "SUEÑOS",
     "badgeColor": null,
     "images": [
-      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1/goshopping/esencias_cono/incienso_cono_jazmin.webp"
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774224636/goshopping/esencias_cono/incienso_cono_lavanda.webp"
     ],
     "description": "El descanso definitivo bajo las estrellas. La lavanda es la reina de la relajación, induciendo un sueño reparador y una profunda paz interior.",
     "specs": [
+      {
+        "label": "Cantidad",
+        "value": "10 unidades"
+      },
       {
         "label": "Uso",
         "value": "Dormitorio/Relax"
@@ -4023,16 +4088,20 @@ export const productsConfig = [
     "name": "Incienso Limpia Casa",
     "slug": "incienso-limpia-casa",
     "category": "esencias",
-    "price": 12.9,
+    "price": 5.95,
     "oldPrice": null,
     "currency": "PEN",
     "badge": "RENOVACIÓN",
     "badgeColor": null,
     "images": [
-      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1/goshopping/esencias_cono/incienso_cono_lavanda.webp"
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774224638/goshopping/esencias_cono/incienso_cono_limpia_casa.webp"
     ],
     "description": "Renueva el aire de cada habitación. Un incienso diario para mantener el flujo de energía positiva y la sensación de limpieza total en tu hogar.",
     "specs": [
+      {
+        "label": "Cantidad",
+        "value": "10 unidades"
+      },
       {
         "label": "Uso",
         "value": "Diario"
@@ -4053,16 +4122,20 @@ export const productsConfig = [
     "name": "Incienso Limpieza Pesada",
     "slug": "incienso-limpieza-pesada",
     "category": "esencias",
-    "price": 12.9,
+    "price": 5.8,
     "oldPrice": null,
     "currency": "PEN",
     "badge": "PROFUNDO",
     "badgeColor": null,
     "images": [
-      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1/goshopping/esencias_cono/incienso_cono_limpia casa.webp"
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774224639/goshopping/esencias_cono/incienso_cono_limpieza_pesada_y_descarga.webp"
     ],
     "description": "Eliminación radical de cargas energéticas negativas. La descarga definitiva para espacios que se sienten pesados o cargados tras eventos intensos.",
     "specs": [
+      {
+        "label": "Cantidad",
+        "value": "10 unidades"
+      },
       {
         "label": "Tipo",
         "value": "Limpieza Espiritual"
@@ -4083,16 +4156,20 @@ export const productsConfig = [
     "name": "Incienso Atrae Clientes",
     "slug": "incienso-llama-cliente",
     "category": "esencias",
-    "price": 12.9,
+    "price": 5.7,
     "oldPrice": null,
     "currency": "PEN",
     "badge": "NEGOCIOS",
     "badgeColor": null,
     "images": [
-      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1/goshopping/esencias_cono/incienso_cono_limpieza pesada y descarga.webp"
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774224640/goshopping/esencias_cono/incienso_cono_llama_cliente.webp"
     ],
     "description": "Imán para tu emprendimiento. Potencia las ventas y la afluencia de clientes con este incienso diseñado para el éxito comercial y la prosperidad.",
     "specs": [
+      {
+        "label": "Cantidad",
+        "value": "10 unidades"
+      },
       {
         "label": "Uso",
         "value": "Locales/Negocios"
@@ -4113,16 +4190,20 @@ export const productsConfig = [
     "name": "Incienso Llama Plata",
     "slug": "incienso-llama-plata",
     "category": "esencias",
-    "price": 12.9,
+    "price": 5.85,
     "oldPrice": null,
     "currency": "PEN",
     "badge": "DINERO",
     "badgeColor": null,
     "images": [
-      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1/goshopping/esencias_cono/incienso_cono_llama cliente.webp"
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774224642/goshopping/esencias_cono/incienso_cono_llama_plata.webp"
     ],
     "description": "Conexión con el flujo constante del dinero. Atrae ganancias inesperadas y estabilidad financiera con la vibración argenta de este incienso sagrado.",
     "specs": [
+      {
+        "label": "Cantidad",
+        "value": "10 unidades"
+      },
       {
         "label": "Frecuencia",
         "value": "Atrayente Monetario"
@@ -4143,16 +4224,20 @@ export const productsConfig = [
     "name": "Incienso Lluvia de Oro",
     "slug": "incienso-lluvia-oro",
     "category": "esencias",
-    "price": 12.9,
+    "price": 5.95,
     "oldPrice": null,
     "currency": "PEN",
     "badge": "RIQUEZA",
     "badgeColor": null,
     "images": [
-      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1/goshopping/esencias_cono/incienso_cono_llama plata.webp"
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774224643/goshopping/esencias_cono/incienso_cono_lluvia_de_oro.webp"
     ],
     "description": "Cascada de bendiciones económicas. El oro simboliza el éxito total; este incienso te envuelve en una vibración de opulencia y abundancia infinita.",
     "specs": [
+      {
+        "label": "Cantidad",
+        "value": "10 unidades"
+      },
       {
         "label": "Símbolo",
         "value": "Éxito Absoluto"
@@ -4173,16 +4258,20 @@ export const productsConfig = [
     "name": "Incienso Lluvia de Plata",
     "slug": "incienso-lluvia-plata",
     "category": "esencias",
-    "price": 12.9,
+    "price": 5.9,
     "oldPrice": null,
     "currency": "PEN",
     "badge": "SUERTE",
     "badgeColor": null,
     "images": [
-      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1/goshopping/esencias_cono/incienso_cono_lluvia de oro.webp"
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774224645/goshopping/esencias_cono/incienso_cono_lluvia_de_plata.webp"
     ],
     "description": "Protege tu patrimonio y atrae la suerte. La lluvia de plata mantiene tus finanzas en movimiento y protege tus ahorros de pérdidas energéticas.",
     "specs": [
+      {
+        "label": "Cantidad",
+        "value": "10 unidades"
+      },
       {
         "label": "Aroma",
         "value": "Fino/Elegante"
@@ -4203,16 +4292,20 @@ export const productsConfig = [
     "name": "Incienso Manzana Verde",
     "slug": "incienso-manzana-verde",
     "category": "esencias",
-    "price": 12.9,
+    "price": 5.45,
     "oldPrice": null,
     "currency": "PEN",
     "badge": "SALUD",
     "badgeColor": null,
     "images": [
-      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1/goshopping/esencias_cono/incienso_cono_lluvia de plata.webp"
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774224646/goshopping/esencias_cono/incienso_cono_manzana_verde.webp"
     ],
     "description": "Vitalidad renovada y salud vibrante. El aroma fresco de la manzana verde despeja el cansancio mental y atrae el bienestar físico a tu vida.",
     "specs": [
+      {
+        "label": "Cantidad",
+        "value": "10 unidades"
+      },
       {
         "label": "Aroma",
         "value": "Frutal Fresco"
@@ -4233,16 +4326,20 @@ export const productsConfig = [
     "name": "Incienso Miel y Rosa",
     "slug": "incienso-miel-rosa",
     "category": "esencias",
-    "price": 12.9,
+    "price": 5.85,
     "oldPrice": null,
     "currency": "PEN",
     "badge": "AMOR DULCE",
     "badgeColor": null,
     "images": [
-      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1/goshopping/esencias_cono/incienso_cono_manzana verde.webp"
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774224647/goshopping/esencias_cono/incienso_cono_miel_rosa.webp"
     ],
     "description": "Endulza tus relaciones y atrae el cariño. La miel y la rosa se funden para crear un clima de suavidad afectiva y atracción romántica.",
     "specs": [
+      {
+        "label": "Cantidad",
+        "value": "10 unidades"
+      },
       {
         "label": "Aroma",
         "value": "Floral Meloso"
@@ -4263,16 +4360,20 @@ export const productsConfig = [
     "name": "Incienso Orquídea Exótica",
     "slug": "incienso-orquidea",
     "category": "esencias",
-    "price": 12.9,
+    "price": 5.75,
     "oldPrice": null,
     "currency": "PEN",
     "badge": "LUJO",
     "badgeColor": null,
     "images": [
-      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1/goshopping/esencias_cono/incienso_cono_miel rosa.webp"
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774224649/goshopping/esencias_cono/incienso_cono_orquidea.webp"
     ],
     "description": "Distinción y elegancia en cada ráfaga de humo. La orquídea es símbolo de belleza suprema; este incienso eleva el estatus vibratorio de tus espacios.",
     "specs": [
+      {
+        "label": "Cantidad",
+        "value": "10 unidades"
+      },
       {
         "label": "Aroma",
         "value": "Floral Exótico"
@@ -4293,16 +4394,20 @@ export const productsConfig = [
     "name": "Incienso Pachouli Earth",
     "slug": "incienso-pachouli",
     "category": "esencias",
-    "price": 12.9,
+    "price": 5.9,
     "oldPrice": null,
     "currency": "PEN",
     "badge": "PASIÓN",
     "badgeColor": null,
     "images": [
-      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1/goshopping/esencias_cono/incienso_cono_orquidea.webp"
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774224650/goshopping/esencias_cono/incienso_cono_pachouli.webp"
     ],
     "description": "Magnetismo terrenal y espiritual. El pachuli despierta los sentidos y protege el aura, siendo un aliado poderoso para la meditación y la sensualidad.",
     "specs": [
+      {
+        "label": "Cantidad",
+        "value": "10 unidades"
+      },
       {
         "label": "Aroma",
         "value": "Terroso/Especiado"
@@ -4323,16 +4428,20 @@ export const productsConfig = [
     "name": "Incienso Palo Santo Sagrado",
     "slug": "incienso-palo-santo",
     "category": "esencias",
-    "price": 12.9,
+    "price": 5.75,
     "oldPrice": null,
     "currency": "PEN",
     "badge": "PURIFICACIÓN",
     "badgeColor": null,
     "images": [
-      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1/goshopping/esencias_cono/incienso_cono_pachouli.webp"
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774224651/goshopping/esencias_cono/incienso_cono_palo_santo.webp"
     ],
     "description": "El misticismo de los Andes en tu hogar. Purifica, sana y reconecta con tu ser interior a través del aroma sagrado de la madera milenaria.",
     "specs": [
+      {
+        "label": "Cantidad",
+        "value": "10 unidades"
+      },
       {
         "label": "Origen",
         "value": "Natural/Sagrado"
@@ -4353,16 +4462,20 @@ export const productsConfig = [
     "name": "Incienso Ponche de Frutas",
     "slug": "incienso-ponche-frutas",
     "category": "esencias",
-    "price": 12.9,
+    "price": 5.55,
     "oldPrice": null,
     "currency": "PEN",
     "badge": "CELEBRACIÓN",
     "badgeColor": null,
     "images": [
-      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1/goshopping/esencias_cono/incienso_cono_palo santo.webp"
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774224652/goshopping/esencias_cono/incienso_cono_ponche_de_frutas.webp"
     ],
     "description": "Alegría compartida en cada rincón. Un aroma festivo que invita a la celebración y el buen humor en reuniones con seres queridos.",
     "specs": [
+      {
+        "label": "Cantidad",
+        "value": "10 unidades"
+      },
       {
         "label": "Aroma",
         "value": "Mix Frutal"
@@ -4383,16 +4496,20 @@ export const productsConfig = [
     "name": "Incienso Rosa Real",
     "slug": "incienso-rosa",
     "category": "esencias",
-    "price": 12.9,
+    "price": 5.9,
     "oldPrice": null,
     "currency": "PEN",
     "badge": "AMOR ROYAL",
     "badgeColor": null,
     "images": [
-      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1/goshopping/esencias_cono/incienso_cono_ponche de frutas.webp"
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774224653/goshopping/esencias_cono/incienso_cono_rosa.webp"
     ],
     "description": "La esencia pura del romance. Abre tu corazón y atrae la ternura con el aroma floral más clásico y poderoso de la historia de la aromaterapia.",
     "specs": [
+      {
+        "label": "Cantidad",
+        "value": "10 unidades"
+      },
       {
         "label": "Aroma",
         "value": "Floral Clásico"
@@ -4413,16 +4530,20 @@ export const productsConfig = [
     "name": "Incienso Sándalo Hindú",
     "slug": "incienso-sandalo",
     "category": "esencias",
-    "price": 12.9,
+    "price": 5.89,
     "oldPrice": null,
     "currency": "PEN",
     "badge": "ESPIRITUAL",
     "badgeColor": null,
     "images": [
-      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1/goshopping/esencias_cono/incienso_cono_rosa.webp"
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774224656/goshopping/esencias_cono/incienso_cono_sandalo.webp"
     ],
     "description": "Serenidad milenaria para el alma. El sándalo es fundamental para la paz mental, el enfoque espiritual y la armonización de centros energéticos.",
     "specs": [
+      {
+        "label": "Cantidad",
+        "value": "10 unidades"
+      },
       {
         "label": "Aroma",
         "value": "Amaderado/Suave"
@@ -4443,16 +4564,20 @@ export const productsConfig = [
     "name": "Incienso Siete Poderes",
     "slug": "incienso-siete-poderes",
     "category": "esencias",
-    "price": 12.9,
+    "price": 5.9,
     "oldPrice": null,
     "currency": "PEN",
     "badge": "SUPREMO",
     "badgeColor": null,
     "images": [
-      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1/goshopping/esencias_cono/incienso_cono_salvia blanca.webp"
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774224658/goshopping/esencias_cono/incienso_cono_siete_poderes.webp"
     ],
     "description": "La fuerza absoluta de la espiritualidad. Siete vibraciones combinadas para brindarte protección, salud, amor, dinero, paz, sabiduría y éxito.",
     "specs": [
+      {
+        "label": "Cantidad",
+        "value": "10 unidades"
+      },
       {
         "label": "Nivel",
         "value": "Poder Máximo"
@@ -4473,16 +4598,20 @@ export const productsConfig = [
     "name": "Incienso Violeta y Citronela",
     "slug": "incienso-violeta-citronela",
     "category": "esencias",
-    "price": 12.9,
+    "price": 5.89,
     "oldPrice": null,
     "currency": "PEN",
     "badge": "PROTECCIÓN",
     "badgeColor": null,
     "images": [
-      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1/goshopping/esencias_cono/incienso_cono_sandalo.webp"
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774224659/goshopping/esencias_cono/incienso_cono_violeta_y_citronela.webp"
     ],
     "description": "Transmutación energética con escudo natural. La violeta transmuta lo negativo en positivo mientras la citronela protege tu espacio de influencias externas.",
     "specs": [
+      {
+        "label": "Cantidad",
+        "value": "10 unidades"
+      },
       {
         "label": "Doble Efecto",
         "value": "Transmutar/Proteger"
@@ -4503,16 +4632,20 @@ export const productsConfig = [
     "name": "Incienso Violeta Suave",
     "slug": "incienso-violeta",
     "category": "esencias",
-    "price": 12.9,
+    "price": 5.9,
     "oldPrice": null,
     "currency": "PEN",
     "badge": "TRANSMUTACIÓN",
     "badgeColor": null,
     "images": [
-      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1/goshopping/esencias_cono/incienso_cono_siete poderes.webp"
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774224660/goshopping/esencias_cono/incienso_cono_violeta.webp"
     ],
     "description": "Cambia tu energía de raíz. La violeta es la llama de la transmutación, ideal para convertir el dolor en sabiduría y la tristeza en esperanza.",
     "specs": [
+      {
+        "label": "Cantidad",
+        "value": "10 unidades"
+      },
       {
         "label": "Aroma",
         "value": "Floral Suave"
@@ -4529,17 +4662,17 @@ export const productsConfig = [
     "salePercent": null
   },
   {
-    "id": "sahumerio-palo",
-    "name": "Palo Santo Premium x10",
-    "slug": "sahumerio-palo",
+    "id": "incienso-salvia-blanca",
+    "name": "Incienso Salvia Blanca",
+    "slug": "incienso-salvia-blanca",
     "category": "esencias",
-    "price": 29.9,
-    "oldPrice": 39.9,
+    "price": 5.89,
+    "oldPrice": null,
     "currency": "PEN",
     "badge": "-25%",
     "badgeColor": null,
     "images": [
-      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1/goshopping/esencias_cono/incienso_cono_violeta y citronela.webp"
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774224655/goshopping/esencias_cono/incienso_cono_salvia_blanca.webp"
     ],
     "description": "Purificación y energía positiva real. Siente la reconexión espiritual con el aroma sagrado del Palo Santo, recolectado de forma sostenible para elevar tu vibración.",
     "specs": [
@@ -4562,40 +4695,9 @@ export const productsConfig = [
     "isOnSale": true,
     "salePercent": 25
   },
-  {
-    "id": "sahumerio-palo-var1",
-    "name": "Palo Santo Premium x10 (Var 1)",
-    "slug": "sahumerio-palo-var1",
-    "category": "esencias",
-    "price": 29.9,
-    "oldPrice": 39.9,
-    "currency": "PEN",
-    "badge": "-25%",
-    "badgeColor": null,
-    "images": [
-      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1/goshopping/esencias_cono/incienso_cono_violeta.webp"
-    ],
-    "description": "Purificación y energía positiva real. Siente la reconexión espiritual con el aroma sagrado del Palo Santo, recolectado de forma sostenible para elevar tu vibración.",
-    "specs": [
-      {
-        "label": "Cantidad",
-        "value": "10 unidades"
-      },
-      {
-        "label": "Origen",
-        "value": "Sudamérica"
-      }
-    ],
-    "rating": 4.5,
-    "reviews": 234,
-    "colors": [],
-    "stock": 45,
-    "tags": [],
-    "fragrances": [],
-    "isNew": false,
-    "isOnSale": true,
-    "salePercent": 25
-  },
+ //********************************************************************//
+ //           HIDROGEL
+ //********************************************************************//
   {
     "id": "hidrogel-scar",
     "name": "Pistola SCAR Battle Edition",
@@ -4916,38 +5018,10 @@ export const productsConfig = [
     "isOnSale": false,
     "salePercent": null
   },
-  {
-    "id": "quemador-zen-38",
-    "name": "Quemador Clarity 38",
-    "slug": "quemador-zen-38",
-    "category": "quemadores",
-    "price": 54.9,
-    "oldPrice": null,
-    "currency": "PEN",
-    "badge": "CLARIDAD",
-    "badgeColor": null,
-    "images": [
-      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1/goshopping/quemadores/quemador_7253_38.webp"
-    ],
-    "description": "Despeja tu mente de pensamientos pesados. Su forma abierta y clara invita a la transparencia mental y a la frescura de nuevos comienzos.",
-    "specs": [
-      {
-        "label": "Propósito",
-        "value": "Enfoque Mental"
-      }
-    ],
-    "rating": 4.5,
-    "reviews": 27,
-    "colors": [
-      "#FFFFFF"
-    ],
-    "stock": 30,
-    "tags": [],
-    "fragrances": [],
-    "isNew": false,
-    "isOnSale": false,
-    "salePercent": null
-  },
+
+  //********************************************************************//
+  //           DIFUSORES - HUMIFICADORES
+  //********************************************************************//
   {
     "id": "difusor-cilindrico",
     "name": "Difusor Cilindrico",
@@ -4980,11 +5054,11 @@ export const productsConfig = [
     "rating": 4.7,
     "reviews": 89,
     "colors": [
-      "#430d06" ,"cafe madera",
-      "#aa7444", "madera clara",
-      "#FFFFFF", "blanco",
-      "#341100", "cafe oscuro",
-      "#fbb2a3", "rosado"
+      "#430d06",
+      "#aa7444",
+      "#FFFFFF",
+      "#341100",
+      "#fbb2a3"
     ],
     "stock": 15,
     "tags": [],
@@ -5022,8 +5096,8 @@ export const productsConfig = [
     "rating": 4.4,
     "reviews": 156,
     "colors": [
-      "#ec1e1b", "diseño rojo",
-      "#003785","diseño azul",
+      "#ec1e1b ",
+      "#003785 "
     ],
     "stock": 30,
     "tags": [],
@@ -5061,8 +5135,8 @@ export const productsConfig = [
     "rating": 4.9,
     "reviews": 56,
     "colors": [
-      "#aa7444", "madera clara",
-      "#430d06", "cafe madera"
+      "#aa7444 ",
+      "#430d06 "
     ],
     "stock": 18,
     "tags": [],
@@ -5076,7 +5150,7 @@ export const productsConfig = [
     "name": "Difusor Corona Royal",
     "slug": "difusor-corona",
     "category": "humidificadores",
-    "price": 99.9,
+    "price": 53.9,
     "oldPrice": null,
     "currency": "PEN",
     "badge": "ELEGANTE",
@@ -5094,7 +5168,7 @@ export const productsConfig = [
     "rating": 4.6,
     "reviews": 22,
     "colors": [
-      "#aa7444", "madera clara",
+      "#aa7444 "
     ],
     "stock": 25,
     "tags": [],
@@ -5132,8 +5206,8 @@ export const productsConfig = [
     "rating": 5,
     "reviews": 12,
     "colors": [
-      "#430d06", "cafe madera",
-      "#aa7444", "madera clara"
+      "#430d06 ",
+      "#aa7444 "
     ],
     "stock": 10,
     "tags": [],
@@ -5169,7 +5243,7 @@ export const productsConfig = [
     "rating": 4.8,
     "reviews": 34,
     "colors": [
-      "#FFFFFF"
+      "#FFFFFF "
     ],
     "stock": 15,
     "tags": [],
@@ -5207,8 +5281,8 @@ export const productsConfig = [
     "rating": 4.7,
     "reviews": 41,
     "colors": [
-      "#430d06", "cafe madera",
-      "#aa7444", "madera clara"
+      "#430d06 ",
+      "#aa7444 "
     ],
     "stock": 20,
     "tags": [],
@@ -5244,7 +5318,7 @@ export const productsConfig = [
     "rating": 4.9,
     "reviews": 67,
     "colors": [
-      "#FFFFFF"
+      "#FFFFFF "
     ],
     "stock": 30,
     "tags": [],
@@ -5282,8 +5356,8 @@ export const productsConfig = [
     "rating": 4.5,
     "reviews": 112,
     "colors": [
-      "#FFFFFF", "blanco",
-      "#000000", "negro"
+      "#FFFFFF ",
+      "#000000 "
     ],
     "stock": 50,
     "tags": [],
@@ -5322,9 +5396,9 @@ export const productsConfig = [
     "rating": 4.9,
     "reviews": 88,
     "colors": [
-      "#FFFFFF", "blanco",
-      "#FF69B4", "rosa",
-      "#90EE90", "verde"
+      "#FFFFFF ",
+      "#FF69B4 ",
+      "#90EE90 "
     ],
     "stock": 18,
     "tags": [],
@@ -5362,8 +5436,8 @@ export const productsConfig = [
     "rating": 4.7,
     "reviews": 29,
     "colors": [
-      "#FFFFFF", "blanco",
-      "#000000","negro"
+      "#FFFFFF ",
+      "#000000 "
     ],
     "stock": 12,
     "tags": [],
@@ -5402,9 +5476,9 @@ export const productsConfig = [
     "rating": 4.6,
     "reviews": 24,
     "colors": [
-      "#FFFFFF", "blanco",
-      "#8B4513", "cafe",
-      "#D2B48C", "madera claro"
+      "#FFFFFF ",
+      "#8B4513 ",
+      "#D2B48C "
     ],
     "stock": 25,
     "tags": [],
@@ -5442,8 +5516,8 @@ export const productsConfig = [
     "rating": 4.8,
     "reviews": 52,
     "colors": [
-          "#8B4513", "cafe",
-          "#D2B48C", "madera claro"
+          "#8B4513 ",
+          "#D2B48C "
         ],
     "stock": 35,
     "tags": [],
@@ -5477,8 +5551,8 @@ export const productsConfig = [
     "rating": 4.9,
     "reviews": 16,
     "colors": [
-      "#8B4513", "cafe",
-      "#D2B48C", "madera claro"
+      "#8B4513 ",
+      "#D2B48C "
     ],
     "stock": 10,
     "tags": [],
@@ -5517,9 +5591,9 @@ export const productsConfig = [
     "rating": 4.8,
     "reviews": 21,
     "colors": [
-      "#FF00FF", "magenta",
-      "#cf4523ff", "oro rosa",
-      "#40E0D0", "turquesa"
+      "#FF00FF ",
+      "#cf4523ff ",
+      "#40E0D0 "
     ],
     "stock": 15,
     "tags": [],
@@ -5552,8 +5626,8 @@ export const productsConfig = [
     "rating": 4.9,
     "reviews": 14,
     "colors": [
-      "#a7630ace", "madera clara",
-      "#FFFFFF", "blanco"
+      "#a7630ace ",
+      "#FFFFFF "
     ],
     "stock": 8,
     "tags": [],
@@ -5589,7 +5663,7 @@ export const productsConfig = [
     "rating": 4.7,
     "reviews": 19,
     "colors": [
-      "#FFFFFF"
+      "#FFFFFF "
     ],
     "stock": 20,
     "tags": [],
@@ -5600,8 +5674,8 @@ export const productsConfig = [
   },
   {
     "id": "difusor-y",
-    "name": "Difusor Jarrón Zen Dot",
-    "slug": "difusor-jarron-dot",
+    "name": "Difusor Clasico Y",
+    "slug": "difusor-y",
     "category": "humidificadores",
     "price": 16.9,
     "oldPrice": null,
@@ -5621,9 +5695,9 @@ export const productsConfig = [
     "rating": 4.6,
     "reviews": 31,
     "colors": [
-      "#FFFFFF", "blanco",
-      "#ff8becff", "rosado",
-      "#40E0D0", "turquesa"
+      "#FFFFFF ",
+      "#ff8becff ",
+      "#40E0D0 "
     ],
     "stock": 22,
     "tags": [],
@@ -5662,9 +5736,9 @@ export const productsConfig = [
     "rating": 4.5,
     "reviews": 45,
     "colors": [
-      "#8B4513", "cafe",
-      "#D2B48C", "madera claro",
-      "#ffffff", "craquelado"
+      "#8B4513 ",
+      "#D2B48C ",
+      "#ffffff "
     ],
     "stock": 25,
     "tags": [],
@@ -5696,7 +5770,7 @@ export const productsConfig = [
     "rating": 4.6,
     "reviews": 27,
     "colors": [
-      "#000000", "negro"
+      "#000000 "
     ],
     "stock": 30,
     "tags": [],
@@ -5732,7 +5806,7 @@ export const productsConfig = [
     "rating": 4.8,
     "reviews": 39,
     "colors": [
-      "#a35103ff", "cafe"
+      "#a35103ff "
     ],
     "stock": 15,
     "tags": [],
@@ -5741,106 +5815,9 @@ export const productsConfig = [
     "isOnSale": false,
     "salePercent": null
   },
-  {
-    "id": "difusor-redondo-basmade",
-    "name": "Difusor Redondo Wood Base",
-    "slug": "difusor-redondo-basmade",
-    "category": "humidificadores",
-    "price": 119.9,
-    "oldPrice": null,
-    "currency": "PEN",
-    "badge": "ESTILO",
-    "badgeColor": null,
-    "images": [
-      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1/goshopping/difusores/difusor_redondo_basMade.webp"
-    ],
-    "description": "La esencia de la madera. Un diseño redondo y acogedor con base tipo madera que aporta calidez visual y una aromaterapia envolvente a tu hogar.",
-    "specs": [
-      {
-        "label": "Base",
-        "value": "Efecto Madera"
-      },
-      {
-        "label": "Forma",
-        "value": "Circular"
-      }
-    ],
-    "rating": 4.9,
-    "reviews": 18,
-    "colors": [
-      "#D4A574"
-    ],
-    "stock": 12,
-    "tags": [],
-    "fragrances": [],
-    "isNew": false,
-    "isOnSale": false,
-    "salePercent": null
-  },
-  {
-    "id": "quemador-zen-42",
-    "name": "Quemador Peace 42",
-    "slug": "quemador-zen-42",
-    "category": "quemadores",
-    "price": 63.9,
-    "oldPrice": null,
-    "currency": "PEN",
-    "badge": "PAZ",
-    "badgeColor": null,
-    "images": [
-      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1/goshopping/quemadores/quemador_7253_42.webp"
-    ],
-    "description": "Un monumento a la tranquilidad. Este quemador de gran tamaño es una pieza de declaración que trae paz inmediata a cualquier sala o dormitorio.",
-    "specs": [
-      {
-        "label": "Atributo",
-        "value": "Pieza de Lujo"
-      }
-    ],
-    "rating": 5,
-    "reviews": 18,
-    "colors": [
-      "#000000"
-    ],
-    "stock": 10,
-    "tags": [],
-    "fragrances": [],
-    "isNew": true,
-    "isOnSale": false,
-    "salePercent": null
-  },
-  {
-    "id": "difusor-corona-silver",
-    "name": "Difusor Corona Mystic Silver",
-    "slug": "difusor-corona-silver",
-    "category": "humidificadores",
-    "price": 105.9,
-    "oldPrice": null,
-    "currency": "PEN",
-    "badge": "ROYAL",
-    "badgeColor": null,
-    "images": [
-      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1/goshopping/difusores/disufor_montaña_parlante.webp"
-    ],
-    "description": "Majestuosidad plateada. Un diseño de corona con detalles espectaculares que transforma tu habitación en un palacio de relajación y pureza.",
-    "specs": [
-      {
-        "label": "Diseño",
-        "value": "Corona Imperial"
-      }
-    ],
-    "rating": 5,
-    "reviews": 15,
-    "colors": [
-      "#C0C0C0"
-    ],
-    "stock": 10,
-    "tags": [],
-    "fragrances": [],
-    "isNew": true,
-    "isOnSale": false,
-    "salePercent": null
-  },
+  //********************************************************************//
+  //           ACCESORIOS MASCOTAS
+  //********************************************************************//
   {
     "id": "casco-tactical",
     "name": "Casco Tactical Pet Pro",
@@ -6176,6 +6153,9 @@ export const productsConfig = [
     "isOnSale": false,
     "salePercent": null
   },
+  //********************************************************************//
+  //           NOVEDADES
+  //********************************************************************//
   {
     "id": "nov-casco-dino",
     "name": "Casco Dino",
@@ -7200,6 +7180,73 @@ export const productsConfig = [
     "isOnSale": false,
     "salePercent": null
   },
+  //********************************************************************//
+  //           QUEMADORES - CASCADAS DE AGUA
+  //********************************************************************//
+  {
+    "id": "quemador-zen-38",
+    "name": "Quemador Clarity 38",
+    "slug": "quemador-zen-38",
+    "category": "quemadores",
+    "price": 54.9,
+    "oldPrice": null,
+    "currency": "PEN",
+    "badge": "CLARIDAD",
+    "badgeColor": null,
+    "images": [
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1/goshopping/quemadores/quemador_7253_38.webp"
+    ],
+    "description": "Despeja tu mente de pensamientos pesados. Su forma abierta y clara invita a la transparencia mental y a la frescura de nuevos comienzos.",
+    "specs": [
+      {
+        "label": "Propósito",
+        "value": "Enfoque Mental"
+      }
+    ],
+    "rating": 4.5,
+    "reviews": 27,
+    "colors": [
+      "#FFFFFF"
+    ],
+    "stock": 30,
+    "tags": [],
+    "fragrances": [],
+    "isNew": false,
+    "isOnSale": false,
+    "salePercent": null
+  },
+  {
+    "id": "quemador-zen-42",
+    "name": "Quemador Peace 42",
+    "slug": "quemador-zen-42",
+    "category": "quemadores",
+    "price": 63.9,
+    "oldPrice": null,
+    "currency": "PEN",
+    "badge": "PAZ",
+    "badgeColor": null,
+    "images": [
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1/goshopping/quemadores/quemador_7253_42.webp"
+    ],
+    "description": "Un monumento a la tranquilidad. Este quemador de gran tamaño es una pieza de declaración que trae paz inmediata a cualquier sala o dormitorio.",
+    "specs": [
+      {
+        "label": "Atributo",
+        "value": "Pieza de Lujo"
+      }
+    ],
+    "rating": 5,
+    "reviews": 18,
+    "colors": [
+      "#000000"
+    ],
+    "stock": 10,
+    "tags": [],
+    "fragrances": [],
+    "isNew": true,
+    "isOnSale": false,
+    "salePercent": null
+  },
   {
     "id": "quemador-aves",
     "name": "Quemador Cascada Aves Paraíso",
@@ -8206,6 +8253,9 @@ export const productsConfig = [
     "isOnSale": false,
     "salePercent": null
   },
+  //********************************************************************//
+  //           TECNOLOGIA
+  //********************************************************************//
   {
     "id": "lamp-geo",
     "name": "Lámpara Geometric Muse",
@@ -8564,47 +8614,6 @@ export const productsConfig = [
     "tags": [],
     "fragrances": [],
     "isNew": true,
-    "isOnSale": false,
-    "salePercent": null
-  },
-  {
-    "id": "humidificador-aura",
-    "name": "Humidificador Aura Mist",
-    "slug": "humidificador-aura",
-    "category": "humidificadores",
-    "price": 129.9,
-    "oldPrice": null,
-    "currency": "PEN",
-    "badge": "MÁS VENDIDO",
-    "badgeColor": null,
-    "images": [
-      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774224566/goshopping/difusores/difusor_cesta_mt.webp"
-    ],
-    "description": "Crea tu propio oasis de serenidad. Aura Mist purifica tu entorno con tecnología ultrasónica silenciosa y una luz ambiental que danza al ritmo de tu bienestar.",
-    "specs": [
-      {
-        "label": "Capacidad",
-        "value": "4.5 Litros"
-      },
-      {
-        "label": "Cobertura",
-        "value": "Hasta 50 m²"
-      },
-      {
-        "label": "Ruido",
-        "value": "< 26dB"
-      }
-    ],
-    "rating": 4.8,
-    "reviews": 312,
-    "colors": [
-      "#FFFFFF",
-      "#171512"
-    ],
-    "stock": 25,
-    "tags": [],
-    "fragrances": [],
-    "isNew": false,
     "isOnSale": false,
     "salePercent": null
   }
