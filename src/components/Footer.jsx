@@ -30,9 +30,13 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
           {/* Brand */}
           <div>
-            <div className="flex items-center gap-2 mb-4">
-              <span className="material-symbols-outlined text-primary text-2xl">diamond</span>
-              <h3 className="font-serif text-xl font-bold">GO SHOPPING</h3>
+            <div className="flex items-center gap-3 mb-4">
+              <img 
+                src="https://res.cloudinary.com/dod8hhjoo/image/upload/v1774224726/goshopping/optimized/logo-768w.webp" 
+                alt="GO SHOPPING" 
+                className="h-12 w-auto object-contain"
+              />
+              <span className="font-serif text-xl font-bold text-white">SHOPPING</span>
             </div>
             <p className="text-white/60 text-sm leading-relaxed mb-4">Selección exclusiva de productos importados premium para los gustos más exigentes.</p>
             <div className="flex gap-3">

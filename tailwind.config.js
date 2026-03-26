@@ -63,6 +63,7 @@ export default {
         "slide-up": "slideUp 0.5s ease-out forwards",
         "scale-in": "scaleIn 0.25s ease-out forwards",
         "smooth-bounce": "smoothBounce 0.6s ease",
+        "scroll": "scroll 40s linear infinite",
       },
 
       keyframes: {
@@ -84,6 +85,11 @@ export default {
         smoothBounce: {
           "0%, 100%": { transform: "translateY(0)" },
           "50%": { transform: "translateY(-4px)" },
+        },
+        
+        scroll: {
+          "0%": { transform: "translateX(0)" },
+          "100%": { transform: "translateX(-50%)" },
         },
       },
 

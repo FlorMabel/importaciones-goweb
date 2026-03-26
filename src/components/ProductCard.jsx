@@ -22,11 +22,11 @@ export default function ProductCard({ product: p, index = 0 }) {
 
   return (
     <div
-      className="product-card bg-white border border-gray-100 flex flex-col stagger-card"
+      className="product-card bg-surface-light border border-border-default flex flex-col stagger-card"
       style={{ animationDelay: `${index * 0.05}s` }}
     >
       <div
-        className="image-container relative bg-gray-50 cursor-pointer"
+        className="image-container relative bg-surface-soft cursor-pointer"
         onClick={() => navigate(`/producto/${p.slug}`)}
       >
         {p.badge && (

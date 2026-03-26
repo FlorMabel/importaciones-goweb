@@ -21,7 +21,7 @@ export default function AboutPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
             {[
-              { icon: 'diamond', title: '300+ Productos', desc: 'Catálogo curado con más de 300 productos importados organizados en 9+ categorías exclusivas.' },
+              { icon: 'inventory_2', title: '300+ Productos', desc: 'Catálogo curado con más de 300 productos importados organizados en 9+ categorías exclusivas.' },
               { icon: 'public', title: 'Importación Directa', desc: 'Seleccionamos y traemos productos premium directamente de los mejores proveedores internacionales.' },
               { icon: 'favorite', title: 'Atención Personalizada', desc: 'Cada cliente es único. Nuestro equipo te asesora y acompaña en cada compra vía WhatsApp.' },
             ].map(item => (

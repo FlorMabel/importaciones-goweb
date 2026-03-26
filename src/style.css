@@ -21,7 +21,7 @@
   }
   .product-card:hover { box-shadow: 0 8px 30px rgba(0,0,0,0.08); }
   .product-card .image-container {
-    @apply aspect-square flex items-center justify-center p-4 overflow-hidden;
+    @apply aspect-[4/3] flex items-center justify-center p-4 overflow-hidden;
   }
   .product-card .image-container img {
     @apply w-full h-full object-contain mix-blend-multiply transition-transform duration-500;

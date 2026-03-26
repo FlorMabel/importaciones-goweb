@@ -77,9 +77,13 @@ export default function Header() {
       <header className="glass-header sticky top-0 z-50 w-full border-b border-gray-100 transition-all duration-300">
         <div className="mx-auto max-w-[1440px] px-4 lg:px-10 h-16 lg:h-20 flex items-center justify-between">
           <Link to="/" className="flex items-center gap-2">
-          <span className="material-symbols-outlined text-2xl text-primary">diamond</span>
-          <h2 className="text-text-main font-serif text-lg lg:text-xl font-bold tracking-tight">GO SHOPPING</h2>
-        </Link>
+            <img 
+              src="https://res.cloudinary.com/dod8hhjoo/image/upload/v1774224726/goshopping/optimized/logo-768w.webp" 
+              alt="GO SHOPPING" 
+              className="h-10 lg:h-12 w-auto object-contain"
+            />
+            <span className="text-text-main font-serif text-lg lg:text-xl font-bold tracking-tight">SHOPPING</span>
+          </Link>
 
         <nav className="hidden lg:flex items-center gap-8">
           <Link to="/" className="text-text-main hover:text-accent transition-colors text-sm font-medium">Inicio</Link>

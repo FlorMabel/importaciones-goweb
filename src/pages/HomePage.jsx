@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
-import { getCategories, getDeals, getNewArrivals } from '../services/api';
+import { getCategories, getDeals, getNewArrivals, getAllProducts } from '../services/api';
 import { formatPrice } from '../utils';
 import { useStore } from '../context/StoreContext';
 import { useToast } from '../context/ToastContext';
@@ -17,17 +17,19 @@ export default function HomePage() {
   const [categories, setCategories] = useState([]);
   const [deals, setDeals] = useState([]);
   const [newArrivals, setNewArrivals] = useState([]);
+  const [allProducts, setAllProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [currentVideo, setCurrentVideo] = useState(0);
   const navigate = useNavigate();
   const { showToast } = useToast();
 
   useEffect(() => {
-    Promise.all([getCategories(), getDeals(), getNewArrivals()])
-      .then(([cats, d, na]) => {
+    Promise.all([getCategories(), getDeals(), getNewArrivals(), getAllProducts()])
+      .then(([cats, d, na, all]) => {
         setCategories(cats);
         setDeals(d);
         setNewArrivals(na);
+        setAllProducts(all || []);
         setLoading(false);
       });
   }, []);
@@ -46,6 +48,11 @@ export default function HomePage() {
   const featuredCategories = categories.slice(0, 8);
   const featuredProducts = deals.slice(0, 8);
   const latestProducts = newArrivals.slice(0, 3);
+  
+  const productsByCategory = categories.map(c => ({
+    ...c,
+    products: allProducts.filter(p => p.category === c.id || p.category_id === c.id)
+  })).filter(c => c.products.length > 0);
 
   return (
     <>
@@ -104,24 +111,26 @@ export default function HomePage() {
       </div>
     </section>
 
-      {/* Trust Badges */}
-      <section className="py-10 px-6 md:px-10 lg:px-20">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 max-w-5xl mx-auto">
-          {[
-            { icon: 'local_shipping', title: 'Envío Asegurado', desc: 'Entrega rápida, segura y rastreable a todo el Perú.' },
-            { icon: 'verified_user', title: 'Garantía Premium', desc: 'Cobertura total de autenticidad y calidad.' },
-            { icon: 'support_agent', title: 'Soporte 24/7', desc: 'Atención personalizada vía WhatsApp.' },
-          ].map(t => (
-            <div key={t.icon} className="flex flex-col items-center text-center p-6 bg-white rounded-2xl shadow-sm border border-gray-100">
-              <div className="size-12 rounded-full bg-accent/10 flex items-center justify-center text-accent mb-3">
-                <span className="material-symbols-outlined">{t.icon}</span>
-              </div>
-              <h3 className="text-sm font-bold text-accent mb-1">{t.title}</h3>
-              <p className="text-text-muted text-xs leading-relaxed">{t.desc}</p>
+    {/* Trust Badges - Flush with Hero but OUTSIDE */}
+    <section className="bg-background-soft pt-0 pb-8 px-6 md:px-10 lg:px-20">
+      <div className="flex flex-col md:flex-row gap-3 max-w-4xl mx-auto justify-center relative">
+        {[
+          { icon: 'local_shipping', title: 'Envío Asegurado', desc: 'A todo el Perú' },
+          { icon: 'verified_user', title: 'Garantía Premium', desc: 'Calidad total' },
+          { icon: 'support_agent', title: 'Soporte 24/7', desc: 'Por WhatsApp' },
+        ].map(t => (
+          <div key={t.icon} className="flex-1 flex items-center justify-center md:justify-start gap-3 p-3 bg-white rounded-2xl shadow-soft border border-border-default hover:border-primary/50 transition-all duration-300">
+            <div className="size-8 rounded-full bg-primary/10 flex items-center justify-center text-primary shrink-0">
+              <span className="material-symbols-outlined text-[16px]">{t.icon}</span>
             </div>
-          ))}
-        </div>
-      </section>
+            <div className="flex flex-col text-left">
+              <h3 className="text-[11px] md:text-xs font-bold text-accent leading-none mb-1">{t.title}</h3>
+              <p className="text-[9px] md:text-[10px] text-text-muted leading-none">{t.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
 
       {/* Categories */}
       <section className="py-12 px-6 md:px-10 lg:px-20 bg-background-soft">
@@ -173,6 +182,78 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Category Rows Section (Color Palette: 60% Beige, 20% Gold, 20% Purple) */}
+      <section className="py-12 px-6 md:px-10 lg:px-20 bg-background-soft">
+        <div className="max-w-[1400px] mx-auto flex flex-col gap-8 md:gap-12">
+          {productsByCategory.map((cat, idx) => {
+            const colors = [
+              "bg-accent text-white",           // 20% Morado
+              "bg-[#F5F3EF] text-accent",       // 60% Beige
+              "bg-primary text-white",          // 20% Dorado
+              "bg-[#F5F3EF] text-accent",       // 60% Beige
+              "bg-[#EFE9DF] text-accent"        // 60% Beige (ligeramente más oscuro)
+            ];
+            const colorClass = colors[idx % colors.length];
+
+            return (
+              <div key={cat.id} className="flex flex-col lg:flex-row gap-4 p-4 lg:p-6 bg-white rounded-[2rem] shadow-sm border border-gray-100">
+                {/* Left Category Hero Block */}
+                <div className={`w-full lg:w-[320px] shrink-0 rounded-[1.5rem] p-8 flex flex-col justify-between relative overflow-hidden ${colorClass}`}>
+                  <div className="z-10 relative text-center lg:text-left">
+                    <span className={`text-[10px] font-bold uppercase tracking-[0.2em] mb-3 block ${colorClass.includes('text-white') ? 'text-white/80' : 'text-accent/60'}`}>
+                      Colección
+                    </span>
+                    <h3 className="font-serif text-3xl md:text-4xl font-bold leading-tight">{cat.name}</h3>
+                  </div>
+                  
+                  {cat.image_url && (
+                    <div className="my-8 flex justify-center items-center z-10 relative">
+                       <img 
+                         src={cat.image_url} 
+                         alt={cat.name} 
+                         className="w-32 h-32 md:w-40 md:h-40 object-cover rounded-full shadow-lg border-4 border-white/20 hover:scale-105 transition-transform duration-500" 
+                         loading="lazy" 
+                       />
+                    </div>
+                  )}
+
+                  <button 
+                    onClick={() => navigate(`/categoria/${cat.slug}`)}
+                    className={`z-10 relative mt-auto mx-auto lg:mx-0 w-max px-6 py-3 rounded-full text-sm font-bold transition-all flex items-center gap-2 ${
+                      colorClass.includes('text-white') 
+                        ? 'bg-white/20 hover:bg-white/30 text-white' 
+                        : 'bg-primary/10 hover:bg-primary/20 text-primary'
+                    }`}
+                  >
+                    Ver Todo <span className="material-symbols-outlined text-sm">arrow_forward</span>
+                  </button>
+                </div>
+
+                {/* Horizontal Product Scroll */}
+                <div className="flex-1 w-full overflow-hidden relative">
+                  <div className="flex overflow-x-auto gap-4 pb-4 snap-x snap-mandatory pt-2 custom-scrollbar">
+                    {cat.products.slice(0, 8).map((p) => (
+                      <div key={p.id} className="w-[200px] md:w-[240px] shrink-0 snap-start">
+                        <ProductCard product={p} index={0} />
+                      </div>
+                    ))}
+                    <div className="w-[180px] md:w-[200px] shrink-0 snap-start flex items-center justify-center p-4">
+                      <button 
+                        onClick={() => navigate(`/categoria/${cat.slug}`)}
+                        className="flex flex-col items-center justify-center gap-3 w-full h-full min-h-[250px] bg-background-soft rounded-2xl hover:bg-[#EFE9DF] transition-colors text-accent border border-transparent hover:border-primary"
+                      >
+                        <span className="material-symbols-outlined text-3xl">arrow_circle_right</span>
+                        <span className="font-bold text-sm">Ver más info</span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </section>
+
       {/* Featured Products / Deals */}
       <section className="py-12 px-6 md:px-10 lg:px-20 bg-white">
         <div className="max-w-7xl mx-auto">
@@ -180,10 +261,14 @@ export default function HomePage() {
             <span className="text-primary font-bold tracking-[0.2em] text-xs uppercase mb-2 block">NUESTRA SELECCIÓN</span>
             <h2 className="font-serif text-3xl md:text-4xl font-bold text-accent">Productos Destacados</h2>
           </div>
-          <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
-            {featuredProducts.map((p, i) => (
-              <ProductCard key={p.id} product={p} index={i} />
-            ))}
+          <div className="relative w-full overflow-hidden group py-4">
+            <div className="flex w-max animate-scroll group-hover:[animation-play-state:paused] gap-4 md:gap-6">
+              {[...featuredProducts, ...featuredProducts].map((p, i) => (
+                <div key={`${p.id}-${i}`} className="w-[260px] md:w-[280px] shrink-0">
+                  <ProductCard product={p} index={0} />
+                </div>
+              ))}
+            </div>
           </div>
           <div className="text-center mt-8">
             <button
@@ -196,44 +281,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* New Arrivals Preview */}
-      {latestProducts.length > 0 && (
-        <section className="py-12 px-6 md:px-10 lg:px-20 bg-background-soft">
-          <div className="max-w-7xl mx-auto">
-            <div className="flex flex-col md:flex-row justify-between items-end gap-4 mb-8">
-              <div>
-                <span className="text-primary font-bold tracking-[0.2em] text-xs uppercase mb-2 block">LO ÚLTIMO</span>
-                <h2 className="font-serif text-3xl font-bold text-accent">Novedades</h2>
-              </div>
-              <button
-                onClick={() => navigate('/novedades')}
-                className="text-primary text-xs font-bold uppercase tracking-wider hover:text-primary-dark flex items-center gap-1"
-              >
-                Ver todo <span className="material-symbols-outlined text-sm">add</span>
-              </button>
-            </div>
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-              {latestProducts.map((p, i) => (
-                <div
-                  key={p.id}
-                  onClick={() => navigate(`/producto/${p.slug}`)}
-                  className="group bg-white rounded-2xl overflow-hidden border border-gray-100 cursor-pointer hover:shadow-md transition-shadow stagger-card"
-                  style={{ animationDelay: `${i * 0.08}s` }}
-                >
-                  <div className="aspect-[4/3] bg-gray-50 flex items-center justify-center p-6 overflow-hidden">
-                    <img src={p.images?.[0] || ''} alt={p.name} className="w-full h-full object-contain mix-blend-multiply transition-transform duration-500 group-hover:scale-105" loading="lazy" />
-                  </div>
-                  <div className="p-5">
-                    {p.badge && <span className="text-[10px] font-bold text-accent uppercase tracking-wider">{p.badge}</span>}
-                    <h3 className="text-base font-serif font-bold text-text-main mt-1">{p.name}</h3>
-                    <p className="text-sm font-bold text-primary mt-1">{formatPrice(p.price)}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-      )}
+
 
       {/* Newsletter */}
       <section className="py-16 px-6 bg-[#f8f6f2] flex flex-col items-center text-center">

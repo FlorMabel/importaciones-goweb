@@ -27,9 +27,13 @@ export function renderFooter() {
       <div class="grid grid-cols-1 md:grid-cols-4 gap-10">
         <!-- Brand -->
         <div>
-          <div class="flex items-center gap-2 mb-4">
-            <span class="material-symbols-outlined text-primary text-2xl">diamond</span>
-            <h3 class="font-serif text-xl font-bold">GO SHOPPING</h3>
+          <div class="flex items-center gap-3 mb-4">
+            <img 
+              src="https://res.cloudinary.com/dod8hhjoo/image/upload/v1774224726/goshopping/optimized/logo-768w.webp" 
+              alt="GO SHOPPING" 
+              class="h-12 w-auto object-contain"
+            />
+            <span class="font-serif text-xl font-bold text-white">SHOPPING</span>
           </div>
           <p class="text-white/60 text-sm leading-relaxed mb-4">Selección exclusiva de productos importados premium para los gustos más exigentes.</p>
           <div class="flex gap-3">

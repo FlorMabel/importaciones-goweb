@@ -24,8 +24,12 @@ export async function renderHeader() {
   <header class="glass-header sticky top-0 z-50 w-full border-b border-gray-100 transition-all duration-300">
     <div class="mx-auto max-w-[1440px] px-4 lg:px-10 h-16 lg:h-20 flex items-center justify-between">
       <div class="flex items-center gap-2 cursor-pointer" onclick="navigate('home')">
-        <span class="material-symbols-outlined text-2xl text-primary">diamond</span>
-        <h2 class="text-text-main font-serif text-lg lg:text-xl font-bold tracking-tight">GO SHOPPING</h2>
+        <img 
+          src="https://res.cloudinary.com/dod8hhjoo/image/upload/v1774224726/goshopping/optimized/logo-768w.webp" 
+          alt="GO SHOPPING" 
+          class="h-10 lg:h-12 w-auto object-contain"
+        />
+        <span class="text-text-main font-serif text-xl font-bold tracking-tight">SHOPPING</span>
       </div>
 
       <nav class="hidden lg:flex items-center gap-8">
