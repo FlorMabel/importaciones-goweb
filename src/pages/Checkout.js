@@ -160,11 +160,11 @@ export function init() {
       const grandTotal = total + shipping;
 
       const msg = `🛍️ *NUEVO PEDIDO - GO SHOPPING*\n\n`
-        + `👤 *Cliente:* ${name}\n📱 *Teléfono:* ${phone}\n📍 *Ubicación:* ${city}, ${dept}\n🏠 *Dirección:* ${address}\n💳 *Pago:* ${payment.toUpperCase()}\n\n`
-        + `📦 *Productos:*\n${orderLines}\n\n`
-        + `🚚 Envío: ${shipping === 0 ? 'GRATIS' : `S/ ${shipping.toFixed(2)}`}\n`
-        + `💰 *TOTAL: S/ ${grandTotal.toFixed(2)}*\n\n`
-        + `_Adjunto mi voucher de pago_ ✅`;
+        + ` *Cliente:* ${name}\n📱 *Teléfono:* ${phone}\n *Ubicación:* ${city}, ${dept}\n🏠 *Dirección:* ${address}\n💳 *Pago:* ${payment.toUpperCase()}\n\n`
+        + ` *Productos:*\n${orderLines}\n\n`
+        + ` Envío: ${shipping === 0 ? 'GRATIS' : `S/ ${shipping.toFixed(2)}`}\n`
+        + ` *TOTAL: S/ ${grandTotal.toFixed(2)}*\n\n`
+        + `_Adjunto mi voucher de pago_ `;
 
       const whatsappUrl = `https://wa.me/51962810439?text=${encodeURIComponent(msg)}`;
       window.open(whatsappUrl, '_blank');

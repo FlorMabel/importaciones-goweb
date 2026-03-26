@@ -7,11 +7,18 @@ import { useStore } from '../context/StoreContext';
 import { useToast } from '../context/ToastContext';
 import ProductCard from '../components/ProductCard';
 
+const HERO_VIDEOS = [
+  "/videos/video_vista%20de%20anillos.mp4",
+  "/videos/video_esencias%20en%20muestra.mp4",
+  "/videos/video_casco%20de%20perro.mp4"
+];
+
 export default function HomePage() {
   const [categories, setCategories] = useState([]);
   const [deals, setDeals] = useState([]);
   const [newArrivals, setNewArrivals] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [currentVideo, setCurrentVideo] = useState(0);
   const navigate = useNavigate();
   const { showToast } = useToast();
 
@@ -51,31 +58,51 @@ export default function HomePage() {
       </Helmet>
 
       {/* Hero Section */}
-      <section className="relative w-full px-4 py-6 md:px-10 lg:px-20">
-        <div
-          className="relative w-full overflow-hidden rounded-[2rem] min-h-[420px] md:min-h-[500px] flex items-center justify-center bg-cover bg-center shadow-lg"
-          style={{ backgroundImage: `linear-gradient(rgba(75, 46, 111, 0.5) 0%, rgba(0, 0, 0, 0.6) 100%), url('${categories[0]?.heroImage || "/images/ring/ring_7_chakras.webp"}')` }}
-        >
-          <div className="relative z-10 text-center max-w-3xl px-6 flex flex-col gap-5 items-center">
+      <section className="relative w-full">
+        <div className="relative w-full overflow-hidden min-h-[420px] md:min-h-[500px] bg-black">
+
+          {/* VIDEO */}
+          <video
+          key={HERO_VIDEOS[currentVideo]}
+          src={HERO_VIDEOS[currentVideo]}
+          autoPlay
+          muted
+          playsInline
+          onEnded={() =>
+            setCurrentVideo((prev) => (prev + 1) % HERO_VIDEOS.length)
+          }
+          className="absolute inset-0 w-full h-full object-cover z-0"
+          />
+
+          {/* OVERLAY PRO */}
+          <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent z-10"></div>
+
+          {/* CONTENIDO */}
+          <div className="absolute z-20 left-6 md:left-20 top-1/2 -translate-y-1/2 max-w-xl">
+          <div className="flex flex-col items-start text-left">
             <span className="text-white font-bold uppercase tracking-[0.15em] text-xs bg-white/20 backdrop-blur-md px-5 py-2 rounded-full border border-white/30">
-              COLECCIÓN EXCLUSIVA 2025
+            COLECCIONES EXCLUSIVAS
             </span>
-            <h1 className="text-white font-serif text-4xl md:text-6xl font-medium leading-[1.1] tracking-tight">
+
+            <h1 className="text-white font-serif text-3xl md:text-5xl mt-4 leading-tight">
               Productos importados que elevan tu estilo de vida
             </h1>
-            <p className="text-white/90 text-lg font-light max-w-xl mx-auto mt-2">
+
+            <p className="text-white/80 text-lg font-light mt-3">
               Descubre nuestra selección exclusiva de artículos premium para los gustos más exigentes.
             </p>
+
             <button
-              onClick={() => navigate('/categoria/anillos')}
-              className="mt-4 bg-primary hover:bg-primary-dark text-white text-sm font-bold py-3.5 px-8 rounded-full transition-all duration-300 flex items-center gap-2"
+            onClick={() => navigate('/categoria/anillos')}
+            className="mt-6 bg-primary hover:bg-primary-dark text-white text-sm font-bold py-3 px-6 rounded-full transition-all duration-300 flex items-center gap-2 shadow-medium"
             >
               <span>Explorar Colección</span>
               <span className="material-symbols-outlined text-sm">arrow_forward</span>
             </button>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
       {/* Trust Badges */}
       <section className="py-10 px-6 md:px-10 lg:px-20">
@@ -97,30 +124,49 @@ export default function HomePage() {
       </section>
 
       {/* Categories */}
-      <section className="py-12 px-6 md:px-10 lg:px-20">
+      <section className="py-12 px-6 md:px-10 lg:px-20 bg-background-soft">
         <div className="max-w-7xl mx-auto">
-          <div className="flex flex-col md:flex-row justify-between items-end gap-4 border-b border-gray-200 pb-4 mb-8">
-            <div>
-              <h2 className="font-serif text-3xl font-bold text-accent mb-1">Categorías Destacadas</h2>
-              <p className="text-text-muted text-sm">Curaduría de excelencia en cada detalle.</p>
+          <div className="flex justify-between items-center mb-8">
+            <h2 className="font-serif text-3xl md:text-4xl font-bold text-accent">Categorías</h2>
+            <div className="flex gap-2">
+              <button 
+                onClick={() => { document.getElementById('categories-scroll').scrollBy({ left: -300, behavior: 'smooth' }); }}
+                className="size-10 rounded-full bg-white border border-primary text-primary flex items-center justify-center hover:bg-primary hover:text-white transition-colors shadow-sm"
+                aria-label="Anterior"
+              >
+                <span className="material-symbols-outlined">chevron_left</span>
+              </button>
+              <button 
+                onClick={() => { document.getElementById('categories-scroll').scrollBy({ left: 300, behavior: 'smooth' }); }}
+                className="size-10 rounded-full bg-white border border-primary text-primary flex items-center justify-center hover:bg-primary hover:text-white transition-colors shadow-sm"
+                aria-label="Siguiente"
+              >
+                <span className="material-symbols-outlined">chevron_right</span>
+              </button>
             </div>
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-            {featuredCategories.map((c, i) => (
+
+          <div 
+            id="categories-scroll"
+            className="flex overflow-x-auto gap-4 md:gap-8 pb-4 snap-x snap-mandatory [&::-webkit-scrollbar]:hidden"
+            style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+          >
+            {categories.map((c, i) => (
               <div
                 key={c.id}
                 onClick={() => navigate(`/categoria/${c.slug}`)}
-                className="group relative overflow-hidden rounded-2xl aspect-square cursor-pointer shadow-sm stagger-card"
-                style={{ animationDelay: `${i * 0.06}s` }}
+                className="group flex flex-col items-center gap-3 cursor-pointer shrink-0 snap-start w-24 sm:w-28 md:w-32 lg:w-36 stagger-card hover:-translate-y-1 transition-transform"
+                style={{ animationDelay: `${i * 0.05}s` }}
               >
-                <div className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" style={{ backgroundImage: `url('${c.image}')` }}></div>
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent"></div>
-                <div className="absolute bottom-0 left-0 p-5 w-full">
-                  <div className="flex items-center gap-2 mb-1">
-                    <span className="material-symbols-outlined text-white text-lg">{c.icon}</span>
-                  </div>
-                  <h3 className="text-white font-serif text-lg font-medium">{c.name}</h3>
+                <div className="relative size-24 sm:size-28 md:size-32 lg:size-36 rounded-full overflow-hidden border-2 border-transparent group-hover:border-primary transition-all duration-300 shadow-md bg-white p-1">
+                  <div 
+                    className="w-full h-full rounded-full bg-cover bg-center transition-transform duration-700 group-hover:scale-110" 
+                    style={{ backgroundImage: `url('${c.image_url || c.image}')` }}
+                  ></div>
                 </div>
+                <h3 className="text-center text-sm lg:text-base font-bold text-accent leading-tight group-hover:text-primary transition-colors">
+                  {c.name}
+                </h3>
               </div>
             ))}
           </div>

@@ -2,6 +2,7 @@ import React, { useState, useEffect, useCallback } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { getCategories, searchProducts } from '../services/api';
 import { useStore } from '../context/StoreContext';
+import { motion } from 'framer-motion';
 
 function debounce(fn, delay = 300) {
   let timer;
@@ -55,9 +56,27 @@ export default function Header() {
   };
 
   return (
-    <header className="glass-header sticky top-0 z-50 w-full border-b border-gray-100 transition-all duration-300">
-      <div className="mx-auto max-w-[1440px] px-4 lg:px-10 h-16 lg:h-20 flex items-center justify-between">
-        <Link to="/" className="flex items-center gap-2">
+    <>
+      {/* Top Bar with Ticker */}
+      <div className="bg-accent text-white overflow-hidden py-1.5">
+        <motion.div
+          animate={{ x: ["100%", "-100%"] }}
+          transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
+          className="whitespace-nowrap flex items-center gap-16 text-[10px] font-light tracking-[0.2em] uppercase opacity-90"
+        >
+          <span>Envíos gratis a todo el Perú en compras mayores a S/400</span>
+          <span className="text-white/40">•</span>
+          <span>Lima • Arequipa • Cusco • Chiclayo • Chimbote • Huanuco • Huancayo • Ica • Piura • Pucallpa • Puno • Tarapoto</span>
+          <span className="text-white/40">•</span>
+          <span>Pago 100% Seguro: Yape, Plin o Transferencia Bancaria</span>
+          <span className="text-white/40">•</span>
+          <span>Asesoría personalizada WhatsApp +51 962 810 439</span>
+        </motion.div>
+      </div>
+
+      <header className="glass-header sticky top-0 z-50 w-full border-b border-gray-100 transition-all duration-300">
+        <div className="mx-auto max-w-[1440px] px-4 lg:px-10 h-16 lg:h-20 flex items-center justify-between">
+          <Link to="/" className="flex items-center gap-2">
           <span className="material-symbols-outlined text-2xl text-primary">diamond</span>
           <h2 className="text-text-main font-serif text-lg lg:text-xl font-bold tracking-tight">GO SHOPPING</h2>
         </Link>
@@ -188,5 +207,6 @@ export default function Header() {
         </div>
       )}
     </header>
+    </>
   );
 }

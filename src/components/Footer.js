@@ -87,7 +87,7 @@ export function renderFooter() {
     <!-- Copyright -->
     <div class="border-t border-white/10 py-6">
       <div class="max-w-[1440px] mx-auto px-6 lg:px-10 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-white/40">
-        <p>© ${new Date().getFullYear()} GO SHOPPING. Todos los derechos reservados. RUC: 20610191244</p>
+        <p>© ${new Date().getFullYear()} GO SHOPPING. Todos los derechos reservados. RUC: 20601880904</p>
         <div class="flex gap-6">
           <a class="hover:text-white/70 cursor-pointer">Términos</a>
           <a class="hover:text-white/70 cursor-pointer">Privacidad</a>

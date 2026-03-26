@@ -10,7 +10,7 @@ export default function ProductGallery({ images = [], activeIndex, onSelect, bad
             <button
               key={i}
               onClick={() => onSelect(i)}
-              className={`w-16 h-16 rounded-lg overflow-hidden border-2 transition-all
+              className={`w-16 h-16 rounded-lg overflow-hidden border-2 transition-all bg-white
                 ${i === activeIndex
                   ? 'border-primary shadow-sm'
                   : 'border-border-color hover:border-primary/50'}`}
@@ -18,7 +18,7 @@ export default function ProductGallery({ images = [], activeIndex, onSelect, bad
               <img
                 src={img}
                 alt=""
-                className="w-full h-full object-cover"
+                className="w-full h-full object-contain p-1"
               />
             </button>
           ))}
@@ -45,7 +45,11 @@ export default function ProductGallery({ images = [], activeIndex, onSelect, bad
         <img
           src={activeImage}
           alt="Producto"
-          className="w-full h-full object-contain p-4 transition-opacity duration-200"
+          className={`w-full h-full transition-opacity duration-200 ${
+            activeIndex === 0 
+              ? 'object-cover' 
+              : 'object-contain p-4'
+          }`}
         />
       </div>
     </div>

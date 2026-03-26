@@ -33,10 +33,10 @@ async function uploadImage(filePath, folderPath) {
       overwrite: true,
     });
     
-    console.log(`✅ Uploaded: ${result.secure_url}`);
+    console.log(` Uploaded: ${result.secure_url}`);
     return result.secure_url;
   } catch (error) {
-    console.error(`❌ Error uploading ${filePath}:`, error.message);
+    console.error(` Error uploading ${filePath}:`, error.message);
     return null;
   }
 }
@@ -58,21 +58,21 @@ async function processDirectory(dirPath) {
 }
 
 async function run() {
-  console.log('🚀 Starting image migration to Cloudinary...');
+  console.log(' Starting image migration to Cloudinary...');
   
   if (!process.env.CLOUDINARY_CLOUD_NAME || !process.env.CLOUDINARY_API_KEY || !process.env.CLOUDINARY_API_SECRET) {
-    console.error('❌ Missing Cloudinary credentials in .env file.');
+    console.error(' Missing Cloudinary credentials in .env file.');
     process.exit(1);
   }
   
   if (!fs.existsSync(IMAGES_DIR)) {
-    console.error(`❌ Images directory not found: ${IMAGES_DIR}`);
+    console.error(` Images directory not found: ${IMAGES_DIR}`);
     process.exit(1);
   }
   
   await processDirectory(IMAGES_DIR);
   
-  console.log('🎉 Image migration complete!');
+  console.log(' Image migration complete!');
 }
 
 run().catch(console.error);

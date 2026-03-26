@@ -11,7 +11,7 @@ const supabaseUrl = process.env.VITE_SUPABASE_URL;
 const supabaseKey = process.env.SUPABASE_SERVICE_ROLE_KEY || process.env.VITE_SUPABASE_ANON_KEY;
 
 if (!supabaseUrl || !supabaseKey) {
-  console.error('❌ Missing Supabase credentials in .env file.');
+  console.error(' Missing Supabase credentials in .env file.');
   process.exit(1);
 }
 
@@ -94,7 +94,10 @@ async function syncProducts() {
         name: f.name || f,
         description: f.description || ''
       }));
-      await supabase.from('product_fragrances').insert(fragToInsert);
+      const { error: fError } = await supabase.from('product_fragrances').insert(fragToInsert);
+      if (fError) {
+        console.error(`Error inserting fragrances for ${p.id}:`, fError);
+      }
     }
     
     // 6. Insert Tags
