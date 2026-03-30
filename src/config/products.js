@@ -5171,12 +5171,11 @@ export const productsConfig = [
     "rating": 4.7,
     "reviews": 89,
     "colors": [
-      "",
-      "#430d06",
-      "#aa7444",
+      "#430D06",
+      "#AA7444",
       "#FFFFFF",
-      "#341100",
-      "#fbb2a3"
+      "#2B0F01FF",
+      "#FBB2A3"
     ],
     "stock": 15,
     "tags": [],
@@ -5197,7 +5196,7 @@ export const productsConfig = [
     "badgeColor": null,
     "images": [
       "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774323353/difusor_redondo_con_dise%C3%B1os_mfb6jo.png",
-      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774323353/difusor_redondo_con_dise%C3%B1os_mfb6jo.png",
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774323264/difusor_redondo_dise%C3%B1o_rojo_d6qvgf.jpg",
       "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774323261/difusor_redondo_dise%C3%B1o_azul_mj76uk.jpg"
     ],
     "description": "Equilibrio natural en tu espacio. El acabado en bambú auténtico se une a la aromaterapia de lujo para brindarte un ambiente zen y sofisticado en cualquier rincón.",
@@ -5214,8 +5213,8 @@ export const productsConfig = [
     "rating": 4.4,
     "reviews": 156,
     "colors": [
-      "#ec1e1b ",
-      "#003785 "
+      "#EC1E1B",
+      "#003785"
     ],
     "stock": 30,
     "tags": [],
@@ -5253,8 +5252,8 @@ export const productsConfig = [
     "rating": 4.9,
     "reviews": 56,
     "colors": [
-      "#aa7444 ",
-      "#430d06 "
+      "#AA7444",
+      "#430D06"
     ],
     "stock": 18,
     "tags": [],
@@ -5286,7 +5285,7 @@ export const productsConfig = [
     "rating": 4.6,
     "reviews": 22,
     "colors": [
-      "#aa7444 "
+      "#AA7444"
     ],
     "stock": 25,
     "tags": [],
@@ -5324,8 +5323,8 @@ export const productsConfig = [
     "rating": 5,
     "reviews": 12,
     "colors": [
-      "#430d06 ",
-      "#aa7444 "
+      "#430D06",
+      "#AA7444"
     ],
     "stock": 10,
     "tags": [],
@@ -5361,7 +5360,7 @@ export const productsConfig = [
     "rating": 4.8,
     "reviews": 34,
     "colors": [
-      "#FFFFFF "
+      "#FFFFFF"
     ],
     "stock": 15,
     "tags": [],
@@ -5399,8 +5398,8 @@ export const productsConfig = [
     "rating": 4.7,
     "reviews": 41,
     "colors": [
-      "#430d06 ",
-      "#aa7444 "
+      "#430D06",
+      "#AA7444"
     ],
     "stock": 20,
     "tags": [],
@@ -5436,7 +5435,7 @@ export const productsConfig = [
     "rating": 4.9,
     "reviews": 67,
     "colors": [
-      "#FFFFFF "
+      "#FFFFFF"
     ],
     "stock": 30,
     "tags": [],
@@ -5474,8 +5473,8 @@ export const productsConfig = [
     "rating": 4.5,
     "reviews": 112,
     "colors": [
-      "#FFFFFF ",
-      "#000000 "
+      "#000000",
+      "#FFFFFF"
     ],
     "stock": 50,
     "tags": [],
@@ -5514,9 +5513,9 @@ export const productsConfig = [
     "rating": 4.9,
     "reviews": 88,
     "colors": [
-      "#FFFFFF ",
-      "#FF69B4 ",
-      "#90EE90 "
+      "#FFFFFF",
+      "#FBB2A3",
+      "#90EE90"
     ],
     "stock": 18,
     "tags": [],
@@ -5554,8 +5553,8 @@ export const productsConfig = [
     "rating": 4.7,
     "reviews": 29,
     "colors": [
-      "#FFFFFF ",
-      "#000000 "
+      "#FFFFFF",
+      "#000000"
     ],
     "stock": 12,
     "tags": [],
@@ -5594,9 +5593,9 @@ export const productsConfig = [
     "rating": 4.6,
     "reviews": 24,
     "colors": [
-      "#FFFFFF ",
-      "#8B4513 ",
-      "#D2B48C "
+      "#F0EBD7",
+      "#AA7444",
+      "#2B0F01"
     ],
     "stock": 25,
     "tags": [],
@@ -5634,8 +5633,8 @@ export const productsConfig = [
     "rating": 4.8,
     "reviews": 52,
     "colors": [
-          "#8B4513 ",
-          "#D2B48C "
+          "#430D06",
+          "#AA7444"
         ],
     "stock": 35,
     "tags": [],
@@ -5669,8 +5668,8 @@ export const productsConfig = [
     "rating": 4.9,
     "reviews": 16,
     "colors": [
-      "#8B4513 ",
-      "#D2B48C "
+      "#430D06",
+      "#AA7444"
     ],
     "stock": 10,
     "tags": [],
@@ -5709,9 +5708,9 @@ export const productsConfig = [
     "rating": 4.8,
     "reviews": 21,
     "colors": [
-      "#FF00FF ",
-      "#cf4523ff ",
-      "#40E0D0 "
+      "#FF00FF",
+      "#CF4523FF",
+      "#40E0D0"
     ],
     "stock": 15,
     "tags": [],
@@ -5731,6 +5730,7 @@ export const productsConfig = [
     "badge": "LAMPARA",
     "badgeColor": "RGB",
     "images": [
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774323239/difusor_lampara_circular_rgb_jxehxs.webp",
       "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774323273/difusor_redondo_basMade_trck9r.webp",
       "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774323239/difusor_lampara_circular_rgb_jxehxs.webp"
     ],
@@ -5744,8 +5744,8 @@ export const productsConfig = [
     "rating": 4.9,
     "reviews": 14,
     "colors": [
-      "#a7630ace ",
-      "#FFFFFF "
+      "#AA7444",
+      "#FFFFFF"
     ],
     "stock": 8,
     "tags": [],
@@ -5765,6 +5765,7 @@ export const productsConfig = [
     "badge": "PRESTIGIO",
     "badgeColor": null,
     "images": [
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774323266/difusor_y_lluvia_rgb_ybeism.webp",
       "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774323266/difusor_y_lluvia_rgb_ybeism.webp"
     ],
     "description": "Diseño real para tu descanso. Una silueta elegante y equilibrada que aporta una nota de distinción clásica a tu ritual de bienestar diario.",
@@ -5781,7 +5782,7 @@ export const productsConfig = [
     "rating": 4.7,
     "reviews": 19,
     "colors": [
-      "#FFFFFF "
+      "#FFFFFF"
     ],
     "stock": 20,
     "tags": [],
@@ -5813,9 +5814,9 @@ export const productsConfig = [
     "rating": 4.6,
     "reviews": 31,
     "colors": [
-      "#FFFFFF ",
-      "#ff8becff ",
-      "#40E0D0 "
+      "#FFFFFF",
+      "#FBB2A3",
+      "#40E0D0"
     ],
     "stock": 22,
     "tags": [],
@@ -5854,9 +5855,9 @@ export const productsConfig = [
     "rating": 4.5,
     "reviews": 45,
     "colors": [
-      "#8B4513 ",
-      "#D2B48C ",
-      "#ffffff "
+      "#AA7444",
+      "#430d06",
+      "#F0EBD7"
     ],
     "stock": 25,
     "tags": [],
@@ -5888,7 +5889,8 @@ export const productsConfig = [
     "rating": 4.6,
     "reviews": 27,
     "colors": [
-      "#000000 "
+      "#000000",
+      "#FFFFFF"
     ],
     "stock": 30,
     "tags": [],
@@ -5908,6 +5910,7 @@ export const productsConfig = [
     "badge": "TOP",
     "badgeColor": null,
     "images": [
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774323210/difusor_cesta_mt_n0xg1k.webp",
       "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774323210/difusor_cesta_mt_n0xg1k.webp"
     ],
     "description": "Solidez y sofisticación. Esta versión premium de nuestro diseño tejido ofrece acabados unicos para tu fragancia favorita.",
@@ -5924,7 +5927,7 @@ export const productsConfig = [
     "rating": 4.8,
     "reviews": 39,
     "colors": [
-      "#a35103ff "
+      "#AA7444"
     ],
     "stock": 15,
     "tags": [],
@@ -5937,18 +5940,36 @@ export const productsConfig = [
   //           ACCESORIOS MASCOTAS
   //********************************************************************//
   {
-    "id": "casco-tactical",
-    "name": "Casco Tactical Pet Pro",
-    "slug": "casco-tactical",
+    "id": "casco-modelo",
+    "name": "Casco Motero",
+    "slug": "casco-modelo",
     "category": "mascotas",
-    "price": 69.9,
-    "oldPrice": 89.9,
     "currency": "PEN",
     "badge": "SEGURIDAD",
     "badgeColor": null,
     "images": [
-      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1/goshopping/mascotas/casco dog.webp"
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774755657/casco_modelo_nwamxa.webp",
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774755656/casco_dog_S_mf3ble.webp",
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774755655/casco_dog_M_lradyu.webp",
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774755655/casco_dog_L_zt1pi2.webp"
     ],
+    "variants": [
+    {
+      "name": "Talla S",
+      "price": 49.9,
+      "oldPrice": 59.9
+    },
+    {
+      "name": "Talla M",
+      "price": 59.9,
+      "oldPrice":null
+    },
+    {
+      "name": "Talla L",
+      "price": 69.9,
+      "oldPrice": null
+    }
+  ],
     "description": "Seguridad máxima para tus aventuras extremas. Este casco táctico para mascotas está fabricado en polímero de alta resistencia, ideal para paseos en moto o actividades al aire libre que requieran protección adicional.",
     "specs": [
       {
@@ -5957,14 +5978,16 @@ export const productsConfig = [
       },
       {
         "label": "Tallas",
-        "value": "Ajustable S/M"
+        "value": "S / M / L"
       }
     ],
     "rating": 4.9,
     "reviews": 124,
     "colors": [
       "#000000",
-      "#FFFFFF"
+      "#000000",
+      "#000000"
+
     ],
     "stock": 15,
     "tags": [],
@@ -5974,33 +5997,40 @@ export const productsConfig = [
     "salePercent": 22
   },
   {
-    "id": "gafas-aviador-pet",
-    "name": "Gafas Aviador Stealth Pet",
-    "slug": "gafas-aviador-pet",
+    "id": "lente-modelo-aviador",
+    "name": "Lente Modelo Aviador",
+    "slug": "lente-modelo-aviador",
     "category": "mascotas",
-    "price": 45.9,
+    "price": 15.9,
     "oldPrice": null,
     "currency": "PEN",
     "badge": "ESTILO",
     "badgeColor": null,
     "images": [
-      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1/goshopping/mascotas/gafa_animal_aviador.webp"
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774755691/gafa_animal_aviador_sqwgfp.webp",
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774762465/gaja_aviador_verde_zsohhb.webp",
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774762460/gafa_aviador_rosa_cbfkly.webp",
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774762459/gafa_aviador_trasparente_yvjsmv.webp",
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774762459/gafa_aviador_azul_x01hnp.webp"
     ],
     "description": "El look clásico para el piloto más fiel. Gafas tipo aviador con protección UV400 y correa elástica ajustable para asegurar comodidad y firmeza durante la acción.",
     "specs": [
       {
         "label": "Protección",
-        "value": "UV400"
+        "value": "Vidrio"
       },
       {
-        "label": "Correa",
-        "value": "Elástica"
+        "label": "Montura",
+        "value": "Metal"
       }
     ],
     "rating": 4.8,
     "reviews": 156,
     "colors": [
-      "#000000"
+      "#90EE90",
+      "#fbb2a3",
+      "#f0f0f0",
+      "#003785"
     ],
     "stock": 30,
     "tags": [],
@@ -6010,17 +6040,25 @@ export const productsConfig = [
     "salePercent": null
   },
   {
-    "id": "gafas-retro-pet",
-    "name": "Gafas Retro Round Pet",
-    "slug": "gafas-retro-pet",
+    "id": "lente-dog-redondo-modelo",
+    "name": "Lente Dog Redondo",
+    "slug": "lente-dog-redondo-modelo",
     "category": "mascotas",
-    "price": 39.9,
+    "price": 15.9,
     "oldPrice": null,
     "currency": "PEN",
     "badge": "VINTAGE",
     "badgeColor": null,
     "images": [
-      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1/goshopping/mascotas/gafa_animal_redonda.webp"
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774755693/gafa_animal_redondo_va_ksnhzw.webp",
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774755690/gafa_redondo_ahumado_lsj9n7.webp",
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774755689/gafa_redonda_rosa_x9z5w2.webp",
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774755688/gafa_redonda_rojo_gpfwjr.webp",
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774755687/gafa_redonda_negro_gif13a.webp",
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774755686/gafa_redonda_lila_mftfpx.webp",
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774755684/gafa_redonda_cafe_dee5x6.webp",
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774755684/gafa_redonda_azul_tm6x3t.webp",
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774755682/gafa_redonda_amarilla_t3nzsy.webp"      
     ],
     "description": "Elegancia vintage para sesiones de fotos inolvidables. Estas gafas redondas aportan un toque intelectual y chic a tu mascota, perfectas para redes sociales.",
     "specs": [
@@ -6032,8 +6070,14 @@ export const productsConfig = [
     "rating": 4.7,
     "reviews": 89,
     "colors": [
-      "#FFD700",
-      "#000000"
+      "#69503C",
+      "#FBB2A3",
+      "#EC1E1B",
+      "#4D4D4D",
+      "#916CEA",
+      "#2B0F01",
+      "#003785",
+      "#FFFFA2"   
     ],
     "stock": 25,
     "tags": [],
@@ -6043,9 +6087,9 @@ export const productsConfig = [
     "salePercent": null
   },
   {
-    "id": "gafas-urban-pet",
-    "name": "Gafas Urban Style Pet",
-    "slug": "gafas-urban-pet",
+    "id": "lente-cat-corazon",
+    "name": "Lente Cat Corazón Minimalista",
+    "slug": "lente-cat-corazon",
     "category": "mascotas",
     "price": 42.9,
     "oldPrice": null,
@@ -6053,7 +6097,14 @@ export const productsConfig = [
     "badge": "TRENDY",
     "badgeColor": null,
     "images": [
-      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1/goshopping/mascotas/gafa_animal_redondo_va.webp"
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774755694/gafa_cat_corazon_paxhwx.webp",
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774762464/gafa_oval_trasparente_lb0g5e.webp",
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774762462/gafa_corazon_rojo_isgfmm.webp",
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774755701/lente_corazon_verdeamarela_roazhf.webp",
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774755700/lente_corazon_verde_oeujp1.webp",
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774755699/lente_corazon_rosa_iapulx.webp",
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774755697/lente_corazon_lila_gzjbsg.webp",
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774755695/lente_corazon_amarillo_pt2zwp.webp"
     ],
     "description": "Diseño moderno para la ciudad. Gafas con montura reforzada que combinan perfectamente con cualquier arnés o collar, ideales para el día a día urbano.",
     "specs": [
@@ -6065,7 +6116,14 @@ export const productsConfig = [
     "rating": 4.6,
     "reviews": 67,
     "colors": [
-      "#000000"
+      "#F0F0F0",
+      "#C99036",
+      "#EC1E1B",
+      "#03BB85",
+      "#90EE90",
+      "#FBB2A3",
+      "#916CEA",
+      "#FFFFA2"
     ],
     "stock": 20,
     "tags": [],
