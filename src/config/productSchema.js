@@ -45,7 +45,16 @@ export const COLOR_NAMES = {
   '#2B0F01': 'CAFE',
   '#FFFFA2': 'AMARILLO',
   '#C99036': 'MARRON',
-  '#03BB85': 'VERDEAMARELA'
+  '#03BB85': 'VERDEAMARELA',
+  '#00FFF6': 'ARCO IRIS',
+  '#E7C500': 'TORNASOL',
+  '#D0CCD1': 'PLATEADO',
+  '#588100': 'VERDE MARINO',
+  '#FF9800': 'NARANJA',
+  '#DDDAAB': 'BEIGE',
+  '#73063B': 'FUCSIA OSCURO',
+  '#955F34': 'MARRON OSCURO'
+
 }
 
 export const getColorName = (hex) => {

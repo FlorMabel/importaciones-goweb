@@ -4817,16 +4817,16 @@ export const productsConfig = [
  //********************************************************************//
   {
     "id": "hidrogel-scar",
-    "name": "Pistola SCAR Battle Edition",
+    "name": "Pistola SCAR ",
     "slug": "hidrogel-scar",
     "category": "hidrogel",
-    "price": 99.9,
+    "price": 169.9,
     "oldPrice": null,
     "currency": "PEN",
     "badge": "MÁS VENDIDO",
     "badgeColor": null,
     "images": [
-      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1/goshopping/hidrogel/hidrogel_battle_robot.webp"
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774224668/goshopping/hidrogel/hidrogel_scar.webp"
     ],
     "description": "Domina el campo de batalla con la SCAR de hidrogel. Diseño ergonómico, disparo automático de alta velocidad y una precisión que te hará imparable en cada partida.",
     "specs": [
@@ -4840,14 +4840,13 @@ export const productsConfig = [
       },
       {
         "label": "Alcance",
-        "value": "15-20 metros"
+        "value": "18-20 metros"
       }
     ],
     "rating": 4.8,
     "reviews": 312,
     "colors": [
-      "#000000",
-      "#D4A574"
+      "-----"
     ],
     "stock": 25,
     "tags": [],
@@ -4861,13 +4860,13 @@ export const productsConfig = [
     "name": "Rifle M416 Pro Series",
     "slug": "hidrogel-m416",
     "category": "hidrogel",
-    "price": 149.9,
+    "price": 89.9,
     "oldPrice": null,
     "currency": "PEN",
     "badge": "NUEVO",
     "badgeColor": null,
     "images": [
-      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1/goshopping/hidrogel/hidrogel_mp5k.webp"
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774224667/goshopping/hidrogel/hidrogel_pistola_m416_rifle.webp"
     ],
     "description": "La joya de la corona en rifles de hidrogel. El M416 Pro ofrece una experiencia táctica realista con mira ajustable y culata expandible para máxima comodidad.",
     "specs": [
@@ -4887,8 +4886,7 @@ export const productsConfig = [
     "rating": 4.9,
     "reviews": 89,
     "colors": [
-      "#000000",
-      "#808080"
+      "----"
     ],
     "stock": 15,
     "tags": [],
@@ -4908,7 +4906,7 @@ export const productsConfig = [
     "badge": "-19%",
     "badgeColor": null,
     "images": [
-      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1/goshopping/hidrogel/hidrogel_mp5Ka.webp"
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774224670/goshopping/hidrogel/hidrogel_vector.webp"
     ],
     "description": "Velocidad de ráfaga inigualable. El diseño compacto del Vector lo hace ideal para enfrentamientos cercanos, proporcionando una agilidad táctica superior.",
     "specs": [
@@ -4924,7 +4922,7 @@ export const productsConfig = [
     "rating": 4.7,
     "reviews": 156,
     "colors": [
-      "#000000"
+      "--------"
     ],
     "stock": 20,
     "tags": [],
@@ -4938,13 +4936,13 @@ export const productsConfig = [
     "name": "Subfusil MP7A Elite",
     "slug": "hidrogel-mp7a",
     "category": "hidrogel",
-    "price": 119.9,
+    "price": 79.9,
     "oldPrice": null,
     "currency": "PEN",
     "badge": "TACTICAL",
     "badgeColor": null,
     "images": [
-      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1/goshopping/hidrogel/hidrogel_mp7.webp"
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774224666/goshopping/hidrogel/hidrogel_mp7A.webp"
     ],
     "description": "Precisión alemana en tus manos. El MP7A combina el tamaño de una pistola con la potencia de un subfusil, perfecto para operaciones de asalto rápidas.",
     "specs": [
@@ -4960,7 +4958,7 @@ export const productsConfig = [
     "rating": 4.9,
     "reviews": 42,
     "colors": [
-      "#000000"
+      "-------"
     ],
     "stock": 12,
     "tags": [],
@@ -4974,13 +4972,13 @@ export const productsConfig = [
     "name": "Subfusil MP7 Compact",
     "slug": "hidrogel-mp7",
     "category": "hidrogel",
-    "price": 89.9,
+    "price": 79.9,
     "oldPrice": null,
     "currency": "PEN",
     "badge": "ESENCIAL",
     "badgeColor": null,
     "images": [
-      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1/goshopping/hidrogel/hidrogel_mp7A.webp"
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774224665/goshopping/hidrogel/hidrogel_mp7.webp"
     ],
     "description": "Ligereza y potencia. La versión compacta del MP7 es la entrada perfecta al mundo del hidrogel, ofreciendo fiabilidad y facilidad de uso inmejorables.",
     "specs": [
@@ -4992,7 +4990,7 @@ export const productsConfig = [
     "rating": 4.6,
     "reviews": 67,
     "colors": [
-      "#000000"
+      "--------"
     ],
     "stock": 30,
     "tags": [],
@@ -5006,25 +5004,25 @@ export const productsConfig = [
     "name": "Subfusil MP5K Stealth",
     "slug": "hidrogel-mp5k",
     "category": "hidrogel",
-    "price": 105.9,
+    "price": 135.9,
     "oldPrice": null,
     "currency": "PEN",
     "badge": "POPULAR",
     "badgeColor": null,
     "images": [
-      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1/goshopping/hidrogel/hidrogel_pistola_m416_rifle.webp"
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774224663/goshopping/hidrogel/hidrogel_mp5k.webp"
     ],
     "description": "Un clásico táctico. El MP5K Stealth es preferido por veteranos por su equilibrio perfecto entre ráfaga y control, envuelto en un acabado negro mate profesional.",
     "specs": [
       {
-        "label": "Motor",
-        "value": "High-Torque"
+        "label": "Bateria",
+        "value": "5.7v"
       }
     ],
     "rating": 4.8,
     "reviews": 124,
     "colors": [
-      "#000000"
+      "----"
     ],
     "stock": 18,
     "tags": [],
@@ -5044,19 +5042,19 @@ export const productsConfig = [
     "badge": "AGIL",
     "badgeColor": null,
     "images": [
-      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1/goshopping/hidrogel/hidrogel_scar.webp"
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774224664/goshopping/hidrogel/hidrogel_mp5Ka.webp"
     ],
     "description": "Personalización al extremo. El MP5Ka ofrece rieles tácticos para añadir tus propios accesorios, adaptándose a cualquier estilo de juego en el campo.",
     "specs": [
       {
-        "label": "Accesorios",
-        "value": "Rieles Picatinny"
+        "label": "Funcion",
+        "value": "Raga - Tiro por uno"
       }
     ],
     "rating": 4.5,
     "reviews": 54,
     "colors": [
-      "#000000"
+      "--------"
     ],
     "stock": 22,
     "tags": [],
@@ -5070,13 +5068,13 @@ export const productsConfig = [
     "name": "Robot de Batalla Hidrogel",
     "slug": "hidrogel-battle-robot",
     "category": "hidrogel",
-    "price": 179.9,
+    "price": 149.9,
     "oldPrice": 199.9,
     "currency": "PEN",
     "badge": "EXCLUSIVO",
     "badgeColor": null,
     "images": [
-      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1/goshopping/hidrogel/hidrogel_vector.webp"
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774224662/goshopping/hidrogel/hidrogel_battle_robot.webp"
     ],
     "description": "El futuro de la diversión. Este tanque robótico lanza ráfagas de hidrogel mientras realiza maniobras de 360°, controlado remotamente para un dominio absoluto del área.",
     "specs": [
@@ -5085,15 +5083,14 @@ export const productsConfig = [
         "value": "360° Omnidireccional"
       },
       {
-        "label": "Control",
-        "value": "Remoto 2.4GHz"
+        "label": "Potencia",
+        "value": "Alcance 20 metros"
       }
     ],
     "rating": 5,
     "reviews": 28,
     "colors": [
-      "#00BCD4",
-      "#000000"
+      ""
     ],
     "stock": 8,
     "tags": [],
@@ -5113,7 +5110,7 @@ export const productsConfig = [
     "badge": "VERANO",
     "badgeColor": null,
     "images": [
-      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1/goshopping/hidrogel/pistola_water gun.webp"
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774224671/goshopping/hidrogel/pistola_water_gun.webp"
     ],
     "description": "Diversión refrescante. Potente chorro de agua con diseño deportivo y carga rápida, ideal para las batallas mas intensas bajo el sol de verano.",
     "specs": [
@@ -5125,8 +5122,7 @@ export const productsConfig = [
     "rating": 4.4,
     "reviews": 142,
     "colors": [
-      "#00BCD4",
-      "#FFFFFF"
+      "-----"
     ],
     "stock": 50,
     "tags": [],
@@ -6091,7 +6087,7 @@ export const productsConfig = [
     "name": "Lente Cat Corazón Minimalista",
     "slug": "lente-cat-corazon",
     "category": "mascotas",
-    "price": 42.9,
+    "price": 15.9,
     "oldPrice": null,
     "currency": "PEN",
     "badge": "TRENDY",
@@ -6099,6 +6095,7 @@ export const productsConfig = [
     "images": [
       "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774755694/gafa_cat_corazon_paxhwx.webp",
       "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774762464/gafa_oval_trasparente_lb0g5e.webp",
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774762463/gafa_oval_minimalista_jnmf9g.webp",
       "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774762462/gafa_corazon_rojo_isgfmm.webp",
       "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774755701/lente_corazon_verdeamarela_roazhf.webp",
       "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774755700/lente_corazon_verde_oeujp1.webp",
@@ -6133,17 +6130,23 @@ export const productsConfig = [
     "salePercent": null
   },
   {
-    "id": "gafas-corazon-pet",
-    "name": "Gafas Corazón Love Pet",
-    "slug": "gafas-corazon-pet",
+    "id": "lente-cat-redonda-modelo",
+    "name": "Lente Cat Espejo",
+    "slug": "lente-cat-redonda-modelo",
     "category": "mascotas",
-    "price": 35.9,
+    "price": 15.9,
     "oldPrice": null,
     "currency": "PEN",
     "badge": "LOVELY",
     "badgeColor": null,
     "images": [
-      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1/goshopping/mascotas/gafa_cat_corazon.webp"
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774755692/gafa_animal_redonda_uzippo.webp",
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774755678/gafa_espejo_verde_gqq6yk.webp",
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774755677/gafa_espejo_tornasol_s6pphy.webp",
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774755676/gafa_espejo_plateado_ng0ixp.webp",
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774755675/gafa_espejo_marino_rgaosd.webp",
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774755674/gafa_espejo_azul_xwjhah.webp",
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774755673/gafa_espejo_arco_ires_uh9glo.webp"
     ],
     "description": "Derrite corazones con este accesorio súper dulce. Gafas en forma de corazón para las mascotas más cariñosas de la casa, ligeras y muy cómodas.",
     "specs": [
@@ -6155,8 +6158,12 @@ export const productsConfig = [
     "rating": 4.9,
     "reviews": 212,
     "colors": [
-      "#FFB6C1",
-      "#FF0000"
+      " #90EE90",
+      "#E7C500",
+      "#D0CCD1",
+      "#588100",
+      "#003785",
+      "#00FFF6"
     ],
     "stock": 35,
     "tags": [],
@@ -6166,17 +6173,22 @@ export const productsConfig = [
     "salePercent": null
   },
   {
-    "id": "gafas-espejo-pet",
-    "name": "Gafas Espejo Mirror Pet",
-    "slug": "gafas-espejo-pet",
+    "id": "lente-rectangulo-mascotas",
+    "name": "Lente Rectangulo",
+    "slug": "lente-rectangulo-mascotas",
     "category": "mascotas",
-    "price": 49.9,
+    "price": 15.9,
     "oldPrice": null,
     "currency": "PEN",
     "badge": "COOL",
     "badgeColor": null,
     "images": [
-      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1/goshopping/mascotas/gafa_espejo_animal_redondo.webp"
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774755703/lente_rectangulo_mascotas_uh8u7k.webp",
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774755672/gafa_cuadrada_verde_khxela.webp",
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774755671/gafa_cuadrada_trasparente_t7a2af.webp",
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774755670/gafa_cuadrada_rosa_vw6mug.webp",
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774755669/gafa_cuadrada_naraja_vh6vfx.webp",
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774755668/gafa_cuadrada_celeste_k6bo24.webp"
     ],
     "description": "Reflejos de pura onda. Lentes con acabado de espejo multicolor que protegen del sol intenso y ofrecen un look futurista y audaz para tu mascota.",
     "specs": [
@@ -6188,7 +6200,11 @@ export const productsConfig = [
     "rating": 4.8,
     "reviews": 45,
     "colors": [
-      "#00BCD4"
+      "#90EE90",
+      "#000000",
+      "#FBB2A3",
+      "#FF9800",
+      "#94E7FF"
     ],
     "stock": 15,
     "tags": [],
@@ -6198,17 +6214,20 @@ export const productsConfig = [
     "salePercent": null
   },
   {
-    "id": "gafas-moto-pet",
-    "name": "Gafas Moto Biker Pet",
-    "slug": "gafas-moto-pet",
+    "id": "lente-moto-dog-modelo",
+    "name": "Lente Moto Dog Flex",
+    "slug": "lente-moto-dog-modelo",
     "category": "mascotas",
-    "price": 55.9,
+    "price": 18.9,
     "oldPrice": 69.9,
     "currency": "PEN",
     "badge": "TOP",
     "badgeColor": null,
     "images": [
-      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1/goshopping/mascotas/gafa_moto_animal.webp"
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774755703/lente_moto_dog_xcmf0c.webp",
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774755666/dog_rosado_simple_xfnw4i.webp",
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774755665/dog_negro_simple_xl3cwl.webp",
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774755657/dog_blanco_simple_e7cir2.webp"
     ],
     "description": "Resistencia total al viento y al polvo. El accesorio indispensable para mascotas que viajan en moto, con acolchado interno para evitar irritaciones.",
     "specs": [
@@ -6218,9 +6237,12 @@ export const productsConfig = [
       }
     ],
     "rating": 5,
-    "reviews": 78,
+    "reviews": 78, 
     "colors": [
-      "#000000"
+      "#FBB2A3",
+      "#000000",
+      "#FFFFFF"
+
     ],
     "stock": 12,
     "tags": [],
@@ -6230,17 +6252,24 @@ export const productsConfig = [
     "salePercent": 20
   },
   {
-    "id": "sombrero-cowboy-pet",
+    "id": "sombrero-cat",
     "name": "Sombrero Western Cowboy Pet",
-    "slug": "sombrero-cowboy-pet",
+    "slug": "sombrero-cat",
     "category": "mascotas",
-    "price": 32.9,
+    "price": 18.9,
     "oldPrice": null,
     "currency": "PEN",
     "badge": "DIVERTIDO",
     "badgeColor": null,
     "images": [
-      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1/goshopping/mascotas/lente_moto_dog.webp"
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774755713/sombrero_cat_dcqrad.webp",
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774755709/sombrero_dog_rosa_m2lxgx.webp",
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774755707/sombrero_dog_negro_htuga2.webp",
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774755708/sombrero_dog_rojo_treha6.webp",
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774755705/sombrero_dog_beige_wk8nhv.webp",
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774755705/sombrero_dog_guinda_xbj2do.webp",
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774755711/sombrero_medidas_S_gvrucv.webp",
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774755706/sombrero_dog_marron_tvy4sg.webp"
     ],
     "description": "¡Llegó el sheriff a la ciudad! Sombrero estilo western con cordón ajustable bajo la barbilla, ideal para disfraces o simplemente para lucir diferente.",
     "specs": [
@@ -6251,12 +6280,22 @@ export const productsConfig = [
       {
         "label": "Ajuste",
         "value": "Cordón con Freno"
+      },
+      {
+        "label": "TALLA",
+        "value": "TODAS SON TALLAS 'S'"
       }
     ],
     "rating": 4.5,
     "reviews": 94,
     "colors": [
-      "#8B4513"
+      "#FBB2A3",
+      "#000000",
+      "#EC1E1B",
+      "#DDDAAB",
+      "#73063B",
+      "#2B0F01",
+      "#955F34"
     ],
     "stock": 40,
     "tags": [],
@@ -6266,29 +6305,44 @@ export const productsConfig = [
     "salePercent": null
   },
   {
-    "id": "sombrero-elegante-pet",
-    "name": "Sombrero Bombín Elegance Pet",
-    "slug": "sombrero-elegante-pet",
+    "id": "sombrero-dog",
+    "name": "Sombrero Elegance Pet",
+    "slug": "sombrero-dog",
     "category": "mascotas",
-    "price": 29.9,
+    "price": 19.9,
     "oldPrice": null,
     "currency": "PEN",
     "badge": "GENTLEMAN",
     "badgeColor": null,
     "images": [
-      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1/goshopping/mascotas/lente_rectangulo mascotas.webp"
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774755714/sombrero_dog_zmj1gt.webp",
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774755714/sombrerp_dog_cafe_itgtfj.webp",
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774755707/sombrero_dog_negro_htuga2.webp",
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774755706/sombrero_dog_marron_tvy4sg.webp",
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774755710/sombrero_medidas_M_bk7ebf.webp"
     ],
     "description": "Para las ocasiones más especiales. Un bombín miniatura que aporta clase y distinción, fabricado en fieltro suave para que tu mascota se sienta cómoda.",
     "specs": [
       {
-        "label": "Material",
-        "value": "Fieltro"
+        "label": "Estilo",
+        "value": "Cowboy"
+      },
+      {
+        "label": "Ajuste",
+        "value": "Cordón con Freno"
+      },
+      {
+        "label": "TALLA",
+        "value": "TODAS SON TALLAS 'M"
       }
     ],
     "rating": 4.8,
     "reviews": 36,
     "colors": [
-      "#000000"
+      "#2B0F01",
+      "#000000",
+      "#955F34"
+
     ],
     "stock": 15,
     "tags": [],
@@ -6298,29 +6352,38 @@ export const productsConfig = [
     "salePercent": null
   },
   {
-    "id": "sombrero-safari-pet",
-    "name": "Sombrero Safari Explorer Pet",
-    "slug": "sombrero-safari-pet",
+    "id": "sombrero-moto-dog",
+    "name": "Lentes Explorador de Moto Dog",
+    "slug": "sombrero-moto-dog",
     "category": "mascotas",
-    "price": 34.9,
+    "price": 24.9,
     "oldPrice": null,
     "currency": "PEN",
     "badge": "EXPLORADOR",
     "badgeColor": null,
     "images": [
-      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1/goshopping/mascotas/sombreo_medida.webp"
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774755696/gafa_moto_animal_i8appk.webp",
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774755681/gafa_moto_dog_traslucido_fx0mmm.webp",
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774755680/gafa_moto_dog_polarizado_ngk9yb.webp",
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774755679/gafa_moto_dog_espejo_v0rfoj.webp"
     ],
-    "description": "Listo para la selva (o el parque). Sombrero tipo safari que protege de la luz solar directa, perfecto para expediciones largas y días soleados.",
+    "description": "Protección total contra el viento y el polvo. El accesorio indispensable para mascotas que viajan en moto, con acolchado interno para evitar irritaciones.",
     "specs": [
       {
         "label": "Uso",
         "value": "Protección Solar"
+      },
+      {
+        "label": "Talla",
+        "value": "Para Mascotas medias a grandes"
       }
     ],
     "rating": 4.6,
     "reviews": 52,
     "colors": [
-      "#D4A574"
+      "#F0F0F0",
+      "#69503C",
+      "#D0CCD1"
     ],
     "stock": 18,
     "tags": [],
@@ -7364,7 +7427,7 @@ export const productsConfig = [
     "name": "Quemador Clarity 38",
     "slug": "quemador-zen-38",
     "category": "quemadores",
-    "price": 54.9,
+    "price": 32.9,
     "oldPrice": null,
     "currency": "PEN",
     "badge": "CLARIDAD",
@@ -7382,7 +7445,7 @@ export const productsConfig = [
     "rating": 4.5,
     "reviews": 27,
     "colors": [
-      "#FFFFFF"
+      "------"
     ],
     "stock": 30,
     "tags": [],
@@ -7396,7 +7459,7 @@ export const productsConfig = [
     "name": "Quemador Peace 42",
     "slug": "quemador-zen-42",
     "category": "quemadores",
-    "price": 63.9,
+    "price": 32.9,
     "oldPrice": null,
     "currency": "PEN",
     "badge": "PAZ",
@@ -7414,7 +7477,7 @@ export const productsConfig = [
     "rating": 5,
     "reviews": 18,
     "colors": [
-      "#000000"
+      "---------"
     ],
     "stock": 10,
     "tags": [],
@@ -7424,11 +7487,11 @@ export const productsConfig = [
     "salePercent": null
   },
   {
-    "id": "quemador-aves",
-    "name": "Quemador Cascada Aves Paraíso",
-    "slug": "quemador-aves",
+    "id": "cascada-agua-aves",
+    "name": "Cascada de Agua Aves Paraíso",
+    "slug": "cascada-agua-aves",
     "category": "quemadores",
-    "price": 85.9,
+    "price": 89.9,
     "oldPrice": null,
     "currency": "PEN",
     "badge": "EXCLUSIVO",
@@ -7446,7 +7509,7 @@ export const productsConfig = [
     "rating": 4.9,
     "reviews": 45,
     "colors": [
-      "#8B4513"
+      "-----------"
     ],
     "stock": 12,
     "tags": [],
@@ -7456,11 +7519,11 @@ export const productsConfig = [
     "salePercent": null
   },
   {
-    "id": "quemador-elefante-sagrado",
-    "name": "Quemador Elefante Sagrado",
-    "slug": "quemador-elefante-sagrado",
+    "id": "cascada-agua-elefante-sagrado",
+    "name": "Cascada de Agua Elefante Sagrado",
+    "slug": "cascada-agua-elefante-sagrado",
     "category": "quemadores",
-    "price": 75.9,
+    "price": 88.9,
     "oldPrice": null,
     "currency": "PEN",
     "badge": "FORTUNA",
@@ -7478,7 +7541,7 @@ export const productsConfig = [
     "rating": 4.8,
     "reviews": 112,
     "colors": [
-      "#808080"
+      "---------"
     ],
     "stock": 20,
     "tags": [],
@@ -7492,7 +7555,7 @@ export const productsConfig = [
     "name": "Quemador Zen Circle 28",
     "slug": "quemador-zen-28",
     "category": "quemadores",
-    "price": 59.9,
+    "price": 31.9,
     "oldPrice": null,
     "currency": "PEN",
     "badge": "ZEN",
@@ -7510,7 +7573,7 @@ export const productsConfig = [
     "rating": 4.7,
     "reviews": 34,
     "colors": [
-      "#000000"
+      "-------"
     ],
     "stock": 25,
     "tags": [],
@@ -7524,7 +7587,7 @@ export const productsConfig = [
     "name": "Quemador Loto Mystic 29",
     "slug": "quemador-zen-29",
     "category": "quemadores",
-    "price": 62.9,
+    "price": 32.9,
     "oldPrice": null,
     "currency": "PEN",
     "badge": "MÍSTICO",
@@ -7542,7 +7605,7 @@ export const productsConfig = [
     "rating": 4.8,
     "reviews": 28,
     "colors": [
-      "#8B4513"
+      "--------"
     ],
     "stock": 18,
     "tags": [],
@@ -7556,7 +7619,7 @@ export const productsConfig = [
     "name": "Quemador Harmony 30",
     "slug": "quemador-zen-30",
     "category": "quemadores",
-    "price": 58.9,
+    "price": 31.9,
     "oldPrice": null,
     "currency": "PEN",
     "badge": "ARMONÍA",
@@ -7574,7 +7637,7 @@ export const productsConfig = [
     "rating": 4.6,
     "reviews": 41,
     "colors": [
-      "#D4A574"
+      "------"
     ],
     "stock": 22,
     "tags": [],
@@ -7588,7 +7651,7 @@ export const productsConfig = [
     "name": "Quemador Flow 33",
     "slug": "quemador-zen-33",
     "category": "quemadores",
-    "price": 64.9,
+    "price": 31.9,
     "oldPrice": null,
     "currency": "PEN",
     "badge": "FLUIDEZ",
@@ -7606,7 +7669,7 @@ export const productsConfig = [
     "rating": 4.9,
     "reviews": 56,
     "colors": [
-      "#000000"
+      "-------"
     ],
     "stock": 15,
     "tags": [],
@@ -7620,7 +7683,7 @@ export const productsConfig = [
     "name": "Quemador Balance 34",
     "slug": "quemador-zen-34",
     "category": "quemadores",
-    "price": 61.9,
+    "price": 31.9,
     "oldPrice": null,
     "currency": "PEN",
     "badge": "EQUILIBRIO",
@@ -7638,7 +7701,7 @@ export const productsConfig = [
     "rating": 4.7,
     "reviews": 23,
     "colors": [
-      "#8B4513"
+      "--------"
     ],
     "stock": 19,
     "tags": [],
@@ -7652,7 +7715,7 @@ export const productsConfig = [
     "name": "Quemador Serenity 37",
     "slug": "quemador-zen-37",
     "category": "quemadores",
-    "price": 57.9,
+    "price": 32.9,
     "oldPrice": null,
     "currency": "PEN",
     "badge": "SERENIDAD",
@@ -7670,7 +7733,7 @@ export const productsConfig = [
     "rating": 4.8,
     "reviews": 39,
     "colors": [
-      "#808080"
+      "-------"
     ],
     "stock": 24,
     "tags": [],
@@ -7684,7 +7747,7 @@ export const productsConfig = [
     "name": "Quemador Modern Art 24",
     "slug": "quemador-modern-24",
     "category": "quemadores",
-    "price": 69.9,
+    "price": 49.9,
     "oldPrice": null,
     "currency": "PEN",
     "badge": "MODERNO",
@@ -7702,7 +7765,7 @@ export const productsConfig = [
     "rating": 4.7,
     "reviews": 31,
     "colors": [
-      "#808080"
+      "-------"
     ],
     "stock": 15,
     "tags": [],
@@ -7713,10 +7776,10 @@ export const productsConfig = [
   },
   {
     "id": "quemador-minimal-42",
-    "name": "Quemador Minimalist 42",
+    "name": "Quemador Minimalist 7677-42",
     "slug": "quemador-minimal-42",
     "category": "quemadores",
-    "price": 52.9,
+    "price": 31.9,
     "oldPrice": null,
     "currency": "PEN",
     "badge": "ESSENCIAL",
@@ -7734,7 +7797,7 @@ export const productsConfig = [
     "rating": 4.6,
     "reviews": 22,
     "colors": [
-      "#D4A574"
+      "-------"
     ],
     "stock": 35,
     "tags": [],
@@ -7748,7 +7811,7 @@ export const productsConfig = [
     "name": "Quemador Ángel de Luz RGB",
     "slug": "quemador-angel-rgb",
     "category": "quemadores",
-    "price": 119,
+    "price": 83.59,
     "oldPrice": 149,
     "currency": "PEN",
     "badge": "MÁGICO",
@@ -7770,7 +7833,7 @@ export const productsConfig = [
     "rating": 5,
     "reviews": 64,
     "colors": [
-      "#FFFFFF"
+      "--------"
     ],
     "stock": 8,
     "tags": [],
@@ -7780,11 +7843,11 @@ export const productsConfig = [
     "salePercent": 20
   },
   {
-    "id": "quemador-robot",
-    "name": "Quemador Robot Futurista",
-    "slug": "quemador-robot",
+    "id": "quemador-caidas",
+    "name": "Quemador Futurista Capas",
+    "slug": "quemador-caidas",
     "category": "quemadores",
-    "price": 89.9,
+    "price": 49.9,
     "oldPrice": null,
     "currency": "PEN",
     "badge": "TECH",
@@ -7802,8 +7865,7 @@ export const productsConfig = [
     "rating": 4.8,
     "reviews": 25,
     "colors": [
-      "#000000",
-      "#C0C0C0"
+      "---------"
     ],
     "stock": 14,
     "tags": [],
@@ -7817,7 +7879,7 @@ export const productsConfig = [
     "name": "Quemador Castillo del Dragón",
     "slug": "quemador-castillo-dragon",
     "category": "quemadores",
-    "price": 125,
+    "price": 69.9,
     "oldPrice": null,
     "currency": "PEN",
     "badge": "ÉPICO",
@@ -7839,7 +7901,7 @@ export const productsConfig = [
     "rating": 4.9,
     "reviews": 87,
     "colors": [
-      "#8B4513"
+      "--------"
     ],
     "stock": 7,
     "tags": [],
@@ -7853,7 +7915,7 @@ export const productsConfig = [
     "name": "Quemador Dragón de Cascada",
     "slug": "quemador-dragon-cascada",
     "category": "quemadores",
-    "price": 79.9,
+    "price": 59.9,
     "oldPrice": null,
     "currency": "PEN",
     "badge": "TOP VENTAS",
@@ -7871,7 +7933,7 @@ export const productsConfig = [
     "rating": 4.9,
     "reviews": 265,
     "colors": [
-      "#8B4513"
+      "-------"
     ],
     "stock": 20,
     "tags": [],
@@ -7885,7 +7947,7 @@ export const productsConfig = [
     "name": "Quemador Dragón sobre Roca",
     "slug": "quemador-dragon-roca",
     "category": "quemadores",
-    "price": 82.9,
+    "price": 62.9,
     "oldPrice": null,
     "currency": "PEN",
     "badge": "SALVAJE",
@@ -7903,7 +7965,7 @@ export const productsConfig = [
     "rating": 4.7,
     "reviews": 31,
     "colors": [
-      "#808080"
+      "--------"
     ],
     "stock": 16,
     "tags": [],
@@ -7917,7 +7979,7 @@ export const productsConfig = [
     "name": "Quemador Elefante Porta Vela",
     "slug": "quemador-elefante-vela",
     "category": "quemadores",
-    "price": 49.9,
+    "price": 25.9,
     "oldPrice": null,
     "currency": "PEN",
     "badge": "CÁLIDO",
@@ -7935,7 +7997,7 @@ export const productsConfig = [
     "rating": 4.6,
     "reviews": 93,
     "colors": [
-      "#8B4513"
+      "-------"
     ],
     "stock": 25,
     "tags": [],
@@ -7949,7 +8011,7 @@ export const productsConfig = [
     "name": "Quemador Elefante Sabio",
     "slug": "quemador-elefante-sabio",
     "category": "quemadores",
-    "price": 68.9,
+    "price": 59.9,
     "oldPrice": null,
     "currency": "PEN",
     "badge": "ZEN",
@@ -7967,7 +8029,7 @@ export const productsConfig = [
     "rating": 4.8,
     "reviews": 75,
     "colors": [
-      "#808080"
+      "--------"
     ],
     "stock": 30,
     "tags": [],
@@ -7981,7 +8043,7 @@ export const productsConfig = [
     "name": "Quemador Té y Meditación",
     "slug": "quemador-te-zen",
     "category": "quemadores",
-    "price": 45.9,
+    "price": 48.9,
     "oldPrice": null,
     "currency": "PEN",
     "badge": "RELAX",
@@ -7999,7 +8061,7 @@ export const productsConfig = [
     "rating": 4.7,
     "reviews": 48,
     "colors": [
-      "#D4A574"
+      "--------"
     ],
     "stock": 22,
     "tags": [],
@@ -8013,7 +8075,7 @@ export const productsConfig = [
     "name": "Quemador Pez Carpa Koi",
     "slug": "quemador-carpa-koi",
     "category": "quemadores",
-    "price": 59.9,
+    "price": 49.9,
     "oldPrice": null,
     "currency": "PEN",
     "badge": "PROSPERIDAD",
@@ -8031,8 +8093,7 @@ export const productsConfig = [
     "rating": 4.9,
     "reviews": 52,
     "colors": [
-      "#FFD700",
-      "#8B4513"
+      "------------"
     ],
     "stock": 15,
     "tags": [],
@@ -8046,13 +8107,13 @@ export const productsConfig = [
     "name": "Quemador Flor de Loto Divina",
     "slug": "quemador-loto-divino",
     "category": "quemadores",
-    "price": 44.9,
+    "price": 79.9,
     "oldPrice": null,
     "currency": "PEN",
     "badge": "SAGRADO",
     "badgeColor": null,
     "images": [
-      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1/goshopping/quemadores/quemador_flor de loto2.webp"
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774224751/goshopping/quemadores/quemador_flor_de_loto2.webp"
     ],
     "description": "Símbolo de renacimiento ypureza. La flor de loto se abre paso entre el humo para recordarte que la belleza puede florecer en cualquier circunstancia.",
     "specs": [
@@ -8064,7 +8125,7 @@ export const productsConfig = [
     "rating": 4.8,
     "reviews": 67,
     "colors": [
-      "#E8B4B4"
+      "---------"
     ],
     "stock": 40,
     "tags": [],
@@ -8078,7 +8139,7 @@ export const productsConfig = [
     "name": "Quemador Flor de Loto Pura",
     "slug": "quemador-loto-pure",
     "category": "quemadores",
-    "price": 39.9,
+    "price": 79.9,
     "oldPrice": null,
     "currency": "PEN",
     "badge": "ESENCIAL",
@@ -8096,7 +8157,7 @@ export const productsConfig = [
     "rating": 4.6,
     "reviews": 89,
     "colors": [
-      "#FFFFFF"
+      "--------"
     ],
     "stock": 50,
     "tags": [],
@@ -8110,7 +8171,7 @@ export const productsConfig = [
     "name": "Quemador Hojas de Otoño",
     "slug": "quemador-hojas-otono",
     "category": "quemadores",
-    "price": 35.9,
+    "price": 31.9,
     "oldPrice": null,
     "currency": "PEN",
     "badge": "NATURA",
@@ -8128,7 +8189,7 @@ export const productsConfig = [
     "rating": 4.5,
     "reviews": 76,
     "colors": [
-      "#D4A574"
+      "-----------"
     ],
     "stock": 35,
     "tags": [],
@@ -8142,7 +8203,7 @@ export const productsConfig = [
     "name": "Quemador León Majestuoso",
     "slug": "quemador-leon-majestuoso",
     "category": "quemadores",
-    "price": 85,
+    "price": 52.9,
     "oldPrice": null,
     "currency": "PEN",
     "badge": "PODER",
@@ -8160,8 +8221,7 @@ export const productsConfig = [
     "rating": 4.9,
     "reviews": 31,
     "colors": [
-      "#D4A574",
-      "#8B4513"
+      "---------"
     ],
     "stock": 11,
     "tags": [],
@@ -8175,7 +8235,7 @@ export const productsConfig = [
     "name": "Quemador Flor de Loto y Pez",
     "slug": "quemador-lotus-koi",
     "category": "quemadores",
-    "price": 55.9,
+    "price": 45.9,
     "oldPrice": null,
     "currency": "PEN",
     "badge": "EQUILIBRIO",
@@ -8193,7 +8253,7 @@ export const productsConfig = [
     "rating": 4.8,
     "reviews": 44,
     "colors": [
-      "#8B4513"
+      "-------"
     ],
     "stock": 18,
     "tags": [],
@@ -8207,7 +8267,7 @@ export const productsConfig = [
     "name": "Quemador Manzana de la Suerte",
     "slug": "quemador-manzana-suerte",
     "category": "quemadores",
-    "price": 42.9,
+    "price": 65.9,
     "oldPrice": null,
     "currency": "PEN",
     "badge": "DULCE",
@@ -8225,8 +8285,7 @@ export const productsConfig = [
     "rating": 4.6,
     "reviews": 58,
     "colors": [
-      "#FF0000",
-      "#228B22"
+      "---------"
     ],
     "stock": 26,
     "tags": [],
@@ -8240,7 +8299,7 @@ export const productsConfig = [
     "name": "Quemador Silueta Femenina Zen",
     "slug": "quemador-mujer-zen",
     "category": "quemadores",
-    "price": 79.9,
+    "price": 49.9,
     "oldPrice": null,
     "currency": "PEN",
     "badge": "ELEGANCIA",
@@ -8258,8 +8317,7 @@ export const productsConfig = [
     "rating": 4.9,
     "reviews": 29,
     "colors": [
-      "#000000",
-      "#D4A574"
+      "--------"
     ],
     "stock": 13,
     "tags": [],
@@ -8273,7 +8331,7 @@ export const productsConfig = [
     "name": "Quemador Oración y Calma",
     "slug": "quemador-oracion-calma",
     "category": "quemadores",
-    "price": 65.9,
+    "price": 59.9,
     "oldPrice": null,
     "currency": "PEN",
     "badge": "REZO",
@@ -8291,7 +8349,7 @@ export const productsConfig = [
     "rating": 4.8,
     "reviews": 37,
     "colors": [
-      "#8B4513"
+      "---------"
     ],
     "stock": 18,
     "tags": [],
@@ -8305,7 +8363,7 @@ export const productsConfig = [
     "name": "Quemador Pez de la Abundancia",
     "slug": "quemador-pez-abundancia",
     "category": "quemadores",
-    "price": 52.9,
+    "price": 49.9,
     "oldPrice": null,
     "currency": "PEN",
     "badge": "SUERTE",
@@ -8323,7 +8381,7 @@ export const productsConfig = [
     "rating": 4.7,
     "reviews": 41,
     "colors": [
-      "#8B4513"
+      "---------"
     ],
     "stock": 21,
     "tags": [],
@@ -8337,7 +8395,7 @@ export const productsConfig = [
     "name": "Quemador Shiva Meditación",
     "slug": "quemador-shiva",
     "category": "quemadores",
-    "price": 72.9,
+    "price": 71.9,
     "oldPrice": null,
     "currency": "PEN",
     "badge": "POTENCIA",
@@ -8355,8 +8413,7 @@ export const productsConfig = [
     "rating": 5,
     "reviews": 54,
     "colors": [
-      "#808080",
-      "#000000"
+      "----------"
     ],
     "stock": 15,
     "tags": [],
@@ -8370,7 +8427,7 @@ export const productsConfig = [
     "name": "Quemador Jarrón Antiguo",
     "slug": "quemador-vase-antique",
     "category": "quemadores",
-    "price": 48.9,
+    "price": 25.9,
     "oldPrice": null,
     "currency": "PEN",
     "badge": "CLÁSICO",
@@ -8388,7 +8445,7 @@ export const productsConfig = [
     "rating": 4.5,
     "reviews": 32,
     "colors": [
-      "#8B4513"
+      "---------"
     ],
     "stock": 28,
     "tags": [],
@@ -8402,7 +8459,7 @@ export const productsConfig = [
     "name": "Quemador Flor y Vela Artística",
     "slug": "quemador-vela-flor",
     "category": "quemadores",
-    "price": 46.9,
+    "price": 14.9,
     "oldPrice": null,
     "currency": "PEN",
     "badge": "ART",
@@ -8420,7 +8477,7 @@ export const productsConfig = [
     "rating": 4.7,
     "reviews": 29,
     "colors": [
-      "#E8B4B4"
+      ""
     ],
     "stock": 24,
     "tags": [],
@@ -8433,11 +8490,11 @@ export const productsConfig = [
   //           TECNOLOGIA
   //********************************************************************//
   {
-    "id": "lamp-geo",
-    "name": "Lámpara Geometric Muse",
-    "slug": "lamp-geo",
+    "id": "audifonos-m45",
+    "name": "Audifonos M45",
+    "slug": "audifonos-45",
     "category": "tecnologia",
-    "price": 109.9,
+    "price": 39.9,
     "oldPrice": null,
     "currency": "PEN",
     "badge": "NUEVO",
@@ -8445,19 +8502,17 @@ export const productsConfig = [
     "images": [
       "https://res.cloudinary.com/dod8hhjoo/image/upload/v1/goshopping/tecnologia/audifono_c45.webp"
     ],
-    "description": "El arte de iluminar con geometría. Una pieza escultórica que proyecta una luz ambiente sofisticada, ideal para espacios que respiran minimalismo y diseño moderno.",
+    "description": "El sonido perfecto para escuchar tus Musicas y diseño moderno.",
     "specs": [
       {
         "label": "Diseño",
-        "value": "Geométrico"
+        "value": "Portatil"
       }
     ],
     "rating": 4.6,
     "reviews": 18,
     "colors": [
-      "#add8e6",
-      "#FFD700",
-      "#000000"
+      ""
     ],
     "stock": 25,
     "tags": [],
@@ -8467,12 +8522,12 @@ export const productsConfig = [
     "salePercent": null
   },
   {
-    "id": "parlante-agua",
-    "name": "Parlante Liquid Aura RGB",
-    "slug": "parlante-agua",
+    "id": "lampara-luna",
+    "name": "Lampara Luna Aura RGB",
+    "slug": "lampara-luna",
     "category": "tecnologia",
-    "price": 149.9,
-    "oldPrice": 179.9,
+    "price": 29.9,
+    "oldPrice": 88.9,
     "currency": "PEN",
     "badge": "TOP",
     "badgeColor": null,
@@ -8508,7 +8563,7 @@ export const productsConfig = [
     "name": "Lámpara Táctil Inalámbrica",
     "slug": "lampara-tac-carga",
     "category": "tecnologia",
-    "price": 89.9,
+    "price": 79.9,
     "oldPrice": null,
     "currency": "PEN",
     "badge": "SMART",
@@ -8524,14 +8579,13 @@ export const productsConfig = [
       },
       {
         "label": "Luz",
-        "value": "LED Regulable"
+        "value": "LED Regulable - Diseño Blanco"
       }
     ],
     "rating": 4.8,
     "reviews": 67,
     "colors": [
-      "#FFFFFF",
-      "#000000"
+      "-----"
     ],
     "stock": 18,
     "tags": [],
@@ -8545,7 +8599,7 @@ export const productsConfig = [
     "name": "Lámpara Táctil Dark Edition",
     "slug": "lampara-tac-carga-neg",
     "category": "tecnologia",
-    "price": 89.9,
+    "price": 79.9,
     "oldPrice": null,
     "currency": "PEN",
     "badge": "DARK",
@@ -8561,7 +8615,7 @@ export const productsConfig = [
       },
       {
         "label": "Luz",
-        "value": "LED Warm"
+        "value": "LED Warm - Diseño Negro"
       }
     ],
     "rating": 4.7,
@@ -8581,7 +8635,7 @@ export const productsConfig = [
     "name": "Lámpara Geométrica Aqua",
     "slug": "lamp-geo-celeste",
     "category": "tecnologia",
-    "price": 109.9,
+    "price": 149.9,
     "oldPrice": null,
     "currency": "PEN",
     "badge": "TENDENCIA",
@@ -8603,7 +8657,7 @@ export const productsConfig = [
     "rating": 4.8,
     "reviews": 34,
     "colors": [
-      "#add8e6"
+      "-----"
     ],
     "stock": 15,
     "tags": [],
@@ -8617,7 +8671,7 @@ export const productsConfig = [
     "name": "Lámpara Geométrica Gold Luxe",
     "slug": "lamp-geo-dorado",
     "category": "tecnologia",
-    "price": 119.9,
+    "price": 149.9,
     "oldPrice": null,
     "currency": "PEN",
     "badge": "LUJO",
@@ -8639,7 +8693,7 @@ export const productsConfig = [
     "rating": 4.9,
     "reviews": 22,
     "colors": [
-      "#FFD700"
+      "-----"
     ],
     "stock": 8,
     "tags": [],
@@ -8653,7 +8707,7 @@ export const productsConfig = [
     "name": "Lámpara Geométrica Stealth",
     "slug": "lamp-geo-negro",
     "category": "tecnologia",
-    "price": 109.9,
+    "price": 149.9,
     "oldPrice": null,
     "currency": "PEN",
     "badge": "URBAN",
@@ -8675,7 +8729,7 @@ export const productsConfig = [
     "rating": 4.7,
     "reviews": 28,
     "colors": [
-      "#000000"
+      "------"
     ],
     "stock": 20,
     "tags": [],
@@ -8689,7 +8743,7 @@ export const productsConfig = [
     "name": "Parlante Liquid Crystal",
     "slug": "parlante-agua-white",
     "category": "tecnologia",
-    "price": 149.9,
+    "price": 79.9,
     "oldPrice": 179.9,
     "currency": "PEN",
     "badge": "BEST SELLER",
@@ -8711,7 +8765,7 @@ export const productsConfig = [
     "rating": 4.9,
     "reviews": 198,
     "colors": [
-      "#FFFFFF"
+      "-------"
     ],
     "stock": 15,
     "tags": [],
@@ -8725,7 +8779,7 @@ export const productsConfig = [
     "name": "Parlante Liquid Shadow",
     "slug": "parlante-agua-black",
     "category": "tecnologia",
-    "price": 159.9,
+    "price": 79.9,
     "oldPrice": 189.9,
     "currency": "PEN",
     "badge": "PREMIUM",
@@ -8747,7 +8801,7 @@ export const productsConfig = [
     "rating": 4.8,
     "reviews": 89,
     "colors": [
-      "#000000"
+      "------"
     ],
     "stock": 10,
     "tags": [],
@@ -8761,7 +8815,7 @@ export const productsConfig = [
     "name": "Parlante Medusa Glow",
     "slug": "parlante-medusa",
     "category": "tecnologia",
-    "price": 139.9,
+    "price": 49.9,
     "oldPrice": null,
     "currency": "PEN",
     "badge": "EXCLUSIVO",
@@ -8783,8 +8837,102 @@ export const productsConfig = [
     "rating": 5,
     "reviews": 45,
     "colors": [
-      "#FFFFFF",
-      "#add8e6"
+      "-----"
+    ],
+    "stock": 8,
+    "tags": [],
+    "fragrances": [],
+  },
+  {
+    "id": "proyector-astronauta-luna",
+    "name": "Proyector Astronauta Luna",
+    "slug": "proyector-astronauta-luna",
+    "category": "tecnologia",
+    "price": 44.9,
+    "oldPrice": null,
+    "currency": "PEN",
+    "badge": "EXCLUSIVO",
+    "badgeColor": null,
+    "images": [
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774224882/goshopping/tecnologia/astronauta__luna_proyector.webp"
+    ],
+    "description": "Dormir observando las auroras boreales, hara que contemples la calma y tranquilidad de un sueño reparador.",
+    "specs": [
+      {
+        "label": "Conexión Parlante",
+        "value": "Bluetooth 5.0"
+      },
+      {
+        "label": "Efecto",
+        "value": "Luz RGB suave"
+      }
+    ],
+    "rating": 5,
+    "reviews": 45,
+    "colors": [
+      "-----"
+    ],
+    "stock": 8,
+    "tags": [],
+    "fragrances": [],
+  },
+  {
+    "id": "audifono-m25",
+    "name": "Audifono M25",
+    "slug": "audifono-m25",
+    "category": "tecnologia",
+    "price": 39.9,
+    "oldPrice": null,
+    "currency": "PEN",
+    "badge": "EXCLUSIVO",
+    "badgeColor": null,
+    "images": [
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774224884/goshopping/tecnologia/audifono_c25.webp"
+    ],
+    "description": "Para aquellos amantes del sonido GAMER. Ideal para sentir al maximo el poder de estar dentro del juego",
+    "specs": [
+      {
+        "label": "Conexión",
+        "value": "Bluetooth 5.0"
+      },
+    ],
+    "rating": 5,
+    "reviews": 45,
+    "colors": [
+      "-----"
+    ],
+    "stock": 8,
+    "tags": [],
+    "fragrances": [],
+  },
+  {
+    "id": "astronauta-galaxia",
+    "name": "Astronauta Galaxia",
+    "slug": "astronauta-galaxia",
+    "category": "tecnologia",
+    "price": 49.9,
+    "oldPrice": null,
+    "currency": "PEN",
+    "badge": "EXCLUSIVO",
+    "badgeColor": null,
+    "images": [
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774224883/goshopping/tecnologia/astronauta_proyector.webp"
+    ],
+    "description": "Hipnótica experiencia de ver las estrellas y galaxias antes de un placentero sueño reparador.",
+    "specs": [
+      {
+        "label": "Parlante Conexión",
+        "value": "Bluetooth 5.0"
+      },
+      {
+        "label": "Efecto",
+        "value": "Galaxia LED"
+      }
+    ],
+    "rating": 5,
+    "reviews": 45,
+    "colors": [
+      "-----"
     ],
     "stock": 8,
     "tags": [],
