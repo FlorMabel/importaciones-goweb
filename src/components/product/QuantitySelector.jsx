@@ -1,8 +1,9 @@
 import { useState } from 'react'
+import { motion } from 'framer-motion'
 import { useStore } from '../../context/StoreContext'
 import { useToast } from '../../context/ToastContext'
 
-export default function QuantitySelector({ product }) {
+export default function QuantitySelector({ product, selectedVariant }) {
   const [quantity, setQuantity] = useState(1)
   const [fragQtys, setFragQtys] = useState({})
   const { addToCart } = useStore()
@@ -31,10 +32,10 @@ export default function QuantitySelector({ product }) {
     })
     
     if (added) {
-      showToast('¡Selecciones agregadas al carrito!')
+      showToast('¡Selecciones de lujo añadidas al carrito!')
       setFragQtys({}) // Reset after adding
     } else {
-      showToast('Selecciona al menos un aroma', 'warning')
+      showToast('Por favor, selecciona un aroma para continuar', 'warning')
     }
   }
 
@@ -42,35 +43,48 @@ export default function QuantitySelector({ product }) {
     const totalSelected = Object.values(fragQtys).reduce((a, b) => a + b, 0)
     
     return (
-      <div className="flex flex-col gap-4 mt-2">
+      <div id="quantity-selector" className="flex flex-col gap-4 mt-2">
         <div className="flex items-center gap-2 mb-2">
           <span className="text-accent text-xl material-symbols-outlined">local_florist</span>
           <h3 className="font-bold text-text-main text-sm">Elige tus Esencias</h3>
         </div>
         
-        <div className="flex flex-col gap-3 max-h-[350px] overflow-y-auto pr-2 scrollbar-thin scrollbar-thumb-border-color scrollbar-track-transparent">
+        <div className="flex flex-col gap-4 max-h-[400px] overflow-y-auto pr-2 custom-scrollbar">
           {fragrancesList.map((frag, idx) => {
             const qty = fragQtys[frag.name] || 0
             return (
-              <div key={idx} className="flex items-center justify-between p-4 rounded-xl border border-gray-100 bg-white shadow-sm hover:border-primary/30 transition-colors">
-                <div className="flex-1 pr-4">
-                  <h4 className="font-bold text-text-main text-sm">{frag.name}</h4>
+              <motion.div 
+                key={idx}
+                initial={{ opacity: 0, x: -10 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: idx * 0.03 }}
+                className={`flex items-center justify-between p-5 rounded-2xl border transition-all duration-300 ${qty > 0 ? 'border-primary bg-white shadow-medium' : 'border-border-light bg-beige-light hover:border-border-strong'}`}
+              >
+                <div className="flex-1 pr-6">
+                  <div className="flex items-center gap-2 mb-1">
+                    <h4 className={`font-bold text-sm ${qty > 0 ? 'text-primary' : 'text-text-main'}`}>{frag.name}</h4>
+                    {qty > 0 && <span className="size-1.5 bg-primary rounded-full animate-pulse"></span>}
+                  </div>
                   {frag.description && (
-                    <p className="text-text-muted text-xs mt-1 leading-snug">{frag.description}</p>
+                    <p className="text-text-muted text-[11px] leading-relaxed italic">{frag.description}</p>
                   )}
                 </div>
-                <div className="flex items-center border border-border-color rounded-full overflow-hidden shrink-0 bg-white">
+                <div className="flex items-center border border-border-default rounded-xl overflow-hidden shrink-0 bg-white shadow-soft">
                   <button
                     onClick={() => updateFragQty(frag.name, -1)}
-                    className="w-8 h-8 flex items-center justify-center text-text-main hover:bg-background-soft transition-colors font-light"
-                  >−</button>
-                  <span className="w-8 text-center text-text-main font-bold text-xs">{qty}</span>
+                    className="size-9 flex items-center justify-center text-text-main hover:bg-beige-soft transition-colors"
+                  >
+                    <span className="material-symbols-outlined text-sm">remove</span>
+                  </button>
+                  <span className={`w-8 text-center font-bold text-xs ${qty > 0 ? 'text-primary' : 'text-text-main'}`}>{qty}</span>
                   <button
                     onClick={() => updateFragQty(frag.name, 1)}
-                    className="w-8 h-8 flex items-center justify-center text-text-main hover:bg-background-soft transition-colors font-light"
-                  >+</button>
+                    className="size-9 flex items-center justify-center text-text-main hover:bg-beige-soft transition-colors"
+                  >
+                    <span className="material-symbols-outlined text-sm">add</span>
+                  </button>
                 </div>
-              </div>
+              </motion.div>
             )
           })}
         </div>
@@ -93,34 +107,42 @@ export default function QuantitySelector({ product }) {
   }
 
   return (
-    <div className="flex flex-col gap-3">
-      <div className="flex items-center gap-3">
-        <span className="text-sm text-text-muted font-medium">Cantidad</span>
-        <div className="flex items-center border border-border-color rounded-lg overflow-hidden">
+    <>
+      <div id="quantity-selector" className="flex items-center gap-4 py-4 px-5 bg-beige-light rounded-2xl border border-border-light">
+        <span className="text-[10px] uppercase tracking-[0.2em] text-text-muted font-bold">Cantidad</span>
+        <div className="flex items-center border border-border-default rounded-xl overflow-hidden bg-white shadow-soft">
           <button
             onClick={dec}
-            className="w-10 h-10 flex items-center justify-center text-text-main hover:bg-background-soft transition-colors text-lg font-light"
-          >−</button>
-          <span className="w-12 text-center text-text-main font-medium text-sm">{quantity}</span>
+            className="size-11 flex items-center justify-center text-text-main hover:bg-beige-soft transition-colors"
+          >
+            <span className="material-symbols-outlined text-sm">remove</span>
+          </button>
+          <span className="w-10 text-center text-text-main font-bold text-sm">{quantity}</span>
           <button
             onClick={inc}
             disabled={quantity >= product.stock}
-            className="w-10 h-10 flex items-center justify-center text-text-main hover:bg-background-soft transition-colors text-lg font-light disabled:opacity-40 disabled:cursor-not-allowed"
-          >+</button>
+            className="size-11 flex items-center justify-center text-text-main hover:bg-beige-soft transition-colors disabled:opacity-30"
+          >
+            <span className="material-symbols-outlined text-sm">add</span>
+          </button>
         </div>
       </div>
 
-      <button
-        onClick={() => addToCart(product, quantity)}
-        disabled={product.stock === 0}
-        className="w-full bg-primary hover:bg-primary-dark text-white font-semibold py-3 px-6 rounded-xl transition-colors disabled:opacity-50 disabled:cursor-not-allowed animate-fade-in"
-      >
-        AGREGAR AL CARRITO
-      </button>
+      <div className="flex flex-col gap-3 mt-4">
+        <button
+          onClick={() => addToCart(product, quantity, selectedVariant?.name)}
+          disabled={product.stock === 0}
+          className="w-full bg-primary hover:bg-primary-dark text-white font-bold py-5 px-8 rounded-2xl transition-all shadow-glow flex items-center justify-center gap-3 group"
+        >
+          <span className="material-symbols-outlined text-xl italic">add_shopping_cart</span>
+          <span>Añadir al Carrito</span>
+          <span className="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
+        </button>
 
-      <button className="w-full border-2 border-accent text-accent hover:bg-accent hover:text-white font-semibold py-3 px-6 rounded-xl transition-colors">
-        COMPRAR AHORA
-      </button>
-    </div>
+        <button className="w-full py-5 px-8 rounded-2xl border-2 border-accent text-accent hover:bg-accent hover:text-white font-bold text-sm transition-all flex items-center justify-center gap-3">
+          Comprar Ahora
+        </button>
+      </div>
+    </>
   )
 }

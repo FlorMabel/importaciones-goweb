@@ -1,67 +1,122 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { motion } from 'framer-motion';
 import StarRating from './StarRating';
 import { useStore } from '../context/StoreContext';
 import { useToast } from '../context/ToastContext';
 import { formatPrice } from '../utils';
 import { getProductById } from '../services/api';
 
-export default function ProductCard({ product: p, index = 0 }) {
+export default function ProductCard({ product, index }) {
   const navigate = useNavigate();
   const { addToCart } = useStore();
   const { showToast } = useToast();
+  const [selectedVariant, setSelectedVariant] = useState(
+    product.variants && product.variants.length > 0 ? product.variants[0] : null
+  );
 
-  const handleQuickAdd = async (e) => {
+  const displayPrice = selectedVariant ? selectedVariant.price : product.price;
+  const displayOldPrice = selectedVariant ? selectedVariant.oldPrice : product.oldPrice;
+
+  const handleSelectVariant = (variant) => {
+    setSelectedVariant(variant);
+  };
+
+  const handleAddToCart = (e) => {
     e.stopPropagation();
-    const product = await getProductById(p.id);
-    if (product) {
-      addToCart(product.id, 1);
-      showToast(`${product.name} agregado al carrito`);
-    }
+    addToCart(product, 1, selectedVariant?.name);
+    showToast(`${product.name} añadido al carrito`);
   };
 
   return (
-    <div
-      className="product-card bg-surface-light border border-border-default flex flex-col stagger-card"
-      style={{ animationDelay: `${index * 0.05}s` }}
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ delay: index * 0.05 }}
+      className="group relative bg-white rounded-[2rem] border border-border-light overflow-hidden hover:shadow-strong transition-all duration-700 h-full flex flex-col"
     >
-      <div
-        className="image-container relative bg-surface-soft cursor-pointer"
-        onClick={() => navigate(`/producto/${p.slug}`)}
+      {/* Image Section */}
+      <div 
+        className="relative aspect-[4/5] overflow-hidden cursor-pointer bg-beige-light p-6"
+        onClick={() => navigate(`/producto/${product.slug}`)}
       >
-        {p.badge && (
-          <span className={`variant-badge ${p.badgeColor || ''}`}>{p.badge}</span>
-        )}
-        <img src={p.images?.[0] || ''} alt={p.name} loading="lazy" />
-        <button
-          onClick={handleQuickAdd}
-          className="add-btn"
-          title="Agregar al carrito"
-        >
-          <span className="material-symbols-outlined text-base">add_shopping_cart</span>
-        </button>
-      </div>
-      <div className="p-4 flex flex-col flex-1">
-        <p className="text-[10px] font-bold text-text-muted uppercase tracking-wider mb-1">
-          {p.category || ''}
-        </p>
-        <h3
-          className="text-sm font-bold text-text-main mb-1 line-clamp-2 cursor-pointer hover:text-accent transition-colors"
-          onClick={() => navigate(`/producto/${p.slug}`)}
-        >
-          {p.name}
-        </h3>
-        <div className="flex items-center gap-1 mb-2">
-          <StarRating rating={p.rating} />
-          <span className="text-[10px] text-text-muted">({p.reviews || 0})</span>
-        </div>
-        <div className="mt-auto flex items-center gap-2">
-          <span className="text-sm font-bold text-accent">{formatPrice(p.price)}</span>
-          {p.oldPrice && (
-            <span className="text-xs text-text-muted line-through">{formatPrice(p.oldPrice)}</span>
+        <img
+          src={product.images?.[0] || 'https://placehold.co/400x500'}
+          alt={product.name}
+          className="w-full h-full object-contain mix-blend-multiply group-hover:scale-110 transition-transform duration-1000 ease-out"
+        />
+        
+        {/* Badges */}
+        <div className="absolute top-4 left-4 flex flex-col gap-2">
+          {product.badge && (
+            <span className="bg-accent text-white text-[9px] font-bold px-3 py-1.5 rounded-full uppercase tracking-[0.2em] shadow-soft">
+              {product.badge}
+            </span>
+          )}
+          {product.isOnSale && (
+             <span className="bg-red-600 text-white text-[9px] font-bold px-3 py-1.5 rounded-full uppercase tracking-[0.2em] shadow-soft">
+               {product.salePercent}% OFF
+             </span>
           )}
         </div>
+
+        {/* Quick Add Button */}
+        <button
+          onClick={handleAddToCart}
+          className="absolute bottom-6 right-6 size-12 rounded-full bg-white shadow-medium flex items-center justify-center text-accent opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 hover:bg-primary hover:text-white z-10"
+          aria-label="Añadir rápido"
+        >
+          <span className="material-symbols-outlined text-xl italic">add_shopping_cart</span>
+        </button>
       </div>
-    </div>
+
+      {/* Info Section */}
+      <div className="p-6 flex flex-col flex-1">
+        <div className="flex-1">
+          <p className="text-[10px] uppercase tracking-[0.3em] text-text-muted mb-2 font-bold">{product.category}</p>
+          <h3 
+            className="text-base font-bold text-text-main group-hover:text-primary transition-colors cursor-pointer mb-2 line-clamp-2 leading-snug"
+            onClick={() => navigate(`/producto/${product.slug}`)}
+          >
+            {product.name}
+          </h3>
+          
+          {/* Variant Dots (Peek) */}
+          {product.variants && product.variants.length > 1 && (
+            <div className="flex gap-1.5 mb-4 items-center">
+              {product.variants.slice(0, 4).map((v) => (
+                <button
+                  key={v.name}
+                  onClick={(e) => { e.stopPropagation(); handleSelectVariant(v); }}
+                  className={`size-2.5 rounded-full border transition-all ${selectedVariant?.name === v.name ? 'border-primary ring-1 ring-primary ring-offset-1 scale-110' : 'border-border-default bg-beige-soft hov:bg-border-light'}`}
+                  title={v.name}
+                />
+              ))}
+              {product.variants.length > 4 && <span className="text-[9px] text-text-muted font-bold ml-1">+{product.variants.length - 4}</span>}
+            </div>
+          )}
+        </div>
+
+        {/* Pricing */}
+        <div className="flex items-center justify-between mt-auto pt-4 border-t border-border-light/50">
+          <div className="flex items-baseline gap-2">
+            <span className="text-lg font-bold text-accent">{formatPrice(displayPrice)}</span>
+            {displayOldPrice && (
+              <span className="text-xs text-text-muted line-through opacity-60">
+                {formatPrice(displayOldPrice)}
+              </span>
+            )}
+          </div>
+          
+          <button 
+            onClick={() => navigate(`/producto/${product.slug}`)}
+            className="text-[10px] uppercase tracking-widest font-bold text-primary hover:underline underline-offset-4"
+          >
+            Detalles
+          </button>
+        </div>
+      </div>
+    </motion.div>
   );
 }

@@ -4,6 +4,16 @@ export function formatPrice(price) {
   return `S/ ${Number(price).toFixed(2)}`;
 }
 
+/** Get price of a product, optionally considering a variant */
+export function getItemPrice(product, variantName) {
+  if (!product) return 0;
+  if (variantName && product.variants) {
+    const v = product.variants.find(v => v.name === variantName);
+    if (v) return v.price;
+  }
+  return product.price || 0;
+}
+
 /** Resolve local image URL. path comes from JSON like "/images/ring/file.webp" */
 export function getImageUrl(path, width) {
   if (!path) return 'https://placehold.co/400x400/f4f1ec/827a68?text=Sin+Imagen';

@@ -1,6 +1,6 @@
-# 🛍️ GO SHOPPING — Premium E-Commerce Store
+# 🛍️ GO SHOPPING — Premium E-Commerce Store (React Edition)
 
-> Tienda online premium de productos importados: **97 anillos**, 34 quemadores, **100+ variedades de esencias**, 25 humidificadores, 11 accesorios para mascotas, 9 juguetes de hidrogel, tecnología, alcancías y accesorios. Una tienda, muchas categorías, productos seleccionados y calidad garantizada con estética de alta gama.
+> Tienda online premium de productos importados: **262 productos sincronizados** en 9 categorías (Anillos, Humidificadores, Alcancías, Esencias, Quemadores, Tecnología, Mascotas, Hidrogel y Novedades). Una plataforma moderna construida con **React 19**, **Supabase** y **Cloudinary** para una experiencia de compra fluida y estética de alta gama.
 
 ---
 
@@ -8,32 +8,34 @@
 
 | Feature | Descripción |
 |---------|-------------|
-| 🏠 **SPA completa** | Navegación fluida sin recargas, router hash-based con lazy loading |
-| 🛒 **Carrito de compras** | Agregar, eliminar, actualizar cantidades con soporte de variantes (fragancias) |
-| ❤️ **Lista de deseos** | Favoritos persistentes con toggle interactivo |
-| 🔍 **Búsqueda instantánea** | Autocompletado en tiempo real con modal overlay sobre `search.json` |
-| 🧪 **Selección de variantes** | Sistema dinámico de fragancias con selectores de cantidad múltiples e individuales |
-| 📱 **Mobile first** | Diseño responsive con drawer de navegación móvil y CTA sticky |
-| 🔎 **SEO dinámico** | Meta tags OG, Twitter Cards y JSON-LD por página |
-| 🎬 **Animaciones Premium** | Staggered cards, fade-in, hover effects, glassmorphism |
-| 🗂️ **Catálogo Masivo** | **300+ productos** organizados en 9 categorías con JSONs independientes |
-| 🚀 **Performance** | Lazy Loading de páginas, Fetch con caché en memoria, `mix-blend-multiply` |
-| 🛒 **Checkout Peruano** | Pago con Yape/Plin, orden completa enviada por WhatsApp |
+| ⚛️ **React 19 SPA** | Aplicación de una sola página ultra rápida con React Router 7 y Lazy Loading |
+| 🗄️ **Supabase Backend** | Persistencia de datos en tiempo real, catálogo sincronizado dinámicamente |
+| ☁️ **Cloudinary CDN** | Gestión inteligente de imágenes con optimización automática y carga rápida |
+| 🛒 **Carrito Avanzado** | Gestión de estado reactiva con `CartContext`, persistencia local y variantes |
+| ❤️ **Lista de deseos** | Favoritos persistentes con animaciones de `framer-motion` |
+| 📱 **Responsive Design** | UI móvil optimizada con componentes táctiles y navegación fluida |
+| 🔎 **SEO & Meta Tags** | Integración con `react-helmet-async` para SEO dinámico por producto |
+| 🎬 **Animaciones Pro** | Transiciones suaves, staggered cards y micro-interacciones premium |
+| 🚀 **Performance** | Código dividido (Code Splitting), Memoización y fetch eficiente |
+| 💳 **Checkout Seguro** | Proceso de compra local optimizado con envío final vía WhatsApp |
 
 ---
 
 ## 🧱 Stack Tecnológico
 
 ```
-Vite 6               → Build tool & dev server
-Tailwind CSS 3.4      → Utility-first CSS framework
-PostCSS + Autoprefixer → Procesamiento de estilos
-Vanilla JavaScript     → Sin frameworks, SPA pura
+Vite 6               → Entorno de desarrollo y build
+React 19             → Framework UI moderno
+Supabase             → Base de datos PostgreSQL (BaaS)
+Cloudinary           → Gestión de assets e imágenes
+Tailwind CSS 3.4      → Framework de estilos utility-first
+Framer Motion        → Librería de animaciones premium
+React Router 7       → Enrutamiento avanzado
 ```
 
 **Tipografías:** Inter (sans-serif) + Playfair Display (serif) para un look moderno y premium.
-**Iconos:** Material Symbols Outlined (Google Fonts).
-**Imágenes:** Assets locales en `/public/images/` — WebP optimizados, mapeados al 100% del catálogo.
+**Iconos:** Material Symbols Outlined (Google Fonts) + Lucide Icons.
+**Imágenes:** Gestionadas en **Cloudinary** — Formatos WebP/AVIF automáticos
 
 ---
 
@@ -41,129 +43,72 @@ Vanilla JavaScript     → Sin frameworks, SPA pura
 
 ```
 GoWEB/
-├── index.html                 # Entry point HTML (mínimo, carga Vite)
-├── package.json               # Dependencias y scripts
-├── tailwind.config.js         # Colores custom, fuentes, animaciones
-├── postcss.config.js          # PostCSS plugins
-├── public/
-│   ├── images/                # Assets locales organizados por categoría
-│   │   ├── ring/              # 97 anillos
-│   │   ├── esencias_cono/     # 36 esencias e inciensos
-│   │   ├── quemadores/        # 34 quemadores
-│   │   ├── humidificadores/   # 25 difusores
-│   │   ├── mascotas/          # 11 accesorios mascotas
-│   │   ├── hidrogel/          # 9 juguetes hidrogel
-│   │   ├── alcancias/         # 8 alcancías
-│   │   ├── tecnologia/        # Gadgets
-│   │   ├── novedades/         # Novedades
-│   │   └── categories/        # Imágenes de categorías
-│   └── data/
-│       ├── categories.json    # 9 categorías con iconos, colores, imágenes
-│       ├── all.json           # Catálogo completo (300+ productos)
-│       ├── deals.json         # 16 productos en oferta
-│       ├── new.json           # Productos nuevos
-│       ├── search.json        # Índice optimizado para búsqueda
-│       └── products/          # JSONs por categoría (lazy-loaded)
-│           ├── alcancias.json
-│           ├── anillos.json
-│           ├── esencias.json
-│           ├── hidrogel.json
-│           ├── humidificadores.json
-│           ├── mascotas.json
-│           ├── novedades.json
-│           ├── quemadores.json
-│           └── tecnologia.json
-└── src/
-    ├── main.js                # Entry point — inicializa router, header, footer, toasts
-    ├── router.js              # Router hash-based con lazy loading de páginas
-    ├── store.js               # State manager reactivo (pub/sub + localStorage)
-    ├── seo.js                 # SEO dinámico (meta, OG, JSON-LD) por vista
-    ├── style.css              # Tailwind directives + componentes custom (glassmorphism, cards)
-    ├── utils.js               # Helpers: formatPrice, sanitize (XSS), debounce
-    ├── services/
-    │   └── api.js             # Fetch con caché + búsqueda unificada entre all.json y categorías
-    ├── components/
-    │   ├── Header.js          # Glass header, mega-menu, búsqueda overlay, drawer móvil
-    │   └── Footer.js          # Trust bar, pagos (Yape/Plin), redes, contacto
-    └── pages/
-        ├── Home.js            # Hero, trust badges, categorías, productos destacados, newsletter
-        ├── Category.js        # Hero banner, grid con sorting, breadcrumbs
-        ├── Product.js         # Galería, fragancias, color swatches, specs, WhatsApp CTA
-        ├── Cart.js            # Items con variantes, resumen, envío gratis +S/150
-        ├── Checkout.js        # Formulario Perú (25 departamentos), Yape/Plin, orden WhatsApp
-        ├── NewArrivals.js     # Grid de productos nuevos (isNew: true)
-        ├── Deals.js           # Grid de ofertas con badges de descuento
-        ├── About.js           # Historia, valores, diferenciadores
-        └── Contact.js         # Formulario, FAQ accordion, WhatsApp directo
+├── public/                # Assets estáticos (logos, iconos)
+├── scripts/               # Utilidades de mantenimiento y sincronización
+├── src/
+│   ├── main.jsx           # Punto de entrada de React
+│   ├── App.jsx            # Componente raíz con Router y Providers
+│   ├── components/        # Componentes UI (Header, Footer, ProductCard)
+│   ├── context/           # Context API de React para gestión de estado
+│   ├── hooks/             # Custom Hooks (useCart, useProducts)
+│   ├── pages/             # Vistas de la aplicación (Home, Product, etc.)
+│   ├── services/          # Cliente Supabase y llamadas a la API
+│   ├── config/            # Configuración local de productos y categorías
+│   └── style.css          # Estilos globales y Tailwind CSS
+└── .env                   # Credenciales de Supabase y Cloudinary
 ```
 
 ---
 
-## 🏗️ Arquitectura
+## 🏗️ Arquitecture
 
 ```mermaid
 graph TD
-    A[index.html] --> B[main.js]
-    B --> C[router.js]
-    B --> D[store.js]
-    B --> E[seo.js]
+    A[index.html] --> B[main.jsx]
+    B --> C[App.jsx]
+    C --> D[BrowserRouter]
+    D --> E[CartProvider]
+    E --> F[Routes]
 
-    C --> F[Home.js]
-    C --> G[Category.js]
-    C --> H[Product.js]
-    C --> I[Cart.js]
-    C --> J[Checkout.js]
-    C --> NA[NewArrivals.js]
-    C --> DA[Deals.js]
-    C --> AB[About.js]
-    C --> CO[Contact.js]
+    F --> G[HomePage]
+    F --> H[CategoryPage]
+    F --> I[ProductPage]
+    F --> J[CartPage]
+    F --> K[CheckoutPage]
 
-    B --> K[Header.js]
-    B --> L[Footer.js]
+    G --> L[Supabase Service]
+    H --> L
+    I --> L
+    J --> L
+    K --> L
 
-    F --> M[services/api.js]
-    G --> M
-    H --> M
-    NA --> M
-    DA --> M
-    I --> M
-    J --> M
-    K --> M
+    L --> M[(Supabase DB)]
+    L --> N[Cloudinary CDN]
 
-    M --> P["public/data/*.json"]
-    M --> Q["public/data/products/*.json"]
-
-    D -->|localStorage| N["Persistencia"]
-    E -->|meta tags| O["SEO / OG / JSON-LD"]
+    E -->|localStorage| O[State Persistence]
 ```
 
-### Router (`router.js`)
+### State Management (`context/`)
+- **CartContext**: Gestión centralizada del carrito, wishlist y persistencia en `localStorage`.
+- **Custom Hooks**: `useCart`, `useProducts`, `useSeo`.
 
-| Ruta | Vista | Descripción |
-|------|-------|-------------|
-| `#/` | Home | Página principal con hero, categorías, deals |
-| `#/categoria/:slug` | Category | Listado por categoría con sorting |
-| `#/producto/:slug` | Product | Ficha de producto premium |
-| `#/carrito` | Cart | Carrito de compras con resumen |
-| `#/checkout` | Checkout | Proceso de pago (Yape/Plin → WhatsApp) |
-| `#/novedades` | NewArrivals | Productos nuevos |
-| `#/ofertas` | Deals | Productos en oferta |
-| `#/nosotros` | About | Sobre la empresa |
-| `#/contacto` | Contact | Formulario + FAQ + WhatsApp |
+### API & Services (`services/`)
+- **supabase.js**: Cliente configurado para interactuar con la base de datos.
+- **productService.js**: Capa de abstracción para fetch de productos, categorías y búsquedas.
 
-### Store (`store.js`)
-State manager reactivo con patrón **pub/sub**:
-- **Cart:** `addToCart(id, qty, variant)`, `removeFromCart`, `updateCartQuantity`, `clearCart`
-- **Wishlist:** `toggleWishlist`, `isInWishlist`
-- **Recently Viewed:** últimos 10 productos visitados
-- **Dark Mode:** toggle con persistencia
-- Variantes de fragancias almacenadas como `id__variant` keys
+---
 
-### SEO (`seo.js`)
-Inyección dinámica por vista (8 funciones):
-- `setHomeSeo`, `setCategorySeo`, `setProductSeo`, `setCartSeo`
-- `setNewArrivalsSeo`, `setDealsSeo`, `setAboutSeo`, `setContactSeo`
-- Open Graph, Twitter Cards, JSON-LD schemas
+## 🛒 Catálogo & Sincronización
+
+El catálogo se define localmente en `/src/config/products.js` como **Source of Truth** y se sincroniza con Supabase mediante scripts automatizados.
+
+### Scripts de Mantenimiento (`scripts/`)
+
+| Script | Descripción |
+|--------|-------------|
+| `node scripts/syncProducts.js` | Sincroniza el catálogo local con la base de datos Supabase. |
+| `node scripts/uploadImages.js` | Sube imágenes de `/public/images/` a Cloudinary automáticamente. |
+| `node scripts/syncCategories.js` | Sincroniza la estructura de categorías. |
 
 ---
 
@@ -235,55 +180,16 @@ Capa de datos asíncrona con **caché en memoria** unificado:
 
 ## 📱 Componentes Clave
 
-### Header (`Header.js`)
-- Glass header con sticky + scroll blur (`backdrop-filter`)
-- Logo "GO SHOPPING" + navegación desktop (5 items)
-- **Mega-menu:** dropdown con 9 categorías (iconos Material + descripción)
-- Búsqueda modal con autocompletado (`debounce 250ms`)
-- Carrito con badge dinámico de conteo
-- **Drawer móvil:** menú lateral con categorías, links, CTA WhatsApp
+### Layout (`components/Header.jsx`, `Footer.jsx`)
+- **Header**: Glass design con `backdrop-filter`, mega-menu interactivo y búsqueda modal.
+- **Footer**: Trust bar con 4 garantías de compra y navegación rápida.
 
-### Footer (`Footer.js`)
-- **Trust bar:** 4 garantías (Originales, Envío, WhatsApp, Satisfacción)
-- Navegación rápida + políticas
-- Métodos de pago: Yape, Plin, Transferencia, Depósito
-- Redes sociales + info (teléfono, email, ubicación)
-- CTA WhatsApp directo
-- Fondo púrpura premium (`#3B2066`)
-
-### Home (`Home.js`)
-- Hero section con imagen de fondo, badge "COLECCIÓN EXCLUSIVA 2025", CTA
-- Trust badges (3 cards: Envío, Garantía, Soporte)
-- Grid de categorías (4 cols, imágenes reales de `categories.json`, stagger animation)
-- Productos destacados (8 cards con datos de `deals.json`)
-- Preview de novedades (3 cards)
-- Newsletter con formulario
-- WhatsApp flotante (bottom-left)
-
-### Product (`Product.js`)
-- Galería con thumbnails clicables
-- **Selector dinámico de fragancias:** Lista scrollable con descripción y selectores `[ - 0 + ]` individuales
-- Selectores de color (swatches circulares)
-- Especificaciones técnicas (accordion)
-- Indicador de stock con estados (verde/amarillo/rojo)
-- Botón "Agregar al carrito" + wishlist toggle
-- **Sticky bottom CTA** en móviles
-- CTA WhatsApp con mensaje pre-formateado (nombre + precio + URL)
-- Trust signals (Envío, Garantía, Devolución, Eco-friendly)
-- Productos relacionados (grid 4 cols)
-
-### Cart (`Cart.js`)
-- Lista de items con imagen, nombre, variante (fragancia), precio, cantidad
-- Soporte para múltiples variantes del mismo producto
-- Resumen: subtotal, envío (gratis +S/150), total
-- CTA "Proceder al Pago"
-
-### Checkout (`Checkout.js`)
-- Formulario: nombre, teléfono, departamento (25 del Perú), ciudad, dirección
-- Métodos de pago: Yape / Plin (radio buttons)
-- Resumen de orden con scroll
-- **Envío de pedido por WhatsApp:** orden completa pre-formateada con emojis
-- Limpieza automática del carrito tras envío
+### Vistas (`pages/`)
+- **HomePage**: Hero interactivo, grid de categorías y productos destacados.
+- **ProductPage**: Galería de imágenes, selectores de variantes (color/cantidad) y specs.
+- **CategoryPage**: Vista de catálogo filtrada con sistema de ordenamiento.
+- **CartPage**: Gestión de productos con persistencia de estado.
+- **CheckoutPage**: Formulario dinámico optimizado para envíos en Perú.
 
 ---
 
@@ -314,20 +220,21 @@ npm run dev
 | `npm run dev` | Servidor de desarrollo con HMR → `http://localhost:5173/` |
 | `npm run build` | Build de producción → `dist/` |
 | `npm run preview` | Previsualizar build de producción |
+| `node scripts/syncProducts.js` | Sincroniza catálogo local -> Supabase |
+| `node scripts/uploadImages.js` | Sincroniza imágenes locales -> Cloudinary |
 
 ---
 
 ## 🌐 SEO & Performance
 
 - ✅ JSON-LD estructurado (Product, CollectionPage, WebSite)
-- ✅ Open Graph y Twitter Cards dinámicos por página
-- ✅ Lazy loading de imágenes con `loading="lazy"`
-- ✅ Lazy loading de páginas (dynamic `import()`)
-- ✅ Fuentes con `preconnect` para carga óptima
-- ✅ CSS utility-first (Tailwind) — bundle optimizado
-- ✅ Assets 100% locales — sin dependencias de CDN externo
-- ✅ Caché en memoria para fetch de datos (sin re-requests)
-- ✅ Sanitización XSS en inputs de usuario
+- ✅ Open Graph y Twitter Cards dinámicos con `react-helmet-async`
+- ✅ Gestión de imágenes mediante **Cloudinary CDN** para máxima velocidad
+- ✅ Lazy loading nativo y mediante importaciones dinámicas de React
+- ✅ Fuentes optimizadas con `preconnect`
+- ✅ CSS-in-JS minimalista mediante Tailwind CSS
+- ✅ Persistencia de estado ultra-ligera en `localStorage`
+- ✅ Sanitización XSS en todos los flujos de datos
 
 ---
 

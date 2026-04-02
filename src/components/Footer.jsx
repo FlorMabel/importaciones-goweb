@@ -3,46 +3,58 @@ import { Link } from 'react-router-dom';
 
 export default function Footer() {
   return (
-    <footer className="bg-[#3B2066] text-white">
-      {/* Trust Bar */}
-      <div className="border-b border-white/10">
-        <div className="max-w-[1440px] mx-auto px-6 lg:px-10 py-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            {[
-              { icon: 'verified', title: 'Productos Originales', desc: '100% importados' },
-              { icon: 'local_shipping', title: 'Envío Seguro', desc: 'A todo el Perú' },
-              { icon: 'support_agent', title: 'Soporte WhatsApp', desc: 'Respuesta rápida' },
-              { icon: 'thumb_up', title: 'Satisfacción', desc: 'Garantía total' },
-            ].map(t => (
-              <div key={t.icon} className="flex items-center gap-3">
-                <span className="material-symbols-outlined text-primary text-2xl">{t.icon}</span>
-                <div>
-                  <p className="text-sm font-bold">{t.title}</p>
-                  <p className="text-xs text-white/60">{t.desc}</p>
-                </div>
+    <footer className="bg-accent-dark text-white pt-16">
+      {/* Luxury Trust Bar */}
+      <div className="max-w-[1440px] mx-auto px-6 lg:px-10 pb-16">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+          {[
+            { icon: 'verified', title: 'Autenticidad', desc: '100% Importados' },
+            { icon: 'local_shipping', title: 'Guante Blanco', desc: 'Envío Asegurado' },
+            { icon: 'support_agent', title: 'Concierge', desc: 'Soporte 24/7' },
+            { icon: 'history_edu', title: 'Legado', desc: 'Garantía Total' },
+          ].map((t, i) => (
+            <div key={t.icon} className="flex flex-col items-center md:items-start gap-4 text-center md:text-left group cursor-default">
+              <div className="size-12 rounded-full border border-white/10 flex items-center justify-center text-primary group-hover:scale-110 group-hover:border-primary transition-all duration-500">
+                <span className="material-symbols-outlined text-2xl">{t.icon}</span>
               </div>
-            ))}
-          </div>
+              <div>
+                <p className="text-xs font-bold uppercase tracking-[0.2em] mb-1">{t.title}</p>
+                <p className="text-[10px] text-white/40 uppercase tracking-widest">{t.desc}</p>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
 
       <div className="max-w-[1440px] mx-auto px-6 lg:px-10 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
           {/* Brand */}
-          <div>
-            <div className="flex items-center gap-3 mb-4">
+          {/* Brand */}
+          <div className="md:col-span-1">
+            <div className="flex items-center gap-3 mb-6">
               <img 
                 src="https://res.cloudinary.com/dod8hhjoo/image/upload/v1774224726/goshopping/optimized/logo-768w.webp" 
                 alt="GO SHOPPING" 
-                className="h-12 w-auto object-contain"
+                className="h-10 w-auto object-contain brightness-0 invert"
               />
-              <span className="font-serif text-xl font-bold text-white">SHOPPING</span>
+              <span className="font-serif text-xl font-bold text-white tracking-widest">SHOPPING</span>
             </div>
-            <p className="text-white/60 text-sm leading-relaxed mb-4">Selección exclusiva de productos importados premium para los gustos más exigentes.</p>
-            <div className="flex gap-3">
-              <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-full bg-white/10 hover:bg-primary flex items-center justify-center transition-colors text-sm">f</a>
-              <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-full bg-white/10 hover:bg-primary flex items-center justify-center transition-colors text-sm">ig</a>
-              <a href="https://www.tiktok.com" target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-full bg-white/10 hover:bg-primary flex items-center justify-center transition-colors text-sm">tk</a>
+            <p className="text-white/40 text-sm leading-relaxed mb-8 font-light italic">
+              "Curando piezas de lujo que transforman lo cotidiano en algo extraordinario."
+            </p>
+            <div className="flex gap-4">
+              {['facebook', 'instagram', 'tiktok'].map(social => (
+                <a 
+                  key={social}
+                  href={`https://www.${social}.com`} 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="size-10 rounded-full border border-white/10 hover:border-primary hover:text-primary flex items-center justify-center transition-all duration-300"
+                >
+                  <span className="sr-only">{social}</span>
+                  <div className="size-4 bg-white/20 rounded-full group-hover:bg-primary transition-colors"></div>
+                </a>
+              ))}
             </div>
           </div>
 

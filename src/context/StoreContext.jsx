@@ -15,14 +15,27 @@ const initialState = {
   wishlist: saved.wishlist || [],
   recentlyViewed: saved.recentlyViewed || [],
   darkMode: saved.darkMode || false,
+  isCartDrawerOpen: false,
 };
 
 function storeReducer(state, action) {
   switch (action.type) {
+    case 'SET_CART_DRAWER':
+      return { ...state, isCartDrawerOpen: action.payload };
     case 'ADD_TO_CART': {
-      const { id, qty, variant } = action.payload;
+      const { product, qty, variant } = action.payload;
+      const id = product.id;
       const key = variant ? `${id}__${variant}` : id;
+      
       const existing = state.cart.find(i => (i.variant ? `${i.id}__${i.variant}` : i.id) === key);
+      
+      // Determine price based on variant
+      let price = product.price;
+      if (variant && product.variants) {
+        const v = product.variants.find(v => v.name === variant);
+        if (v) price = v.price;
+      }
+
       if (existing) {
         return {
           ...state,
@@ -31,9 +44,25 @@ function storeReducer(state, action) {
               ? { ...i, qty: i.qty + qty }
               : i
           ),
+          isCartDrawerOpen: true, // Open drawer on addition
         };
       }
-      return { ...state, cart: [...state.cart, { id, qty, variant }] };
+      
+      const newItem = { 
+        id, 
+        qty, 
+        variant, 
+        name: product.name, 
+        price, 
+        images: product.images,
+        slug: product.slug 
+      };
+      
+      return { 
+        ...state, 
+        cart: [...state.cart, newItem],
+        isCartDrawerOpen: true, // Open drawer on addition
+      };
     }
     case 'REMOVE_FROM_CART': {
       const { id, variant } = action.payload;
@@ -97,12 +126,12 @@ export function StoreProvider({ children }) {
   }, [state]);
 
   // Dark mode class
-  useEffect(() => {
-    document.documentElement.classList.toggle('dark', state.darkMode);
-  }, [state.darkMode]);
+  const addToCart = useCallback((product, qty = 1, variant = null) => {
+    dispatch({ type: 'ADD_TO_CART', payload: { product, qty, variant } });
+  }, []);
 
-  const addToCart = useCallback((id, qty = 1, variant = null) => {
-    dispatch({ type: 'ADD_TO_CART', payload: { id, qty, variant } });
+  const setCartDrawerOpen = useCallback((open) => {
+    dispatch({ type: 'SET_CART_DRAWER', payload: open });
   }, []);
 
   const removeFromCart = useCallback((id, variant = null) => {
@@ -133,18 +162,14 @@ export function StoreProvider({ children }) {
     return state.cart.reduce((sum, item) => sum + item.qty, 0);
   }, [state.cart]);
 
-  const getCartTotal = useCallback((products) => {
-    return state.cart.reduce((sum, item) => {
-      const p = products.find(pr => pr.id === item.id);
-      return sum + (p ? p.price * item.qty : 0);
-    }, 0);
+  const getCartTotal = useCallback(() => {
+    return state.cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
   }, [state.cart]);
 
   const value = {
     cart: state.cart,
-    wishlist: state.wishlist,
-    recentlyViewed: state.recentlyViewed,
-    darkMode: state.darkMode,
+    isCartDrawerOpen: state.isCartDrawerOpen,
+    setCartDrawerOpen,
     addToCart,
     removeFromCart,
     updateCartQuantity,

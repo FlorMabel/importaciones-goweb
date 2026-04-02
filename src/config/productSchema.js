@@ -53,7 +53,8 @@ export const COLOR_NAMES = {
   '#FF9800': 'NARANJA',
   '#DDDAAB': 'BEIGE',
   '#73063B': 'FUCSIA OSCURO',
-  '#955F34': 'MARRON OSCURO'
+  '#955F34': 'MARRON OSCURO',
+  '#7F00B2': 'MORADO'
 
 }
 

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { getProductsByIds } from '../services/api';
-import { formatPrice } from '../utils';
+import { formatPrice, getItemPrice } from '../utils';
 import { useStore } from '../context/StoreContext';
 import { useToast } from '../context/ToastContext';
 import { supabase } from '../services/supabase';
@@ -23,18 +23,20 @@ function sanitize(str) {
 
 export default function CheckoutPage() {
   const navigate = useNavigate();
-  const { cart, clearCart } = useStore();
+  const { cart, clearCart, getCartTotal } = useStore();
   const { showToast } = useToast();
-  const [products, setProducts] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
   const [form, setForm] = useState({ name: '', phone: '', dept: '', city: '', address: '' });
   const [payment, setPayment] = useState('yape');
 
   useEffect(() => {
-    if (cart.length === 0) { setLoading(false); return; }
-    const uniqueIds = [...new Set(cart.map(i => i.id))];
-    getProductsByIds(uniqueIds).then(prods => { setProducts(prods); setLoading(false); });
-  }, [cart]);
+    if (cart.length === 0) {
+      const timer = setTimeout(() => {
+        if (cart.length === 0) navigate('/carrito');
+      }, 100);
+      return () => clearTimeout(timer);
+    }
+  }, [cart, navigate]);
 
   if (loading) {
     return <div className="flex items-center justify-center min-h-[60vh]"><div className="w-10 h-10 border-4 border-primary/30 border-t-primary rounded-full animate-spin"></div></div>;
@@ -50,10 +52,7 @@ export default function CheckoutPage() {
     );
   }
 
-  const total = cart.reduce((sum, item) => {
-    const p = products.find(pr => pr.id === item.id);
-    return sum + (p ? p.price * item.qty : 0);
-  }, 0);
+  const total = getCartTotal();
   const shipping = total >= 150 ? 0 : 15;
   const grandTotal = total + shipping;
 
@@ -84,16 +83,13 @@ export default function CheckoutPage() {
       if (orderError) throw orderError;
 
       // 2. Push order items to Supabase database
-      const orderItems = cart.map(item => {
-        const p = products.find(pr => pr.id === item.id);
-        return {
-          order_id: orderData.id,
-          product_id: p ? p.id : item.id,
-          variant: item.variant || null,
-          quantity: item.qty,
-          unit_price: p ? p.price : 0
-        };
-      });
+      const orderItems = cart.map(item => ({
+        order_id: orderData.id,
+        product_id: item.id,
+        variant: item.variant || null,
+        quantity: item.qty,
+        unit_price: item.price
+      }));
 
       const { error: itemsError } = await supabase
         .from('order_items')
@@ -102,11 +98,9 @@ export default function CheckoutPage() {
       if (itemsError) throw itemsError;
 
       // 3. Generate WhatsApp message
-      let orderLines = cart.map(item => {
-        const p = products.find(pr => pr.id === item.id);
-        if (!p) return '';
-        return `• ${p.name}${item.variant ? ` (${item.variant})` : ''} x${item.qty} = S/ ${(p.price * item.qty).toFixed(2)}`;
-      }).filter(Boolean).join('\n');
+      let orderLines = cart.map(item => 
+        `• ${item.name}${item.variant ? ` (${item.variant})` : ''} x${item.qty} = S/ ${(item.price * item.qty).toFixed(2)}`
+      ).join('\n');
 
       const msg = `🛍️ *NUEVO PEDIDO - GO SHOPPING*\n\n`
         + `🆔 *ID:* ${orderData.id.split('-')[0]}\n`
@@ -135,92 +129,156 @@ export default function CheckoutPage() {
   return (
     <>
       <Helmet><title>Checkout | GO SHOPPING</title></Helmet>
-      <div className="max-w-[1280px] mx-auto px-4 lg:px-10 py-8 lg:py-12">
-        <h1 className="text-3xl font-serif font-bold text-accent mb-8">Checkout</h1>
-
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
-          {/* Form */}
-          <div className="lg:col-span-7">
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="bg-white rounded-2xl p-6 border border-gray-100">
-                <h3 className="font-bold text-lg text-accent mb-4">Datos de Envío</h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <div>
-                    <label className="block text-xs font-bold text-text-main mb-1">Nombre completo *</label>
-                    <input type="text" required value={form.name} onChange={onChange('name')} className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm focus:ring-1 focus:ring-accent focus:border-accent" placeholder="Tu nombre" />
-                  </div>
-                  <div>
-                    <label className="block text-xs font-bold text-text-main mb-1">Teléfono *</label>
-                    <input type="tel" required value={form.phone} onChange={onChange('phone')} className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm focus:ring-1 focus:ring-accent focus:border-accent" placeholder="+51 999 999 999" />
-                  </div>
-                  <div>
-                    <label className="block text-xs font-bold text-text-main mb-1">Departamento *</label>
-                    <select required value={form.dept} onChange={onChange('dept')} className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm focus:ring-1 focus:ring-accent focus:border-accent">
-                      <option value="">Seleccionar</option>
-                      {DEPARTAMENTOS.map(d => <option key={d} value={d}>{d}</option>)}
-                    </select>
-                  </div>
-                  <div>
-                    <label className="block text-xs font-bold text-text-main mb-1">Ciudad / Distrito *</label>
-                    <input type="text" required value={form.city} onChange={onChange('city')} className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm focus:ring-1 focus:ring-accent focus:border-accent" placeholder="Tu distrito" />
-                  </div>
-                  <div className="md:col-span-2">
-                    <label className="block text-xs font-bold text-text-main mb-1">Dirección *</label>
-                    <input type="text" required value={form.address} onChange={onChange('address')} className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm focus:ring-1 focus:ring-accent focus:border-accent" placeholder="Av./Jr./Calle, número, referencia" />
-                  </div>
-                </div>
-              </div>
-
-              <div className="bg-white rounded-2xl p-6 border border-gray-100">
-                <h3 className="font-bold text-lg text-accent mb-4">Método de Pago</h3>
-                <div className="grid grid-cols-2 gap-3">
-                  <label className={`flex items-center gap-3 p-4 rounded-xl border-2 cursor-pointer ${payment === 'yape' ? 'border-accent bg-accent/5' : 'border-gray-200 hover:border-accent'}`}>
-                    <input type="radio" name="payment" value="yape" checked={payment === 'yape'} onChange={() => setPayment('yape')} className="text-accent focus:ring-accent" />
-                    <div><p className="text-sm font-bold text-accent">Yape</p><p className="text-[10px] text-text-muted">Pago instantáneo</p></div>
-                  </label>
-                  <label className={`flex items-center gap-3 p-4 rounded-xl border-2 cursor-pointer ${payment === 'plin' ? 'border-accent bg-accent/5' : 'border-gray-200 hover:border-accent'}`}>
-                    <input type="radio" name="payment" value="plin" checked={payment === 'plin'} onChange={() => setPayment('plin')} className="text-accent focus:ring-accent" />
-                    <div><p className="text-sm font-bold">Plin</p><p className="text-[10px] text-text-muted">Pago rápido</p></div>
-                  </label>
-                </div>
-              </div>
-
-              <button type="submit" className="w-full bg-green-600 hover:bg-green-700 text-white text-sm font-bold py-4 rounded-full transition-colors flex items-center justify-center gap-2">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-                Confirmar Pedido por WhatsApp ({formatPrice(grandTotal)})
-              </button>
-            </form>
+      <div className="bg-beige-soft min-h-screen">
+        <div className="max-w-[1440px] mx-auto px-6 lg:px-10 py-12 lg:py-20">
+          <div className="mb-12">
+            <span className="text-primary font-bold tracking-[0.3em] text-[10px] uppercase mb-1 block">Pasarela de</span>
+            <h1 className="text-4xl md:text-5xl font-serif font-bold text-accent italic">Finalizar Pedido</h1>
           </div>
 
-          {/* Summary */}
-          <div className="lg:col-span-5">
-            <div className="bg-white rounded-2xl p-6 border border-gray-100 sticky top-24">
-              <h3 className="font-serif text-lg font-bold text-accent mb-4">Tu Pedido</h3>
-              <div className="space-y-3 mb-4 max-h-[300px] overflow-y-auto custom-scrollbar">
-                {cart.map(item => {
-                  const p = products.find(pr => pr.id === item.id);
-                  if (!p) return null;
-                  return (
-                    <div key={`${item.id}__${item.variant || ''}`} className="flex items-center gap-3 py-2">
-                      <div className="w-12 h-12 rounded-lg bg-gray-50 overflow-hidden flex-shrink-0 p-1">
-                        <img src={p.images?.[0] || ''} className="w-full h-full object-contain" alt="" />
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+            {/* Left: Form */}
+            <div className="lg:col-span-7">
+              <form onSubmit={handleSubmit} className="space-y-8">
+                {/* Shipping Info Card */}
+                <div className="bg-white rounded-[2.5rem] p-8 md:p-10 shadow-soft border border-border-light relative overflow-hidden">
+                  <div className="flex items-center gap-4 mb-8">
+                    <div className="size-10 rounded-2xl bg-accent/5 flex items-center justify-center text-accent">
+                      <span className="material-symbols-outlined">local_shipping</span>
+                    </div>
+                    <h3 className="text-xl font-bold text-accent">Detalles del Destinatario</h3>
+                  </div>
+
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div className="md:col-span-2">
+                       <label className="block text-[10px] uppercase tracking-widest font-bold text-text-muted mb-2 ml-1">Nombre de Prestigio *</label>
+                       <input type="text" required value={form.name} onChange={onChange('name')} className="w-full bg-beige-light border-border-light rounded-2xl px-5 py-4 text-sm focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all placeholder:text-text-muted/40" placeholder="Ej: Julian Casablancas" />
+                    </div>
+                    
+                    <div>
+                       <label className="block text-[10px] uppercase tracking-widest font-bold text-text-muted mb-2 ml-1">Contacto Directo *</label>
+                       <input type="tel" required value={form.phone} onChange={onChange('phone')} className="w-full bg-beige-light border-border-light rounded-2xl px-5 py-4 text-sm focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all placeholder:text-text-muted/40" placeholder="+51 999 999 999" />
+                    </div>
+
+                    <div>
+                       <label className="block text-[10px] uppercase tracking-widest font-bold text-text-muted mb-2 ml-1">Departamento *</label>
+                       <select required value={form.dept} onChange={onChange('dept')} className="w-full bg-beige-light border-border-light rounded-2xl px-5 py-4 text-sm focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all appearance-none cursor-pointer">
+                         <option value="">Seleccionar Ubicación</option>
+                         {DEPARTAMENTOS.map(d => <option key={d} value={d}>{d}</option>)}
+                       </select>
+                    </div>
+
+                    <div>
+                       <label className="block text-[10px] uppercase tracking-widest font-bold text-text-muted mb-2 ml-1">Distrito / Ciudad *</label>
+                       <input type="text" required value={form.city} onChange={onChange('city')} className="w-full bg-beige-light border-border-light rounded-2xl px-5 py-4 text-sm focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all placeholder:text-text-muted/40" placeholder="Tu distrito" />
+                    </div>
+
+                    <div className="md:col-span-2">
+                       <label className="block text-[10px] uppercase tracking-widest font-bold text-text-muted mb-2 ml-1">Dirección Exacta / Referencias *</label>
+                       <input type="text" required value={form.address} onChange={onChange('address')} className="w-full bg-beige-light border-border-light rounded-2xl px-5 py-4 text-sm focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all placeholder:text-text-muted/40" placeholder="Ciudad, Calle, Nº de casa y referencia" />
+                    </div>
+                  </div>
+                </div>
+
+                {/* Payment Methods Card */}
+                <div className="bg-white rounded-[2.5rem] p-8 md:p-10 shadow-soft border border-border-light relative overflow-hidden">
+                   <div className="flex items-center gap-4 mb-8">
+                    <div className="size-10 rounded-2xl bg-accent/5 flex items-center justify-center text-accent">
+                      <span className="material-symbols-outlined">account_balance_wallet</span>
+                    </div>
+                    <h3 className="text-xl font-bold text-accent">Preferencia de Pago</h3>
+                  </div>
+
+                  <div className="grid grid-cols-2 gap-4">
+                    {[
+                      { id: 'yape', name: 'Yape', desc: 'Confirmación instantánea' },
+                      { id: 'plin', name: 'Plin', desc: 'Transferencia directa' }
+                    ].map(p => (
+                      <label key={p.id} className={`group flex flex-col p-6 rounded-[2rem] border-2 cursor-pointer transition-all duration-300 relative ${payment === p.id ? 'border-primary bg-primary/5 ring-4 ring-primary/5' : 'border-border-light bg-beige-light hover:border-border-strong'}`}>
+                        <div className="flex justify-between items-start mb-4">
+                           <div className={`size-5 rounded-full border-2 flex items-center justify-center transition-colors ${payment === p.id ? 'border-primary bg-primary' : 'border-border-strong bg-white'}`}>
+                             {payment === p.id && <div className="size-2 bg-white rounded-full"></div>}
+                           </div>
+                           <span className="material-symbols-outlined text-text-muted/20 group-hover:text-primary/30 transition-colors">qr_code_2</span>
+                        </div>
+                        <input type="radio" name="payment" value={p.id} checked={payment === p.id} onChange={() => setPayment(p.id)} className="sr-only" />
+                        <span className={`font-bold block ${payment === p.id ? 'text-primary' : 'text-text-main'}`}>{p.name}</span>
+                        <span className="text-[10px] text-text-muted font-medium uppercase tracking-widest mt-1">{p.desc}</span>
+                      </label>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Final Button */}
+                <button 
+                  type="submit" 
+                  disabled={loading}
+                  className="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-6 rounded-3xl transition-all shadow-glow flex flex-col items-center justify-center gap-1 disabled:opacity-50 relative overflow-hidden group"
+                >
+                  <div className="absolute inset-0 bg-white/10 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000 ease-in-out"></div>
+                  <div className="flex items-center gap-3">
+                    <span className="material-symbols-outlined animate-bounce">send</span>
+                    <span className="uppercase tracking-[0.2em] text-xs">Confirmar por WhatsApp</span>
+                  </div>
+                  <span className="text-[10px] opacity-80 font-light italic">Se enviará el detalle de tu selección</span>
+                </button>
+              </form>
+            </div>
+
+            {/* Right: Summary */}
+            <div className="lg:col-span-5 lg:sticky lg:top-32">
+              <div className="bg-white rounded-[2.5rem] p-10 shadow-strong border border-border-light">
+                <h3 className="font-serif text-2xl font-bold text-accent mb-8 italic">Resumen de Pedido</h3>
+                
+                <div className="space-y-6 mb-10 max-h-[400px] overflow-y-auto custom-scrollbar pr-4">
+                  {cart.map(item => (
+                    <div key={`${item.id}__${item.variant || ''}`} className="flex items-center gap-5 group">
+                      <div className="size-16 rounded-[1.2rem] bg-beige-light border border-border-light overflow-hidden flex-shrink-0 p-2 group-hover:scale-105 transition-transform">
+                        <img src={item.images?.[0] || ''} className="w-full h-full object-contain mix-blend-multiply" alt="" />
                       </div>
                       <div className="flex-1 min-w-0">
-                        <p className="text-xs font-bold text-text-main truncate">{p.name}</p>
-                        {item.variant && <p className="text-[10px] text-accent">{item.variant}</p>}
-                        <p className="text-[10px] text-text-muted">Cant: {item.qty}</p>
+                        <h4 className="text-xs font-bold text-text-main truncate group-hover:text-primary transition-colors">{item.name}</h4>
+                        {item.variant && <p className="text-[9px] text-primary font-bold uppercase tracking-widest mt-0.5">{item.variant}</p>}
+                        <p className="text-[10px] text-text-muted mt-1">Cantidad de {item.qty}</p>
                       </div>
-                      <span className="text-xs font-bold text-text-main">{formatPrice(p.price * item.qty)}</span>
+                      <div className="text-right">
+                        <p className="text-sm font-bold text-accent">{formatPrice(item.price * item.qty)}</p>
+                      </div>
                     </div>
-                  );
-                })}
-              </div>
-              <div className="border-t border-gray-200 pt-4 space-y-2 text-sm">
-                <div className="flex justify-between"><span className="text-text-muted">Subtotal</span><span className="font-bold">{formatPrice(total)}</span></div>
-                <div className="flex justify-between"><span className="text-text-muted">Envío</span><span className={`font-bold ${shipping === 0 ? 'text-green-600' : ''}`}>{shipping === 0 ? 'GRATIS' : formatPrice(shipping)}</span></div>
-                <div className="border-t border-gray-200 pt-2 flex justify-between text-base">
-                  <span className="font-bold">Total</span>
-                  <span className="font-bold text-accent text-lg">{formatPrice(grandTotal)}</span>
+                  ))}
+                </div>
+
+                <div className="space-y-4 pt-6 border-t border-border-light">
+                   <div className="flex justify-between text-xs font-medium">
+                     <span className="text-text-muted uppercase tracking-widest">Subtotal de Compra</span>
+                     <span className="text-text-main">{formatPrice(total)}</span>
+                   </div>
+                   <div className="flex justify-between text-xs font-medium">
+                     <span className="text-text-muted uppercase tracking-widest">Logística de Envío</span>
+                     <span className={`font-bold ${shipping === 0 ? 'text-green-600' : 'text-text-main'}`}>
+                       {shipping === 0 ? 'CORTESÍA' : formatPrice(shipping)}
+                     </span>
+                   </div>
+                   
+                   <div className="pt-6 mt-4 border-t-2 border-border-light flex justify-between items-baseline">
+                     <div>
+                       <p className="text-[10px] font-bold text-primary uppercase tracking-[0.3em] mb-1">Total a Invertir</p>
+                       <p className="font-serif text-3xl font-bold text-accent">Pago Final</p>
+                     </div>
+                     <div className="text-right">
+                       <p className="text-3xl font-bold text-accent">{formatPrice(grandTotal)}</p>
+                       <p className="text-[9px] text-text-muted italic">Incluye impuestos y gestión</p>
+                     </div>
+                   </div>
+                </div>
+
+                <div className="mt-10 p-6 bg-beige-light rounded-[2rem] border border-border-light space-y-4">
+                  <div className="flex items-start gap-4">
+                    <span className="material-symbols-outlined text-primary">verified_user</span>
+                    <p className="text-[10px] text-text-muted leading-relaxed font-medium">
+                      Tu pedido está protegido. Al confirmar, un personal shopper te guiará para finalizar el pago y coordinar la entrega.
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>

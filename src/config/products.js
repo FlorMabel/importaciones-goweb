@@ -1,6 +1,6 @@
 // Archivo central de productos. Editando este archivo modificarás catálogo, precios e imágenes.
 //********************************************************************//
-//           ALCANCIAS
+//           ALCANCIASn y COFRES
 //********************************************************************//
 
 export const productsConfig = [
@@ -270,29 +270,42 @@ export const productsConfig = [
   //********************************************************************//
 
   {
-    "id": "ring-dragon-or",
-    "name": "Anillo Dragón Oro Imperial",
-    "slug": "ring-dragon-or",
+    "id": "anillo-ojos-buho-modelo",
+    "name": "Anillo Ojos de Buho",
+    "slug": "anillo-ojos-buho-modelo",
     "category": "anillos",
-    "price": 89.9,
+    "price": 10.0,
     "oldPrice": null,
     "currency": "PEN",
     "badge": "LUJO",
-    "badgeColor": null,
+    "badgeColor":  null,
     "images": [
-      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1/goshopping/ring/anillo_pulsera escop dorado.webp"
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774981288/anillo_ojos_buho_modelo_tnnre0.webp",
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774981286/anillo_buho_verde_dnoca2.webp",
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774981286/anillo_buho_azul_l9ibx4.webp",
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774981286/anillo_buho_naranja_f0lit2.webp",
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774981285/anillo_buho_rojo_ibqzxm.webp",
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774981285/anillo_buho_plomo_rqh6fr.webp",
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774981284/anillo_buho_rosa_fsu595.webp",
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774981274/anillo_buho_amarillo_qp6ncu.webp"
     ],
-    "description": "El guardián de la fortuna. Bañado en oro de 18k, este dragón imperial envuelve tu dedo con detalles esculturales que simbolizan poder, sabiduría y éxito eterno.",
+    "description": "Diseñado para quienes buscan destacar con un accesorio único, este anillo de ojos de búho combina elegancia y significado. Su acabado en aleación resistente y su diseño detallado hacen que sea una pieza llamativa y duradera.",
     "specs": [
       {
         "label": "Material",
-        "value": "Acero + Oro 18k"
+        "value": "Aleación"
       }
     ],
     "rating": 5,
     "reviews": 142,
     "colors": [
-      "#FFD700"
+      "#90EE90",
+      "#003785",
+      "#FF9800",
+      "#EC1E1B",
+      "#D0CCD1",
+      "#FBB2A3",
+      "#FFFFA2"
     ],
     "stock": 15,
     "tags": [],
@@ -302,29 +315,40 @@ export const productsConfig = [
     "salePercent": null
   },
   {
-    "id": "ring-tigre-real",
-    "name": "Anillo Tigre de Bengala",
-    "slug": "ring-tigre-real",
+    "id": "anillo-pulsera",
+    "name": "Anillo Pulsera",
+    "slug": "anillo-pulsera",
     "category": "anillos",
-    "price": 54.9,
+    "price": 22.9,
     "oldPrice": null,
     "currency": "PEN",
-    "badge": "PODER",
+    "badge": "NUEVO",
     "badgeColor": null,
     "images": [
-      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1/goshopping/ring/anillo_pulsera escop plateado.webp"
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774981289/anillo_modelo_entero_cywmwy.webp",
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774981281/anillo_pulsera_gotico_c3f3lv.webp",
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774981277/anillo_pulsera_mariposa_l3niih.webp",
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774981270/anillo_pulsera_escop_plateado_zv9mij.webp",
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774981269/anillo__duo_scorp_plateado_lpdp13.webp",
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774981259/anillo_pulsera_escop_dorado_zub0co.webp",
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774981258/anillo__duo_scorp_dorado_pzyjpa.webp"
     ],
-    "description": "Instinto dominante en acero. La mirada feroz del tigre capturada en una pieza de acero quirúrgico pulido a mano, ideal para quienes lideran su propio camino.",
+    "description": "Una pieza sofisticada que conecta delicadamente la muñeca con el dedo, creando un efecto visual elegante y único. Ideal para elevar cualquier look con un toque moderno y femenino.",
     "specs": [
       {
         "label": "Material",
-        "value": "Acero 316L"
+        "value": "Aleación"
       }
     ],
     "rating": 4.9,
     "reviews": 38,
     "colors": [
-      "#C0C0C0"
+      "#000000",
+      "#FFD700",
+      "#D0CCD1",
+      "#D0CCD1",
+      "#FFD700",
+      "#FFD700"
     ],
     "stock": 20,
     "tags": [],
@@ -334,29 +358,38 @@ export const productsConfig = [
     "salePercent": null
   },
   {
-    "id": "ring-cobra-royal",
-    "name": "Anillo Cobra Imperial",
-    "slug": "ring-cobra-royal",
+    "id": "anillo-ojo-de-dragon",
+    "name": "Anillo Ojo Dragon Imperial",
+    "slug": "anillo-ojo-de-dragon",
     "category": "anillos",
-    "price": 49.9,
+    "price": 15.9,
     "oldPrice": null,
     "currency": "PEN",
     "badge": "NUEVO",
     "badgeColor": null,
     "images": [
-      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1/goshopping/ring/anillo_pulsera mariposa.webp"
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774981234/anillo_ojos_dragon_modelos_ceszeq.webp",
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774981252/anillo_ojo_morado_h6eitw.webp",
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774981273/anillo_ojo_colores_uidcv5.webp",
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774981240/anillo_ojo_rojo_msuouq.webp",
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774981239/anillo_ojo_amarillo_st2tzu.webp",
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774981238/anillo_ojo_azul_hf0nru.webp"
     ],
-    "description": "Seducción y peligro. Un diseño hipnótico de cobra real que destaca por su realismo y acabado espejo, una pieza de distinción para personalidades audaces.",
+    "description": "Despierta tu lado más audaz con este impresionante anillo de dragón, una pieza que simboliza fuerza, protección y dominio..",
     "specs": [
       {
         "label": "Material",
-        "value": "Acero de Titanio"
+        "value": "Aleacion de Hierro"
       }
     ],
     "rating": 4.8,
     "reviews": 45,
     "colors": [
-      "#C0C0C0"
+      "#7F00B2",
+      "#00FFF6",
+      "#EC1E1B",
+      "#FFFFA2",
+      "#003785"
     ],
     "stock": 25,
     "tags": [],
@@ -366,29 +399,45 @@ export const productsConfig = [
     "salePercent": null
   },
   {
-    "id": "ring-lobo-feroz",
-    "name": "Anillo Lobo Alpha",
-    "slug": "ring-lobo-feroz",
+    "id": "anillo-varon-modelo",
+    "name": "Anillo Estilo Men",
+    "slug": "anillo-varon-modelo",
     "category": "anillos",
-    "price": 55.9,
+    "price": 16.9,
     "oldPrice": null,
     "currency": "PEN",
     "badge": "LIDER",
     "badgeColor": null,
     "images": [
-      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1/goshopping/ring/mano modelo ring.webp"
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774981288/anillo_varon_modelos_gyfjsk.webp",
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774981280/anillo_oval_scorpion_hormiga_wwizez.webp",
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774981279/anillo_cuadrado_hormiga_j36is3.webp",
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774981273/anillo_piedra_celeste_lkw0x1.webp",
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774981267/anillo_piedra_rojo_aqdjdq.webp",
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774981266/anillo_piedra_verde_ghx6vr.webp",
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774981266/anillo_piedra_negra_fpo6ek.webp",
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774981265/anillo_oval_aleacion_ibaawz.webp",
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774981260/anillo_cuadrado_aleacion_ddfaxq.webp"
+
     ],
-    "description": "El espíritu de la manada. Relieve detallado que invoca la nobleza y fuerza del lobo, diseñado para acompañarte en cada aventura con elegancia indomable.",
+    "description": "Anillos para hombre con diseños modernos y elegantes.",
     "specs": [
       {
         "label": "Material",
-        "value": "Acero Inoxidable"
+        "value": "Aleacion Zinc/Hierro"
       }
     ],
     "rating": 4.9,
     "reviews": 56,
     "colors": [
-      "#C0C0C0"
+      "#FFD700",
+      "#D0CCD1",
+      "#94E7FF",
+      "#EC1E1B",
+      "#90EE90",
+      "#000000",
+      "#D0CCD1",
+      "#4D4D4D"
     ],
     "stock": 18,
     "tags": [],
@@ -398,29 +447,42 @@ export const productsConfig = [
     "salePercent": null
   },
   {
-    "id": "ring-aguila-imperial",
-    "name": "Anillo Águila de Libertad",
-    "slug": "ring-aguila-imperial",
+    "id": "anillo-duos",
+    "name": "Anillo Dos Piezas",
+    "slug": "anillo-duos",
     "category": "anillos",
-    "price": 52.9,
+    "price": 19.9,
     "oldPrice": null,
     "currency": "PEN",
-    "badge": "VISION",
+    "badge": "NUEVO",
     "badgeColor": null,
     "images": [
-      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1/goshopping/ring/pulsera_anillos.webp"
-    ],
-    "description": "Vuelo sin límites. El águila majestuosa en pleno ascenso, capturada con un detalle asombroso para inspirar liderazgo y una perspectiva superior en tu vida.",
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774981256/anillo_2_piezas_modelo_wfy1zl.webp",
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774981285/anillo_2_piezas_negro_cuadrado_wpwvua.webp",
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774981283/anillo_2_piezas_rojo_obsnv3.webp",
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774981278/anillo_2_piezas_plateado_zv04qp.webp",
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774981271/anillo_2_piezas_negro_hv6teb.webp",
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774981263/anillo_3_piezas_morado_s4wake.webp",
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774981245/anillo_2_piezas_lila_txzhxr.webp",
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774981243/anillo_2_piezas_dorado_verde_byibag.webp"
+    ],  
+    "description": "Eleva tu estilo con este set de anillos de 2 piezas diseñado para quienes buscan versatilidad y personalidad en cada detalle. Su diseño unisex permite combinarlos libremente, ya sea usándolos juntos para un look más llamativo o por separado para un estilo minimalista.",
     "specs": [
       {
         "label": "Material",
-        "value": "Acero Quirúrgico"
+        "value": "Aleacion Zinc/Hierro"
       }
     ],
     "rating": 4.7,
     "reviews": 31,
     "colors": [
-      "#C0C0C0"
+      "#000000",
+      "#EC1E1B",
+      "#D0CCD1",
+      "#000000",
+      "#4D4D4D",
+      "#916CEA",
+      "#FFD700"
     ],
     "stock": 22,
     "tags": [],
@@ -430,29 +492,40 @@ export const productsConfig = [
     "salePercent": null
   },
   {
-    "id": "ring-buho-hi",
-    "name": "Anillo Búho Ancestral",
-    "slug": "ring-buho-hi",
+    "id": "accesorios-acero-quirurgico",
+    "name": "Anillo, Pulsera Acero Quirurgico",
+    "slug": "accesorios-acero-quirurgico",
     "category": "anillos",
-    "price": 49.9,
+    "price": 22.9,
     "oldPrice": null,
     "currency": "PEN",
     "badge": "SABIDURÍA",
     "badgeColor": null,
     "images": [
-      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1/goshopping/ring/pulsera_anillo_scorp.webp"
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774981283/pulsera_nudo_bruja_ace_rtjzdm.webp",
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774981267/ani-pulsera_bruja_plateado_kw42cm.webp",
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774981250/ani-pulsera_bruja_dorado_lb5pot.webp",
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774981252/anillo_acero_bruja_dorado_ophtrc.webp",
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774981279/anillo_acero_bruja_plateado_zomirp.webp",
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774981279/anillo_acero_ala_plateado_rp77tm.webp",
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774981283/anillo_acero_ala_dorado_vxrgnb.webp"
     ],
-    "description": "Conexión con el conocimiento oculto. Los ojos de este búho sabio guardan secretos milenarios, ideal para quienes buscan un accesorio con significado espiritual.",
+    "description": "Una colección diseñada para quienes buscan algo más que accesorios. Inspirada en símbolos místicos, esta línea combina protección, energía y estilo moderno, creando piezas que destacan por su significado y presencia.",
     "specs": [
       {
         "label": "Material",
-        "value": "Acero + Esmalte"
+        "value": "Acero Quirurgico"
       }
     ],
     "rating": 4.9,
     "reviews": 67,
     "colors": [
-      "#C0C0C0"
+      "#D0CCD1",
+      "#FFD700",
+      "#FFD700",
+      "#D0CCD1",
+      "#D0CCD1",
+      "#FFD700"
     ],
     "stock": 12,
     "tags": [],
@@ -462,29 +535,34 @@ export const productsConfig = [
     "salePercent": null
   },
   {
-    "id": "ring-cocodri",
-    "name": "Anillo Cocodrilo Stealth",
-    "slug": "ring-cocodri",
+    "id": "anillos-conjunto",
+    "name": "Anillo Serpientes Conjunto",
+    "slug": "anillo-conjunto",
     "category": "anillos",
-    "price": 55.9,
+    "price": 29.9,
     "oldPrice": null,
     "currency": "PEN",
     "badge": "VANGUARDIA",
     "badgeColor": null,
     "images": [
-      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1/goshopping/ring/pulsera_anillo_scorp_do.webp"
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774981264/anillo_modelo_juego_llx0gm.webp",
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774981282/anillo_juego_bronce_rfqq60.webp",
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774981273/anillo_juego_negro_ltew3h.webp",
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774981287/anillo_juego_plomo_euoo7e.webp"
     ],
-    "description": "Resiliencia prehistórica. Un diseño envolvente que imita la textura y fuerza del cocodrilo, una pieza de declaración para un estilo audaz.",
+    "description": "Atrévete a destacar con este exclusivo set de anillos de serpiente de 4 piezas, diseñado para transformar completamente el estilo de tu mano. Cada anillo se adapta a un dedo diferente creando una composición armoniosa, moderna y llena de actitud.",
     "specs": [
       {
         "label": "Material",
-        "value": "Acero de Titanio"
+        "value": "Aleacion Zinc/Hierro"
       }
     ],
     "rating": 4.6,
     "reviews": 24,
     "colors": [
-      "#C0C0C0"
+      "#FFFFA2",
+      "#000000",
+      "#4D4D4D"
     ],
     "stock": 14,
     "tags": [],
@@ -494,29 +572,46 @@ export const productsConfig = [
     "salePercent": null
   },
   {
-    "id": "ring-toro-bravo",
-    "name": "Anillo Toro de Lidia",
-    "slug": "ring-toro-bravo",
+    "id": "anillo-acero-antiEstres",
+    "name": "Anillo Acero AntiEstres",
+    "slug": "anillo-acero-antiEstres",
     "category": "anillos",
-    "price": 59.9,
+    "price": 24.9,
     "oldPrice": null,
     "currency": "PEN",
     "badge": "FUERZA",
     "badgeColor": null,
     "images": [
-      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1/goshopping/ring/pulsera_nudo_bruja_ace.webp"
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774981276/anillo_stres_modelos_eijqu7.webp",
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774981239/anillo_acero_plateado_eg2uz7.webp",
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774981239/anillo_acero_plateado_cadena_azul_kfsl0e.webp",
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774981238/anillo_acero_plateado_dorado_azmygy.webp",
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774981238/anillo_acero_negro-plomo_ipz6rl.webp",
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774981237/anillo_acero_negro_cadena_dorada_vavmxj.webp",
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774981237/anillo_acero_dorado_xjj7ul.webp",
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774981236/anillo_acero_arco_ires_krjit2.webp",
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774981236/anillo_acero_azul_negro_chrfj1.webp",
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774981233/anillo_acero_negro_qwnv8x.webp"
     ],
-    "description": "Determinación inquebrantable. Este anillo de toro simboliza la fuerza bruta y la perseverancia, una pieza maciza con detalles en alto relieve.",
+    "description": "Diseñado para hombres que buscan equilibrio y presencia, este anillo con cadena giratoria combina estilo moderno con una función relajante. Su mecanismo permite girar la cadena suavemente, ayudando a liberar tensión y mantener la concentración en cualquier momento del día",
     "specs": [
       {
         "label": "Material",
-        "value": "Acero 316L"
+        "value": "Acero Inoxidable"
       }
     ],
     "rating": 4.8,
     "reviews": 42,
     "colors": [
-      "#C0C0C0"
+      "#D0CCD1",
+      "#003785",
+      "#FFD700",
+      "#000000",
+      "#FFFFA2",
+      "#FFD700",
+      "#00FFF6",
+      "#003785",
+      "#000000"
     ],
     "stock": 10,
     "tags": [],
@@ -524,31 +619,42 @@ export const productsConfig = [
     "isNew": false,
     "isOnSale": false,
     "salePercent": null
-  },
+  }, 
   {
-    "id": "ring-elefan",
-    "name": "Anillo Elefante Ganesha",
-    "slug": "ring-elefan",
+    "id": "anillo-serpiente",
+    "name": "Anillo Serpiente",
+    "slug": "anillo-serpiente",
     "category": "anillos",
-    "price": 49.9,
+    "price": 14.9,
     "oldPrice": null,
     "currency": "PEN",
-    "badge": "FORTUNA",
+    "badge": "RENOVACIÓN",
     "badgeColor": null,
     "images": [
-      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1/goshopping/ring/pulsera_piedra.webp"
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774981288/anillo_modelo_B_tit6jz.webp",
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774981275/anillo_serpiente_hierro_bronce_ddq294.webp",
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774981244/anillo_serpiente_hierro_rosapalo_zpvs7e.webp",
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774981244/anillo_serpiente_hierro_hjlsaz.webp",
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774981255/anillo_serpiente_hierro_dorado_f2uipn.webp",
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774981256/anillo_serpiente_hierro_plomo_t3qpfp.webp",
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774981256/anillo_serpiente_hierroBronce_b3b1bc.webp",
     ],
-    "description": "Sabiduría y buena suerte. El elefante sagrado en un diseño de anillo detallado que atrae prosperidad y elimina obstáculos en tu camino diario.",
+    "description": "Inspirados en la simbología de la serpiente, representan transformación, poder y renovación, convirtiéndose en el accesorio perfecto para quienes buscan un look único y con carácter.",
     "specs": [
       {
         "label": "Material",
-        "value": "Acero Inoxidable"
+        "value": "Aleación de Hierro"
       }
     ],
     "rating": 4.9,
     "reviews": 89,
     "colors": [
-      "#C0C0C0"
+      "#FFFFA2",
+      "#CF4523FF",
+      "#4D4D4D",
+      "#FFD700",
+      "#4D4D4D",
+      "#FFFFA2"
     ],
     "stock": 30,
     "tags": [],
@@ -558,29 +664,38 @@ export const productsConfig = [
     "salePercent": null
   },
   {
-    "id": "ring-buldog",
-    "name": "Anillo Bulldog Guardián",
-    "slug": "ring-buldog",
+    "id": "trepadores-anillo-garra",
+    "name": "Trepadores y Anillos Garra",
+    "slug": "trepadores-anillo-garra",
     "category": "anillos",
-    "price": 45.9,
+    "price": 19.9,
     "oldPrice": null,
     "currency": "PEN",
     "badge": "ESTILO",
     "badgeColor": null,
     "images": [
-      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1/goshopping/ring/ring_,mascara.webp"
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774981270/trepadores_modelo_g0wthn.webp",
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774981277/trepador_dorado_arete_s6vdcp.webp",
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774981259/trepadores_plateado_oklzgx.webp",
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774981252/anillo_modelo_dedo_oelowy.webp",
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774981248/anillo_dedo_dorado_x2daxn.webp",
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774981247/anillo_dedo_bronce_udghrx.webp"
     ],
-    "description": "Lealtad con actitud. Un tributo a la fidelidad canina con el estilo rudo y sofisticado de un bulldog perfectamente esculpido en acero.",
+    "description": "Representa libertad, evolución y fuerza interior. Un detalle sofisticado que eleva tu estilo.",
     "specs": [
       {
         "label": "Material",
-        "value": "Acero 316L"
+        "value": "Aleación de Hierro"
       }
     ],
     "rating": 4.7,
     "reviews": 15,
     "colors": [
-      "#C0C0C0"
+      "#FFD700",
+      "#D0CCD1",
+      "#D0CCD1",
+      "#FFD700",
+      "#FFFFA2"
     ],
     "stock": 15,
     "tags": [],
@@ -590,29 +705,53 @@ export const productsConfig = [
     "salePercent": null
   },
   {
-    "id": "ring-rino",
-    "name": "Anillo Rinoceronte Blindado",
-    "slug": "ring-rino",
+    "id": "anillo-goticos",
+    "name": "Anillos Goticos Aleacion Hierro",
+    "slug": "anillo-gotico",
     "category": "anillos",
-    "price": 54.9,
+    "price": 15.9,
     "oldPrice": null,
     "currency": "PEN",
     "badge": "MASIZO",
     "badgeColor": null,
     "images": [
-      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1/goshopping/ring/ring_2_piezas.webp"
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774981282/anillo_modeloA_forfrp.webp",
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774981237/anillo_mascara_jcvkph.webp",
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774981241/anillo_rino_ya5njp.webp",
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774981241/anillo_anubis_delgado_hxrzxh.webp",
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774981241/anillo_anubis_grueso_v09jzg.webp",
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774981242/anillo_sapo_rojo_hierro_b57nme.webp",
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774981234/anillo_sapo_hierro_izyvco.webp",
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774981240/anillo_pavo_aleacion_qdmu3a.webp",
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774981245/anillo_calavera_hk7al3.webp",
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774981246/anillo_toro_jtngl6.webp",
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774981253/anillo_pavo_grande_aleacion_mnhyzj.webp",
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774981253/anillo_aliens_j5cqgc.webp",
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774981257/anillo_cabeza_aguila_zgcsau.webp",
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774981260/anillo_cocodrilo_lbquce.webp",
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774981261/anillo_dragon_aire_plomo_we5iso.webp",
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774981263/anillo_elefante_bgtuq9.webp",
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774981264/anillo_lobo_n13oq3.webp",
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774981265/anillo_aguila_alas_votpt4.webp",
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774981267/anillo_pavo_hierro_urznjn.webp",
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774981268/anillo_buldog_bd50ku.webp",
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774981271/anillo_dragon_aire_plomo_pja7af.webp",
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774981272/anillo_elefante_hindu_cshvau.webp",
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774981275/anillo_tigre_uni9zi.webp",
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774981277/anillo_cobra_stk3aa.webp",
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774981257/anillo_serpiente_mushu_aleacion_ajmbyf.webp"
     ],
-    "description": "Protección impenetrable. El rinoceronte, símbolo de fuerza y resistencia, en un anillo con texturas rugosas que imitan la armadura natural del animal.",
+    "description": "Fabricado en aleación resistente, combina durabilidad con un acabado elegante, ideal para quienes buscan destacar con un accesorio único y lleno de carácter.",
     "specs": [
       {
         "label": "Material",
-        "value": "Acero + Oxidado"
+        "value": "Aleación de Hierro/Zinc"
       }
     ],
     "rating": 4.8,
     "reviews": 12,
     "colors": [
-      "#C0C0C0"
+      "#D0CCD1"
     ],
     "stock": 8,
     "tags": [],
@@ -622,23 +761,44 @@ export const productsConfig = [
     "salePercent": null
   },
   {
-    "id": "ring-7-chakras-pro",
-    "name": "Anillo 7 Chakras Balance",
-    "slug": "ring-7-chakras-pro",
+    "id": "anillos-aleacion-zinc",
+    "name": "Anillos variados de Aleación Zinc",
+    "slug": "anillos-aleacion-zinc",
     "category": "anillos",
-    "price": 45.9,
+    "price": 11.9,
     "oldPrice": null,
     "currency": "PEN",
     "badge": "ZEN",
     "badgeColor": null,
     "images": [
-      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1/goshopping/ring/ring_3_piezas.webp"
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774981289/anillo_modelos_tnrdfv.webp",
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774981281/zorro_piedra_blanca_hb977y.webp",
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774981278/anillo_dragon_agua_azul_mcme72.webp",
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774981272/anillo_mariposa_bronce_pxs9th.webp",
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774981271/zorro_piedra_rojo_dzn0cd.webp",
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774981269/anillo_serpiente_zinc_flolrf.webp",
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774981269/anillo_serpiente_plomo_aleacion_khtegz.webp",
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774981268/anillo_serpiente_aleacion_negro_el4oj6.webp",
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774981262/anillo_dragon_aleacion_qb8pvh.webp",
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774981261/anillo_dragon_agua_rojo_m5ymsi.webp",
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774981261/anillo_dragon_agua_verde_wfhqvj.webp",
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774981260/zorro_piedra_morada_nvlibn.webp",
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774981257/anillo_serpiente_zinc_aleacion_qtm1hc.webp",
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774981255/anillo_serpiente_aleacion_plomo_nlx6mo.webp",
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774981254/anillo_sapo_abrazo_aleacion_aigoit.webp",
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774981250/anillo_garra_1_aleacion_vodeep.webp",
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774981250/anillo_garra_2_aleacion_t2ldjo.webp",
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774981249/anillo_dragon_cola_aleacion_gtqkak.webp",
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774981235/anillo_garra_3_aleacion_wjeyub.webp",
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774981234/anillo_sapo_aleacion_xoklwn.webp",
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774981242/anillo_serpiente_3_zinc_negro_iue8hm.webp"
+      
     ],
     "description": "Alineación energética vital. Siente el equilibrio de tus centros energéticos con este diseño que incorpora los 7 colores sagrados para traerte paz y enfoque.",
     "specs": [
       {
         "label": "Material",
-        "value": "Acero + Cristales"
+        "value": "Aleación de Zinc"
       }
     ],
     "rating": 4.9,
@@ -654,23 +814,28 @@ export const productsConfig = [
     "salePercent": null
   },
   {
-    "id": "ring-nudo-ace",
-    "name": "Anillo Nudo de Bruja Celta",
-    "slug": "ring-nudo-ace",
+    "id": "anillos-aleacion-HZ",
+    "name": "Anillos goticos HZ",
+    "slug": "anillos-aleacion-hz",
     "category": "anillos",
-    "price": 42.9,
+    "price": 22.9,
     "oldPrice": null,
     "currency": "PEN",
     "badge": "PROTECCIÓN",
     "badgeColor": null,
     "images": [
-      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1/goshopping/ring/ring_7_chakras.webp"
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774981288/anillo_modelo_B_tit6jz.webp",
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774981254/anillo_promesa_negro_jldls7.webp",
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774981263/anillo_gotico_craneo_wddvdt.webp",
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774981267/anillo_promesa_plateado_nv3wa8.webp",
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774981274/anillo_promesa_piedras_plateado_a6fad0.webp",
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774981280/ring_cabeza_drag_r0rbjz.webp"
     ],
     "description": "Escudo contra la negatividad. El antiguo símbolo celta del nudo de bruja te brinda protección y empoderamiento en cada paso de tu camino.",
     "specs": [
       {
         "label": "Material",
-        "value": "Acero Quirúrgico"
+        "value": "Aleacion de HZ"
       }
     ],
     "rating": 4.8,
@@ -685,2769 +850,10 @@ export const productsConfig = [
     "isOnSale": false,
     "salePercent": null
   },
-  {
-    "id": "ring-anubis-roy",
-    "name": "Anillo Anubis Guardián",
-    "slug": "ring-anubis-roy",
-    "category": "anillos",
-    "price": 59.9,
-    "oldPrice": null,
-    "currency": "PEN",
-    "badge": "EGIPCIO",
-    "badgeColor": null,
-    "images": [
-      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1/goshopping/ring/ring_aguila.webp"
-    ],
-    "description": "Legado de los faraones. El dios Anubis protege tu destino con esta pieza escultural que evoca el misterio y la gloria del antiguo Egipto.",
-    "specs": [
-      {
-        "label": "Material",
-        "value": "Acero de Titanio"
-      }
-    ],
-    "rating": 4.9,
-    "reviews": 52,
-    "colors": [
-      "#C0C0C0"
-    ],
-    "stock": 15,
-    "tags": [],
-    "fragrances": [],
-    "isNew": true,
-    "isOnSale": false,
-    "salePercent": null
-  },
-  {
-    "id": "ring-hamsa-guard",
-    "name": "Mano de Fátima Hamsa",
-    "slug": "ring-hamsa-guard",
-    "category": "anillos",
-    "price": 48.9,
-    "oldPrice": null,
-    "currency": "PEN",
-    "badge": "DIVINO",
-    "badgeColor": null,
-    "images": [
-      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1/goshopping/ring/ring_alas_ace.webp"
-    ],
-    "description": "Protección divina en tus manos. La Mano de Hamsa detiene las malas vibras mientras atrae la suerte y la felicidad con un diseño detallado.",
-    "specs": [
-      {
-        "label": "Material",
-        "value": "Acero Pulido"
-      }
-    ],
-    "rating": 4.9,
-    "reviews": 41,
-    "colors": [
-      "#C0C0C0"
-    ],
-    "stock": 20,
-    "tags": [],
-    "fragrances": [],
-    "isNew": true,
-    "isOnSale": false,
-    "salePercent": null
-  },
-  {
-    "id": "ring-serp-ororosa",
-    "name": "Anillo Serpiente Oro Rosa",
-    "slug": "ring-serp-ororosa",
-    "category": "anillos",
-    "price": 49.9,
-    "oldPrice": null,
-    "currency": "PEN",
-    "badge": "CHIC",
-    "badgeColor": null,
-    "images": [
-      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1/goshopping/ring/ring_aliens.webp"
-    ],
-    "description": "Elegancia sinuosa y femenina. Un diseño de serpiente estilizada con acabado en oro rosa que se envuelve con delicadeza aportando un toque de lujo moderno.",
-    "specs": [
-      {
-        "label": "Material",
-        "value": "Acero + Oro Rosa"
-      }
-    ],
-    "rating": 4.8,
-    "reviews": 34,
-    "colors": [
-      "#E8B4B4"
-    ],
-    "stock": 15,
-    "tags": [],
-    "fragrances": [],
-    "isNew": true,
-    "isOnSale": false,
-    "salePercent": null
-  },
-  {
-    "id": "ring-serp-dorada",
-    "name": "Anillo Serpiente Golden Eye",
-    "slug": "ring-serp-dorada",
-    "category": "anillos",
-    "price": 49.9,
-    "oldPrice": null,
-    "currency": "PEN",
-    "badge": "LUJO",
-    "badgeColor": null,
-    "images": [
-      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1/goshopping/ring/ring_anillo_7pi.webp"
-    ],
-    "description": "Brillo letal y sofisticado. La serpiente en su maximo esplendor dorado, un diseño que simboliza la transformación constante y el renacimiento con elegancia.",
-    "specs": [
-      {
-        "label": "Material",
-        "value": "Acero Baño Oro"
-      }
-    ],
-    "rating": 4.9,
-    "reviews": 28,
-    "colors": [
-      "#FFD700"
-    ],
-    "stock": 12,
-    "tags": [],
-    "fragrances": [],
-    "isNew": false,
-    "isOnSale": false,
-    "salePercent": null
-  },
-  {
-    "id": "ring-serp-plat",
-    "name": "Anillo Serpiente Silver Mist",
-    "slug": "ring-serp-plat",
-    "category": "anillos",
-    "price": 45.9,
-    "oldPrice": null,
-    "currency": "PEN",
-    "badge": "ESTILO",
-    "badgeColor": null,
-    "images": [
-      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1/goshopping/ring/ring_antiStres_ace.webp"
-    ],
-    "description": "Pureza plateada en movimiento. El diseño de serpiente en acero pulido de alto impacto, perfecto para combinar con cualquier outfit y destacar tu brillo natural.",
-    "specs": [
-      {
-        "label": "Material",
-        "value": "Acero 316L"
-      }
-    ],
-    "rating": 4.7,
-    "reviews": 45,
-    "colors": [
-      "#C0C0C0"
-    ],
-    "stock": 25,
-    "tags": [],
-    "fragrances": [],
-    "isNew": false,
-    "isOnSale": false,
-    "salePercent": null
-  },
-  {
-    "id": "ring-serp-oscuro",
-    "name": "Anillo Serpiente Black Viper",
-    "slug": "ring-serp-oscuro",
-    "category": "anillos",
-    "price": 45.9,
-    "oldPrice": null,
-    "currency": "PEN",
-    "badge": "DARK",
-    "badgeColor": null,
-    "images": [
-      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1/goshopping/ring/ring_anubis.webp"
-    ],
-    "description": "Enigmatica y poderosa. Un acabado en negro obsidiana para esta serpiente que envuelve tu estilo con un aire de misterio y profundidad nocturna.",
-    "specs": [
-      {
-        "label": "Material",
-        "value": "Acero Black PVD"
-      }
-    ],
-    "rating": 4.8,
-    "reviews": 19,
-    "colors": [
-      "#000000"
-    ],
-    "stock": 10,
-    "tags": [],
-    "fragrances": [],
-    "isNew": false,
-    "isOnSale": false,
-    "salePercent": null
-  },
-  {
-    "id": "ring-serp-rosca",
-    "name": "Anillo Serpiente Coil Stream",
-    "slug": "ring-serp-rosca",
-    "category": "anillos",
-    "price": 42.9,
-    "oldPrice": null,
-    "currency": "PEN",
-    "badge": "MODERNO",
-    "badgeColor": null,
-    "images": [
-      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1/goshopping/ring/ring_anubis_gr.webp"
-    ],
-    "description": "Fluidez infinita. Un diseño de rosca continua que imita el movimiento natural de una serpiente, una pieza minimalista pero cargada de simbolismo y estilo.",
-    "specs": [
-      {
-        "label": "Material",
-        "value": "Acero 316L"
-      }
-    ],
-    "rating": 4.6,
-    "reviews": 12,
-    "colors": [
-      "#C0C0C0"
-    ],
-    "stock": 20,
-    "tags": [],
-    "fragrances": [],
-    "isNew": true,
-    "isOnSale": false,
-    "salePercent": null
-  },
-  {
-    "id": "anillo-oro-eternity",
-    "name": "Anillo Eternity Prime",
-    "slug": "anillo-oro-eternity",
-    "category": "anillos",
-    "price": 89.9,
-    "oldPrice": null,
-    "currency": "PEN",
-    "badge": "TOP VENTAS",
-    "badgeColor": null,
-    "images": [
-      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1/goshopping/ring/ring_buho_hi.webp"
-    ],
-    "description": "Elegancia atemporal en cada detalle. Este anillo bañado en oro captura la esencia de la sofisticación eterna.",
-    "specs": [
-      {
-        "label": "Material",
-        "value": "Acero + Baño en Oro"
-      }
-    ],
-    "rating": 4.8,
-    "reviews": 124,
-    "colors": [
-      "#FFD700"
-    ],
-    "stock": 35,
-    "tags": [],
-    "fragrances": [],
-    "isNew": false,
-    "isOnSale": false,
-    "salePercent": null
-  },
-  {
-    "id": "anillo-mariposa",
-    "name": "Anillo Mariposa Cristal",
-    "slug": "anillo-mariposa",
-    "category": "anillos",
-    "price": 59.9,
-    "oldPrice": 79.9,
-    "currency": "PEN",
-    "badge": "-25%",
-    "badgeColor": null,
-    "images": [
-      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1/goshopping/ring/ring_buldog.webp"
-    ],
-    "description": "Un toque de fantasía y brillo. Deja que la delicadeza de esta mariposa de cristal ilumine tus manos.",
-    "specs": [
-      {
-        "label": "Material",
-        "value": "Plata 925"
-      }
-    ],
-    "rating": 4.6,
-    "reviews": 87,
-    "colors": [
-      "#C0C0C0"
-    ],
-    "stock": 40,
-    "tags": [],
-    "fragrances": [],
-    "isNew": false,
-    "isOnSale": true,
-    "salePercent": 25
-  },
-  {
-    "id": "anillo-minimalista",
-    "name": "Set Anillos Minimalistas x5",
-    "slug": "anillo-minimalista",
-    "category": "anillos",
-    "price": 45.9,
-    "oldPrice": null,
-    "currency": "PEN",
-    "badge": "NUEVO",
-    "badgeColor": null,
-    "images": [
-      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1/goshopping/ring/ring_cabeza_drag.webp"
-    ],
-    "description": "La belleza de lo simple. Crea infinitas combinaciones con este set de 5 anillos minimalistas.",
-    "specs": [
-      {
-        "label": "Material",
-        "value": "Acero Inoxidable"
-      }
-    ],
-    "rating": 4.5,
-    "reviews": 203,
-    "colors": [
-      "#C0C0C0"
-    ],
-    "stock": 60,
-    "tags": [],
-    "fragrances": [],
-    "isNew": true,
-    "isOnSale": false,
-    "salePercent": null
-  },
-  {
-    "id": "ring-dragon-azul-gr",
-    "name": "Anillo Dragón Aqua Azur",
-    "slug": "ring-dragon-azul-gr",
-    "category": "anillos",
-    "price": 59.9,
-    "oldPrice": null,
-    "currency": "PEN",
-    "badge": "MÍSTICO",
-    "badgeColor": null,
-    "images": [
-      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1/goshopping/ring/ring_calavera.webp"
-    ],
-    "description": "Soberano de las profundidades. Un diseño majestuoso con relieves que simulan las escamas de un dragón marino, evocando la fuerza y calma del océano.",
-    "specs": [
-      {
-        "label": "Material",
-        "value": "Acero + Esmalte Azul"
-      }
-    ],
-    "rating": 4.9,
-    "reviews": 31,
-    "colors": [
-      "#4B8BBE"
-    ],
-    "stock": 12,
-    "tags": [],
-    "fragrances": [],
-    "isNew": true,
-    "isOnSale": false,
-    "salePercent": null
-  },
-  {
-    "id": "ring-dragon-rojo-gr",
-    "name": "Anillo Dragón Fuego Carmín",
-    "slug": "ring-dragon-rojo-gr",
-    "category": "anillos",
-    "price": 59.9,
-    "oldPrice": null,
-    "currency": "PEN",
-    "badge": "FEROZ",
-    "badgeColor": null,
-    "images": [
-      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1/goshopping/ring/ring_calevra_luminoso.webp"
-    ],
-    "description": "La esencia del fuego en tu dedo. Los ojos carmesí de este dragón protegen tu energía personal con un diseño que impone respeto y admiración.",
-    "specs": [
-      {
-        "label": "Material",
-        "value": "Acero + Esmalte Rojo"
-      }
-    ],
-    "rating": 4.8,
-    "reviews": 27,
-    "colors": [
-      "#FF0000"
-    ],
-    "stock": 10,
-    "tags": [],
-    "fragrances": [],
-    "isNew": false,
-    "isOnSale": false,
-    "salePercent": null
-  },
-  {
-    "id": "ring-dragon-verde-gr",
-    "name": "Anillo Dragón Jade Mist",
-    "slug": "ring-dragon-verde-gr",
-    "category": "anillos",
-    "price": 59.9,
-    "oldPrice": null,
-    "currency": "PEN",
-    "badge": "EQUILIBRIO",
-    "badgeColor": null,
-    "images": [
-      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1/goshopping/ring/ring_cobra.webp"
-    ],
-    "description": "Armonía ancestral. Tonos esmeralda y plateados se funden en este diseño de dragón que atrae la serenidad y la buena fortuna a quien lo porta.",
-    "specs": [
-      {
-        "label": "Material",
-        "value": "Acero + Esmalte Verde"
-      }
-    ],
-    "rating": 4.7,
-    "reviews": 19,
-    "colors": [
-      "#228B22"
-    ],
-    "stock": 15,
-    "tags": [],
-    "fragrances": [],
-    "isNew": false,
-    "isOnSale": false,
-    "salePercent": null
-  },
-  {
-    "id": "ring-dragon-cigar",
-    "name": "Anillo Dragón Smokey Spirit",
-    "slug": "ring-dragon-cigar",
-    "category": "anillos",
-    "price": 65.9,
-    "oldPrice": null,
-    "currency": "PEN",
-    "badge": "ALTO DETALLE",
-    "badgeColor": null,
-    "images": [
-      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1/goshopping/ring/ring_cocodri.webp"
-    ],
-    "description": "El dragón del humo y la sombra. Un diseño intrincado que parece fundirse con tu estilo, ideal para quienes buscan un accesorio con carácter oscuro y elegante.",
-    "specs": [
-      {
-        "label": "Material",
-        "value": "Acero Envejecido"
-      }
-    ],
-    "rating": 4.9,
-    "reviews": 12,
-    "colors": [
-      "#808080"
-    ],
-    "stock": 8,
-    "tags": [],
-    "fragrances": [],
-    "isNew": true,
-    "isOnSale": false,
-    "salePercent": null
-  },
-  {
-    "id": "ring-garra-drag-pro",
-    "name": "Anillo Garra Draconiana Pro",
-    "slug": "ring-garra-drag-pro",
-    "category": "anillos",
-    "price": 49.9,
-    "oldPrice": null,
-    "currency": "PEN",
-    "badge": "REBELDE",
-    "badgeColor": null,
-    "images": [
-      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1/goshopping/ring/ring_craneo.webp"
-    ],
-    "description": "Control de acero. Siente el poder de un dragón en tus dedos con esta garra envolvente diseñada para quienes marcan su propio camino con firmeza.",
-    "specs": [
-      {
-        "label": "Material",
-        "value": "Acero Quirúrgico"
-      }
-    ],
-    "rating": 4.9,
-    "reviews": 54,
-    "colors": [
-      "#C0C0C0"
-    ],
-    "stock": 20,
-    "tags": [],
-    "fragrances": [],
-    "isNew": true,
-    "isOnSale": false,
-    "salePercent": null
-  },
-  {
-    "id": "ring-garra-simp",
-    "name": "Anillo Garra Minimalista",
-    "slug": "ring-garra-simp",
-    "category": "anillos",
-    "price": 39.9,
-    "oldPrice": null,
-    "currency": "PEN",
-    "badge": "TENDENCIA",
-    "badgeColor": null,
-    "images": [
-      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1/goshopping/ring/ring_dargon_entero_zi.webp"
-    ],
-    "description": "Sutileza letal. Un diseño de garra más ligero y estilizado que ofrece un look moderno y vanguardista sin perder la esencia de poder draconiano.",
-    "specs": [
-      {
-        "label": "Material",
-        "value": "Acero Pulido"
-      }
-    ],
-    "rating": 4.6,
-    "reviews": 38,
-    "colors": [
-      "#C0C0C0"
-    ],
-    "stock": 25,
-    "tags": [],
-    "fragrances": [],
-    "isNew": false,
-    "isOnSale": false,
-    "salePercent": null
-  },
-  {
-    "id": "ring-dargon-entero",
-    "name": "Anillo Dragón Total Infinity",
-    "slug": "ring-dargon-entero",
-    "category": "anillos",
-    "price": 69.9,
-    "oldPrice": null,
-    "currency": "PEN",
-    "badge": "ESCULTURA",
-    "badgeColor": null,
-    "images": [
-      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1/goshopping/ring/ring_drago cigarro_hi.webp"
-    ],
-    "description": "La majestuosidad completa. Este dragón de cuerpo entero se enrosca con gracia en tu dedo, una obra maestra de joyería urbana que atrae todas las miradas.",
-    "specs": [
-      {
-        "label": "Material",
-        "value": "Zinc de Lujo"
-      }
-    ],
-    "rating": 5,
-    "reviews": 14,
-    "colors": [
-      "#C0C0C0"
-    ],
-    "stock": 5,
-    "tags": [],
-    "fragrances": [],
-    "isNew": true,
-    "isOnSale": false,
-    "salePercent": null
-  },
-  {
-    "id": "ring-serp-mushu",
-    "name": "Anillo Serpiente Mushu Style",
-    "slug": "ring-serp-mushu",
-    "category": "anillos",
-    "price": 45.9,
-    "oldPrice": null,
-    "currency": "PEN",
-    "badge": "DESTACADO",
-    "badgeColor": null,
-    "images": [
-      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1/goshopping/ring/ring_dragon_agua_roj.webp"
-    ],
-    "description": "Inspiración oriental. Un diseño de serpiente que evoca la agilidad y fluidez de la mitología asiática, aportando una nota de elegancia exótica a tu mano.",
-    "specs": [
-      {
-        "label": "Material",
-        "value": "Acero Inoxidable"
-      }
-    ],
-    "rating": 4.7,
-    "reviews": 29,
-    "colors": [
-      "#C0C0C0"
-    ],
-    "stock": 15,
-    "tags": [],
-    "fragrances": [],
-    "isNew": false,
-    "isOnSale": false,
-    "salePercent": null
-  },
-  {
-    "id": "ring-serp-aire",
-    "name": "Anillo Serpiente del Viento",
-    "slug": "ring-serp-aire",
-    "category": "anillos",
-    "price": 42.9,
-    "oldPrice": null,
-    "currency": "PEN",
-    "badge": "FLUIDEZ",
-    "badgeColor": null,
-    "images": [
-      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1/goshopping/ring/ring_dragon_agua_ver.webp"
-    ],
-    "description": "Ligereza y cambio. Siente la libertad del movimiento con este diseño aerodinámico de serpiente que simboliza la capacidad de adaptación en un mundo cambiante.",
-    "specs": [
-      {
-        "label": "Material",
-        "value": "Acero 316L"
-      }
-    ],
-    "rating": 4.8,
-    "reviews": 21,
-    "colors": [
-      "#C0C0C0"
-    ],
-    "stock": 20,
-    "tags": [],
-    "fragrances": [],
-    "isNew": true,
-    "isOnSale": false,
-    "salePercent": null
-  },
-  {
-    "id": "ring-serp-drag-fus",
-    "name": "Anillo Híbrido Draco-Serp",
-    "slug": "ring-serp-drag-fus",
-    "category": "anillos",
-    "price": 54.9,
-    "oldPrice": null,
-    "currency": "PEN",
-    "badge": "ÚNICO",
-    "badgeColor": null,
-    "images": [
-      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1/goshopping/ring/ring_dragon_cigar.webp"
-    ],
-    "description": "Poder duplicado. Una fusión magistral entre el dragón y la serpiente, creando una pieza de joyería vanguardista que irradia misterio y control absoluto.",
-    "specs": [
-      {
-        "label": "Material",
-        "value": "Acero Envejecido"
-      }
-    ],
-    "rating": 4.9,
-    "reviews": 15,
-    "colors": [
-      "#808080"
-    ],
-    "stock": 10,
-    "tags": [],
-    "fragrances": [],
-    "isNew": true,
-    "isOnSale": false,
-    "salePercent": null
-  },
-  {
-    "id": "ring-anillo-7pi",
-    "name": "Anillo 7 Piedras Sagradas",
-    "slug": "ring-anillo-7pi",
-    "category": "anillos",
-    "price": 49.9,
-    "oldPrice": null,
-    "currency": "PEN",
-    "badge": "ENERGÍA",
-    "badgeColor": null,
-    "images": [
-      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1/goshopping/ring/ring_dragon_or.webp"
-    ],
-    "description": "Tu talismán de bienestar. Siente la vibración de 7 piedras preciosas integradas en un diseño de acero pulido, diseñado para acompañarte en tu búsqueda de armonía.",
-    "specs": [
-      {
-        "label": "Material",
-        "value": "Acero + Gemas"
-      }
-    ],
-    "rating": 4.9,
-    "reviews": 88,
-    "colors": [
-      "#C0C0C0"
-    ],
-    "stock": 30,
-    "tags": [],
-    "fragrances": [],
-    "isNew": true,
-    "isOnSale": false,
-    "salePercent": null
-  },
-  {
-    "id": "ring-ojo-hie",
-    "name": "Anillo Ojo de Hierbas Zen",
-    "slug": "ring-ojo-hie",
-    "category": "anillos",
-    "price": 39.9,
-    "oldPrice": null,
-    "currency": "PEN",
-    "badge": "RELAX",
-    "badgeColor": null,
-    "images": [
-      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1/goshopping/ring/ring_dragon_plo.webp"
-    ],
-    "description": "Mirada en paz. Un diseño conceptual inspirado en la botánica y el bienestar, perfecto para quienes valoran la conexión espiritual con la naturaleza.",
-    "specs": [
-      {
-        "label": "Material",
-        "value": "Aleación Refinada"
-      }
-    ],
-    "rating": 4.5,
-    "reviews": 14,
-    "colors": [
-      "#C0C0C0"
-    ],
-    "stock": 20,
-    "tags": [],
-    "fragrances": [],
-    "isNew": false,
-    "isOnSale": false,
-    "salePercent": null
-  },
-  {
-    "id": "ring-ojo-buho-roy",
-    "name": "Anillo Mirada de Búho",
-    "slug": "ring-ojo-buho-roy",
-    "category": "anillos",
-    "price": 42.9,
-    "oldPrice": null,
-    "currency": "PEN",
-    "badge": "MISTERIO",
-    "badgeColor": null,
-    "images": [
-      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1/goshopping/ring/ring_dragon_zin.webp"
-    ],
-    "description": "Visión nocturna. La mirada penetrante del búho en un anillo que simboliza la sabiduría y la capacidad de ver la verdad a través de las sombras cotidanas.",
-    "specs": [
-      {
-        "label": "Material",
-        "value": "Acero Pulido"
-      }
-    ],
-    "rating": 4.7,
-    "reviews": 33,
-    "colors": [
-      "#C0C0C0"
-    ],
-    "stock": 18,
-    "tags": [],
-    "fragrances": [],
-    "isNew": false,
-    "isOnSale": false,
-    "salePercent": null
-  },
-  {
-    "id": "ring-mask-venice",
-    "name": "Anillo Máscara Veneciana",
-    "slug": "ring-mask-venice",
-    "category": "anillos",
-    "price": 49.9,
-    "oldPrice": null,
-    "currency": "PEN",
-    "badge": "ARTE",
-    "badgeColor": null,
-    "images": [
-      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1/goshopping/ring/ring_drag_lumino.webp"
-    ],
-    "description": "El misterio bajo la máscara. Una pieza de alto detalle inspirada en el carnaval veneciano, ideal para personalidades enigmáticas que aprecian el diseño artístico.",
-    "specs": [
-      {
-        "label": "Material",
-        "value": "Acero Envejecido"
-      }
-    ],
-    "rating": 4.8,
-    "reviews": 14,
-    "colors": [
-      "#C0C0C0"
-    ],
-    "stock": 10,
-    "tags": [],
-    "fragrances": [],
-    "isNew": true,
-    "isOnSale": false,
-    "salePercent": null
-  },
-  {
-    "id": "ring-craneo-dark",
-    "name": "Anillo Cráneo Gótico",
-    "slug": "ring-craneo-dark",
-    "category": "anillos",
-    "price": 45.9,
-    "oldPrice": null,
-    "currency": "PEN",
-    "badge": "HEAVY",
-    "badgeColor": null,
-    "images": [
-      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1/goshopping/ring/ring_drag_luminoso.webp"
-    ],
-    "description": "Memento Mori con estilo. Un cráneo perfectamente detallado en acero premium, la pieza definitiva para un estilo gótico, rockero o rebelde de alta gama.",
-    "specs": [
-      {
-        "label": "Material",
-        "value": "Acero de Titanio"
-      }
-    ],
-    "rating": 4.9,
-    "reviews": 45,
-    "colors": [
-      "#C0C0C0"
-    ],
-    "stock": 25,
-    "tags": [],
-    "fragrances": [],
-    "isNew": false,
-    "isOnSale": false,
-    "salePercent": null
-  },
-  {
-    "id": "ring-calavera-mex-roy",
-    "name": "Anillo Calavera Real",
-    "slug": "ring-calavera-mex-roy",
-    "category": "anillos",
-    "price": 55.9,
-    "oldPrice": null,
-    "currency": "PEN",
-    "badge": "DESTACADO",
-    "badgeColor": null,
-    "images": [
-      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1/goshopping/ring/ring_duo lila.webp"
-    ],
-    "description": "Tradición y rebeldía. Un diseño inspirado en la \"Catrina\" con acabados intrincados que rinden homenaje a la cultura con un giro moderno y sofisticado.",
-    "specs": [
-      {
-        "label": "Material",
-        "value": "Acero + Oxidado"
-      }
-    ],
-    "rating": 4.8,
-    "reviews": 31,
-    "colors": [
-      "#C0C0C0"
-    ],
-    "stock": 15,
-    "tags": [],
-    "fragrances": [],
-    "isNew": false,
-    "isOnSale": false,
-    "salePercent": null
-  },
-  {
-    "id": "ring-calavera-glory",
-    "name": "Anillo Calavera Glos",
-    "slug": "ring-calavera-glory",
-    "category": "anillos",
-    "price": 59.9,
-    "oldPrice": null,
-    "currency": "PEN",
-    "badge": "PREMIUM",
-    "badgeColor": null,
-    "images": [
-      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1/goshopping/ring/ring_duo negro.webp"
-    ],
-    "description": "Brillo letal. Una calavera con acabados pulidos que capturan la luz de forma única, diseñada para quienes desean destacar con un accesorio potente y lujoso.",
-    "specs": [
-      {
-        "label": "Material",
-        "value": "Acero Pulido Espejo"
-      }
-    ],
-    "rating": 4.9,
-    "reviews": 18,
-    "colors": [
-      "#C0C0C0"
-    ],
-    "stock": 12,
-    "tags": [],
-    "fragrances": [],
-    "isNew": true,
-    "isOnSale": false,
-    "salePercent": null
-  },
-  {
-    "id": "ring-claw-double",
-    "name": "Anillo Doble Garra Strike",
-    "slug": "ring-claw-double",
-    "category": "anillos",
-    "price": 52.9,
-    "oldPrice": null,
-    "currency": "PEN",
-    "badge": "VANGUARDIA",
-    "badgeColor": null,
-    "images": [
-      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1/goshopping/ring/ring_duonegro.webp"
-    ],
-    "description": "Doble impacto. El diseño de garra llevado al siguiente nivel con una estructura articulada que envuelve el dedo con una agresividad refinada y moderna.",
-    "specs": [
-      {
-        "label": "Material",
-        "value": "Acero Quirúrgico"
-      }
-    ],
-    "rating": 4.7,
-    "reviews": 22,
-    "colors": [
-      "#C0C0C0"
-    ],
-    "stock": 8,
-    "tags": [],
-    "fragrances": [],
-    "isNew": true,
-    "isOnSale": false,
-    "salePercent": null
-  },
-  {
-    "id": "ring-black-onyx-hi",
-    "name": "Anillo Ónice Nocturno",
-    "slug": "ring-black-onyx-hi",
-    "category": "anillos",
-    "price": 65.9,
-    "oldPrice": null,
-    "currency": "PEN",
-    "badge": "ELEGANCIA",
-    "badgeColor": null,
-    "images": [
-      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1/goshopping/ring/ring_duoplomo.webp"
-    ],
-    "description": "Fuerza oscura y protectora. Una gema negra profunda centrada en un marco de acero pulido, simbolizando el enfoque y la protección espiritual con lujo.",
-    "specs": [
-      {
-        "label": "Material",
-        "value": "Acero + Gema Óniz"
-      }
-    ],
-    "rating": 5,
-    "reviews": 37,
-    "colors": [
-      "#000000"
-    ],
-    "stock": 15,
-    "tags": [],
-    "fragrances": [],
-    "isNew": true,
-    "isOnSale": false,
-    "salePercent": null
-  },
-  {
-    "id": "ring-piedra-verde-hi",
-    "name": "Anillo Esmeralda Imperial",
-    "slug": "ring-piedra-verde-hi",
-    "category": "anillos",
-    "price": 79.9,
-    "oldPrice": null,
-    "currency": "PEN",
-    "badge": "LUJO",
-    "badgeColor": null,
-    "images": [
-      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1/goshopping/ring/ring_duo_plateado.webp"
-    ],
-    "description": "La esencia de la distinción. Una gema verde esmeralda que irradia abundancia y sofisticación, perfecta para tus momentos de mayor éxito y distinción.",
-    "specs": [
-      {
-        "label": "Material",
-        "value": "Acero + Gema Verde"
-      }
-    ],
-    "rating": 4.9,
-    "reviews": 21,
-    "colors": [
-      "#008000"
-    ],
-    "stock": 10,
-    "tags": [],
-    "fragrances": [],
-    "isNew": false,
-    "isOnSale": false,
-    "salePercent": null
-  },
-  {
-    "id": "ring-ruby-spark-hi",
-    "name": "Anillo Rubí de Pasión",
-    "slug": "ring-ruby-spark-hi",
-    "category": "anillos",
-    "price": 79.9,
-    "oldPrice": null,
-    "currency": "PEN",
-    "badge": "PASIÓN",
-    "badgeColor": null,
-    "images": [
-      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1/goshopping/ring/ring_duo_plomo.webp"
-    ],
-    "description": "Energía y deseo. El rubí carmesí en el centro de este anillo captura la esencia de la pasión y el coraje, un diseño de lujo para personalidades intensas.",
-    "specs": [
-      {
-        "label": "Material",
-        "value": "Acero + Gema Roja"
-      }
-    ],
-    "rating": 4.8,
-    "reviews": 15,
-    "colors": [
-      "#FF0000"
-    ],
-    "stock": 8,
-    "tags": [],
-    "fragrances": [],
-    "isNew": true,
-    "isOnSale": false,
-    "salePercent": null
-  },
-  {
-    "id": "ring-celeste-gem-hi",
-    "name": "Anillo Aquamarina Soul",
-    "slug": "ring-celeste-gem-hi",
-    "category": "anillos",
-    "price": 69.9,
-    "oldPrice": null,
-    "currency": "PEN",
-    "badge": "PAZ",
-    "badgeColor": null,
-    "images": [
-      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1/goshopping/ring/ring_duo_verde dorado.webp"
-    ],
-    "description": "Calma oceánica en tu mano. Una piedra celeste que evoca la serenidad de las aguas cristalinas, ideal para quienes buscan claridad y paz espiritual diaria.",
-    "specs": [
-      {
-        "label": "Material",
-        "value": "Acero + Gema Celeste"
-      }
-    ],
-    "rating": 4.9,
-    "reviews": 19,
-    "colors": [
-      "#add8e6"
-    ],
-    "stock": 12,
-    "tags": [],
-    "fragrances": [],
-    "isNew": false,
-    "isOnSale": false,
-    "salePercent": null
-  },
-  {
-    "id": "ring-square-gem-hi",
-    "name": "Anillo Square Luxe Diamond",
-    "slug": "ring-square-gem-hi",
-    "category": "anillos",
-    "price": 85.9,
-    "oldPrice": null,
-    "currency": "PEN",
-    "badge": "PREMIUM",
-    "badgeColor": null,
-    "images": [
-      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1/goshopping/ring/ring_elefan.webp"
-    ],
-    "description": "Geometría del lujo. Una gema cuadrada de corte perfecto que refleja el éxito y la determinación con un brillo geométrico impecable y sofisticado.",
-    "specs": [
-      {
-        "label": "Material",
-        "value": "Acero + Gema Clear"
-      }
-    ],
-    "rating": 5,
-    "reviews": 12,
-    "colors": [
-      "#C0C0C0"
-    ],
-    "stock": 5,
-    "tags": [],
-    "fragrances": [],
-    "isNew": true,
-    "isOnSale": false,
-    "salePercent": null
-  },
-  {
-    "id": "ring-men-flat-gem-hi",
-    "name": "Anillo Varonil Flatstone",
-    "slug": "ring-men-flat-gem-hi",
-    "category": "anillos",
-    "price": 65.9,
-    "oldPrice": null,
-    "currency": "PEN",
-    "badge": "MAN STYLE",
-    "badgeColor": null,
-    "images": [
-      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1/goshopping/ring/ring_elef_indu.webp"
-    ],
-    "description": "Elegancia masculina robusta. Un diseño plano y sobrio con una piedra central integrada que aporta una nota de distinción sin perder la rudeza del diseño.",
-    "specs": [
-      {
-        "label": "Material",
-        "value": "Acero 316L + Óniz"
-      }
-    ],
-    "rating": 4.7,
-    "reviews": 42,
-    "colors": [
-      "#C0C0C0",
-      "#000000"
-    ],
-    "stock": 18,
-    "tags": [],
-    "fragrances": [],
-    "isNew": false,
-    "isOnSale": false,
-    "salePercent": null
-  },
-  {
-    "id": "ring-duo-modular",
-    "name": "Set Anillos Dual Vision",
-    "slug": "ring-duo-modular",
-    "category": "anillos",
-    "price": 49.9,
-    "oldPrice": null,
-    "currency": "PEN",
-    "badge": "SET",
-    "badgeColor": null,
-    "images": [
-      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1/goshopping/ring/ring_garra2-2.webp"
-    ],
-    "description": "Versatilidad geométrica. Dos piezas complementarias que puedes usar juntas o por separado para crear un look dinámico y moderno adaptado a tu estilo.",
-    "specs": [
-      {
-        "label": "Cantidad",
-        "value": "2 Piezas"
-      }
-    ],
-    "rating": 4.6,
-    "reviews": 29,
-    "colors": [
-      "#C0C0C0"
-    ],
-    "stock": 25,
-    "tags": [],
-    "fragrances": [],
-    "isNew": true,
-    "isOnSale": false,
-    "salePercent": null
-  },
-  {
-    "id": "ring-trio-modular",
-    "name": "Set Anillos Triple Infinity",
-    "slug": "ring-trio-modular",
-    "category": "anillos",
-    "price": 59.9,
-    "oldPrice": null,
-    "currency": "PEN",
-    "badge": "TOP SET",
-    "badgeColor": null,
-    "images": [
-      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1/goshopping/ring/ring_garra2.webp"
-    ],
-    "description": "La trinidad del diseño. Un set de tres anillos con texturas y formas que se integran en una sola pieza de declaración potente y sofisticada.",
-    "specs": [
-      {
-        "label": "Cantidad",
-        "value": "3 Piezas"
-      }
-    ],
-    "rating": 4.8,
-    "reviews": 16,
-    "colors": [
-      "#C0C0C0"
-    ],
-    "stock": 15,
-    "tags": [],
-    "fragrances": [],
-    "isNew": false,
-    "isOnSale": false,
-    "salePercent": null
-  },
-  {
-    "id": "ring-promise-eternal",
-    "name": "Anillo Promesa de Luz",
-    "slug": "ring-promise-eternal",
-    "category": "anillos",
-    "price": 65.9,
-    "oldPrice": null,
-    "currency": "PEN",
-    "badge": "AMOR",
-    "badgeColor": null,
-    "images": [
-      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1/goshopping/ring/ring_garra_comp.webp"
-    ],
-    "description": "Un compromiso con el futuro. Un diseño delicado y brillante que simboliza la unión y las promesas compartidas, la pieza perfecta para momentos inolvidables.",
-    "specs": [
-      {
-        "label": "Material",
-        "value": "Plata 925"
-      }
-    ],
-    "rating": 4.9,
-    "reviews": 104,
-    "colors": [
-      "#C0C0C0"
-    ],
-    "stock": 30,
-    "tags": [],
-    "fragrances": [],
-    "isNew": true,
-    "isOnSale": false,
-    "salePercent": null
-  },
-  {
-    "id": "ring-serp-aire-hi",
-    "name": "Anillo Serpiente Aero Mist",
-    "slug": "ring-serp-aire-hi",
-    "category": "anillos",
-    "price": 45.9,
-    "oldPrice": null,
-    "currency": "PEN",
-    "badge": "TENDENCIA",
-    "badgeColor": null,
-    "images": [
-      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1/goshopping/ring/ring_garra_simp.webp"
-    ],
-    "description": "Ligereza y cambio. Siente la libertad del movimiento con este diseño aerodinámico de serpiente que simboliza la capacidad de adaptación constante.",
-    "specs": [
-      {
-        "label": "Material",
-        "value": "Acero 316L"
-      }
-    ],
-    "rating": 4.8,
-    "reviews": 31,
-    "colors": [
-      "#C0C0C0"
-    ],
-    "stock": 20,
-    "tags": [],
-    "fragrances": [],
-    "isNew": true,
-    "isOnSale": false,
-    "salePercent": null
-  },
-  {
-    "id": "ring-serp-bron-hi",
-    "name": "Anillo Serpiente Bronce Zen",
-    "slug": "ring-serp-bron-hi",
-    "category": "anillos",
-    "price": 42.9,
-    "oldPrice": null,
-    "currency": "PEN",
-    "badge": "ZEN",
-    "badgeColor": null,
-    "images": [
-      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1/goshopping/ring/ring_gragon_agua_azu.webp"
-    ],
-    "description": "Sabiduría atemporal. El acabado en bronce envejecido le otorga a esta serpiente un aire de reliquia antigua, ideal para coleccionistas de piezas con historia.",
-    "specs": [
-      {
-        "label": "Material",
-        "value": "Bronce Refinado"
-      }
-    ],
-    "rating": 4.7,
-    "reviews": 22,
-    "colors": [
-      "#CD7F32"
-    ],
-    "stock": 12,
-    "tags": [],
-    "fragrances": [],
-    "isNew": false,
-    "isOnSale": false,
-    "salePercent": null
-  },
-  {
-    "id": "ring-serp-cigar-hi",
-    "name": "Anillo Serpiente Smokey Viper",
-    "slug": "ring-serp-cigar-hi",
-    "category": "anillos",
-    "price": 49.9,
-    "oldPrice": null,
-    "currency": "PEN",
-    "badge": "DARK",
-    "badgeColor": null,
-    "images": [
-      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1/goshopping/ring/ring_hormi_cuadr.webp"
-    ],
-    "description": "Escencia de misterio. Un diseño intrincado que parece emerger de las sombras, con relieves que capturan la textura escamosa con un realismo impresionante.",
-    "specs": [
-      {
-        "label": "Material",
-        "value": "Acero Envejecido"
-      }
-    ],
-    "rating": 4.9,
-    "reviews": 15,
-    "colors": [
-      "#808080"
-    ],
-    "stock": 8,
-    "tags": [],
-    "fragrances": [],
-    "isNew": true,
-    "isOnSale": false,
-    "salePercent": null
-  },
-  {
-    "id": "ring-serp-mues-hi",
-    "name": "Anillo Serpiente Royal Mue",
-    "slug": "ring-serp-mues-hi",
-    "category": "anillos",
-    "price": 45.9,
-    "oldPrice": null,
-    "currency": "PEN",
-    "badge": "ROYAL",
-    "badgeColor": null,
-    "images": [
-      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1/goshopping/ring/ring_hormi_oval.webp"
-    ],
-    "description": "Distincion sinuosa. Un diseño de serpiente que destaca por su elegancia real y proporciones perfectas, una pieza que eleva cualquier estilo personal.",
-    "specs": [
-      {
-        "label": "Material",
-        "value": "Acero 316L"
-      }
-    ],
-    "rating": 4.8,
-    "reviews": 19,
-    "colors": [
-      "#C0C0C0"
-    ],
-    "stock": 15,
-    "tags": [],
-    "fragrances": [],
-    "isNew": false,
-    "isOnSale": false,
-    "salePercent": null
-  },
-  {
-    "id": "ring-serp-placlara-hi",
-    "name": "Anillo Serpiente White Diamond",
-    "slug": "ring-serp-placlara-hi",
-    "category": "anillos",
-    "price": 65.9,
-    "oldPrice": null,
-    "currency": "PEN",
-    "badge": "BRIGTH",
-    "badgeColor": null,
-    "images": [
-      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1/goshopping/ring/ring_lobo.webp"
-    ],
-    "description": "Claridad y lujo radiante. Acabados espejados que reflejan la luz intensamente, simbolizando la pureza y el renacimiento en un diseño cautivador.",
-    "specs": [
-      {
-        "label": "Material",
-        "value": "Acero Pulido Espejo"
-      }
-    ],
-    "rating": 4.9,
-    "reviews": 26,
-    "colors": [
-      "#FFFFFF",
-      "#C0C0C0"
-    ],
-    "stock": 10,
-    "tags": [],
-    "fragrances": [],
-    "isNew": true,
-    "isOnSale": false,
-    "salePercent": null
-  },
-  {
-    "id": "ring-serp-plomo-hi",
-    "name": "Anillo Serpiente Carbon Grey",
-    "slug": "ring-serp-plomo-hi",
-    "category": "anillos",
-    "price": 42.9,
-    "oldPrice": null,
-    "currency": "PEN",
-    "badge": "INDUSTRIAL",
-    "badgeColor": null,
-    "images": [
-      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1/goshopping/ring/ring_maripo_dora.webp"
-    ],
-    "description": "Fuerza mate y moderna. El tono plomo profundo le otorga un aire industrial y robusto a este diseño de serpiente, ideal para un estilo urbano minimalista.",
-    "specs": [
-      {
-        "label": "Material",
-        "value": "Acero Mate"
-      }
-    ],
-    "rating": 4.6,
-    "reviews": 14,
-    "colors": [
-      "#808080"
-    ],
-    "stock": 20,
-    "tags": [],
-    "fragrances": [],
-    "isNew": false,
-    "isOnSale": false,
-    "salePercent": null
-  },
-  {
-    "id": "ring-serpi-gr-hi",
-    "name": "Anillo Gran Cobra Imperial",
-    "slug": "ring-serpi-gr-hi",
-    "category": "anillos",
-    "price": 59.9,
-    "oldPrice": null,
-    "currency": "PEN",
-    "badge": "XL",
-    "badgeColor": null,
-    "images": [
-      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1/goshopping/ring/ring_mari_plo.webp"
-    ],
-    "description": "Presencia dominante. Una serpiente de gran tamaño esculpida con detalles meticulosos que envuelve tu dedo como una corona de poder indomable.",
-    "specs": [
-      {
-        "label": "Material",
-        "value": "Acero de Lujo"
-      }
-    ],
-    "rating": 5,
-    "reviews": 11,
-    "colors": [
-      "#C0C0C0"
-    ],
-    "stock": 5,
-    "tags": [],
-    "fragrances": [],
-    "isNew": true,
-    "isOnSale": false,
-    "salePercent": null
-  },
-  {
-    "id": "ring-sapo-abraz-hi",
-    "name": "Anillo Sapo del Abrazo",
-    "slug": "ring-sapo-abraz-hi",
-    "category": "anillos",
-    "price": 39.9,
-    "oldPrice": null,
-    "currency": "PEN",
-    "badge": "DULCERÍA",
-    "badgeColor": null,
-    "images": [
-      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1/goshopping/ring/ring_negro_pie.webp"
-    ],
-    "description": "Compañero de fortuna. Un diseño adorable de sapo que abraza tu dedo, simbolizando la protección y la atracción de la buena suerte en tus finanzas.",
-    "specs": [
-      {
-        "label": "Material",
-        "value": "Aleación Refinada"
-      }
-    ],
-    "rating": 4.9,
-    "reviews": 54,
-    "colors": [
-      "#C0C0C0"
-    ],
-    "stock": 30,
-    "tags": [],
-    "fragrances": [],
-    "isNew": true,
-    "isOnSale": false,
-    "salePercent": null
-  },
-  {
-    "id": "ring-sapo-ojo-hi",
-    "name": "Anillo Sapo Ojos de Rubí",
-    "slug": "ring-sapo-ojo-hi",
-    "category": "anillos",
-    "price": 45.9,
-    "oldPrice": null,
-    "currency": "PEN",
-    "badge": "MÍSTICO",
-    "badgeColor": null,
-    "images": [
-      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1/goshopping/ring/ring_nudo_ace.webp"
-    ],
-    "description": "Visión protectora. Este sapo místico con ojos de cristal carmesí actúa como un talismán de protección ancestral en un diseño lleno de carácter.",
-    "specs": [
-      {
-        "label": "Material",
-        "value": "Acero + Cristales"
-      }
-    ],
-    "rating": 4.8,
-    "reviews": 31,
-    "colors": [
-      "#C0C0C0",
-      "#FF0000"
-    ],
-    "stock": 15,
-    "tags": [],
-    "fragrances": [],
-    "isNew": false,
-    "isOnSale": false,
-    "salePercent": null
-  },
-  {
-    "id": "ring-pavo-real-hi",
-    "name": "Anillo Pavo Real Majestuoso",
-    "slug": "ring-pavo-real-hi",
-    "category": "anillos",
-    "price": 49.9,
-    "oldPrice": null,
-    "currency": "PEN",
-    "badge": "GALA",
-    "badgeColor": null,
-    "images": [
-      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1/goshopping/ring/ring_ojoBuho.webp"
-    ],
-    "description": "Belleza en despliegue. Captura la elegancia suprema del pavo real con este diseño intrincado que irradia color y sofisticación en cada detalle.",
-    "specs": [
-      {
-        "label": "Material",
-        "value": "Acero + Detalles Esmalte"
-      }
-    ],
-    "rating": 4.9,
-    "reviews": 42,
-    "colors": [
-      "#C0C0C0",
-      "#4B8BBE"
-    ],
-    "stock": 12,
-    "tags": [],
-    "fragrances": [],
-    "isNew": true,
-    "isOnSale": false,
-    "salePercent": null
-  },
-  {
-    "id": "ring-pavo-med-hi",
-    "name": "Anillo Pavo Real Medium",
-    "slug": "ring-pavo-med-hi",
-    "category": "anillos",
-    "price": 42.9,
-    "oldPrice": null,
-    "currency": "PEN",
-    "badge": "CHIC",
-    "badgeColor": null,
-    "images": [
-      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1/goshopping/ring/ring_ojo_hie.webp"
-    ],
-    "description": "Estilo pluma de seda. Una versión más estilizada del pavo real, perfecta para añadir una nota de color y distinción a tu look diario con sutileza.",
-    "specs": [
-      {
-        "label": "Material",
-        "value": "Acero Inoxidable"
-      }
-    ],
-    "rating": 4.7,
-    "reviews": 25,
-    "colors": [
-      "#C0C0C0"
-    ],
-    "stock": 20,
-    "tags": [],
-    "fragrances": [],
-    "isNew": false,
-    "isOnSale": false,
-    "salePercent": null
-  },
-  {
-    "id": "ring-zorrito-royal",
-    "name": "Anillo Zorro de las Estrellas",
-    "slug": "ring-zorrito-royal",
-    "category": "anillos",
-    "price": 45.9,
-    "oldPrice": null,
-    "currency": "PEN",
-    "badge": "ADORES",
-    "badgeColor": null,
-    "images": [
-      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1/goshopping/ring/ring_oval_hi.webp"
-    ],
-    "description": "Astucia y magia nocturna. Un diseño encantador de zorro que evoca cuentos y leyendas, ideal para quienes buscan una pieza llena de magia y personalidad.",
-    "specs": [
-      {
-        "label": "Material",
-        "value": "Plata Tibetana"
-      }
-    ],
-    "rating": 4.9,
-    "reviews": 68,
-    "colors": [
-      "#C0C0C0"
-    ],
-    "stock": 18,
-    "tags": [],
-    "fragrances": [],
-    "isNew": true,
-    "isOnSale": false,
-    "salePercent": null
-  },
-  {
-    "id": "ring-trepador-gold",
-    "name": "Anillo Trepador Royal Gold",
-    "slug": "ring-trepador-gold",
-    "category": "anillos",
-    "price": 39.9,
-    "oldPrice": null,
-    "currency": "PEN",
-    "badge": "TREND",
-    "badgeColor": null,
-    "images": [
-      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1/goshopping/ring/ring_pavo_gr.webp"
-    ],
-    "description": "Elegancia ascendente. Un diseño único que trepa con delicadeza por tu dedo, bañado en oro para un brillo que destaca en cualquier evento social.",
-    "specs": [
-      {
-        "label": "Material",
-        "value": "Acero + Baño Oro"
-      }
-    ],
-    "rating": 4.7,
-    "reviews": 15,
-    "colors": [
-      "#FFD700"
-    ],
-    "stock": 40,
-    "tags": [],
-    "fragrances": [],
-    "isNew": true,
-    "isOnSale": false,
-    "salePercent": null
-  },
-  {
-    "id": "ring-uñas-set-roy",
-    "name": "Anillo Uñas de Pantera",
-    "slug": "ring-uñas-set-roy",
-    "category": "anillos",
-    "price": 55.9,
-    "oldPrice": null,
-    "currency": "PEN",
-    "badge": "PODER",
-    "badgeColor": null,
-    "images": [
-      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1/goshopping/ring/ring_pavo_med.webp"
-    ],
-    "description": "Fuerza felina extrema. No solo un anillo, sino una garra que se extiende como una armadura, diseñada para personalidades fuertes y estilos radicales.",
-    "specs": [
-      {
-        "label": "Material",
-        "value": "Acero de Impacto"
-      }
-    ],
-    "rating": 4.9,
-    "reviews": 9,
-    "colors": [
-      "#C0C0C0"
-    ],
-    "stock": 10,
-    "tags": [],
-    "fragrances": [],
-    "isNew": true,
-    "isOnSale": false,
-    "salePercent": null
-  },
-  {
-    "id": "ring-duo-lila",
-    "name": "Anillo Duo Lavanda Mist",
-    "slug": "ring-duo-lila",
-    "category": "anillos",
-    "price": 45.9,
-    "oldPrice": null,
-    "currency": "PEN",
-    "badge": "SOFT",
-    "badgeColor": null,
-    "images": [
-      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1/goshopping/ring/ring_pavo_pq.webp"
-    ],
-    "description": "Sutileza en dos tonos. Un diseño suave y elegante que combina el lila pastel con el brillo del acero, perfecto para añadir un toque de color discreto a tu día.",
-    "specs": [
-      {
-        "label": "Material",
-        "value": "Acero + Resina"
-      }
-    ],
-    "rating": 4.6,
-    "reviews": 22,
-    "colors": [
-      "#E6E6FA"
-    ],
-    "stock": 15,
-    "tags": [],
-    "fragrances": [],
-    "isNew": true,
-    "isOnSale": false,
-    "salePercent": null
-  },
-  {
-    "id": "ring-duo-negro-roy",
-    "name": "Anillo Duo Black Carbon",
-    "slug": "ring-duo-negro-roy",
-    "category": "anillos",
-    "price": 45.9,
-    "oldPrice": null,
-    "currency": "PEN",
-    "badge": "URBANO",
-    "badgeColor": null,
-    "images": [
-      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1/goshopping/ring/ring_piedra_celeste.webp"
-    ],
-    "description": "Contraste de poder. La union perfecta entre el negro profundo y el acero pulido, un diseño minimalista con una presencia rotunda y moderna.",
-    "specs": [
-      {
-        "label": "Material",
-        "value": "Acero 316L"
-      }
-    ],
-    "rating": 4.8,
-    "reviews": 31,
-    "colors": [
-      "#000000",
-      "#C0C0C0"
-    ],
-    "stock": 20,
-    "tags": [],
-    "fragrances": [],
-    "isNew": false,
-    "isOnSale": false,
-    "salePercent": null
-  },
-  {
-    "id": "ring-duo-plomo-roy",
-    "name": "Anillo Duo Steel Grey",
-    "slug": "ring-duo-plomo-roy",
-    "category": "anillos",
-    "price": 45.9,
-    "oldPrice": null,
-    "currency": "PEN",
-    "badge": "FUERZA",
-    "badgeColor": null,
-    "images": [
-      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1/goshopping/ring/ring_piedra_cuadrado_hi.webp"
-    ],
-    "description": "Industrial y sofisticado. Tonos grises que se funden en una pieza maciza y elegante, diseñada para resistir el ritmo de la ciudad con un estilo impecable.",
-    "specs": [
-      {
-        "label": "Material",
-        "value": "Acero de Titanio"
-      }
-    ],
-    "rating": 4.7,
-    "reviews": 18,
-    "colors": [
-      "#808080"
-    ],
-    "stock": 12,
-    "tags": [],
-    "fragrances": [],
-    "isNew": false,
-    "isOnSale": false,
-    "salePercent": null
-  },
-  {
-    "id": "ring-duo-plateado",
-    "name": "Anillo Duo Silver Glow",
-    "slug": "ring-duo-plateado",
-    "category": "anillos",
-    "price": 45.9,
-    "oldPrice": null,
-    "currency": "PEN",
-    "badge": "PUREZA",
-    "badgeColor": null,
-    "images": [
-      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1/goshopping/ring/ring_piedra_negra.webp"
-    ],
-    "description": "Brillo infinito. Dos texturas de plata que se encuentran para reflejar la luz desde cualquier angulo, una pieza esencial para un look limpio y profesional.",
-    "specs": [
-      {
-        "label": "Material",
-        "value": "Plata Tibetana"
-      }
-    ],
-    "rating": 4.9,
-    "reviews": 45,
-    "colors": [
-      "#C0C0C0"
-    ],
-    "stock": 25,
-    "tags": [],
-    "fragrances": [],
-    "isNew": true,
-    "isOnSale": false,
-    "salePercent": null
-  },
-  {
-    "id": "ring-duo-verde-gold",
-    "name": "Anillo Duo Esmeralda Gold",
-    "slug": "ring-duo-verde-gold",
-    "category": "anillos",
-    "price": 49.9,
-    "oldPrice": null,
-    "currency": "PEN",
-    "badge": "TOP",
-    "badgeColor": null,
-    "images": [
-      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1/goshopping/ring/ring_piedra_rojo.webp"
-    ],
-    "description": "Lujo natural. El contraste vibrante del verde con el baño de oro crea una pieza de joyería equilibrada y exitosa para tus eventos mas importantes.",
-    "specs": [
-      {
-        "label": "Material",
-        "value": "Acero + Baño Oro"
-      }
-    ],
-    "rating": 4.9,
-    "reviews": 12,
-    "colors": [
-      "#008000",
-      "#FFD700"
-    ],
-    "stock": 8,
-    "tags": [],
-    "fragrances": [],
-    "isNew": true,
-    "isOnSale": false,
-    "salePercent": null
-  },
-  {
-    "id": "ring-hormi-oval-roy",
-    "name": "Anillo Hormiga Oval Art",
-    "slug": "ring-hormi-oval-roy",
-    "category": "anillos",
-    "price": 39.9,
-    "oldPrice": null,
-    "currency": "PEN",
-    "badge": "DISEÑO",
-    "badgeColor": null,
-    "images": [
-      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1/goshopping/ring/ring_piedra_verde.webp"
-    ],
-    "description": "Escultura en miniatura. Un diseño ovalado que integra la figura de la hormiga en una forma fluida y artistica, rompiendo los esquemas tradicionales.",
-    "specs": [
-      {
-        "label": "Material",
-        "value": "Zinc Refinado"
-      }
-    ],
-    "rating": 4.5,
-    "reviews": 15,
-    "colors": [
-      "#C0C0C0"
-    ],
-    "stock": 15,
-    "tags": [],
-    "fragrances": [],
-    "isNew": true,
-    "isOnSale": false,
-    "salePercent": null
-  },
-  {
-    "id": "ring-maripo-dora-hi",
-    "name": "Anillo Mariposa Dorada",
-    "slug": "ring-maripo-dora-hi",
-    "category": "anillos",
-    "price": 49.9,
-    "oldPrice": null,
-    "currency": "PEN",
-    "badge": "CHIC",
-    "badgeColor": null,
-    "images": [
-      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1/goshopping/ring/ring_promesa_zihi.webp"
-    ],
-    "description": "Metamorfosis de oro. Dejate envolver por la delicadeza de esta mariposa dorada que simboliza la transformacion y el brillo interior con lujo supremo.",
-    "specs": [
-      {
-        "label": "Material",
-        "value": "Acero Baño Oro"
-      }
-    ],
-    "rating": 4.9,
-    "reviews": 37,
-    "colors": [
-      "#FFD700"
-    ],
-    "stock": 20,
-    "tags": [],
-    "fragrances": [],
-    "isNew": false,
-    "isOnSale": false,
-    "salePercent": null
-  },
-  {
-    "id": "ring-oval-mystic-hi",
-    "name": "Anillo Ovalo Místico",
-    "slug": "ring-oval-mystic-hi",
-    "category": "anillos",
-    "price": 42.9,
-    "oldPrice": null,
-    "currency": "PEN",
-    "badge": "ZEN",
-    "badgeColor": null,
-    "images": [
-      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1/goshopping/ring/ring_rino.webp"
-    ],
-    "description": "Eternidad sin fin. Un diseño ovalado perfecto que simboliza la continuidad y el enfoque espiritual, forjado en acero con un acabado satinado premium.",
-    "specs": [
-      {
-        "label": "Material",
-        "value": "Acero Satinado"
-      }
-    ],
-    "rating": 4.7,
-    "reviews": 21,
-    "colors": [
-      "#C0C0C0"
-    ],
-    "stock": 18,
-    "tags": [],
-    "fragrances": [],
-    "isNew": false,
-    "isOnSale": false,
-    "salePercent": null
-  },
-  {
-    "id": "ring-tri-plomo-hi",
-    "name": "Anillo Triángulo Industrial",
-    "slug": "ring-tri-plomo-hi",
-    "category": "anillos",
-    "price": 39.9,
-    "oldPrice": null,
-    "currency": "PEN",
-    "badge": "URBANO",
-    "badgeColor": null,
-    "images": [
-      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1/goshopping/ring/ring_sapo_abraz.webp"
-    ],
-    "description": "Geometría de la ciudad. Tres vertices de poder en un diseño de acero plomo que proyecta una imagen de modernidad y firmeza en cada gesto.",
-    "specs": [
-      {
-        "label": "Material",
-        "value": "Acero Industrial"
-      }
-    ],
-    "rating": 4.6,
-    "reviews": 14,
-    "colors": [
-      "#808080"
-    ],
-    "stock": 22,
-    "tags": [],
-    "fragrances": [],
-    "isNew": true,
-    "isOnSale": false,
-    "salePercent": null
-  },
-  {
-    "id": "ring-pavo-pq-hi",
-    "name": "Anillo Pavito Royal Petit",
-    "slug": "ring-pavo-pq-hi",
-    "category": "anillos",
-    "price": 35.9,
-    "oldPrice": null,
-    "currency": "PEN",
-    "badge": "PETIT",
-    "badgeColor": null,
-    "images": [
-      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1/goshopping/ring/ring_sapo_barri.webp"
-    ],
-    "description": "Delicadeza real. Una version minimalista y encantadora del pavo real, diseñada para aquellas manos que prefieren los detalles pequeños pero significativos.",
-    "specs": [
-      {
-        "label": "Material",
-        "value": "Acero Inoxidable"
-      }
-    ],
-    "rating": 4.8,
-    "reviews": 19,
-    "colors": [
-      "#C0C0C0"
-    ],
-    "stock": 30,
-    "tags": [],
-    "fragrances": [],
-    "isNew": false,
-    "isOnSale": false,
-    "salePercent": null
-  },
-  {
-    "id": "ring-sapo-barri-hi",
-    "name": "Anillo Sapo de la Ventuna",
-    "slug": "ring-sapo-barri-hi",
-    "category": "anillos",
-    "price": 39.9,
-    "oldPrice": null,
-    "currency": "PEN",
-    "badge": "SUERTE",
-    "badgeColor": null,
-    "images": [
-      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1/goshopping/ring/ring_sapo_ojo.webp"
-    ],
-    "description": "Abundancia en tu mano. El sapo de la fortuna en un diseño robusto y detallado que atrae la prosperidad y el exito financiero con estilo místico.",
-    "specs": [
-      {
-        "label": "Material",
-        "value": "Aleación Zinc"
-      }
-    ],
-    "rating": 4.7,
-    "reviews": 26,
-    "colors": [
-      "#C0C0C0"
-    ],
-    "stock": 15,
-    "tags": [],
-    "fragrances": [],
-    "isNew": true,
-    "isOnSale": false,
-    "salePercent": null
-  },
-  {
-    "id": "ring-varios-cigar-hi",
-    "name": "Anillo Mix Smoke Royal",
-    "slug": "ring-varios-cigar-hi",
-    "category": "anillos",
-    "price": 55.9,
-    "oldPrice": null,
-    "currency": "PEN",
-    "badge": "ESCLUSIVO",
-    "badgeColor": null,
-    "images": [
-      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1/goshopping/ring/ring_sapo_ojorojo.webp"
-    ],
-    "description": "La coleccion definitiva. Un diseño que integra varios elementos misticos en una sola pieza de acero envejecido, la joya de la corona para tu coleccion.",
-    "specs": [
-      {
-        "label": "Material",
-        "value": "Acero Envejecido"
-      }
-    ],
-    "rating": 5,
-    "reviews": 8,
-    "colors": [
-      "#808080"
-    ],
-    "stock": 5,
-    "tags": [],
-    "fragrances": [],
-    "isNew": true,
-    "isOnSale": false,
-    "salePercent": null
-  },
-  {
-    "id": "ring-aliens-pro",
-    "name": "Anillo Aliens Multi-Vision",
-    "slug": "ring-aliens-pro",
-    "category": "anillos",
-    "price": 49.9,
-    "oldPrice": null,
-    "currency": "PEN",
-    "badge": "SPACE",
-    "badgeColor": null,
-    "images": [
-      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1/goshopping/ring/ring_serp.webp"
-    ],
-    "description": "Mirada extraterrestre. Un diseño vanguardista con múltiples visores que evocan la tecnología de otros mundos, forjado en acero quirúrgico 316L.",
-    "specs": [
-      {
-        "label": "Material",
-        "value": "Acero de Titanio"
-      }
-    ],
-    "rating": 4.8,
-    "reviews": 14,
-    "colors": [
-      "#C0C0C0"
-    ],
-    "stock": 12,
-    "tags": [],
-    "fragrances": [],
-    "isNew": true,
-    "isOnSale": false,
-    "salePercent": null
-  },
-  {
-    "id": "ring-alas-ace-roy",
-    "name": "Anillo Alas de Arcángel",
-    "slug": "ring-alas-ace-roy",
-    "category": "anillos",
-    "price": 42.9,
-    "oldPrice": null,
-    "currency": "PEN",
-    "badge": "CELESTE",
-    "badgeColor": null,
-    "images": [
-      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1/goshopping/ring/ring_serpi_gr.webp"
-    ],
-    "description": "Protección en tus vuelos. Un par de alas divinas que se despliegan con elegancia en tu mano, recordándote tu fuerza interior y tu conexión celestial.",
-    "specs": [
-      {
-        "label": "Material",
-        "value": "Acero de Lujo"
-      }
-    ],
-    "rating": 4.9,
-    "reviews": 28,
-    "colors": [
-      "#C0C0C0"
-    ],
-    "stock": 25,
-    "tags": [],
-    "fragrances": [],
-    "isNew": false,
-    "isOnSale": false,
-    "salePercent": null
-  },
-  {
-    "id": "ring-antistres-roy",
-    "name": "Anillo Anti-Estrés Zen",
-    "slug": "ring-antistres-roy",
-    "category": "anillos",
-    "price": 39.9,
-    "oldPrice": null,
-    "currency": "PEN",
-    "badge": "CALMA",
-    "badgeColor": null,
-    "images": [
-      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1/goshopping/ring/ring_serp_aire.webp"
-    ],
-    "description": "Paz en movimiento. Un diseño giratorio sutil que te ayuda a canalizar la energía y el enfoque durante tus momentos de mayor exigencia diaria.",
-    "specs": [
-      {
-        "label": "Material",
-        "value": "Acero Inoxidable"
-      }
-    ],
-    "rating": 4.7,
-    "reviews": 145,
-    "colors": [
-      "#C0C0C0"
-    ],
-    "stock": 50,
-    "tags": [],
-    "fragrances": [],
-    "isNew": false,
-    "isOnSale": false,
-    "salePercent": null
-  },
-  {
-    "id": "ring-anubis-gr-roy",
-    "name": "Anillo Anubis Guardián XL",
-    "slug": "ring-anubis-gr-roy",
-    "category": "anillos",
-    "price": 65.9,
-    "oldPrice": null,
-    "currency": "PEN",
-    "badge": "MAJESTUOSO",
-    "badgeColor": null,
-    "images": [
-      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1/goshopping/ring/ring_serp_bron.webp"
-    ],
-    "description": "Fuerza de los dioses antiguos. La versión más potente y detallada de nuestro diseño egipcio, con relieves profundos que capturan la esencia del inframundo.",
-    "specs": [
-      {
-        "label": "Material",
-        "value": "Acero de Titanio"
-      }
-    ],
-    "rating": 5,
-    "reviews": 12,
-    "colors": [
-      "#C0C0C0"
-    ],
-    "stock": 5,
-    "tags": [],
-    "fragrances": [],
-    "isNew": true,
-    "isOnSale": false,
-    "salePercent": null
-  },
-  {
-    "id": "ring-calevra-glow-roy",
-    "name": "Anillo Calavera Luminosa",
-    "slug": "ring-calevra-glow-roy",
-    "category": "anillos",
-    "price": 55.9,
-    "oldPrice": null,
-    "currency": "PEN",
-    "badge": "NIGHT",
-    "badgeColor": null,
-    "images": [
-      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1/goshopping/ring/ring_serp_cigar.webp"
-    ],
-    "description": "Luz en la oscuridad. Un diseño de calavera rockero con acabados que capturan la luz tenue, ideal para destacar en ambientes nocturnos y conciertos.",
-    "specs": [
-      {
-        "label": "Material",
-        "value": "Acero + Finish Especial"
-      }
-    ],
-    "rating": 4.8,
-    "reviews": 19,
-    "colors": [
-      "#C0C0C0"
-    ],
-    "stock": 10,
-    "tags": [],
-    "fragrances": [],
-    "isNew": true,
-    "isOnSale": false,
-    "salePercent": null
-  },
-  {
-    "id": "ring-drag-lumino-hi",
-    "name": "Anillo Dragón Plateado Lustre",
-    "slug": "ring-drag-lumino-hi",
-    "category": "anillos",
-    "price": 59.9,
-    "oldPrice": null,
-    "currency": "PEN",
-    "badge": "BRILLO",
-    "badgeColor": null,
-    "images": [
-      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1/goshopping/ring/ring_serp_dorada.webp"
-    ],
-    "description": "Brillo del tesoro guardado. Este dragón de acero pulido intensamente proyecta una imagen de éxito y sofisticación digna de una leyenda milenaria.",
-    "specs": [
-      {
-        "label": "Material",
-        "value": "Acero Cromo"
-      }
-    ],
-    "rating": 4.9,
-    "reviews": 12,
-    "colors": [
-      "#C0C0C0"
-    ],
-    "stock": 8,
-    "tags": [],
-    "fragrances": [],
-    "isNew": false,
-    "isOnSale": false,
-    "salePercent": null
-  },
-  {
-    "id": "ring-drag-luminoso-hi",
-    "name": "Anillo Dragón Radiant Star",
-    "slug": "ring-drag-luminoso-hi",
-    "category": "anillos",
-    "price": 62.9,
-    "oldPrice": null,
-    "currency": "PEN",
-    "badge": "LUJO",
-    "badgeColor": null,
-    "images": [
-      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1/goshopping/ring/ring_serp_mues.webp"
-    ],
-    "description": "Luz pura en acero. Un diseño que refracta la luz con una precisión asombrosa, simbolizando la claridad de visión y el poder del dragón blanco.",
-    "specs": [
-      {
-        "label": "Material",
-        "value": "Acero 316L Espejo"
-      }
-    ],
-    "rating": 5,
-    "reviews": 11,
-    "colors": [
-      "#C0C0C0"
-    ],
-    "stock": 5,
-    "tags": [],
-    "fragrances": [],
-    "isNew": true,
-    "isOnSale": false,
-    "salePercent": null
-  },
-  {
-    "id": "ring-hormi-cuadr-roy",
-    "name": "Anillo Hormiga Square Art",
-    "slug": "ring-hormi-cuadr-roy",
-    "category": "anillos",
-    "price": 39.9,
-    "oldPrice": null,
-    "currency": "PEN",
-    "badge": "ARQUITECTO",
-    "badgeColor": null,
-    "images": [
-      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1/goshopping/ring/ring_serp_mushu.webp"
-    ],
-    "description": "Geometría del trabajo constante. La hormiga, símbolo de laboriosidad, integrada en un marco cuadrado robusto para un estilo industrial diferenciado.",
-    "specs": [
-      {
-        "label": "Material",
-        "value": "Zinc de Diseño"
-      }
-    ],
-    "rating": 4.6,
-    "reviews": 18,
-    "colors": [
-      "#C0C0C0"
-    ],
-    "stock": 20,
-    "tags": [],
-    "fragrances": [],
-    "isNew": false,
-    "isOnSale": false,
-    "salePercent": null
-  },
-  {
-    "id": "ring-pulsera-ani-roy",
-    "name": "Anillo-Pulsera Infinity Link",
-    "slug": "ring-pulsera-ani-roy",
-    "category": "anillos",
-    "price": 89.9,
-    "oldPrice": 119.9,
-    "currency": "PEN",
-    "badge": "SET EXCLUSIVO",
-    "badgeColor": null,
-    "images": [
-      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1/goshopping/ring/ring_serp_ororosa.webp"
-    ],
-    "description": "La conexión total. Un set integrado que une el anillo con una pulsera de diseño coordinado, creando una pieza de declaración única en el mercado.",
-    "specs": [
-      {
-        "label": "Contenido",
-        "value": "Anillo + Pulsera"
-      }
-    ],
-    "rating": 5,
-    "reviews": 14,
-    "colors": [
-      "#C0C0C0"
-    ],
-    "stock": 5,
-    "tags": [],
-    "fragrances": [],
-    "isNew": true,
-    "isOnSale": true,
-    "salePercent": 25
-  },
-  {
-    "id": "ring-pulsera-piedra-roy",
-    "name": "Set Ring-Bracelet Mystic Stone",
-    "slug": "ring-pulsera-piedra-roy",
-    "category": "anillos",
-    "price": 95.9,
-    "oldPrice": null,
-    "currency": "PEN",
-    "badge": "ÉLITE",
-    "badgeColor": null,
-    "images": [
-      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1/goshopping/ring/ring_serp_oscuro.webp"
-    ],
-    "description": "Energía unificada. Un set de lujo que combina una piedra mística central en el anillo con una pulsera de coordinación absoluta para un estilo místico completo.",
-    "specs": [
-      {
-        "label": "Material",
-        "value": "Acero + Gemas"
-      }
-    ],
-    "rating": 4.9,
-    "reviews": 22,
-    "colors": [
-      "#C0C0C0"
-    ],
-    "stock": 3,
-    "tags": [],
-    "fragrances": [],
-    "isNew": true,
-    "isOnSale": false,
-    "salePercent": null
-  },
-  {
-    "id": "ring-pulsera-nudo-roy",
-    "name": "Set Nudo de Bruja Master",
-    "slug": "ring-pulsera-nudo-roy",
-    "category": "anillos",
-    "price": 85.9,
-    "oldPrice": null,
-    "currency": "PEN",
-    "badge": "MÍSTICO",
-    "badgeColor": null,
-    "images": [
-      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1/goshopping/ring/ring_serp_placlara.webp"
-    ],
-    "description": "Protección total garantizada. El símbolo sagrado del nudo de bruja se extiende desde tu dedo hasta tu muñeca en un set de acero premium inmejorable.",
-    "specs": [
-      {
-        "label": "Significado",
-        "value": "Protección Total"
-      }
-    ],
-    "rating": 5,
-    "reviews": 31,
-    "colors": [
-      "#C0C0C0"
-    ],
-    "stock": 10,
-    "tags": [],
-    "fragrances": [],
-    "isNew": true,
-    "isOnSale": false,
-    "salePercent": null
-  },
-  {
-    "id": "ring-scorp-set-gold",
-    "name": "Set Scorpion Golden Elite",
-    "slug": "ring-scorp-set-gold",
-    "category": "anillos",
-    "price": 109.9,
-    "oldPrice": 149.9,
-    "currency": "PEN",
-    "badge": "GOLD EDITION",
-    "badgeColor": null,
-    "images": [
-      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1/goshopping/ring/pulsera_anillo_scorp_do.webp"
-    ],
-    "description": "Poder dorado letal. El diseño de escorpión articulado bañado en oro, la pieza mas exclusiva para quienes buscan la cima del estilo urbano y táctico.",
-    "specs": [
-      {
-        "label": "Material",
-        "value": "Acero Baño Oro"
-      }
-    ],
-    "rating": 5,
-    "reviews": 8,
-    "colors": [
-      "#FFD700"
-    ],
-    "stock": 5,
-    "tags": [],
-    "fragrances": [],
-    "isNew": true,
-    "isOnSale": true,
-    "salePercent": 27
-  },
-  {
-    "id": "ring-serp-carbon-black",
-    "name": "Anillo Serpiente Carbon Black",
-    "slug": "ring-serp-carbon-black",
-    "category": "anillos",
-    "price": 42.9,
-    "oldPrice": null,
-    "currency": "PEN",
-    "badge": "DARK",
-    "badgeColor": null,
-    "images": [
-      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1/goshopping/ring/ring_serp_oscuro.webp"
-    ],
-    "description": "Acabado mate profundo. Una variacion de nuestra serpiente clásica diseñada para un estilo discreto pero potente y lleno de carácter.",
-    "specs": [
-      {
-        "label": "Material",
-        "value": "Acero Black PVD"
-      }
-    ],
-    "rating": 4.7,
-    "reviews": 12,
-    "colors": [
-      "#000000"
-    ],
-    "stock": 15,
-    "tags": [],
-    "fragrances": [],
-    "isNew": false,
-    "isOnSale": false,
-    "salePercent": null
-  },
-  {
-    "id": "ring-serp-silver-coil",
-    "name": "Anillo Serpiente Silver Coil",
-    "slug": "ring-serp-silver-coil",
-    "category": "anillos",
-    "price": 42.9,
-    "oldPrice": null,
-    "currency": "PEN",
-    "badge": "CLASSIC",
-    "badgeColor": null,
-    "images": [
-      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1/goshopping/ring/ring_serp_plat.webp"
-    ],
-    "description": "El clasico de plata atemporal. Una pieza versátil que nunca pasa de moda, forjada en acero de alta resistencia para el uso diario.",
-    "specs": [
-      {
-        "label": "Material",
-        "value": "Acero 316L"
-      }
-    ],
-    "rating": 4.8,
-    "reviews": 21,
-    "colors": [
-      "#C0C0C0"
-    ],
-    "stock": 20,
-    "tags": [],
-    "fragrances": [],
-    "isNew": false,
-    "isOnSale": false,
-    "salePercent": null
-  },
-  {
-    "id": "ring-serp-rose-gold-lux",
-    "name": "Anillo Serpiente Rose Gold Luxe",
-    "slug": "ring-serp-rose-gold-lux",
-    "category": "anillos",
-    "price": 49.9,
-    "oldPrice": null,
-    "currency": "PEN",
-    "badge": "ELITE",
-    "badgeColor": null,
-    "images": [
-      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1/goshopping/ring/ring_serp_ororosa.webp"
-    ],
-    "description": "Dulce elegancia. El brillo del oro rosa en un diseño de serpiente que aporta distinción y una nota de color cálida a tu colección.",
-    "specs": [
-      {
-        "label": "Material",
-        "value": "Acero + Oro Rosa"
-      }
-    ],
-    "rating": 4.9,
-    "reviews": 15,
-    "colors": [
-      "#E8B4B4"
-    ],
-    "stock": 10,
-    "tags": [],
-    "fragrances": [],
-    "isNew": true,
-    "isOnSale": false,
-    "salePercent": null
-  },
-  {
-    "id": "ring-serp-titanio-pro",
-    "name": "Anillo Serpiente Titanio Pro",
-    "slug": "ring-serp-titanio-pro",
-    "category": "anillos",
-    "price": 45.9,
-    "oldPrice": null,
-    "currency": "PEN",
-    "badge": "PRO",
-    "badgeColor": null,
-    "images": [
-      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1/goshopping/ring/ring_serp.webp"
-    ],
-    "description": "Resistencia pura. El diseño clásico de serpiente forjado en acero de titanio para una durabilidad legendaria y un estilo que no conoce límites.",
-    "specs": [
-      {
-        "label": "Material",
-        "value": "Acero de Titanio"
-      }
-    ],
-    "rating": 4.8,
-    "reviews": 29,
-    "colors": [
-      "#C0C0C0"
-    ],
-    "stock": 15,
-    "tags": [],
-    "fragrances": [],
-    "isNew": false,
-    "isOnSale": false,
-    "salePercent": null
-  },
-  {
-    "id": "ring-serp-carbon-ed",
-    "name": "Anillo Serpiente Carbon Edition",
-    "slug": "ring-serp-carbon-ed",
-    "category": "anillos",
-    "price": 42.9,
-    "oldPrice": null,
-    "currency": "PEN",
-    "badge": "DARK",
-    "badgeColor": null,
-    "images": [
-      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1/goshopping/ring/ring_serp_oscuro.webp"
-    ],
-    "description": "Sombra y acero. Un acabado mate profundo para un estilo urbano y misterioso que resalta en cualquier situación nocturna.",
-    "specs": [
-      {
-        "label": "Material",
-        "value": "Acero Black"
-      }
-    ],
-    "rating": 4.7,
-    "reviews": 15,
-    "colors": [
-      "#000000"
-    ],
-    "stock": 12,
-    "tags": [],
-    "fragrances": [],
-    "isNew": false,
-    "isOnSale": false,
-    "salePercent": null
-  },
-  {
-    "id": "ring-cobra-onyx",
-    "name": "Anillo Cobra Onyx Pulse",
-    "slug": "ring-cobra-onyx",
-    "category": "anillos",
-    "price": 54.9,
-    "oldPrice": null,
-    "currency": "PEN",
-    "badge": "ELITE",
-    "badgeColor": null,
-    "images": [
-      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1/goshopping/ring/ring_cobra.webp"
-    ],
-    "description": "El latido del peligro. Nuestra cobra imperial con detalles en acero pulido espejo, simbolizando el renacimiento y el poder constante.",
-    "specs": [
-      {
-        "label": "Material",
-        "value": "Acero 316L"
-      }
-    ],
-    "rating": 4.9,
-    "reviews": 22,
-    "colors": [
-      "#C0C0C0"
-    ],
-    "stock": 10,
-    "tags": [],
-    "fragrances": [],
-    "isNew": true,
-    "isOnSale": false,
-    "salePercent": null
-  },
-  {
-    "id": "ring-dragon-plat-real",
-    "name": "Anillo Dragón Plateado Real",
-    "slug": "ring-dragon-plat-real",
-    "category": "anillos",
-    "price": 69.9,
-    "oldPrice": null,
-    "currency": "PEN",
-    "badge": "LEGEND",
-    "badgeColor": null,
-    "images": [
-      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1/goshopping/ring/ring_dragon_plo.webp"
-    ],
-    "description": "El guardián de plata. Un diseño de dragón con acabados de alta precisión que captura la esencia del valor y la nobleza ancestral.",
-    "specs": [
-      {
-        "label": "Material",
-        "value": "Acero Envejecido"
-      }
-    ],
-    "rating": 4.9,
-    "reviews": 41,
-    "colors": [
-      "#808080"
-    ],
-    "stock": 8,
-    "tags": [],
-    "fragrances": [],
-    "isNew": false,
-    "isOnSale": false,
-    "salePercent": null
-  },
-  {
-    "id": "ring-dragon-zinc",
-    "name": "Anillo Dragón Zinc Edition",
-    "slug": "ring-dragon-zinc",
-    "category": "anillos",
-    "price": 49.9,
-    "oldPrice": null,
-    "currency": "PEN",
-    "badge": "ART",
-    "badgeColor": null,
-    "images": [
-      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1/goshopping/ring/ring_dragon_zin.webp"
-    ],
-    "description": "Escultura urbana. Un diseño industrial de dragón con texturas rugosas y un carácter indomable para tu estilo diario más potente.",
-    "specs": [
-      {
-        "label": "Material",
-        "value": "Zinc de Joyería"
-      }
-    ],
-    "rating": 4.7,
-    "reviews": 18,
-    "colors": [
-      "#C0C0C0"
-    ],
-    "stock": 20,
-    "tags": [],
-    "fragrances": [],
-    "isNew": false,
-    "isOnSale": false,
-    "salePercent": null
-  },
-  {
-    "id": "ring-serp-aire-pro",
-    "name": "Anillo Serpiente Aire Pro",
-    "slug": "ring-serp-aire-pro",
-    "category": "anillos",
-    "price": 42.9,
-    "oldPrice": null,
-    "currency": "PEN",
-    "badge": "ZEN",
-    "badgeColor": null,
-    "images": [
-      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1/goshopping/ring/ring_serp_aire.webp"
-    ],
-    "description": "Fluidez del viento. Una serpiente que parece flotar en tu dedo, simbolizando la agilidad mental y el cambio positivo constante.",
-    "specs": [
-      {
-        "label": "Material",
-        "value": "Acero Inoxidable"
-      }
-    ],
-    "rating": 4.8,
-    "reviews": 12,
-    "colors": [
-      "#C0C0C0"
-    ],
-    "stock": 15,
-    "tags": [],
-    "fragrances": [],
-    "isNew": true,
-    "isOnSale": false,
-    "salePercent": null
-  },
-  {
-    "id": "ring-sapo-suerte-roy",
-    "name": "Anillo Sapo Suerte Royal",
-    "slug": "ring-sapo-suerte-roy",
-    "category": "anillos",
-    "price": 39.9,
-    "oldPrice": null,
-    "currency": "PEN",
-    "badge": "SUERTE",
-    "badgeColor": null,
-    "images": [
-      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1/goshopping/ring/ring_sapo_barri.webp"
-    ],
-    "description": "El iman de fortuna. Siente la energía positiva de este amuleto ancestral diseñado para atraer el exito financiero con elegancia y arte.",
-    "specs": [
-      {
-        "label": "Material",
-        "value": "Acero Pulido"
-      }
-    ],
-    "rating": 4.8,
-    "reviews": 52,
-    "colors": [
-      "#C0C0C0"
-    ],
-    "stock": 30,
-    "tags": [],
-    "fragrances": [],
-    "isNew": false,
-    "isOnSale": false,
-    "salePercent": null
-  },
-  {
-    "id": "ring-pavo-med-elite",
-    "name": "Anillo Pavo Real Medium Elite",
-    "slug": "ring-pavo-med-elite",
-    "category": "anillos",
-    "price": 45.9,
-    "oldPrice": null,
-    "currency": "PEN",
-    "badge": "CHIC",
-    "badgeColor": null,
-    "images": [
-      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1/goshopping/ring/ring_pavo_med.webp"
-    ],
-    "description": "Elegancia pluma a pluma. La version mas equilibrada de nuestro pavo real, combinando color y sofisticacion en una pieza de acero de alta gama.",
-    "specs": [
-      {
-        "label": "Material",
-        "value": "Acero de Titanio"
-      }
-    ],
-    "rating": 4.9,
-    "reviews": 29,
-    "colors": [
-      "#C0C0C0"
-    ],
-    "stock": 15,
-    "tags": [],
-    "fragrances": [],
-    "isNew": true,
-    "isOnSale": false,
-    "salePercent": null
-  },
-
   //********************************************************************//
   //           ESENCIAS - INCIENSOS
   //********************************************************************//
-{
+  {
     "id": "esencias-florales",
     "name": "Esencias Premium Florales",
     "slug": "esencias-florales",
@@ -5940,6 +3346,8 @@ export const productsConfig = [
     "name": "Casco Motero",
     "slug": "casco-modelo",
     "category": "mascotas",
+    "price": 49.9,
+    "oldPrice": 59.9,
     "currency": "PEN",
     "badge": "SEGURIDAD",
     "badgeColor": null,
@@ -6400,8 +3808,8 @@ export const productsConfig = [
     "name": "Casco Dino",
     "slug": "nov-casco-dino",
     "category": "novedades",
-    "price": 45.9,
-    "oldPrice": null,
+    "price": 49.9,
+    "oldPrice": 59.9,
     "currency": "PEN",
     "badge": "NUEVO",
     "badgeColor": null,
@@ -6428,12 +3836,12 @@ export const productsConfig = [
     "salePercent": null
   },
   {
-    "id": "nov-cofre-music-rectro-whi",
+    "id": "cofre-music-rectro-whi",
     "name": "Cofre Music Rectro Whi",
-    "slug": "nov-cofre-music-rectro-whi",
+    "slug": "cofre-music-rectro-whi",
     "category": "novedades",
-    "price": 89.9,
-    "oldPrice": null,
+    "price": 55.9,
+    "oldPrice": 65.9,
     "currency": "PEN",
     "badge": "PREMIUM",
     "badgeColor": null,

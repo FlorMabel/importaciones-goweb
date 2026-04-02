@@ -11,16 +11,23 @@ function debounce(fn, delay = 300) {
     timer = setTimeout(() => fn(...args), delay);
   };
 }
-
 export default function Header() {
-  const [categories, setCategories] = useState([]);
+  const [isScrolled, setIsScrolled] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
   const [searchResults, setSearchResults] = useState([]);
-  const { getCartCount } = useStore();
+  const [categories, setCategories] = useState([]);
+  
+  const { getCartCount, setCartDrawerOpen } = useStore();
   const navigate = useNavigate();
   const cartCount = getCartCount();
+
+  useEffect(() => {
+    const handleScroll = () => setIsScrolled(window.scrollY > 20);
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   useEffect(() => {
     getCategories().then(setCategories);
@@ -74,7 +81,7 @@ export default function Header() {
         </motion.div>
       </div>
 
-      <header className="glass-header sticky top-0 z-50 w-full border-b border-gray-100 transition-all duration-300">
+      <header className={`glass-header sticky top-0 z-50 w-full border-b transition-all duration-500 ${isScrolled ? 'h-14 lg:h-16 scrolled border-gray-200/50' : 'h-16 lg:h-24 border-transparent'}`}>
         <div className="mx-auto max-w-[1440px] px-4 lg:px-10 h-16 lg:h-20 flex items-center justify-between">
           <Link to="/" className="flex items-center gap-2">
             <img 
@@ -118,14 +125,17 @@ export default function Header() {
           <button onClick={() => setIsSearchOpen(true)} className="text-text-main hover:text-accent transition-colors">
             <span className="material-symbols-outlined text-[22px]">search</span>
           </button>
-          <Link to="/carrito" className="text-text-main hover:text-accent transition-colors relative">
-            <span className="material-symbols-outlined text-[22px]">shopping_bag</span>
+          <button 
+            onClick={() => setCartDrawerOpen(true)}
+            className="text-text-main hover:text-accent transition-colors relative"
+          >
+            <span className="material-symbols-outlined text-[24px]">shopping_bag</span>
             {cartCount > 0 && (
-              <span className="absolute -top-1 -right-2 size-5 bg-primary text-white text-[10px] font-bold rounded-full flex items-center justify-center">
+              <span className="absolute -top-1 -right-2 size-4.5 bg-primary text-white text-[9px] font-bold rounded-full flex items-center justify-center">
                 {cartCount}
               </span>
             )}
-          </Link>
+          </button>
           <button onClick={() => setIsDrawerOpen(true)} className="lg:hidden text-text-main">
             <span className="material-symbols-outlined text-[24px]">menu</span>
           </button>
@@ -134,43 +144,66 @@ export default function Header() {
 
       {/* Search Overlay */}
       {isSearchOpen && (
-        <div className="fixed inset-0 bg-black/40 z-[60]" onClick={closeSearch}>
-          <div className="bg-white w-full max-w-2xl mx-auto mt-20 rounded-2xl shadow-2xl p-6" onClick={e => e.stopPropagation()}>
-            <div className="flex items-center gap-3 border-b border-gray-200 pb-4">
-              <span className="material-symbols-outlined text-text-muted">search</span>
-              <input
-                type="text"
-                placeholder="Buscar productos..."
-                className="flex-1 border-none text-lg focus:ring-0 placeholder:text-text-muted/60 outline-none"
-                autoFocus
-                value={searchQuery}
-                onChange={onSearchInput}
-              />
-              <button onClick={closeSearch} className="text-text-muted hover:text-text-main">
-                <span className="material-symbols-outlined">close</span>
-              </button>
-            </div>
-            <div className="mt-4 max-h-80 overflow-y-auto space-y-2">
-              {searchResults.length === 0 && searchQuery.length >= 2 && (
-                <p className="text-text-muted text-sm py-4 text-center">No se encontraron resultados</p>
-              )}
-              {searchResults.map(r => (
-                <div
-                  key={r.slug}
-                  onClick={() => navTo(`/producto/${r.slug}`)}
-                  className="flex items-center gap-3 p-3 rounded-xl hover:bg-background-soft cursor-pointer"
-                >
-                  {r.image && <img src={r.image} className="w-12 h-12 object-contain rounded-lg bg-gray-50 p-1" alt="" />}
-                  <div className="flex-1 min-w-0">
-                    <p className="text-sm font-medium text-text-main truncate">{r.name}</p>
-                    <p className="text-xs text-text-muted">{r.category || ''}</p>
+        <motion.div 
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          className="fixed inset-0 bg-black/60 backdrop-blur-sm z-[60] flex items-start justify-center pt-20 px-4 md:pt-32" 
+          onClick={closeSearch}
+        >
+          <motion.div 
+            initial={{ scale: 0.95, y: -20 }}
+            animate={{ scale: 1, y: 0 }}
+            className="bg-white w-full max-w-2xl rounded-3xl shadow-strong overflow-hidden" 
+            onClick={e => e.stopPropagation()}
+          >
+            <div className="p-6">
+              <div className="flex items-center gap-4 bg-background-soft rounded-2xl px-5 py-4 border border-border-default focus-within:border-primary transition-all">
+                <span className="material-symbols-outlined text-text-muted">search</span>
+                <input
+                  type="text"
+                  placeholder="Busca elegancia, busca estilo..."
+                  className="flex-1 bg-transparent border-none text-base focus:ring-0 placeholder:text-text-muted/60 outline-none font-medium"
+                  autoFocus
+                  value={searchQuery}
+                  onChange={onSearchInput}
+                />
+                <button onClick={closeSearch} className="size-8 rounded-full hover:bg-white flex items-center justify-center text-text-muted transition-colors">
+                  <span className="material-symbols-outlined text-lg">close</span>
+                </button>
+              </div>
+              
+              <div className="mt-6 max-h-[60vh] overflow-y-auto custom-scrollbar -mx-2 px-2">
+                {searchResults.length === 0 && searchQuery.length >= 2 && (
+                  <div className="py-12 text-center">
+                    <span className="material-symbols-outlined text-4xl text-text-muted/20 mb-2">search_off</span>
+                    <p className="text-text-muted text-sm italic">No encontramos lo que buscas hoy...</p>
                   </div>
-                  {r.price && <span className="text-sm font-bold text-accent">S/ {Number(r.price).toFixed(2)}</span>}
+                )}
+                <div className="grid grid-cols-1 gap-2 pb-4">
+                  {searchResults.map(r => (
+                    <div
+                      key={r.slug}
+                      onClick={() => navTo(`/producto/${r.slug}`)}
+                      className="flex items-center gap-4 p-3 rounded-2xl hover:bg-beige-soft cursor-pointer group transition-all"
+                    >
+                      <div className="size-16 rounded-xl bg-white border border-border-light overflow-hidden p-2 flex-shrink-0">
+                        {r.image && <img src={r.image} className="w-full h-full object-contain mix-blend-multiply group-hover:scale-110 transition-transform duration-500" alt="" />}
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <p className="text-sm font-bold text-text-main group-hover:text-primary transition-colors truncate">{r.name}</p>
+                        <p className="text-[10px] uppercase tracking-widest text-text-muted mt-0.5">{r.category || ''}</p>
+                      </div>
+                      <div className="text-right">
+                        {r.price && <span className="text-sm font-bold text-accent"> S/ {Number(r.price).toFixed(2)}</span>}
+                        <span className="material-symbols-outlined text-primary opacity-0 group-hover:opacity-100 transition-all ml-2 text-sm translate-x-[-4px] group-hover:translate-x-0">arrow_forward</span>
+                      </div>
+                    </div>
+                  ))}
                 </div>
-              ))}
+              </div>
             </div>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       )}
 
       {/* Mobile Drawer */}

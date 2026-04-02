@@ -3,6 +3,8 @@ import { Routes, Route, useLocation } from 'react-router-dom';
 import Header from './components/Header.jsx';
 import Footer from './components/Footer.jsx';
 import WhatsAppFloat from './components/WhatsAppFloat.jsx';
+import CartDrawer from './components/cart/CartDrawer.jsx';
+import { useStore } from './context/StoreContext.jsx';
 
 // Lazy-loaded pages
 const HomePage = lazy(() => import('./pages/HomePage.jsx'));
@@ -34,12 +36,14 @@ function ScrollToTop() {
   }, [pathname]);
   return null;
 }
-
 export default function App() {
+  const { isCartDrawerOpen, setCartDrawerOpen } = useStore();
+  
   return (
     <>
       <ScrollToTop />
       <Header />
+      <CartDrawer isOpen={isCartDrawerOpen} onClose={() => setCartDrawerOpen(false)} />
       <main className="flex-grow w-full">
         <Suspense fallback={<Loading />}>
           <Routes>

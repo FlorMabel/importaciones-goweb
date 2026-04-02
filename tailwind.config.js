@@ -7,37 +7,43 @@ export default {
   theme: {
     extend: {
       colors: {
-        // BRAND (más profesional)
-        primary: "#c9a34f",
+        // 👑 LUXURY PALETTE (60-20-20 Rule)
+        primary: "#c9a34f",      // 20% Dorado (Luxury & CTAs)
         "primary-dark": "#a8842f",
         "primary-soft": "#e6d3a3",
 
-        accent: "#4B2E6F",
+        accent: "#4B2E6F",       // 20% Morado (Prestige & Badges)
         "accent-dark": "#2e1b47",
         "accent-soft": "#6d4ca3",
 
-        // 🧱 BACKGROUNDS
+        // 🧱 BASES (60% Beige)
+        beige: {
+          light: "#FAFAFA",
+          soft: "#F5F3EF",       // 60% Beige Base
+          strong: "#EFE9DF",
+        },
+
         "background-light": "#FAFAFA",
         "background-soft": "#F5F3EF",
         "background-dark": "#14110f",
 
-        // 🧾 SURFACES (cards, modales)
+        // 🧾 SURFACES (Luxury layers)
         "surface-light": "#ffffff",
-        "surface-soft": "#f9f7f4",
+        "surface-soft": "#fcfaf7",
         "surface-dark": "#1f1b17",
 
-        // 🔤 TEXTOS
+        // 🔤 TYPOGRAPHY
         "text-main": "#171512",
         "text-secondary": "#5f584b",
         "text-muted": "#827a68",
         "text-inverse": "#ffffff",
 
-        // 🔲 BORDES
+        // 🔲 BORDERS
         "border-light": "#e8e6e1",
         "border-default": "#e4e2dd",
         "border-strong": "#cfcac1",
 
-        // 🚨 ESTADOS (pro)
+        // 🚨 STATES
         success: "#16a34a",
         warning: "#f59e0b",
         error: "#dc2626",

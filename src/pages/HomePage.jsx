@@ -6,6 +6,7 @@ import { formatPrice } from '../utils';
 import { useStore } from '../context/StoreContext';
 import { useToast } from '../context/ToastContext';
 import ProductCard from '../components/ProductCard';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const HERO_VIDEOS = [
   "/videos/video_vista%20de%20anillos.mp4",
@@ -65,95 +66,145 @@ export default function HomePage() {
       </Helmet>
 
       {/* Hero Section */}
-      <section className="relative w-full">
-        <div className="relative w-full overflow-hidden min-h-[420px] md:min-h-[500px] bg-black">
+      <section className="relative w-full overflow-hidden bg-black">
+        <div className="relative w-full min-h-[550px] md:min-h-[700px] flex items-center">
+          {/* VIDEO / IMAGE BACKGROUND */}
+          <AnimatePresence mode="wait">
+            <motion.video
+              key={HERO_VIDEOS[currentVideo]}
+              initial={{ opacity: 0, scale: 1.1 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 1.5 }}
+              src={HERO_VIDEOS[currentVideo]}
+              autoPlay
+              muted
+              playsInline
+              onEnded={() => setCurrentVideo((prev) => (prev + 1) % HERO_VIDEOS.length)}
+              className="absolute inset-0 w-full h-full object-cover z-0"
+            />
+          </AnimatePresence>
 
-          {/* VIDEO */}
-          <video
-          key={HERO_VIDEOS[currentVideo]}
-          src={HERO_VIDEOS[currentVideo]}
-          autoPlay
-          muted
-          playsInline
-          onEnded={() =>
-            setCurrentVideo((prev) => (prev + 1) % HERO_VIDEOS.length)
-          }
-          className="absolute inset-0 w-full h-full object-cover z-0"
-          />
+          {/* LUXURY OVERLAY */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-black/40 z-10"></div>
+          <div className="absolute inset-0 bg-black/10 backdrop-blur-[2px] z-[5]"></div>
 
-          {/* OVERLAY PRO */}
-          <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent z-10"></div>
+          {/* CONTENIDO ELEVADO */}
+          <div className="container mx-auto px-6 lg:px-20 z-20 relative pt-20">
+            <div className="max-w-3xl">
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+                className="flex flex-col items-start"
+              >
+                <div className="flex items-center gap-3 mb-6">
+                  <span className="h-[1px] w-8 bg-primary"></span>
+                  <span className="text-white font-bold uppercase tracking-[0.3em] text-[10px] md:text-xs">
+                    Colecciones de Prestigio
+                  </span>
+                </div>
 
-          {/* CONTENIDO */}
-          <div className="absolute z-20 left-6 md:left-20 top-1/2 -translate-y-1/2 max-w-xl">
-          <div className="flex flex-col items-start text-left">
-            <span className="text-white font-bold uppercase tracking-[0.15em] text-xs bg-white/20 backdrop-blur-md px-5 py-2 rounded-full border border-white/30">
-            COLECCIONES EXCLUSIVAS
-            </span>
+                <h1 className="text-white font-serif text-4xl md:text-7xl leading-[1.1] mb-6">
+                  Donde la exclusividad <br />
+                  <span className="text-primary italic">encuentra su lugar</span>
+                </h1>
 
-            <h1 className="text-white font-serif text-3xl md:text-5xl mt-4 leading-tight">
-              Productos importados que elevan tu estilo de vida
-            </h1>
+                <p className="text-white/70 text-lg md:text-xl font-light mb-10 max-w-xl leading-relaxed">
+                  Curamos piezas únicas traídas de todo el mundo para aquellos que no se conforman con lo ordinario.
+                </p>
 
-            <p className="text-white/80 text-lg font-light mt-3">
-              Descubre nuestra selección exclusiva de artículos premium para los gustos más exigentes.
-            </p>
-
-            <button
-            onClick={() => navigate('/categoria/anillos')}
-            className="mt-6 bg-primary hover:bg-primary-dark text-white text-sm font-bold py-3 px-6 rounded-full transition-all duration-300 flex items-center gap-2 shadow-medium"
-            >
-              <span>Explorar Colección</span>
-              <span className="material-symbols-outlined text-sm">arrow_forward</span>
-            </button>
+                <div className="flex flex-wrap gap-4">
+                  <button
+                    onClick={() => navigate('/categoria/anillos')}
+                    className="bg-primary hover:bg-primary-dark text-white text-sm font-bold py-4 px-10 rounded-full transition-all duration-300 flex items-center gap-3 shadow-glow group"
+                  >
+                    <span>Explorar Catálogo</span>
+                    <span className="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                  </button>
+                  <button
+                    onClick={() => navigate('/novedades')}
+                    className="bg-white/10 hover:bg-white/20 backdrop-blur-md text-white border border-white/30 text-sm font-bold py-4 px-10 rounded-full transition-all duration-300"
+                  >
+                    Ver Novedades
+                  </button>
+                </div>
+              </motion.div>
+            </div>
           </div>
+          
+          {/* SCROLL INDICATOR */}
+          <motion.div 
+            animate={{ y: [0, 10, 0] }}
+            transition={{ duration: 2, repeat: Infinity }}
+            className="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 hidden md:flex flex-col items-center gap-2 opacity-50"
+          >
+            <span className="text-[10px] text-white uppercase tracking-[0.2em]">Scroll</span>
+            <div className="w-[1px] h-12 bg-gradient-to-b from-white to-transparent"></div>
+          </motion.div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    {/* Trust Badges - Flush with Hero but OUTSIDE */}
-    <section className="bg-background-soft pt-0 pb-8 px-6 md:px-10 lg:px-20">
-      <div className="flex flex-col md:flex-row gap-3 max-w-4xl mx-auto justify-center relative">
-        {[
-          { icon: 'local_shipping', title: 'Envío Asegurado', desc: 'A todo el Perú' },
-          { icon: 'verified_user', title: 'Garantía Premium', desc: 'Calidad total' },
-          { icon: 'support_agent', title: 'Soporte 24/7', desc: 'Por WhatsApp' },
-        ].map(t => (
-          <div key={t.icon} className="flex-1 flex items-center justify-center md:justify-start gap-3 p-3 bg-white rounded-2xl shadow-soft border border-border-default hover:border-primary/50 transition-all duration-300">
-            <div className="size-8 rounded-full bg-primary/10 flex items-center justify-center text-primary shrink-0">
-              <span className="material-symbols-outlined text-[16px]">{t.icon}</span>
-            </div>
-            <div className="flex flex-col text-left">
-              <h3 className="text-[11px] md:text-xs font-bold text-accent leading-none mb-1">{t.title}</h3>
-              <p className="text-[9px] md:text-[10px] text-text-muted leading-none">{t.desc}</p>
-            </div>
-          </div>
-        ))}
+    {/* Trust Badges - Refining design */}
+    <section className="bg-beige-soft py-12 px-6 md:px-10 lg:px-20 relative z-30">
+      <div className="max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {[
+            { icon: 'local_shipping', title: 'Logística de Guante Blanco', desc: 'Envío asegurado y discreto a todo el Perú' },
+            { icon: 'verified_user', title: 'Excelencia Certificada', desc: 'Curaduría rigurosa en cada producto importado' },
+            { icon: 'support_agent', title: 'Atención VIP', desc: 'Asesoría personalizada vía WhatsApp 24/7' },
+          ].map((t, i) => (
+            <motion.div 
+              key={t.icon}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.1 }}
+              className="group flex items-start gap-5 p-6 bg-white rounded-3xl shadow-soft hover:shadow-medium transition-all duration-500 border border-border-light hover:border-primary/30"
+            >
+              <div className="size-12 rounded-2xl bg-beige-soft flex items-center justify-center text-primary shrink-0 group-hover:bg-primary group-hover:text-white transition-colors duration-500">
+                <span className="material-symbols-outlined text-2xl">{t.icon}</span>
+              </div>
+              <div className="flex flex-col text-left">
+                <h3 className="text-sm font-bold text-accent mb-2 tracking-wide uppercase">{t.title}</h3>
+                <p className="text-xs text-text-muted leading-relaxed">{t.desc}</p>
+              </div>
+            </motion.div>
+          ))}
+        </div>
       </div>
     </section>
 
       {/* Categories */}
       <section className="py-12 px-6 md:px-10 lg:px-20 bg-background-soft">
         <div className="max-w-7xl mx-auto">
-          <div className="flex justify-between items-center mb-8">
-            <h2 className="font-serif text-3xl md:text-4xl font-bold text-accent">Categorías</h2>
-            <div className="flex gap-2">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="flex justify-between items-end mb-10"
+          >
+            <div>
+              <span className="text-primary font-bold tracking-[0.2em] text-[10px] uppercase mb-2 block">Explora</span>
+              <h2 className="font-serif text-4xl md:text-5xl font-bold text-accent italic">Categorías</h2>
+            </div>
+            <div className="flex gap-3">
               <button 
                 onClick={() => { document.getElementById('categories-scroll').scrollBy({ left: -300, behavior: 'smooth' }); }}
-                className="size-10 rounded-full bg-white border border-primary text-primary flex items-center justify-center hover:bg-primary hover:text-white transition-colors shadow-sm"
+                className="size-12 rounded-full bg-white border border-border-default text-text-main flex items-center justify-center hover:border-primary hover:text-primary transition-all shadow-soft"
                 aria-label="Anterior"
               >
-                <span className="material-symbols-outlined">chevron_left</span>
+                <span className="material-symbols-outlined text-xl">west</span>
               </button>
               <button 
                 onClick={() => { document.getElementById('categories-scroll').scrollBy({ left: 300, behavior: 'smooth' }); }}
-                className="size-10 rounded-full bg-white border border-primary text-primary flex items-center justify-center hover:bg-primary hover:text-white transition-colors shadow-sm"
+                className="size-12 rounded-full bg-white border border-border-default text-text-main flex items-center justify-center hover:border-primary hover:text-primary transition-all shadow-soft"
                 aria-label="Siguiente"
               >
-                <span className="material-symbols-outlined">chevron_right</span>
+                <span className="material-symbols-outlined text-xl">east</span>
               </button>
             </div>
-          </div>
+          </motion.div>
 
           <div 
             id="categories-scroll"
@@ -161,22 +212,29 @@ export default function HomePage() {
             style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
           >
             {categories.map((c, i) => (
-              <div
+              <motion.div
                 key={c.id}
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.05 }}
                 onClick={() => navigate(`/categoria/${c.slug}`)}
-                className="group flex flex-col items-center gap-3 cursor-pointer shrink-0 snap-start w-24 sm:w-28 md:w-32 lg:w-36 stagger-card hover:-translate-y-1 transition-transform"
-                style={{ animationDelay: `${i * 0.05}s` }}
+                className="group flex flex-col items-center gap-4 cursor-pointer shrink-0 snap-start w-28 md:w-36 transition-all"
               >
-                <div className="relative size-24 sm:size-28 md:size-32 lg:size-36 rounded-full overflow-hidden border-2 border-transparent group-hover:border-primary transition-all duration-300 shadow-md bg-white p-1">
+                <div className="relative size-28 md:size-36 rounded-full overflow-hidden border border-border-light group-hover:border-primary transition-all duration-700 shadow-soft bg-white p-1.5">
+                  <div className="absolute inset-0 bg-primary/0 group-hover:bg-primary/5 transition-colors z-10"></div>
                   <div 
-                    className="w-full h-full rounded-full bg-cover bg-center transition-transform duration-700 group-hover:scale-110" 
+                    className="w-full h-full rounded-full bg-cover bg-center transition-transform duration-1000 ease-out group-hover:scale-110" 
                     style={{ backgroundImage: `url('${c.image_url || c.image}')` }}
                   ></div>
                 </div>
-                <h3 className="text-center text-sm lg:text-base font-bold text-accent leading-tight group-hover:text-primary transition-colors">
-                  {c.name}
-                </h3>
-              </div>
+                <div className="text-center">
+                  <h3 className="text-xs md:text-sm font-bold text-accent uppercase tracking-widest group-hover:text-primary transition-colors">
+                    {c.name}
+                  </h3>
+                  <div className="w-0 group-hover:w-full h-[1px] bg-primary mx-auto transition-all duration-500 mt-1"></div>
+                </div>
+              </motion.div>
             ))}
           </div>
         </div>
@@ -188,67 +246,84 @@ export default function HomePage() {
           {productsByCategory.map((cat, idx) => {
             const colors = [
               "bg-accent text-white",           // 20% Morado
-              "bg-[#F5F3EF] text-accent",       // 60% Beige
+              "bg-beige-soft text-accent",      // 60% Beige
               "bg-primary text-white",          // 20% Dorado
-              "bg-[#F5F3EF] text-accent",       // 60% Beige
-              "bg-[#EFE9DF] text-accent"        // 60% Beige (ligeramente más oscuro)
+              "bg-beige-soft text-accent",      // 60% Beige
+              "bg-beige-strong text-accent"     // 60% Beige
             ];
             const colorClass = colors[idx % colors.length];
 
             return (
-              <div key={cat.id} className="flex flex-col lg:flex-row gap-4 p-4 lg:p-6 bg-white rounded-[2rem] shadow-sm border border-gray-100">
+              <motion.div 
+                key={cat.id} 
+                initial={{ opacity: 0, scale: 0.98 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true, margin: "-100px" }}
+                className="flex flex-col lg:flex-row gap-6 p-6 lg:p-8 bg-white rounded-[2.5rem] shadow-soft border border-border-light hover:shadow-medium transition-all duration-700"
+              >
                 {/* Left Category Hero Block */}
-                <div className={`w-full lg:w-[320px] shrink-0 rounded-[1.5rem] p-8 flex flex-col justify-between relative overflow-hidden ${colorClass}`}>
-                  <div className="z-10 relative text-center lg:text-left">
-                    <span className={`text-[10px] font-bold uppercase tracking-[0.2em] mb-3 block ${colorClass.includes('text-white') ? 'text-white/80' : 'text-accent/60'}`}>
-                      Colección
+                <div className={`w-full lg:w-[360px] shrink-0 rounded-[2rem] p-10 flex flex-col justify-between relative overflow-hidden ${colorClass} group/hero`}>
+                  {/* Decorative element */}
+                  <div className="absolute -top-20 -right-20 size-64 bg-white/5 rounded-full blur-3xl group-hover/hero:bg-white/10 transition-colors"></div>
+                  
+                  <div className="z-10 relative">
+                    <span className={`text-[10px] font-bold uppercase tracking-[0.3em] mb-4 block ${colorClass.includes('text-white') ? 'text-white/60' : 'text-accent/40'}`}>
+                      Colección Curada
                     </span>
-                    <h3 className="font-serif text-3xl md:text-4xl font-bold leading-tight">{cat.name}</h3>
+                    <h3 className="font-serif text-4xl md:text-5xl font-bold leading-none tracking-tight mb-4 italic">{cat.name}</h3>
+                    <p className={`text-xs font-light max-w-[200px] leading-relaxed ${colorClass.includes('text-white') ? 'text-white/70' : 'text-text-muted'}`}>
+                      Piezas seleccionadas que definen un estándar de elegancia superior.
+                    </p>
                   </div>
                   
                   {cat.image_url && (
-                    <div className="my-8 flex justify-center items-center z-10 relative">
-                       <img 
-                         src={cat.image_url} 
-                         alt={cat.name} 
-                         className="w-32 h-32 md:w-40 md:h-40 object-cover rounded-full shadow-lg border-4 border-white/20 hover:scale-105 transition-transform duration-500" 
-                         loading="lazy" 
-                       />
+                    <div className="my-10 flex justify-center items-center z-10 relative">
+                       <div className="relative">
+                         <div className="absolute inset-0 bg-primary/20 blur-2xl rounded-full scale-110"></div>
+                         <img 
+                           src={cat.image_url} 
+                           alt={cat.name} 
+                           className="size-40 md:size-48 object-cover rounded-full shadow-strong border-4 border-white/30 hover:scale-105 transition-transform duration-700 z-10 relative" 
+                           loading="lazy" 
+                         />
+                       </div>
                     </div>
                   )}
 
                   <button 
                     onClick={() => navigate(`/categoria/${cat.slug}`)}
-                    className={`z-10 relative mt-auto mx-auto lg:mx-0 w-max px-6 py-3 rounded-full text-sm font-bold transition-all flex items-center gap-2 ${
+                    className={`z-10 relative mt-auto w-full py-4 rounded-xl text-xs font-bold uppercase tracking-widest transition-all duration-300 flex items-center justify-center gap-3 ${
                       colorClass.includes('text-white') 
-                        ? 'bg-white/20 hover:bg-white/30 text-white' 
-                        : 'bg-primary/10 hover:bg-primary/20 text-primary'
+                        ? 'bg-white/10 hover:bg-white text-white hover:text-accent' 
+                        : 'bg-accent/5 hover:bg-accent text-accent hover:text-white'
                     }`}
                   >
-                    Ver Todo <span className="material-symbols-outlined text-sm">arrow_forward</span>
+                    Explorar Todo <span className="material-symbols-outlined text-sm">trending_flat</span>
                   </button>
                 </div>
 
                 {/* Horizontal Product Scroll */}
                 <div className="flex-1 w-full overflow-hidden relative">
-                  <div className="flex overflow-x-auto gap-4 pb-4 snap-x snap-mandatory pt-2 custom-scrollbar">
+                  <div className="flex overflow-x-auto gap-6 pb-6 snap-x snap-mandatory pt-4 custom-scrollbar">
                     {cat.products.slice(0, 8).map((p) => (
-                      <div key={p.id} className="w-[200px] md:w-[240px] shrink-0 snap-start">
+                      <div key={p.id} className="w-[220px] md:w-[280px] shrink-0 snap-start">
                         <ProductCard product={p} index={0} />
                       </div>
                     ))}
-                    <div className="w-[180px] md:w-[200px] shrink-0 snap-start flex items-center justify-center p-4">
+                    <div className="w-[200px] md:w-[240px] shrink-0 snap-start flex items-center justify-center">
                       <button 
                         onClick={() => navigate(`/categoria/${cat.slug}`)}
-                        className="flex flex-col items-center justify-center gap-3 w-full h-full min-h-[250px] bg-background-soft rounded-2xl hover:bg-[#EFE9DF] transition-colors text-accent border border-transparent hover:border-primary"
+                        className="flex flex-col items-center justify-center gap-4 w-full aspect-[3/4] bg-beige-soft rounded-[2rem] hover:bg-beige-strong transition-all duration-500 text-accent group border border-transparent hover:border-primary/30"
                       >
-                        <span className="material-symbols-outlined text-3xl">arrow_circle_right</span>
-                        <span className="font-bold text-sm">Ver más info</span>
+                        <div className="size-16 rounded-full bg-white shadow-soft flex items-center justify-center group-hover:scale-110 transition-transform">
+                          <span className="material-symbols-outlined text-3xl text-primary">add</span>
+                        </div>
+                        <span className="font-bold text-xs uppercase tracking-widest">Ver Catálogo</span>
                       </button>
                     </div>
                   </div>
                 </div>
-              </div>
+              </motion.div>
             );
           })}
         </div>

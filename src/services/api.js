@@ -1,4 +1,5 @@
 import { supabase } from './supabase.js';
+import { productsConfig } from '../config/products.js';
 
 export async function getCategories() {
   const { data, error } = await supabase
@@ -131,8 +132,11 @@ function formatProduct(p) {
     ? p.product_images.sort((a,b)=>a.sort_order - b.sort_order).map(i => i.image_url)
     : [];
     
+  const local = productsConfig.find(lp => lp.id === p.id || lp.slug === p.slug);
+    
   return {
     ...p,
+    variants: local?.variants || [],
     category: p.category_id,
     oldPrice: p.old_price,
     isNew: p.is_new,
@@ -144,6 +148,7 @@ function formatProduct(p) {
 
 function formatProductFull(p) {
   const base = formatProduct(p);
+  
   return {
     ...base,
     specs: p.product_specs || [],

@@ -1,57 +1,65 @@
-export default function ProductGallery({ images = [], activeIndex, onSelect, badge, isNew }) {
-  const activeImage = images[activeIndex] ?? images[0]
+import React from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+
+export default function ProductGallery({ images = [], activeIndex = 0, onSelect, badge, isNew }) {
+  if (!images || images.length === 0) return null;
 
   return (
-    <div className="flex gap-3">
-      {/* Miniaturas verticales */}
-      {images.length > 1 && (
-        <div className="flex flex-col gap-2">
-          {images.map((img, i) => (
-            <button
-              key={i}
-              onClick={() => onSelect(i)}
-              className={`w-16 h-16 rounded-lg overflow-hidden border-2 transition-all bg-white
-                ${i === activeIndex
-                  ? 'border-primary shadow-sm'
-                  : 'border-border-color hover:border-primary/50'}`}
+    <div className="flex flex-col gap-6">
+      {/* Main Image Viewport */}
+      <div className="relative aspect-[4/5] bg-beige-light rounded-[2.5rem] overflow-hidden border border-border-light group cursor-zoom-in">
+        <AnimatePresence mode="wait">
+          <motion.img
+            key={activeIndex}
+            src={images[activeIndex]}
+            initial={{ opacity: 0, scale: 1.05 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.95 }}
+            transition={{ duration: 0.6, ease: [0.43, 0.13, 0.23, 0.96] }}
+            className="w-full h-full object-contain mix-blend-multiply p-8"
+            alt="Vista de producto"
+          />
+        </AnimatePresence>
+
+        {/* Badges */}
+        <div className="absolute top-8 left-8 flex flex-col gap-3">
+          {badge && (
+            <motion.span 
+              initial={{ x: -20, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              className="bg-accent text-white text-[10px] font-bold px-4 py-2 rounded-full uppercase tracking-[0.2em] shadow-glow"
             >
-              <img
-                src={img}
-                alt=""
-                className="w-full h-full object-contain p-1"
-              />
+              {badge}
+            </motion.span>
+          )}
+          {isNew && (
+            <motion.span 
+              initial={{ x: -20, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              transition={{ delay: 0.1 }}
+              className="bg-primary text-white text-[10px] font-bold px-4 py-2 rounded-full uppercase tracking-[0.2em] shadow-glow"
+            >
+              Nuevo Ingreso
+            </motion.span>
+          )}
+        </div>
+      </div>
+
+      {/* Thumbnails Grid */}
+      {images.length > 1 && (
+        <div className="grid grid-cols-5 gap-4 px-2">
+          {images.map((img, idx) => (
+            <button
+              key={idx}
+              onClick={() => onSelect(idx)}
+              className={`relative aspect-square rounded-2xl overflow-hidden border-2 transition-all duration-300 bg-white p-2 ${activeIndex === idx ? 'border-primary ring-4 ring-primary/10 shadow-medium' : 'border-border-light hover:border-border-strong opacity-70 hover:opacity-100'}`}
+            >
+              <img src={img} className="w-full h-full object-contain mix-blend-multiply" alt={`Vista ${idx + 1}`} />
+              <div className={`absolute inset-0 bg-primary/10 transition-opacity ${activeIndex === idx ? 'opacity-0' : 'opacity-0 group-hover:opacity-100'}`}></div>
             </button>
           ))}
         </div>
       )}
-
-      {/* Imagen principal */}
-      <div className="relative flex-1 bg-background-soft rounded-xl overflow-hidden aspect-square">
-        {/* Badge izquierdo */}
-        {badge && (
-          <span className="absolute top-3 left-3 z-10 bg-accent text-white
-                           text-xs font-bold px-3 py-1 rounded-full uppercase">
-            {badge}
-          </span>
-        )}
-        {/* Badge derecho — NUEVO */}
-        {isNew && (
-          <span className="absolute top-3 right-3 z-10 bg-primary text-white
-                           text-xs font-bold px-3 py-1 rounded-full flex items-center gap-1">
-            <span className="w-1.5 h-1.5 bg-white rounded-full"></span>
-            NUEVO
-          </span>
-        )}
-        <img
-          src={activeImage}
-          alt="Producto"
-          className={`w-full h-full transition-opacity duration-200 ${
-            activeIndex === 0 
-              ? 'object-cover' 
-              : 'object-contain p-4'
-          }`}
-        />
-      </div>
     </div>
-  )
+  );
 }
