@@ -1,6 +1,6 @@
 // Archivo central de productos. Editando este archivo modificarás catálogo, precios e imágenes.
 //********************************************************************//
-//           ALCANCIASn y COFRES
+//           ALCANCIAS y COFRES
 //********************************************************************//
 
 export const productsConfig = [
@@ -37,9 +37,9 @@ export const productsConfig = [
     "salePercent": null
   },
   {
-    "id": "alcancia-elec-cat",
-    "name": "Alcancía Eléctrica Cat",
-    "slug": "alcancia-elec-cat",
+    "id": "alcancia-electrica",
+    "name": "Alcancía Eléctrica",
+    "slug": "alcancia-electrica",
     "category": "alcancias",
     "price": 29.9,
     "oldPrice": 39.9,
@@ -47,7 +47,9 @@ export const productsConfig = [
     "badge": "-25%",
     "badgeColor": null,
     "images": [
-      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774224557/goshopping/alcancias/alcancia_elec_cat.webp"
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774224557/goshopping/alcancias/alcancia_elec_cat.webp",
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1775166639/alcancia-electrica-modelo_xuxjof.webp",
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774224558/goshopping/alcancias/alcancia_elec_panda.webp"
     ],
     "description": "Nostalgia y diversión en un solo lugar. Revive la emoción de las máquinas retro mientras aseguras tu futuro, un diseño clásico que aporta carácter a cualquier espacio.",
     "specs": [
@@ -63,7 +65,8 @@ export const productsConfig = [
     "rating": 4.3,
     "reviews": 98,
     "colors": [
-      "#eba8439c"
+      "#4D4D4D",
+      "#000000"
     ],
     "stock": 18,
     "tags": [],
@@ -73,29 +76,36 @@ export const productsConfig = [
     "salePercent": 25
   },
   {
-    "id": "alcancia-elec-panda",
-    "name": "Alcancía Eléctrica Panda",
-    "slug": "alcancia-elec-panda",
+    "id": "cofre-telefono",
+    "name": "Cofre Telefono ring",
+    "slug": "cofre-telefono",
     "category": "alcancias",
-    "price": 29.9,
+    "price": 54.9,
     "oldPrice": null,
     "currency": "PEN",
     "badge": "OFERTA",
     "badgeColor": null,
     "images": [
-      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774224558/goshopping/alcancias/alcancia_elec_panda.webp"
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1775167958/cofre-telefono-modelo_qj0vrr.webp",
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1775170803/cofre-telefono-corazon-ring-cafe_hnlkl9.webp",
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1775170796/cofre-te%C3%B1efono-corazon-ring-blanco_wkaviq.webp",
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1775170388/cofre_music_retro_c5woey.webp",
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1775170378/cofre_music_rectro_whi_k2hk5i.webp"
     ],
     "description": "Resiliencia y estilo para sus primeros ahorros. Fabricada en PVC de alta resistencia, esta alcancía es el regalo perfecto para enseñar el valor del futuro con un diseño divertido y duradero.",
     "specs": [
       {
         "label": "Material",
-        "value": "PVC Flexible"
+        "value": "PVC + Musical"
       }
     ],
     "rating": 4.5,
     "reviews": 88,
     "colors": [
-      "#eba8439c"
+      "#2B0F01",
+      "#FFFFFF",
+      "#2B0F01",
+      "#FFFFFF"
     ],
     "stock": 60,
     "tags": [],
@@ -147,7 +157,11 @@ export const productsConfig = [
     "badge": "EXCLUSIVO",
     "badgeColor": null,
     "images": [
-      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774224560/goshopping/alcancias/r0s5sgwcyjkmnd7jwjic.webp"
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774224560/goshopping/alcancias/r0s5sgwcyjkmnd7jwjic.webp",
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1775166599/alcancia-ni%C3%B1a-lila_xotuim.webp",
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1775166600/alcancia-ni%C3%B1a-rosa_qcqjek.webp",
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1775167222/alcancia-ni%C3%B1a-verde_pdb9th.webp"
+
     ],
     "description": "Expresión y carácter en cada moneda. Un diseño único que captura emociones reales, transformando el ahorro en una pieza de conversación artística para tu hogar.",
     "specs": [
@@ -159,7 +173,9 @@ export const productsConfig = [
     "rating": 4.8,
     "reviews": 32,
     "colors": [
-      "#E8B4B4"
+      "#916CEA",
+      "#FBB2A3",
+      "#90EE90"
     ],
     "stock": 25,
     "tags": [],
@@ -179,7 +195,12 @@ export const productsConfig = [
     "badge": "TENDENCIA",
     "badgeColor": null,
     "images": [
-      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774224562/goshopping/alcancias/bnezvs7qbwlrjpm9d5m9.webp"
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774224562/goshopping/alcancias/bnezvs7qbwlrjpm9d5m9.webp",
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1775167225/alcancia-ni%C3%B1o-verde_vwmynz.webp",
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1775167942/alcancia-ni%C3%B1o-turquesa_ylpiea.webp",
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1775167223/alcancia-ni%C3%B1o-lila_oewayg.webp",
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1775166602/alcancia-ni%C3%B1o-beige_yrqggr.webp",
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1775166601/alcancia-ni%C3%B1o-azul_ynmsyh.webp"
     ],
     "description": "Protección con actitud. No dejes que nadie toque tus ahorros con esta alcancía de diseño rebelde y sofisticado, ideal para quienes buscan piezas con personalidad propia.",
     "specs": [
@@ -191,7 +212,11 @@ export const productsConfig = [
     "rating": 4.7,
     "reviews": 28,
     "colors": [
-      "#E8B4B4"
+      "#90EE90",
+      "#4D4D4D",
+      "#916CEA",
+      "#FF9800",
+      "#003785"
     ],
     "stock": 20,
     "tags": [],
@@ -258,6 +283,122 @@ export const productsConfig = [
       "#ca0c75ff"
     ],
     "stock": 38,
+    "tags": [],
+    "fragrances": [],
+    "isNew": false,
+    "isOnSale": false,
+    "salePercent": null
+  },
+  {
+    "id": "cofre-maquina-coser",
+    "name": "Cofre Maquina Coser",
+    "slug": "cofre-maquina-coser",
+    "category": "alcancias",
+    "price": 39.9,
+    "oldPrice": null,
+    "currency": "PEN",
+    "badge": "OFERTA",
+    "badgeColor": null,
+    "images": [
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1775172862/cofre-maquina-coser-modelo_e5m14k.webp",
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1775167947/cofre-maquina-coser_ssryae.webp",
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1775167950/cofre-maquina-coser-modelo_ijr0nu.webp"
+    ],
+    "variants": [
+      {
+        "name": "Grande",
+        "price": 54.9,
+        "oldPrice": 59.9
+      },
+      {
+        "name": "Pequeño",
+        "price": 39.9,
+        "oldPrice": null
+      }
+    ],
+    "description": "Hermoso detalle para regalo. Para esa persona especial que le agrada realizar creatividades",
+    "specs": [
+      {
+        "label": "Material",
+        "value": "PVC + Musical"
+      }
+    ],
+    "rating": 4.5,
+    "reviews": 88,
+    "colors": [
+      "#2B0F01",
+      "#2B0F01"
+    ],
+    "stock": 60,
+    "tags": [],
+    "fragrances": [],
+    "isNew": false,
+    "isOnSale": false,
+    "salePercent": null
+  },
+  {
+    "id": "cofre-toca-disco",
+    "name": "Cofre Toca Disco",
+    "slug": "cofre-toca-disco",
+    "category": "alcancias",
+    "price": 54.9,
+    "oldPrice": null,
+    "currency": "PEN",
+    "badge": "OFERTA",
+    "badgeColor": null,
+    "images": [
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1775167963/cofre-tocador-modelo_vrxiry.webp",
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1775166616/cofre-tocador_gwezfy.webp",
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1775170798/cofre-vitrola-blanco_lzfhwi.webp"
+    ],
+    "description": "Resiliencia y estilo para sus primeros ahorros. Fabricada en PVC de alta resistencia, esta alcancía es el regalo perfecto para enseñar el valor del futuro con un diseño divertido y duradero.",
+    "specs": [
+      {
+        "label": "Material",
+        "value": "PVC + Musical"
+      }
+    ],
+    "rating": 4.5,
+    "reviews": 88,
+    "colors": [
+      "#2B0F01",
+      "#FFFFFF"
+    ],
+    "stock": 60,
+    "tags": [],
+    "fragrances": [],
+    "isNew": false,
+    "isOnSale": false,
+    "salePercent": null
+  },
+  {
+    "id": "cofre-piano",
+    "name": "Cofre Piano",
+    "slug": "cofre-piano",
+    "category": "alcancias",
+    "price": 54.9,
+    "oldPrice": null,
+    "currency": "PEN",
+    "badge": "OFERTA",
+    "badgeColor": null,
+    "images": [
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1775166613/cofre-piano-modelo_jl4dsi.webp",
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1775166611/cofre-piano_facusw.webp"
+    ],
+    "description": "Resiliencia y estilo para sus primeros ahorros. Fabricada en PVC de alta resistencia, esta alcancía es el regalo perfecto para enseñar el valor del futuro con un diseño divertido y duradero.",
+    "specs": [
+      {
+        "label": "Material",
+        "value": "PVC + Musical"
+      }
+    ],
+    "rating": 4.5,
+    "reviews": 88,
+    "colors": [
+      "#FFFFFF",
+      "#FFFFFF"
+    ],
+    "stock": 60,
     "tags": [],
     "fragrances": [],
     "isNew": false,
