@@ -3977,75 +3977,11 @@ export const productsConfig = [
     "salePercent": null
   },
   {
-    "id": "cofre-music-rectro-whi",
-    "name": "Cofre Music Rectro Whi",
-    "slug": "cofre-music-rectro-whi",
-    "category": "novedades",
-    "price": 55.9,
-    "oldPrice": 65.9,
-    "currency": "PEN",
-    "badge": "PREMIUM",
-    "badgeColor": null,
-    "images": [
-      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1/goshopping/novedades/cofre_music_rectro_whi.webp"
-    ],
-    "description": "Descubre esta increíble pieza de nuestra colección de Novedades. Un artículo con detalles únicos que destaca en cualquier colección o ambiente.",
-    "specs": [
-      {
-        "label": "Categoría",
-        "value": "Novedad Exclusiva"
-      }
-    ],
-    "rating": 4.8,
-    "reviews": 25,
-    "colors": [
-      "#C0C0C0"
-    ],
-    "stock": 15,
-    "tags": [],
-    "fragrances": [],
-    "isNew": true,
-    "isOnSale": false,
-    "salePercent": null
-  },
-  {
-    "id": "nov-cofre-music-retro",
-    "name": "Cofre Music Retro",
-    "slug": "nov-cofre-music-retro",
-    "category": "novedades",
-    "price": 89.9,
-    "oldPrice": null,
-    "currency": "PEN",
-    "badge": "PREMIUM",
-    "badgeColor": null,
-    "images": [
-      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1/goshopping/novedades/cofre_music_retro.webp"
-    ],
-    "description": "Descubre esta increíble pieza de nuestra colección de Novedades. Un artículo con detalles únicos que destaca en cualquier colección o ambiente.",
-    "specs": [
-      {
-        "label": "Categoría",
-        "value": "Novedad Exclusiva"
-      }
-    ],
-    "rating": 4.8,
-    "reviews": 25,
-    "colors": [
-      "#C0C0C0"
-    ],
-    "stock": 15,
-    "tags": [],
-    "fragrances": [],
-    "isNew": true,
-    "isOnSale": false,
-    "salePercent": null
-  },
-  {
     "id": "nov-esfera-ada-madera-6",
-    "name": "Esfera Ada Madera 6",
+    "name": "Esfera Ada Madera 6cm",
     "slug": "nov-esfera-ada-madera-6",
     "category": "novedades",
-    "price": 69.9,
+    "price": 19.9,
     "oldPrice": null,
     "currency": "PEN",
     "badge": "DECOR",
@@ -4057,7 +3993,7 @@ export const productsConfig = [
     "specs": [
       {
         "label": "Categoría",
-        "value": "Novedad Exclusiva"
+        "value": "Novedad Exclusiva- luz amarilla"
       }
     ],
     "rating": 4.8,
@@ -4073,11 +4009,11 @@ export const productsConfig = [
     "salePercent": null
   },
   {
-    "id": "nov-esfera-astronauta-6rgb",
-    "name": "Esfera Astronauta 6rgb",
-    "slug": "nov-esfera-astronauta-6rgb",
+    "id": "esfera-astronauta-6rgb",
+    "name": "Esfera Astronauta 6cm rgb",
+    "slug": "esfera-astronauta-6rgb",
     "category": "novedades",
-    "price": 69.9,
+    "price": 29.9,
     "oldPrice": null,
     "currency": "PEN",
     "badge": "DECOR",
@@ -4089,7 +4025,7 @@ export const productsConfig = [
     "specs": [
       {
         "label": "Categoría",
-        "value": "Novedad Exclusiva"
+        "value": "Novedad Exclusiva - Luces rgb"
       }
     ],
     "rating": 4.8,
@@ -4106,10 +4042,10 @@ export const productsConfig = [
   },
   {
     "id": "nov-esfera-dragon-madera-8",
-    "name": "Esfera Dragon Madera 8",
+    "name": "Esfera Dragon Madera 8cm",
     "slug": "nov-esfera-dragon-madera-8",
     "category": "novedades",
-    "price": 69.9,
+    "price": 24.9,
     "oldPrice": null,
     "currency": "PEN",
     "badge": "DECOR",
@@ -4137,11 +4073,11 @@ export const productsConfig = [
     "salePercent": null
   },
   {
-    "id": "nov-esfera-luna-madera-8",
-    "name": "Esfera Luna Madera 8",
-    "slug": "nov-esfera-luna-madera-8",
+    "id": "esfera-luna-madera-8",
+    "name": "Esfera Luna Madera 8cm",
+    "slug": "esfera-luna-madera-8",
     "category": "novedades",
-    "price": 69.9,
+    "price": 24.9,
     "oldPrice": null,
     "currency": "PEN",
     "badge": "DECOR",
@@ -4153,7 +4089,7 @@ export const productsConfig = [
     "specs": [
       {
         "label": "Categoría",
-        "value": "Novedad Exclusiva"
+        "value": "Novedad Exclusiva - Luz Amarilla"
       }
     ],
     "rating": 4.8,
@@ -4169,11 +4105,11 @@ export const productsConfig = [
     "salePercent": null
   },
   {
-    "id": "nov-esfera-oso-madera-6",
-    "name": "Esfera Oso Madera 6",
-    "slug": "nov-esfera-oso-madera-6",
+    "id": "esfera-oso-madera-6",
+    "name": "Esfera Oso Madera 6cm",
+    "slug": "esfera-oso-madera-6",
     "category": "novedades",
-    "price": 69.9,
+    "price": 19.9,
     "oldPrice": null,
     "currency": "PEN",
     "badge": "DECOR",
@@ -4185,7 +4121,7 @@ export const productsConfig = [
     "specs": [
       {
         "label": "Categoría",
-        "value": "Novedad Exclusiva"
+        "value": "Novedad Exclusiva - Luz Amarilla"
       }
     ],
     "rating": 4.8,
@@ -4201,11 +4137,11 @@ export const productsConfig = [
     "salePercent": null
   },
   {
-    "id": "nov-esfera-rgbb-astro-luna6",
-    "name": "Esfera RgbB Astro Luna6",
-    "slug": "nov-esfera-rgbb-astro-luna6",
+    "id": "esfera-rgbb-astro-luna6",
+    "name": "Esfera RgbB Astro Luna 6cm",
+    "slug": "esfera-rgbb-astro-luna6",
     "category": "novedades",
-    "price": 69.9,
+    "price": 29.9,
     "oldPrice": null,
     "currency": "PEN",
     "badge": "DECOR",
@@ -4217,7 +4153,7 @@ export const productsConfig = [
     "specs": [
       {
         "label": "Categoría",
-        "value": "Novedad Exclusiva"
+        "value": "Novedad Exclusiva - Luz rgb"
       }
     ],
     "rating": 4.8,
@@ -4233,11 +4169,11 @@ export const productsConfig = [
     "salePercent": null
   },
   {
-    "id": "nov-esfera-rgbb-astro-reno6",
-    "name": "Esfera RgbB Astro Reno6",
-    "slug": "nov-esfera-rgbb-astro-reno6",
+    "id": "esfera-rgbb-astro-reno6",
+    "name": "Esfera RgbB Astro Reno 6cm",
+    "slug": "esfera-rgbb-astro-reno6",
     "category": "novedades",
-    "price": 69.9,
+    "price": 29.9,
     "oldPrice": null,
     "currency": "PEN",
     "badge": "DECOR",
@@ -4249,7 +4185,7 @@ export const productsConfig = [
     "specs": [
       {
         "label": "Categoría",
-        "value": "Novedad Exclusiva"
+        "value": "Novedad Exclusiva - Luz rgb"
       }
     ],
     "rating": 4.8,
@@ -4265,11 +4201,11 @@ export const productsConfig = [
     "salePercent": null
   },
   {
-    "id": "nov-esfera-rgbb-astro-sistema6",
-    "name": "Esfera RgbB Astro Sistema6",
-    "slug": "nov-esfera-rgbb-astro-sistema6",
+    "id": "esfera-rgbb-astro-sistema6",
+    "name": "Esfera RgbB Astro Sistema 6cm",
+    "slug": "esfera-rgbb-astro-sistema6",
     "category": "novedades",
-    "price": 69.9,
+    "price": 29.9,
     "oldPrice": null,
     "currency": "PEN",
     "badge": "DECOR",
@@ -4281,7 +4217,7 @@ export const productsConfig = [
     "specs": [
       {
         "label": "Categoría",
-        "value": "Novedad Exclusiva"
+        "value": "Novedad Exclusiva - Luz rgb"
       }
     ],
     "rating": 4.8,
@@ -4297,11 +4233,11 @@ export const productsConfig = [
     "salePercent": null
   },
   {
-    "id": "nov-esfera-sistema-madera-8",
-    "name": "Esfera Sistema Madera 8",
-    "slug": "nov-esfera-sistema-madera-8",
+    "id": "esfera-sistema-madera-8",
+    "name": "Esfera Sistema Madera 8cm",
+    "slug": "esfera-sistema-madera-8",
     "category": "novedades",
-    "price": 69.9,
+    "price": 24.9,
     "oldPrice": null,
     "currency": "PEN",
     "badge": "DECOR",
@@ -4313,7 +4249,7 @@ export const productsConfig = [
     "specs": [
       {
         "label": "Categoría",
-        "value": "Novedad Exclusiva"
+        "value": "Novedad Exclusiva - Luz Amarillo"
       }
     ],
     "rating": 4.8,
@@ -4329,41 +4265,9 @@ export const productsConfig = [
     "salePercent": null
   },
   {
-    "id": "nov-mascara-med",
-    "name": "Mascara Med",
-    "slug": "nov-mascara-med",
-    "category": "novedades",
-    "price": 45.9,
-    "oldPrice": null,
-    "currency": "PEN",
-    "badge": "NUEVO",
-    "badgeColor": null,
-    "images": [
-      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1/goshopping/novedades/mascara_med.webp"
-    ],
-    "description": "Descubre esta increíble pieza de nuestra colección de Novedades. Un artículo con detalles únicos que destaca en cualquier colección o ambiente.",
-    "specs": [
-      {
-        "label": "Categoría",
-        "value": "Novedad Exclusiva"
-      }
-    ],
-    "rating": 4.8,
-    "reviews": 25,
-    "colors": [
-      "#C0C0C0"
-    ],
-    "stock": 15,
-    "tags": [],
-    "fragrances": [],
-    "isNew": true,
-    "isOnSale": false,
-    "salePercent": null
-  },
-  {
-    "id": "nov-moneda-botcoin",
-    "name": "Moneda Botcoin",
-    "slug": "nov-moneda-botcoin",
+    "id": "moneda-bitcoin",
+    "name": "Moneda Bitcoin - Ethereum",
+    "slug": "moneda-bitcoin",
     "category": "novedades",
     "price": 15.9,
     "oldPrice": null,
@@ -4371,7 +4275,11 @@ export const productsConfig = [
     "badge": "COLECCIÓN",
     "badgeColor": null,
     "images": [
-      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1/goshopping/novedades/moneda_botcoin.webp"
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774224706/goshopping/novedades/moneda_lateral_bitcoin.webp",
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774224703/goshopping/novedades/moneda_botcoin.webp",
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774224703/goshopping/novedades/moneda_botcoin.webp",
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774224705/goshopping/novedades/moneda_ethereum.webp",
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774224705/goshopping/novedades/moneda_ethereum.webp"
     ],
     "description": "Descubre esta increíble pieza de nuestra colección de Novedades. Un artículo con detalles únicos que destaca en cualquier colección o ambiente.",
     "specs": [
@@ -4383,7 +4291,10 @@ export const productsConfig = [
     "rating": 4.8,
     "reviews": 25,
     "colors": [
-      "#C0C0C0"
+      "#FFD700",
+      "#D0CCD1",
+      "#FFD700",
+      "#D0CCD1"
     ],
     "stock": 15,
     "tags": [],
@@ -4393,76 +4304,12 @@ export const productsConfig = [
     "salePercent": null
   },
   {
-    "id": "nov-moneda-ethereum",
-    "name": "Moneda Ethereum",
-    "slug": "nov-moneda-ethereum",
+    "id": "quemador-taza-pq",
+    "name": "Taza Caballero Pq",
+    "slug": "quemador-taza-pq",
     "category": "novedades",
-    "price": 15.9,
-    "oldPrice": null,
-    "currency": "PEN",
-    "badge": "COLECCIÓN",
-    "badgeColor": null,
-    "images": [
-      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1/goshopping/novedades/moneda_ethereum.webp"
-    ],
-    "description": "Descubre esta increíble pieza de nuestra colección de Novedades. Un artículo con detalles únicos que destaca en cualquier colección o ambiente.",
-    "specs": [
-      {
-        "label": "Categoría",
-        "value": "Novedad Exclusiva"
-      }
-    ],
-    "rating": 4.8,
-    "reviews": 25,
-    "colors": [
-      "#C0C0C0"
-    ],
-    "stock": 15,
-    "tags": [],
-    "fragrances": [],
-    "isNew": true,
-    "isOnSale": false,
-    "salePercent": null
-  },
-  {
-    "id": "nov-moneda-lateral-bitcoin",
-    "name": "Moneda Lateral Bitcoin",
-    "slug": "nov-moneda-lateral-bitcoin",
-    "category": "novedades",
-    "price": 15.9,
-    "oldPrice": null,
-    "currency": "PEN",
-    "badge": "COLECCIÓN",
-    "badgeColor": null,
-    "images": [
-      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1/goshopping/novedades/moneda_lateral_bitcoin.webp"
-    ],
-    "description": "Descubre esta increíble pieza de nuestra colección de Novedades. Un artículo con detalles únicos que destaca en cualquier colección o ambiente.",
-    "specs": [
-      {
-        "label": "Categoría",
-        "value": "Novedad Exclusiva"
-      }
-    ],
-    "rating": 4.8,
-    "reviews": 25,
-    "colors": [
-      "#C0C0C0"
-    ],
-    "stock": 15,
-    "tags": [],
-    "fragrances": [],
-    "isNew": true,
-    "isOnSale": false,
-    "salePercent": null
-  },
-  {
-    "id": "nov-quemador-taza-pq",
-    "name": "Quemador Taza Pq",
-    "slug": "nov-quemador-taza-pq",
-    "category": "novedades",
-    "price": 39.9,
-    "oldPrice": null,
+    "price": 31.9,
+    "oldPrice": 39.9,
     "currency": "PEN",
     "badge": "ÉPICO",
     "badgeColor": null,
@@ -4489,17 +4336,17 @@ export const productsConfig = [
     "salePercent": null
   },
   {
-    "id": "nov-taza-thor-pq",
+    "id": "taza-thor-pq",
     "name": "Taza Thor Pq",
-    "slug": "nov-taza-thor-pq",
+    "slug": "taza-thor-pq",
     "category": "novedades",
-    "price": 39.9,
+    "price": 31.9,
     "oldPrice": null,
     "currency": "PEN",
     "badge": "ÉPICO",
     "badgeColor": null,
     "images": [
-      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1/goshopping/novedades/taza thor_pq.webp"
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774224708/goshopping/novedades/taza_thor_pq.webp"
     ],
     "description": "Descubre esta increíble pieza de nuestra colección de Novedades. Un artículo con detalles únicos que destaca en cualquier colección o ambiente.",
     "specs": [
@@ -4521,12 +4368,12 @@ export const productsConfig = [
     "salePercent": null
   },
   {
-    "id": "nov-taza-barril-med",
+    "id": "taza-barril-med",
     "name": "Taza Barril Med",
-    "slug": "nov-taza-barril-med",
+    "slug": "taza-barril-med",
     "category": "novedades",
-    "price": 39.9,
-    "oldPrice": null,
+    "price": 45.9,
+    "oldPrice": 59.9,
     "currency": "PEN",
     "badge": "ÉPICO",
     "badgeColor": null,
@@ -4553,43 +4400,11 @@ export const productsConfig = [
     "salePercent": null
   },
   {
-    "id": "nov-taza-caballero-pq",
-    "name": "Taza Caballero Pq",
-    "slug": "nov-taza-caballero-pq",
-    "category": "novedades",
-    "price": 39.9,
-    "oldPrice": null,
-    "currency": "PEN",
-    "badge": "ÉPICO",
-    "badgeColor": null,
-    "images": [
-      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1/goshopping/novedades/taza_caballero_pq.webp"
-    ],
-    "description": "Descubre esta increíble pieza de nuestra colección de Novedades. Un artículo con detalles únicos que destaca en cualquier colección o ambiente.",
-    "specs": [
-      {
-        "label": "Categoría",
-        "value": "Novedad Exclusiva"
-      }
-    ],
-    "rating": 4.8,
-    "reviews": 25,
-    "colors": [
-      "#C0C0C0"
-    ],
-    "stock": 15,
-    "tags": [],
-    "fragrances": [],
-    "isNew": true,
-    "isOnSale": false,
-    "salePercent": null
-  },
-  {
-    "id": "nov-taza-cruz-pq",
+    "id": "taza-cruz-pq",
     "name": "Taza Cruz Pq",
-    "slug": "nov-taza-cruz-pq",
+    "slug": "taza-cruz-pq",
     "category": "novedades",
-    "price": 39.9,
+    "price": 31.9,
     "oldPrice": null,
     "currency": "PEN",
     "badge": "ÉPICO",
@@ -4617,11 +4432,11 @@ export const productsConfig = [
     "salePercent": null
   },
   {
-    "id": "nov-taza-dragarra-gr",
+    "id": "taza-dragarra-gr",
     "name": "Taza Dragarra Gr",
-    "slug": "nov-taza-dragarra-gr",
+    "slug": "taza-dragarra-gr",
     "category": "novedades",
-    "price": 39.9,
+    "price": 49.9,
     "oldPrice": null,
     "currency": "PEN",
     "badge": "ÉPICO",
@@ -4649,11 +4464,11 @@ export const productsConfig = [
     "salePercent": null
   },
   {
-    "id": "nov-taza-dragema-gr",
+    "id": "taza-dragema-gr",
     "name": "Taza Dragema Gr",
-    "slug": "nov-taza-dragema-gr",
+    "slug": "taza-dragema-gr",
     "category": "novedades",
-    "price": 39.9,
+    "price": 49.9,
     "oldPrice": null,
     "currency": "PEN",
     "badge": "ÉPICO",
@@ -4681,11 +4496,11 @@ export const productsConfig = [
     "salePercent": null
   },
   {
-    "id": "nov-taza-dragon-col-gr",
+    "id": "taza-dragon-col-gr",
     "name": "Taza Dragon Col Gr",
-    "slug": "nov-taza-dragon-col-gr",
+    "slug": "taza-dragon-col-gr",
     "category": "novedades",
-    "price": 39.9,
+    "price": 51.9,
     "oldPrice": null,
     "currency": "PEN",
     "badge": "ÉPICO",
@@ -4713,11 +4528,11 @@ export const productsConfig = [
     "salePercent": null
   },
   {
-    "id": "nov-taza-game-thrones-med",
+    "id": "taza-game-thrones-med",
     "name": "Taza Game Thrones Med",
-    "slug": "nov-taza-game-thrones-med",
+    "slug": "taza-game-thrones-med",
     "category": "novedades",
-    "price": 39.9,
+    "price": 35.9,
     "oldPrice": null,
     "currency": "PEN",
     "badge": "ÉPICO",
@@ -4745,11 +4560,11 @@ export const productsConfig = [
     "salePercent": null
   },
   {
-    "id": "nov-taza-hp-amar-gr",
-    "name": "Taza HP Amar Gr",
-    "slug": "nov-taza-hp-amar-gr",
+    "id": "taza-hp-amar-gr",
+    "name": "Taza HP Amarillo Gr",
+    "slug": "taza-hp-amar-gr",
     "category": "novedades",
-    "price": 39.9,
+    "price": 61.9,
     "oldPrice": null,
     "currency": "PEN",
     "badge": "ÉPICO",
@@ -4777,11 +4592,11 @@ export const productsConfig = [
     "salePercent": null
   },
   {
-    "id": "nov-taza-hp-red-gr",
+    "id": "taza-hp-red-gr",
     "name": "Taza HP Red Gr",
-    "slug": "nov-taza-hp-red-gr",
+    "slug": "taza-hp-red-gr",
     "category": "novedades",
-    "price": 39.9,
+    "price": 61.9,
     "oldPrice": null,
     "currency": "PEN",
     "badge": "ÉPICO",
@@ -4809,11 +4624,11 @@ export const productsConfig = [
     "salePercent": null
   },
   {
-    "id": "nov-taza-medie-pq",
-    "name": "Taza Medie Pq",
-    "slug": "nov-taza-medie-pq",
+    "id": "taza-medie-pq",
+    "name": "Taza Medieval Pq",
+    "slug": "taza-medie-pq",
     "category": "novedades",
-    "price": 39.9,
+    "price": 29.9,
     "oldPrice": null,
     "currency": "PEN",
     "badge": "ÉPICO",
@@ -4841,11 +4656,11 @@ export const productsConfig = [
     "salePercent": null
   },
   {
-    "id": "nov-taza-vikingo-gr",
+    "id": "taza-vikingo-gr",
     "name": "Taza Vikingo Gr",
-    "slug": "nov-taza-vikingo-gr",
+    "slug": "taza-vikingo-gr",
     "category": "novedades",
-    "price": 39.9,
+    "price": 51.9,
     "oldPrice": null,
     "currency": "PEN",
     "badge": "ÉPICO",
@@ -4873,11 +4688,11 @@ export const productsConfig = [
     "salePercent": null
   },
   {
-    "id": "nov-taza-winter-coming-pq",
+    "id": "taza-winter-coming-pq",
     "name": "Taza Winter Coming Pq",
-    "slug": "nov-taza-winter-coming-pq",
+    "slug": "taza-winter-coming-pq",
     "category": "novedades",
-    "price": 39.9,
+    "price": 45.9,
     "oldPrice": null,
     "currency": "PEN",
     "badge": "ÉPICO",
@@ -4905,17 +4720,17 @@ export const productsConfig = [
     "salePercent": null
   },
   {
-    "id": "nov-tulipanes-infinito-octogonal",
+    "id": "tulipanes-infinito-octogonal",
     "name": "Tulipanes Infinito Octogonal",
-    "slug": "nov-tulipanes-infinito-octogonal",
+    "slug": "tulipanes-infinito-octogonal",
     "category": "novedades",
-    "price": 59.9,
+    "price": 34.9,
     "oldPrice": null,
     "currency": "PEN",
     "badge": "ROMÁNTICO",
     "badgeColor": null,
     "images": [
-      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1/goshopping/novedades/tulipanes_infinito octogonal.webp"
+      "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774224722/goshopping/novedades/tulipanes_infinito_octogonal.webp"
     ],
     "description": "Descubre esta increíble pieza de nuestra colección de Novedades. Un artículo con detalles únicos que destaca en cualquier colección o ambiente.",
     "specs": [
@@ -4937,11 +4752,11 @@ export const productsConfig = [
     "salePercent": null
   },
   {
-    "id": "nov-tulipanes-infinito-12",
+    "id": "tulipanes-infinito-12",
     "name": "Tulipanes Infinito 12",
-    "slug": "nov-tulipanes-infinito-12",
+    "slug": "tulipanes-infinito-12",
     "category": "novedades",
-    "price": 59.9,
+    "price": 24.9,
     "oldPrice": null,
     "currency": "PEN",
     "badge": "ROMÁNTICO",
