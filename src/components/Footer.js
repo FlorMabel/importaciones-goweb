@@ -29,8 +29,8 @@ export function renderFooter() {
         <div>
           <div class="flex items-center gap-3 mb-4">
             <img 
-              src="https://res.cloudinary.com/dod8hhjoo/image/upload/v1774224726/goshopping/optimized/logo-768w.webp" 
-              alt="GO SHOPPING" 
+              src="https://res.cloudinary.com/dod8hhjoo/image/upload/v1774224672/goshopping/logo.png" 
+              alt="SHOPPING" 
               class="h-12 w-auto object-contain"
             />
             <span class="font-serif text-xl font-bold text-white">SHOPPING</span>
@@ -74,10 +74,10 @@ export function renderFooter() {
               <span class="material-symbols-outlined text-primary text-base">phone</span> +51 962 810 439
             </li>
             <li class="flex items-center gap-2">
-              <span class="material-symbols-outlined text-primary text-base">mail</span> ventas@goshopping.pe
+              <span class="material-symbols-outlined text-primary text-base">mail</span> imporpuno@gmail.com
             </li>
             <li class="flex items-center gap-2">
-              <span class="material-symbols-outlined text-primary text-base">location_on</span> Lima, Perú
+              <span class="material-symbols-outlined text-primary text-base">location_on</span> Puno, Perú
             </li>
           </ul>
           <a href="https://wa.me/51962810439" target="_blank" rel="noopener" class="mt-4 inline-flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white text-xs font-bold py-2 px-4 rounded-full transition-colors">

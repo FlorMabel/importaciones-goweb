@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import StarRating from './StarRating';
 import { useStore } from '../context/StoreContext';
 import { useToast } from '../context/ToastContext';
-import { formatPrice } from '../utils';
+import { formatPrice, getOptimizedImage } from '../utils';
 import { getProductById } from '../services/api';
 
 export default function ProductCard({ product, index }) {
@@ -34,17 +34,17 @@ export default function ProductCard({ product, index }) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ delay: index * 0.05 }}
-      className="group relative bg-white rounded-[2rem] border border-border-light overflow-hidden hover:shadow-strong transition-all duration-700 h-full flex flex-col"
+      className="group relative bg-white rounded-xl md:rounded-[2rem] border border-border-light overflow-hidden hover:shadow-strong transition-all duration-700 h-full flex flex-col"
     >
       {/* Image Section */}
       <div 
-        className="relative aspect-[4/5] overflow-hidden cursor-pointer bg-beige-light p-6"
+        className="relative aspect-[4/5] overflow-hidden cursor-pointer bg-beige-light p-3 md:p-6"
         onClick={() => navigate(`/producto/${product.slug}`)}
       >
         <img
-          src={product.images?.[0] || 'https://placehold.co/400x500'}
+          src={getOptimizedImage(product.images?.[0], 300) || 'https://placehold.co/400x500'}
           alt={product.name}
-          className="w-full h-full object-contain mix-blend-multiply group-hover:scale-110 transition-transform duration-1000 ease-out"
+          className="w-full h-full object-contain mix-blend-multiply group-hover:scale-105 transition-transform duration-1000 ease-out"
         />
         
         {/* Badges */}
@@ -64,19 +64,19 @@ export default function ProductCard({ product, index }) {
         {/* Quick Add Button */}
         <button
           onClick={handleAddToCart}
-          className="absolute bottom-6 right-6 size-12 rounded-full bg-white shadow-medium flex items-center justify-center text-accent opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 hover:bg-primary hover:text-white z-10"
+          className="absolute bottom-3 right-3 md:bottom-6 md:right-6 size-10 md:size-12 rounded-full bg-white shadow-medium flex items-center justify-center text-accent opacity-100 md:opacity-0 md:group-hover:opacity-100 translate-y-0 md:translate-y-4 md:group-hover:translate-y-0 transition-all duration-500 hover:bg-primary hover:text-white z-10"
           aria-label="Añadir rápido"
         >
-          <span className="material-symbols-outlined text-xl italic">add_shopping_cart</span>
+          <span className="material-symbols-outlined text-lg md:text-xl italic">add_shopping_cart</span>
         </button>
       </div>
 
       {/* Info Section */}
-      <div className="p-6 flex flex-col flex-1">
+      <div className="p-3 md:p-6 flex flex-col flex-1">
         <div className="flex-1">
           <p className="text-[10px] uppercase tracking-[0.3em] text-text-muted mb-2 font-bold">{product.category}</p>
           <h3 
-            className="text-base font-bold text-text-main group-hover:text-primary transition-colors cursor-pointer mb-2 line-clamp-2 leading-snug"
+            className="text-sm md:text-base font-bold text-text-main group-hover:text-primary transition-colors cursor-pointer mb-2 line-clamp-1 md:line-clamp-2 leading-snug"
             onClick={() => navigate(`/producto/${product.slug}`)}
           >
             {product.name}
@@ -101,7 +101,7 @@ export default function ProductCard({ product, index }) {
         {/* Pricing */}
         <div className="flex items-center justify-between mt-auto pt-4 border-t border-border-light/50">
           <div className="flex items-baseline gap-2">
-            <span className="text-lg font-bold text-accent">{formatPrice(displayPrice)}</span>
+            <span className="text-base md:text-lg font-bold text-accent">{formatPrice(displayPrice)}</span>
             {displayOldPrice && (
               <span className="text-xs text-text-muted line-through opacity-60">
                 {formatPrice(displayOldPrice)}

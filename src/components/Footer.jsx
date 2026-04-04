@@ -8,10 +8,10 @@ export default function Footer() {
       <div className="max-w-[1440px] mx-auto px-6 lg:px-10 pb-16">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {[
-            { icon: 'verified', title: 'Autenticidad', desc: '100% Importados' },
-            { icon: 'local_shipping', title: 'Guante Blanco', desc: 'Envío Asegurado' },
-            { icon: 'support_agent', title: 'Concierge', desc: 'Soporte 24/7' },
-            { icon: 'history_edu', title: 'Legado', desc: 'Garantía Total' },
+            { icon: 'verified', title: 'AUTENTICIDAD', desc: '100% Importados' },
+            { icon: 'local_shipping', title: 'TRANSPORTE', desc: 'Envío Asegurado' },
+            { icon: 'support_agent', title: 'ATENCIÓN', desc: 'Soporte 24/7' },
+            { icon: 'history_edu', title: 'GARANTÍA', desc: 'Total' },
           ].map((t, i) => (
             <div key={t.icon} className="flex flex-col items-center md:items-start gap-4 text-center md:text-left group cursor-default">
               <div className="size-12 rounded-full border border-white/10 flex items-center justify-center text-primary group-hover:scale-110 group-hover:border-primary transition-all duration-500">
@@ -33,14 +33,14 @@ export default function Footer() {
           <div className="md:col-span-1">
             <div className="flex items-center gap-3 mb-6">
               <img 
-                src="https://res.cloudinary.com/dod8hhjoo/image/upload/v1774224726/goshopping/optimized/logo-768w.webp" 
+                src="https://res.cloudinary.com/dod8hhjoo/image/upload/v1774224725/goshopping/optimized/logo-320w.webp" 
                 alt="GO SHOPPING" 
                 className="h-10 w-auto object-contain brightness-0 invert"
               />
               <span className="font-serif text-xl font-bold text-white tracking-widest">SHOPPING</span>
             </div>
             <p className="text-white/40 text-sm leading-relaxed mb-8 font-light italic">
-              "Curando piezas de lujo que transforman lo cotidiano en algo extraordinario."
+              "Importando piezas que transforman lo cotidiano en algo extraordinario."
             </p>
             <div className="flex gap-4">
               {['facebook', 'instagram', 'tiktok'].map(social => (
@@ -89,10 +89,10 @@ export default function Footer() {
                 <span className="material-symbols-outlined text-primary text-base">phone</span> +51 962 810 439
               </li>
               <li className="flex items-center gap-2">
-                <span className="material-symbols-outlined text-primary text-base">mail</span> ventas@goshopping.pe
+                <span className="material-symbols-outlined text-primary text-base">mail</span> imporpuno@gmail.com
               </li>
               <li className="flex items-center gap-2">
-                <span className="material-symbols-outlined text-primary text-base">location_on</span> Lima, Perú
+                <span className="material-symbols-outlined text-primary text-base">location_on</span> Puno, Perú
               </li>
             </ul>
             <a href="https://wa.me/51962810439" target="_blank" rel="noopener noreferrer" className="mt-4 inline-flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white text-xs font-bold py-2 px-4 rounded-full transition-colors">
@@ -106,7 +106,7 @@ export default function Footer() {
       {/* Copyright */}
       <div className="border-t border-white/10 py-6">
         <div className="max-w-[1440px] mx-auto px-6 lg:px-10 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-white/40">
-          <p>© {new Date().getFullYear()} GO SHOPPING. Todos los derechos reservados. RUC: 20610191244</p>
+          <p>© {new Date().getFullYear()} GO SHOPPING. Todos los derechos reservados. RUC: 20601880904</p>
           <div className="flex gap-6">
             <span className="hover:text-white/70 cursor-pointer">Términos</span>
             <span className="hover:text-white/70 cursor-pointer">Privacidad</span>

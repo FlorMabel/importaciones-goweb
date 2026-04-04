@@ -63,8 +63,33 @@
 
   /* WhatsApp Float */
   .whatsapp-float {
-    @apply fixed bottom-6 left-6 z-50 w-14 h-14 bg-green-500 rounded-full flex items-center justify-center
-           shadow-lg hover:bg-green-600 transition-colors text-white hover:scale-110;
+    @apply fixed z-50 rounded-full flex items-center justify-center
+           shadow-lg transition-all duration-300 text-white hover:scale-110;
+    bottom: 5rem;
+    left: 1rem;
+    width: 3rem;
+    height: 3rem;
+    background: #25d366;
+  }
+  @media (min-width: 1024px) {
+    .whatsapp-float {
+      bottom: 1.5rem;
+      left: 1.5rem;
+      width: 3.5rem;
+      height: 3.5rem;
+    }
+  }
+
+  /* Skeleton Loader for perceived performance */
+  .skeleton-loader {
+    background: linear-gradient(90deg, #f5f3ef 25%, #efe9df 50%, #f5f3ef 75%);
+    background-size: 200% 100%;
+    animation: skeleton-shimmer 1.5s ease-in-out infinite;
+    border-radius: 1rem;
+  }
+  @keyframes skeleton-shimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
   }
 
   /* Sticky Mobile CTA */

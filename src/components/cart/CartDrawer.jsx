@@ -110,7 +110,7 @@ export default function CartDrawer({ isOpen, onClose }) {
                               <span className="material-symbols-outlined text-xs">add</span>
                             </button>
                           </div>
-                          <span className="text-sm font-bold text-accent">{formatPrice(item.price * item.qty)}</span>
+                          <span className="text-sm font-bold text-accent">{formatPrice(Number(item.price || 0) * Number(item.qty || 0))}</span>
                         </div>
                       </div>
                     </motion.div>

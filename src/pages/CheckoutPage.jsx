@@ -6,7 +6,6 @@ import { formatPrice, getItemPrice } from '../utils';
 import { useStore } from '../context/StoreContext';
 import { useToast } from '../context/ToastContext';
 import { supabase } from '../services/supabase';
-import { useToast } from '../context/ToastContext';
 
 const DEPARTAMENTOS = [
   'Amazonas','Áncash','Apurímac','Arequipa','Ayacucho','Cajamarca','Callao','Cusco',
@@ -103,12 +102,12 @@ export default function CheckoutPage() {
       ).join('\n');
 
       const msg = `🛍️ *NUEVO PEDIDO - GO SHOPPING*\n\n`
-        + `🆔 *ID:* ${orderData.id.split('-')[0]}\n`
-        + `👤 *Cliente:* ${sanitize(name)}\n📱 *Teléfono:* ${sanitize(phone)}\n📍 *Ubicación:* ${sanitize(city)}, ${sanitize(dept)}\n🏠 *Dirección:* ${sanitize(address)}\n💳 *Pago:* ${payment.toUpperCase()}\n\n`
-        + `📦 *Productos:*\n${orderLines}\n\n`
-        + `🚚 Envío: ${shipping === 0 ? 'GRATIS' : `S/ ${shipping.toFixed(2)}`}\n`
-        + `💰 *TOTAL: S/ ${grandTotal.toFixed(2)}*\n\n`
-        + `_Adjunto mi voucher de pago_ ✅`;
+        + ` *ID:* ${orderData.id.split('-')[0]}\n`
+        + ` *Cliente:* ${sanitize(name)}\n *Teléfono:* ${sanitize(phone)}\n *Ubicación:* ${sanitize(city)}, ${sanitize(dept)}\n🏠 *Dirección:* ${sanitize(address)}\n💳 *Pago:* ${payment.toUpperCase()}\n\n`
+        + ` *Productos:*\n${orderLines}\n\n`
+        + ` Envío: ${shipping === 0 ? 'GRATIS' : `S/ ${shipping.toFixed(2)}`}\n`
+        + ` *TOTAL: S/ ${grandTotal.toFixed(2)}*\n\n`
+        + `_Adjunto mi voucher de pago_ `;
 
       window.open(`https://wa.me/51962810439?text=${encodeURIComponent(msg)}`, '_blank');
       
@@ -130,10 +129,10 @@ export default function CheckoutPage() {
     <>
       <Helmet><title>Checkout | GO SHOPPING</title></Helmet>
       <div className="bg-beige-soft min-h-screen">
-        <div className="max-w-[1440px] mx-auto px-6 lg:px-10 py-12 lg:py-20">
+        <div className="max-w-[1440px] mx-auto px-4 md:px-6 lg:px-10 py-8 md:py-12 lg:py-20">
           <div className="mb-12">
             <span className="text-primary font-bold tracking-[0.3em] text-[10px] uppercase mb-1 block">Pasarela de</span>
-            <h1 className="text-4xl md:text-5xl font-serif font-bold text-accent italic">Finalizar Pedido</h1>
+            <h1 className="text-3xl md:text-5xl font-serif font-bold text-accent italic">Finalizar Pedido</h1>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
@@ -141,7 +140,7 @@ export default function CheckoutPage() {
             <div className="lg:col-span-7">
               <form onSubmit={handleSubmit} className="space-y-8">
                 {/* Shipping Info Card */}
-                <div className="bg-white rounded-[2.5rem] p-8 md:p-10 shadow-soft border border-border-light relative overflow-hidden">
+                <div className="bg-white rounded-2xl md:rounded-[2.5rem] p-5 md:p-8 lg:p-10 shadow-soft border border-border-light relative overflow-hidden">
                   <div className="flex items-center gap-4 mb-8">
                     <div className="size-10 rounded-2xl bg-accent/5 flex items-center justify-center text-accent">
                       <span className="material-symbols-outlined">local_shipping</span>
@@ -151,18 +150,18 @@ export default function CheckoutPage() {
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div className="md:col-span-2">
-                       <label className="block text-[10px] uppercase tracking-widest font-bold text-text-muted mb-2 ml-1">Nombre de Prestigio *</label>
-                       <input type="text" required value={form.name} onChange={onChange('name')} className="w-full bg-beige-light border-border-light rounded-2xl px-5 py-4 text-sm focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all placeholder:text-text-muted/40" placeholder="Ej: Julian Casablancas" />
+                       <label className="block text-[10px] uppercase tracking-widest font-bold text-text-muted mb-2 ml-1">Nombre de Cliente *</label>
+                       <input type="text" required value={form.name} onChange={onChange('name')} className="w-full bg-beige-light border-border-light rounded-xl md:rounded-2xl px-4 py-3 md:py-4 text-sm focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all placeholder:text-text-muted/40" placeholder="Ej: Julian Casablancas" />
                     </div>
                     
                     <div>
                        <label className="block text-[10px] uppercase tracking-widest font-bold text-text-muted mb-2 ml-1">Contacto Directo *</label>
-                       <input type="tel" required value={form.phone} onChange={onChange('phone')} className="w-full bg-beige-light border-border-light rounded-2xl px-5 py-4 text-sm focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all placeholder:text-text-muted/40" placeholder="+51 999 999 999" />
+                       <input type="tel" required value={form.phone} onChange={onChange('phone')} className="w-full bg-beige-light border-border-light rounded-xl md:rounded-2xl px-4 py-3 md:py-4 text-sm focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all placeholder:text-text-muted/40" placeholder="+51 999 999 999" />
                     </div>
 
                     <div>
                        <label className="block text-[10px] uppercase tracking-widest font-bold text-text-muted mb-2 ml-1">Departamento *</label>
-                       <select required value={form.dept} onChange={onChange('dept')} className="w-full bg-beige-light border-border-light rounded-2xl px-5 py-4 text-sm focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all appearance-none cursor-pointer">
+                       <select required value={form.dept} onChange={onChange('dept')} className="w-full bg-beige-light border-border-light rounded-xl md:rounded-2xl px-4 py-3 md:py-4 text-sm focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all appearance-none cursor-pointer">
                          <option value="">Seleccionar Ubicación</option>
                          {DEPARTAMENTOS.map(d => <option key={d} value={d}>{d}</option>)}
                        </select>
@@ -170,18 +169,18 @@ export default function CheckoutPage() {
 
                     <div>
                        <label className="block text-[10px] uppercase tracking-widest font-bold text-text-muted mb-2 ml-1">Distrito / Ciudad *</label>
-                       <input type="text" required value={form.city} onChange={onChange('city')} className="w-full bg-beige-light border-border-light rounded-2xl px-5 py-4 text-sm focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all placeholder:text-text-muted/40" placeholder="Tu distrito" />
+                       <input type="text" required value={form.city} onChange={onChange('city')} className="w-full bg-beige-light border-border-light rounded-xl md:rounded-2xl px-4 py-3 md:py-4 text-sm focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all placeholder:text-text-muted/40" placeholder="Tu distrito" />
                     </div>
 
                     <div className="md:col-span-2">
                        <label className="block text-[10px] uppercase tracking-widest font-bold text-text-muted mb-2 ml-1">Dirección Exacta / Referencias *</label>
-                       <input type="text" required value={form.address} onChange={onChange('address')} className="w-full bg-beige-light border-border-light rounded-2xl px-5 py-4 text-sm focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all placeholder:text-text-muted/40" placeholder="Ciudad, Calle, Nº de casa y referencia" />
+                       <input type="text" required value={form.address} onChange={onChange('address')} className="w-full bg-beige-light border-border-light rounded-xl md:rounded-2xl px-4 py-3 md:py-4 text-sm focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all placeholder:text-text-muted/40" placeholder="Ciudad, Calle, Nº de casa y referencia" />
                     </div>
                   </div>
                 </div>
 
                 {/* Payment Methods Card */}
-                <div className="bg-white rounded-[2.5rem] p-8 md:p-10 shadow-soft border border-border-light relative overflow-hidden">
+                <div className="bg-white rounded-2xl md:rounded-[2.5rem] p-5 md:p-8 lg:p-10 shadow-soft border border-border-light relative overflow-hidden">
                    <div className="flex items-center gap-4 mb-8">
                     <div className="size-10 rounded-2xl bg-accent/5 flex items-center justify-center text-accent">
                       <span className="material-symbols-outlined">account_balance_wallet</span>
@@ -194,7 +193,7 @@ export default function CheckoutPage() {
                       { id: 'yape', name: 'Yape', desc: 'Confirmación instantánea' },
                       { id: 'plin', name: 'Plin', desc: 'Transferencia directa' }
                     ].map(p => (
-                      <label key={p.id} className={`group flex flex-col p-6 rounded-[2rem] border-2 cursor-pointer transition-all duration-300 relative ${payment === p.id ? 'border-primary bg-primary/5 ring-4 ring-primary/5' : 'border-border-light bg-beige-light hover:border-border-strong'}`}>
+                      <label key={p.id} className={`group flex flex-col p-4 md:p-6 rounded-2xl md:rounded-[2rem] border-2 cursor-pointer transition-all duration-300 relative ${payment === p.id ? 'border-primary bg-primary/5 ring-4 ring-primary/5' : 'border-border-light bg-beige-light hover:border-border-strong'}`}>
                         <div className="flex justify-between items-start mb-4">
                            <div className={`size-5 rounded-full border-2 flex items-center justify-center transition-colors ${payment === p.id ? 'border-primary bg-primary' : 'border-border-strong bg-white'}`}>
                              {payment === p.id && <div className="size-2 bg-white rounded-full"></div>}
@@ -213,7 +212,7 @@ export default function CheckoutPage() {
                 <button 
                   type="submit" 
                   disabled={loading}
-                  className="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-6 rounded-3xl transition-all shadow-glow flex flex-col items-center justify-center gap-1 disabled:opacity-50 relative overflow-hidden group"
+                  className="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-5 md:py-6 rounded-2xl md:rounded-3xl transition-all shadow-glow flex flex-col items-center justify-center gap-1 disabled:opacity-50 relative overflow-hidden group"
                 >
                   <div className="absolute inset-0 bg-white/10 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000 ease-in-out"></div>
                   <div className="flex items-center gap-3">
@@ -227,7 +226,7 @@ export default function CheckoutPage() {
 
             {/* Right: Summary */}
             <div className="lg:col-span-5 lg:sticky lg:top-32">
-              <div className="bg-white rounded-[2.5rem] p-10 shadow-strong border border-border-light">
+              <div className="bg-white rounded-2xl md:rounded-[2.5rem] p-6 md:p-10 shadow-strong border border-border-light">
                 <h3 className="font-serif text-2xl font-bold text-accent mb-8 italic">Resumen de Pedido</h3>
                 
                 <div className="space-y-6 mb-10 max-h-[400px] overflow-y-auto custom-scrollbar pr-4">

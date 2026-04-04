@@ -67,7 +67,7 @@ export default function HomePage() {
 
       {/* Hero Section */}
       <section className="relative w-full overflow-hidden bg-black">
-        <div className="relative w-full min-h-[550px] md:min-h-[700px] flex items-center">
+        <div className="relative w-full min-h-[420px] md:min-h-[700px] flex items-center">
           {/* VIDEO / IMAGE BACKGROUND */}
           <AnimatePresence mode="wait">
             <motion.video
@@ -90,7 +90,7 @@ export default function HomePage() {
           <div className="absolute inset-0 bg-black/10 backdrop-blur-[2px] z-[5]"></div>
 
           {/* CONTENIDO ELEVADO */}
-          <div className="container mx-auto px-6 lg:px-20 z-20 relative pt-20">
+          <div className="container mx-auto px-5 lg:px-20 z-20 relative pt-16 md:pt-20">
             <div className="max-w-3xl">
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
@@ -100,31 +100,31 @@ export default function HomePage() {
               >
                 <div className="flex items-center gap-3 mb-6">
                   <span className="h-[1px] w-8 bg-primary"></span>
-                  <span className="text-white font-bold uppercase tracking-[0.3em] text-[10px] md:text-xs">
+                  <span className="text-white font-bold uppercase tracking-[0.2em] text-[9px] md:text-xs">
                     Colecciones de Prestigio
                   </span>
                 </div>
 
-                <h1 className="text-white font-serif text-4xl md:text-7xl leading-[1.1] mb-6">
+                <h1 className="text-white font-serif text-3xl md:text-7xl leading-[1.1] mb-4 md:mb-6">
                   Donde la exclusividad <br />
                   <span className="text-primary italic">encuentra su lugar</span>
                 </h1>
 
-                <p className="text-white/70 text-lg md:text-xl font-light mb-10 max-w-xl leading-relaxed">
-                  Curamos piezas únicas traídas de todo el mundo para aquellos que no se conforman con lo ordinario.
+                <p className="text-white/70 text-sm md:text-xl font-light mb-6 md:mb-10 max-w-xl leading-relaxed">
+                  Seleccionamos piezas únicas traídas de todo el mundo para aquellos que no se conforman con lo ordinario.
                 </p>
 
-                <div className="flex flex-wrap gap-4">
+                <div className="flex flex-wrap gap-3">
                   <button
                     onClick={() => navigate('/categoria/anillos')}
-                    className="bg-primary hover:bg-primary-dark text-white text-sm font-bold py-4 px-10 rounded-full transition-all duration-300 flex items-center gap-3 shadow-glow group"
+                    className="bg-primary hover:bg-primary-dark text-white text-xs md:text-sm font-bold py-3.5 px-6 md:py-4 md:px-10 rounded-full transition-all duration-300 flex items-center gap-2 shadow-glow group"
                   >
                     <span>Explorar Catálogo</span>
                     <span className="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
                   </button>
                   <button
                     onClick={() => navigate('/novedades')}
-                    className="bg-white/10 hover:bg-white/20 backdrop-blur-md text-white border border-white/30 text-sm font-bold py-4 px-10 rounded-full transition-all duration-300"
+                    className="hidden sm:inline-flex bg-white/10 hover:bg-white/20 backdrop-blur-md text-white border border-white/30 text-xs md:text-sm font-bold py-3.5 px-6 md:py-4 md:px-10 rounded-full transition-all duration-300"
                   >
                     Ver Novedades
                   </button>
@@ -145,14 +145,14 @@ export default function HomePage() {
         </div>
       </section>
 
-    {/* Trust Badges - Refining design */}
-    <section className="bg-beige-soft py-12 px-6 md:px-10 lg:px-20 relative z-30">
+    {/* Trust Badges - Horizontal scroll mobile, grid desktop */}
+    <section className="bg-beige-soft py-6 md:py-12 px-4 md:px-10 lg:px-20 relative z-30">
       <div className="max-w-6xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="flex overflow-x-auto gap-3 md:grid md:grid-cols-3 md:gap-6 pb-2 md:pb-0 [&::-webkit-scrollbar]:hidden" style={{ scrollbarWidth: 'none' }}>
           {[
-            { icon: 'local_shipping', title: 'Logística de Guante Blanco', desc: 'Envío asegurado y discreto a todo el Perú' },
-            { icon: 'verified_user', title: 'Excelencia Certificada', desc: 'Curaduría rigurosa en cada producto importado' },
-            { icon: 'support_agent', title: 'Atención VIP', desc: 'Asesoría personalizada vía WhatsApp 24/7' },
+            { icon: 'local_shipping', title: 'Envío Seguro', desc: 'Envío asegurado a todo el Perú' },
+            { icon: 'verified_user', title: 'Calidad Certificada', desc: 'Productos importados con calidad garantizada' },
+            { icon: 'support_agent', title: 'Atención VIP', desc: 'Asesoría WhatsApp 24/7' },
           ].map((t, i) => (
             <motion.div 
               key={t.icon}
@@ -160,14 +160,14 @@ export default function HomePage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
-              className="group flex items-start gap-5 p-6 bg-white rounded-3xl shadow-soft hover:shadow-medium transition-all duration-500 border border-border-light hover:border-primary/30"
+              className="group flex items-center gap-3 p-4 md:p-6 bg-white rounded-2xl md:rounded-3xl shadow-soft border border-border-light shrink-0 min-w-[240px] md:min-w-0"
             >
-              <div className="size-12 rounded-2xl bg-beige-soft flex items-center justify-center text-primary shrink-0 group-hover:bg-primary group-hover:text-white transition-colors duration-500">
-                <span className="material-symbols-outlined text-2xl">{t.icon}</span>
+              <div className="size-10 md:size-12 rounded-xl md:rounded-2xl bg-beige-soft flex items-center justify-center text-primary shrink-0">
+                <span className="material-symbols-outlined text-xl md:text-2xl">{t.icon}</span>
               </div>
               <div className="flex flex-col text-left">
-                <h3 className="text-sm font-bold text-accent mb-2 tracking-wide uppercase">{t.title}</h3>
-                <p className="text-xs text-text-muted leading-relaxed">{t.desc}</p>
+                <h3 className="text-xs md:text-sm font-bold text-accent mb-0.5 md:mb-2 tracking-wide uppercase">{t.title}</h3>
+                <p className="text-[10px] md:text-xs text-text-muted leading-relaxed">{t.desc}</p>
               </div>
             </motion.div>
           ))}
@@ -176,7 +176,7 @@ export default function HomePage() {
     </section>
 
       {/* Categories */}
-      <section className="py-12 px-6 md:px-10 lg:px-20 bg-background-soft">
+      <section className="py-8 md:py-12 px-4 md:px-10 lg:px-20 bg-background-soft">
         <div className="max-w-7xl mx-auto">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
@@ -186,22 +186,22 @@ export default function HomePage() {
           >
             <div>
               <span className="text-primary font-bold tracking-[0.2em] text-[10px] uppercase mb-2 block">Explora</span>
-              <h2 className="font-serif text-4xl md:text-5xl font-bold text-accent italic">Categorías</h2>
+              <h2 className="font-serif text-3xl md:text-5xl font-bold text-accent italic">Categorías</h2>
             </div>
             <div className="flex gap-3">
               <button 
                 onClick={() => { document.getElementById('categories-scroll').scrollBy({ left: -300, behavior: 'smooth' }); }}
-                className="size-12 rounded-full bg-white border border-border-default text-text-main flex items-center justify-center hover:border-primary hover:text-primary transition-all shadow-soft"
+                className="size-10 md:size-12 rounded-full bg-white border border-border-default text-text-main flex items-center justify-center hover:border-primary hover:text-primary transition-all shadow-soft"
                 aria-label="Anterior"
               >
-                <span className="material-symbols-outlined text-xl">west</span>
+                <span className="material-symbols-outlined text-lg md:text-xl">west</span>
               </button>
               <button 
                 onClick={() => { document.getElementById('categories-scroll').scrollBy({ left: 300, behavior: 'smooth' }); }}
-                className="size-12 rounded-full bg-white border border-border-default text-text-main flex items-center justify-center hover:border-primary hover:text-primary transition-all shadow-soft"
+                className="size-10 md:size-12 rounded-full bg-white border border-border-default text-text-main flex items-center justify-center hover:border-primary hover:text-primary transition-all shadow-soft"
                 aria-label="Siguiente"
               >
-                <span className="material-symbols-outlined text-xl">east</span>
+                <span className="material-symbols-outlined text-lg md:text-xl">east</span>
               </button>
             </div>
           </motion.div>
@@ -241,8 +241,8 @@ export default function HomePage() {
       </section>
 
       {/* Category Rows Section (Color Palette: 60% Beige, 20% Gold, 20% Purple) */}
-      <section className="py-12 px-6 md:px-10 lg:px-20 bg-background-soft">
-        <div className="max-w-[1400px] mx-auto flex flex-col gap-8 md:gap-12">
+      <section className="py-8 md:py-12 px-4 md:px-10 lg:px-20 bg-background-soft">
+        <div className="max-w-[1400px] mx-auto flex flex-col gap-6 md:gap-12">
           {productsByCategory.map((cat, idx) => {
             const colors = [
               "bg-accent text-white",           // 20% Morado
@@ -259,31 +259,31 @@ export default function HomePage() {
                 initial={{ opacity: 0, scale: 0.98 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true, margin: "-100px" }}
-                className="flex flex-col lg:flex-row gap-6 p-6 lg:p-8 bg-white rounded-[2.5rem] shadow-soft border border-border-light hover:shadow-medium transition-all duration-700"
+                className="flex flex-col lg:flex-row gap-4 md:gap-6 p-4 md:p-6 lg:p-8 bg-white rounded-2xl md:rounded-[2.5rem] shadow-soft border border-border-light hover:shadow-medium transition-all duration-700"
               >
                 {/* Left Category Hero Block */}
-                <div className={`w-full lg:w-[360px] shrink-0 rounded-[2rem] p-10 flex flex-col justify-between relative overflow-hidden ${colorClass} group/hero`}>
+                <div className={`w-full lg:w-[360px] shrink-0 rounded-xl md:rounded-[2rem] p-5 md:p-10 flex flex-col justify-between relative overflow-hidden ${colorClass} group/hero`}>
                   {/* Decorative element */}
                   <div className="absolute -top-20 -right-20 size-64 bg-white/5 rounded-full blur-3xl group-hover/hero:bg-white/10 transition-colors"></div>
                   
                   <div className="z-10 relative">
                     <span className={`text-[10px] font-bold uppercase tracking-[0.3em] mb-4 block ${colorClass.includes('text-white') ? 'text-white/60' : 'text-accent/40'}`}>
-                      Colección Curada
+                      Colecciones Seleccionadas 
                     </span>
-                    <h3 className="font-serif text-4xl md:text-5xl font-bold leading-none tracking-tight mb-4 italic">{cat.name}</h3>
+                    <h3 className="font-serif text-2xl md:text-5xl font-bold leading-none tracking-tight mb-2 md:mb-4 italic">{cat.name}</h3>
                     <p className={`text-xs font-light max-w-[200px] leading-relaxed ${colorClass.includes('text-white') ? 'text-white/70' : 'text-text-muted'}`}>
                       Piezas seleccionadas que definen un estándar de elegancia superior.
                     </p>
                   </div>
                   
                   {cat.image_url && (
-                    <div className="my-10 flex justify-center items-center z-10 relative">
+                    <div className="my-4 md:my-10 flex justify-center items-center z-10 relative">
                        <div className="relative">
                          <div className="absolute inset-0 bg-primary/20 blur-2xl rounded-full scale-110"></div>
                          <img 
                            src={cat.image_url} 
                            alt={cat.name} 
-                           className="size-40 md:size-48 object-cover rounded-full shadow-strong border-4 border-white/30 hover:scale-105 transition-transform duration-700 z-10 relative" 
+                           className="size-28 md:size-48 object-cover rounded-full shadow-strong border-4 border-white/30 hover:scale-105 transition-transform duration-700 z-10 relative" 
                            loading="lazy" 
                          />
                        </div>
@@ -305,22 +305,11 @@ export default function HomePage() {
                 {/* Horizontal Product Scroll */}
                 <div className="flex-1 w-full overflow-hidden relative">
                   <div className="flex overflow-x-auto gap-6 pb-6 snap-x snap-mandatory pt-4 custom-scrollbar">
-                    {cat.products.slice(0, 8).map((p) => (
-                      <div key={p.id} className="w-[220px] md:w-[280px] shrink-0 snap-start">
+                    {cat.products.slice(0, 3).map((p) => (
+                      <div key={p.id} className="w-[160px] md:w-[280px] shrink-0 snap-start">
                         <ProductCard product={p} index={0} />
                       </div>
                     ))}
-                    <div className="w-[200px] md:w-[240px] shrink-0 snap-start flex items-center justify-center">
-                      <button 
-                        onClick={() => navigate(`/categoria/${cat.slug}`)}
-                        className="flex flex-col items-center justify-center gap-4 w-full aspect-[3/4] bg-beige-soft rounded-[2rem] hover:bg-beige-strong transition-all duration-500 text-accent group border border-transparent hover:border-primary/30"
-                      >
-                        <div className="size-16 rounded-full bg-white shadow-soft flex items-center justify-center group-hover:scale-110 transition-transform">
-                          <span className="material-symbols-outlined text-3xl text-primary">add</span>
-                        </div>
-                        <span className="font-bold text-xs uppercase tracking-widest">Ver Catálogo</span>
-                      </button>
-                    </div>
                   </div>
                 </div>
               </motion.div>
@@ -339,7 +328,7 @@ export default function HomePage() {
           <div className="relative w-full overflow-hidden group py-4">
             <div className="flex w-max animate-scroll group-hover:[animation-play-state:paused] gap-4 md:gap-6">
               {[...featuredProducts, ...featuredProducts].map((p, i) => (
-                <div key={`${p.id}-${i}`} className="w-[260px] md:w-[280px] shrink-0">
+                <div key={`${p.id}-${i}`} className="w-[170px] md:w-[280px] shrink-0">
                   <ProductCard product={p} index={0} />
                 </div>
               ))}

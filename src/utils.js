@@ -21,6 +21,15 @@ export function getImageUrl(path, width) {
   return path;
 }
 
+/** Optimize Cloudinary image URL with auto format, quality and width */
+export function getOptimizedImage(url, width = 400) {
+  if (!url || typeof url !== 'string') return url || '';
+  if (!url.includes('cloudinary')) return url;
+  // Avoid double-transforming
+  if (url.includes('f_auto')) return url;
+  return url.replace('/upload/', `/upload/f_auto,q_auto,w_${width}/`);
+}
+
 /** Sanitize string to prevent XSS */
 export function sanitize(str) {
   if (!str) return '';

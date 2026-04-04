@@ -51,19 +51,19 @@ export default function CartPage() {
     <>
       <Helmet><title>Carrito de Compras | GO SHOPPING</title></Helmet>
       <div className="bg-beige-soft min-h-screen">
-        <div className="max-w-[1440px] mx-auto px-6 lg:px-10 py-12 lg:py-20">
+        <div className="max-w-[1440px] mx-auto px-4 md:px-6 lg:px-10 py-8 md:py-12 lg:py-20">
           <div className="mb-12">
             <span className="text-primary font-bold tracking-[0.3em] text-[10px] uppercase mb-3 block">Resumen de</span>
-            <h1 className="text-4xl md:text-6xl font-serif font-bold text-accent italic">Tu Carrito</h1>
+            <h1 className="text-3xl md:text-6xl font-serif font-bold text-accent italic">Tu Carrito</h1>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
             {/* Cart Items */}
             <div className="lg:col-span-8 space-y-8">
               {cart.map(item => (
-                <div key={`${item.id}__${item.variant || ''}`} className="bg-white rounded-[2.5rem] p-6 shadow-soft border border-border-light hover:shadow-medium transition-all duration-500 overflow-hidden">
+                <div key={`${item.id}__${item.variant || ''}`} className="bg-white rounded-2xl md:rounded-[2.5rem] p-4 md:p-6 shadow-soft border border-border-light hover:shadow-medium transition-all duration-500 overflow-hidden">
                   <div className="flex flex-col md:flex-row items-center gap-8">
-                    <div className="size-32 md:size-40 shrink-0 rounded-[1.5rem] bg-beige-light border border-border-light overflow-hidden p-4 cursor-pointer" onClick={() => navigate(`/producto/${item.slug}`)}>
+                    <div className="size-24 md:size-40 shrink-0 rounded-xl md:rounded-[1.5rem] bg-beige-light border border-border-light overflow-hidden p-3 md:p-4 cursor-pointer" onClick={() => navigate(`/producto/${item.slug}`)}>
                       <img src={item.images?.[0] || ''} className="w-full h-full object-contain mix-blend-multiply hover:scale-110 transition-transform duration-700" alt="" />
                     </div>
                     
@@ -112,7 +112,7 @@ export default function CartPage() {
 
             {/* Order Summary */}
             <div className="lg:col-span-4 lg:sticky lg:top-32">
-              <div className="bg-white rounded-[2.5rem] p-10 shadow-strong border border-border-light relative overflow-hidden">
+              <div className="bg-white rounded-2xl md:rounded-[2.5rem] p-6 md:p-10 shadow-strong border border-border-light relative overflow-hidden">
                 <div className="absolute top-0 right-0 size-32 bg-primary/5 rounded-full -mr-16 -mt-16 blur-2xl"></div>
                 
                 <h3 className="font-serif text-2xl font-bold text-accent mb-8 italic">Tu Inversión</h3>
@@ -132,7 +132,7 @@ export default function CartPage() {
                   {shipping > 0 && (
                     <div className="p-4 bg-green-50 rounded-2xl border border-green-100">
                       <p className="text-[10px] text-green-700 font-bold uppercase tracking-widest leading-relaxed">
-                        ¡Logra Envío Gratis superando los S/ 150.00 en tu pedido!
+                        ¡Logra Envío Gratis superando los S/ 400.00 en tu pedido!
                       </p>
                     </div>
                   )}

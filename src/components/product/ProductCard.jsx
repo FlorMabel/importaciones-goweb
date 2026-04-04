@@ -62,7 +62,7 @@ export default function ProductCard({ product }) {
         <span className="text-text-main">{product.name}</span>
       </nav>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-20">
 
         <ProductGallery
           images={product.images}
@@ -79,7 +79,7 @@ export default function ProductCard({ product }) {
               {product.category}
             </p>
 
-            <h1 className="font-serif text-4xl md:text-5xl font-bold text-accent leading-none italic">
+            <h1 className="font-serif text-2xl md:text-5xl font-bold text-accent leading-none italic">
               {product.name}
             </h1>
 
@@ -99,7 +99,7 @@ export default function ProductCard({ product }) {
 
           <div className="space-y-2">
             <div className="flex items-baseline gap-4">
-              <span className="text-4xl font-bold text-accent">
+              <span className="text-3xl md:text-4xl font-bold text-accent">
                 S/ {Number(displayPrice || 0).toFixed(2)}
               </span>
               {displayOldPrice && (
@@ -115,7 +115,7 @@ export default function ProductCard({ product }) {
             )}
           </div>
 
-          <div className="bg-beige-soft/50 p-6 rounded-[2rem] border border-border-light border-dashed">
+          <div className="bg-beige-soft/50 p-4 md:p-6 rounded-2xl md:rounded-[2rem] border border-border-light border-dashed">
             <p className="text-sm text-text-secondary leading-relaxed font-light italic">
               "{product.description}"
             </p>

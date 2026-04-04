@@ -71,7 +71,7 @@ export default function CategoryPage() {
                   onClick={() => navigate(`/categoria/${c.slug}`)}
                   className="group relative overflow-hidden rounded-2xl aspect-square cursor-pointer shadow-sm"
                 >
-                  <div className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" style={{ backgroundImage: `url('${c.image}')` }}></div>
+                  <div className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" style={{ backgroundImage: `url('${c.image_url || c.image}')` }}></div>
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent"></div>
                   <div className="absolute bottom-0 left-0 p-5 w-full">
                     <span className="material-symbols-outlined text-white text-xl mb-1">{c.icon}</span>
@@ -105,19 +105,19 @@ export default function CategoryPage() {
 
       {/* Hero Banner */}
       <section
-        className="relative h-[220px] md:h-[280px] w-full bg-cover bg-center flex items-center justify-center"
-        style={{ backgroundImage: `url('${category.heroImage || category.image}')` }}
+        className="relative h-[160px] md:h-[280px] w-full bg-cover bg-center flex items-center justify-center"
+        style={{ backgroundImage: `url('${category.hero_image_url || category.image_url || category.heroImage || category.image}')` }}
       >
         <div className="absolute inset-0 bg-black/45"></div>
         <div className="relative z-10 text-center text-white px-4">
           <p className="text-xs font-bold tracking-[0.2em] uppercase mb-3">COLECCIÓN EXCLUSIVA</p>
-          <h1 className="font-serif text-4xl md:text-5xl font-medium mb-2">{category.name}</h1>
+          <h1 className="font-serif text-3xl md:text-5xl font-medium mb-2">{category.name}</h1>
           <p className="max-w-md mx-auto text-white/80 font-light text-sm">{category.description}</p>
         </div>
       </section>
 
       {/* Product Grid */}
-      <div className="mx-auto max-w-[1440px] px-4 lg:px-12 py-8">
+      <div className="mx-auto max-w-[1440px] px-3 md:px-4 lg:px-12 py-6 md:py-8">
         <nav className="flex items-center text-xs text-text-muted mb-8">
           <span className="hover:text-primary cursor-pointer" onClick={() => navigate('/')}>Inicio</span>
           <span className="mx-2">/</span>
@@ -138,7 +138,7 @@ export default function CategoryPage() {
           </select>
         </div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-6">
+        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-3 md:gap-6">
           {sortedProducts.map((p, i) => (
             <ProductCard key={p.id} product={p} index={i} />
           ))}

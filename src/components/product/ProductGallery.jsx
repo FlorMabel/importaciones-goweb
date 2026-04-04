@@ -7,7 +7,7 @@ export default function ProductGallery({ images = [], activeIndex = 0, onSelect,
   return (
     <div className="flex flex-col gap-6">
       {/* Main Image Viewport */}
-      <div className="relative aspect-[4/5] bg-beige-light rounded-[2.5rem] overflow-hidden border border-border-light group cursor-zoom-in">
+      <div className="relative aspect-[4/5] bg-beige-light rounded-2xl md:rounded-[2.5rem] overflow-hidden border border-border-light group cursor-zoom-in">
         <AnimatePresence mode="wait">
           <motion.img
             key={activeIndex}
@@ -16,7 +16,7 @@ export default function ProductGallery({ images = [], activeIndex = 0, onSelect,
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.95 }}
             transition={{ duration: 0.6, ease: [0.43, 0.13, 0.23, 0.96] }}
-            className="w-full h-full object-contain mix-blend-multiply p-8"
+            className="w-full h-full object-contain mix-blend-multiply p-4 md:p-8"
             alt="Vista de producto"
           />
         </AnimatePresence>
@@ -47,12 +47,12 @@ export default function ProductGallery({ images = [], activeIndex = 0, onSelect,
 
       {/* Thumbnails Grid */}
       {images.length > 1 && (
-        <div className="grid grid-cols-5 gap-4 px-2">
+        <div className="grid grid-cols-4 md:grid-cols-5 gap-2 md:gap-4 px-1 md:px-2">
           {images.map((img, idx) => (
             <button
               key={idx}
               onClick={() => onSelect(idx)}
-              className={`relative aspect-square rounded-2xl overflow-hidden border-2 transition-all duration-300 bg-white p-2 ${activeIndex === idx ? 'border-primary ring-4 ring-primary/10 shadow-medium' : 'border-border-light hover:border-border-strong opacity-70 hover:opacity-100'}`}
+              className={`relative aspect-square rounded-xl md:rounded-2xl overflow-hidden border-2 transition-all duration-300 bg-white p-1.5 md:p-2 ${activeIndex === idx ? 'border-primary ring-2 md:ring-4 ring-primary/10 shadow-medium' : 'border-border-light hover:border-border-strong opacity-70 hover:opacity-100'}`}
             >
               <img src={img} className="w-full h-full object-contain mix-blend-multiply" alt={`Vista ${idx + 1}`} />
               <div className={`absolute inset-0 bg-primary/10 transition-opacity ${activeIndex === idx ? 'opacity-0' : 'opacity-0 group-hover:opacity-100'}`}></div>

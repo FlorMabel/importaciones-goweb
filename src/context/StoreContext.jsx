@@ -53,8 +53,8 @@ function storeReducer(state, action) {
         qty, 
         variant, 
         name: product.name, 
-        price, 
-        images: product.images,
+        price: Number(price) || 0, 
+        images: product.images || [],
         slug: product.slug 
       };
       
@@ -163,7 +163,7 @@ export function StoreProvider({ children }) {
   }, [state.cart]);
 
   const getCartTotal = useCallback(() => {
-    return state.cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
+    return state.cart.reduce((sum, item) => sum + (Number(item.price || 0) * Number(item.qty || 0)), 0);
   }, [state.cart]);
 
   const value = {
