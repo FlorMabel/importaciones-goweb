@@ -121,7 +121,7 @@ export default function ProductCard({ product }) {
             </p>
           </div>
 
-          <WholesalePricing price={product.price} />
+          <WholesalePricing price={product.price} customTiers={product.wholesaleTiers} />
           
           <div className="space-y-6">
             {product.images?.length > 1 && (

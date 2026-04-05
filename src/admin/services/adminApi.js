@@ -118,22 +118,36 @@ export async function upsert(table, data) {
 // PRODUCTOS (con relaciones)
 // ─────────────────────────────────────────────
 
-const PRODUCT_SELECT = '*, product_images(*), product_specs(*), product_colors(*), product_fragrances(*), product_tags:product_tags(tag)';
+const PRODUCT_SELECT = '*, product_images(*), product_specs(*), product_colors(*), product_fragrances(*), product_tags:product_tags(tag), product_wholesale_tiers(*)';
+const PRODUCT_SELECT_FALLBACK = '*, product_images(*), product_specs(*), product_colors(*), product_fragrances(*), product_tags:product_tags(tag)';
 
 export async function getProducts(opts = {}) {
-  return getAll('products', {
-    ...opts,
-    select: PRODUCT_SELECT,
-    searchColumns: opts.searchColumns || ['name', 'slug', 'description'],
-  });
+  try {
+    return await getAll('products', {
+      ...opts,
+      select: PRODUCT_SELECT,
+      searchColumns: opts.searchColumns || ['name', 'slug', 'description'],
+    });
+  } catch (e) {
+    // Fallback if wholesale_tiers table doesn't exist yet
+    return getAll('products', {
+      ...opts,
+      select: PRODUCT_SELECT_FALLBACK,
+      searchColumns: opts.searchColumns || ['name', 'slug', 'description'],
+    });
+  }
 }
 
 export async function getProduct(id) {
-  return getById('products', id, PRODUCT_SELECT);
+  try {
+    return await getById('products', id, PRODUCT_SELECT);
+  } catch (e) {
+    return getById('products', id, PRODUCT_SELECT_FALLBACK);
+  }
 }
 
 export async function saveProduct(productData, relatedData = {}) {
-  const { images, specs, colors, fragrances, tags, ...product } = productData;
+  const { images, specs, colors, fragrances, tags, wholesale_tiers, ...product } = productData;
   
   // Upsert product
   const saved = await upsert('products', product);
@@ -193,6 +207,25 @@ export async function saveProduct(productData, relatedData = {}) {
     }
   }
 
+  // Sync wholesale tiers
+  if (wholesale_tiers !== undefined) {
+    await supabase.from('product_wholesale_tiers').delete().eq('product_id', pid);
+    const validTiers = wholesale_tiers.filter(t => t.label && (t.discount_percent || t.fixed_price));
+    if (validTiers.length > 0) {
+      await supabase.from('product_wholesale_tiers').insert(
+        validTiers.map((t, i) => ({
+          product_id: pid,
+          label: t.label,
+          min_qty: Number(t.min_qty) || 1,
+          max_qty: t.max_qty ? Number(t.max_qty) : null,
+          discount_percent: t.discount_percent ? Number(t.discount_percent) : null,
+          fixed_price: t.fixed_price ? Number(t.fixed_price) : null,
+          sort_order: i,
+        }))
+      );
+    }
+  }
+
   return getProduct(pid);
 }
 
@@ -210,6 +243,10 @@ export async function duplicateProduct(id) {
   const colors = (original.product_colors || []).map(c => c.hex_color);
   const fragrances = (original.product_fragrances || []).map(f => ({ name: f.name, description: f.description }));
   const tags = (original.product_tags || []).map(t => t.tag);
+  const wholesale_tiers = (original.product_wholesale_tiers || []).map(t => ({
+    label: t.label, min_qty: t.min_qty, max_qty: t.max_qty,
+    discount_percent: t.discount_percent, fixed_price: t.fixed_price,
+  }));
 
   return saveProduct({
     id: newId,
@@ -228,7 +265,7 @@ export async function duplicateProduct(id) {
     is_on_sale: original.is_on_sale,
     sale_percent: original.sale_percent,
     status: 'draft',
-    images, specs, colors, fragrances, tags,
+    images, specs, colors, fragrances, tags, wholesale_tiers,
   });
 }
 

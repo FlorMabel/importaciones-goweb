@@ -1,4 +1,5 @@
 import React, { createContext, useContext, useReducer, useEffect, useCallback } from 'react';
+import { calculateUnitPrice } from '../config/productSchema';
 
 const STORAGE_KEY = 'goshopping_store';
 
@@ -29,22 +30,26 @@ function storeReducer(state, action) {
       
       const existing = state.cart.find(i => (i.variant ? `${i.id}__${i.variant}` : i.id) === key);
       
-      // Determine price based on variant
-      let price = product.price;
+      // Determine base price based on variant
+      let basePrice = product.price;
       if (variant && product.variants) {
         const v = product.variants.find(v => v.name === variant);
-        if (v) price = v.price;
+        if (v) basePrice = v.price;
       }
+
+      // NEW: Dynamic wholesale price calculation
+      const newQty = existing ? existing.qty + qty : qty;
+      const unitPrice = calculateUnitPrice(basePrice, newQty, product.wholesaleTiers);
 
       if (existing) {
         return {
           ...state,
           cart: state.cart.map(i =>
             (i.variant ? `${i.id}__${i.variant}` : i.id) === key
-              ? { ...i, qty: i.qty + qty }
+              ? { ...i, qty: newQty, price: unitPrice }
               : i
           ),
-          isCartDrawerOpen: true, // Open drawer on addition
+          isCartDrawerOpen: true,
         };
       }
       
@@ -53,7 +58,9 @@ function storeReducer(state, action) {
         qty, 
         variant, 
         name: product.name, 
-        price: Number(price) || 0, 
+        basePrice: Number(basePrice) || 0,
+        price: unitPrice, 
+        wholesaleTiers: product.wholesaleTiers || [],
         images: product.images || [],
         slug: product.slug 
       };
@@ -61,7 +68,7 @@ function storeReducer(state, action) {
       return { 
         ...state, 
         cart: [...state.cart, newItem],
-        isCartDrawerOpen: true, // Open drawer on addition
+        isCartDrawerOpen: true,
       };
     }
     case 'REMOVE_FROM_CART': {
@@ -75,13 +82,17 @@ function storeReducer(state, action) {
     case 'UPDATE_CART_QTY': {
       const { id, qty, variant } = action.payload;
       const key = variant ? `${id}__${variant}` : id;
+      const newQty = Math.max(1, qty);
+
       return {
         ...state,
-        cart: state.cart.map(i =>
-          (i.variant ? `${i.id}__${i.variant}` : i.id) === key
-            ? { ...i, qty: Math.max(1, qty) }
-            : i
-        ),
+        cart: state.cart.map(i => {
+          if ((i.variant ? `${i.id}__${i.variant}` : i.id) === key) {
+            const unitPrice = calculateUnitPrice(i.basePrice, newQty, i.wholesaleTiers);
+            return { ...i, qty: newQty, price: unitPrice };
+          }
+          return i;
+        }),
       };
     }
     case 'CLEAR_CART':

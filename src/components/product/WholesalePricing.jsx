@@ -1,7 +1,26 @@
 import { getWholesalePrices } from '../../config/productSchema'
 
-export default function WholesalePricing({ price }) {
-  const tiers = getWholesalePrices(price)
+/**
+ * WholesalePricing — muestra precios por mayor
+ * Prioriza tiers personalizados de la DB, si no, usa los globales calculados
+ * 
+ * @param {number} price - Precio base del producto
+ * @param {Array} customTiers - Tiers personalizados del producto (de product_wholesale_tiers)
+ */
+export default function WholesalePricing({ price, customTiers }) {
+  // Si hay tiers personalizados del admin, usarlos
+  const tiers = customTiers && customTiers.length > 0
+    ? customTiers
+        .sort((a, b) => (a.sort_order || 0) - (b.sort_order || 0))
+        .map(t => ({
+          label: t.label,
+          displayPrice: t.fixed_price
+            ? `S/ ${Number(t.fixed_price).toFixed(2)}`
+            : `S/ ${(price * (1 - (t.discount_percent || 0) / 100)).toFixed(2)}`,
+        }))
+    : getWholesalePrices(price)
+
+  if (!tiers || tiers.length === 0) return null
 
   return (
     <div className="bg-background-soft border border-border-color rounded-xl p-4">

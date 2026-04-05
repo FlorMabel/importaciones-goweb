@@ -71,3 +71,38 @@ export const getWholesalePrices = (basePrice) =>
     ...tier,
     displayPrice: `S/ ${(basePrice * (1 - tier.discount)).toFixed(2)}`
   }))
+
+/**
+ * Calcula el precio unitario final basado en la cantidad y los tiers disponibles.
+ * Prioriza los tiers personalizados del producto si existen.
+ */
+export const calculateUnitPrice = (basePrice, qty, customTiers = []) => {
+  const quantity = Number(qty) || 1;
+  const price = Number(basePrice) || 0;
+
+  if (quantity < 1) return price;
+
+  // 1. Intentar con tiers personalizados (de Supabase)
+  if (customTiers && customTiers.length > 0) {
+    // Ordenar por cantidad mínima descendente para encontrar el tier más alto que aplica
+    const applicableTier = [...customTiers]
+      .sort((a, b) => (Number(b.min_qty) || 0) - (Number(a.min_qty) || 0))
+      .find(t => quantity >= (Number(t.min_qty) || 0));
+
+    if (applicableTier) {
+      if (applicableTier.fixed_price) return Number(applicableTier.fixed_price);
+      if (applicableTier.discount_percent) return price * (1 - (Number(applicableTier.discount_percent) / 100));
+    }
+  }
+
+  // 2. Fallback a tiers globales si no hay personalizado que aplique
+  const globalTier = [...WHOLESALE_TIERS]
+    .sort((a, b) => (b.min || 0) - (a.min || 0))
+    .find(t => quantity >= (t.min || 0));
+
+  if (globalTier) {
+    return price * (1 - globalTier.discount);
+  }
+
+  return price;
+};

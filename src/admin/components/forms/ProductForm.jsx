@@ -6,6 +6,7 @@ import { slugify } from '../../utils/slugify.js';
 import { validateForm, required, minLength, minValue, isSlug } from '../../utils/validators.js';
 import { formatPrice } from '../../utils/formatters.js';
 import { useMediaUpload } from '../../hooks/useMediaUpload.js';
+import { WHOLESALE_TIERS } from '../../../config/productSchema.js';
 
 const EMPTY_PRODUCT = {
   id: '',
@@ -29,6 +30,8 @@ const EMPTY_PRODUCT = {
   colors: [],
   fragrances: [],
   tags: [],
+  wholesale_tiers: [],
+  wholesale_enabled: false,
 };
 
 const VALIDATION_RULES = {
@@ -56,6 +59,16 @@ export default function ProductForm({ product, categories = [], onSave, onCancel
       const fragrances = (product.product_fragrances || []).map(f => ({ name: f.name, description: f.description || '' }));
       const tags = (product.product_tags || product.tags || []).map(t => typeof t === 'string' ? t : t.tag);
 
+      const wholesale_tiers = (product.product_wholesale_tiers || [])
+        .sort((a, b) => a.sort_order - b.sort_order)
+        .map(t => ({
+          label: t.label,
+          min_qty: t.min_qty,
+          max_qty: t.max_qty || '',
+          discount_percent: t.discount_percent || '',
+          fixed_price: t.fixed_price || '',
+        }));
+
       setForm({
         ...EMPTY_PRODUCT,
         ...product,
@@ -63,6 +76,8 @@ export default function ProductForm({ product, categories = [], onSave, onCancel
         sale_percent: product.sale_percent || '',
         badge: product.badge || '',
         images, specs, colors, fragrances, tags,
+        wholesale_tiers,
+        wholesale_enabled: wholesale_tiers.length > 0,
       });
       setAutoSlug(false);
     } else {
@@ -116,6 +131,9 @@ export default function ProductForm({ product, categories = [], onSave, onCancel
       colors: form.colors.filter(Boolean),
       fragrances: form.fragrances.filter(f => f.name),
       tags: form.tags.filter(Boolean),
+      wholesale_tiers: form.wholesale_enabled
+        ? form.wholesale_tiers.filter(t => t.label && (t.discount_percent || t.fixed_price))
+        : [],
     };
 
     onSave?.(data);
@@ -152,6 +170,50 @@ export default function ProductForm({ product, categories = [], onSave, onCancel
     setTagInput('');
   };
   const removeTag = (idx) => setForm(p => ({ ...p, tags: p.tags.filter((_, i) => i !== idx) }));
+
+  // Wholesale tier management
+  const DEFAULT_TIERS = [
+    { label: '3–11 ud.', min_qty: 3, max_qty: 11, discount_percent: 15, fixed_price: '' },
+    { label: '12–99 ud.', min_qty: 12, max_qty: 99, discount_percent: 20, fixed_price: '' },
+    { label: '+100 ud.', min_qty: 100, max_qty: '', discount_percent: 30, fixed_price: '' },
+  ];
+
+  const toggleWholesale = () => {
+    setForm(p => {
+      const enabling = !p.wholesale_enabled;
+      return {
+        ...p,
+        wholesale_enabled: enabling,
+        wholesale_tiers: enabling && p.wholesale_tiers.length === 0 ? DEFAULT_TIERS : p.wholesale_tiers,
+      };
+    });
+  };
+
+  const addWholesaleTier = () => setForm(p => ({
+    ...p,
+    wholesale_tiers: [...p.wholesale_tiers, { label: '', min_qty: '', max_qty: '', discount_percent: '', fixed_price: '' }],
+  }));
+  const updateWholesaleTier = (idx, field, val) => {
+    setForm(p => ({
+      ...p,
+      wholesale_tiers: p.wholesale_tiers.map((t, i) => {
+        if (i !== idx) return t;
+        const updated = { ...t, [field]: val };
+        // Auto-generate label from quantities
+        if (field === 'min_qty' || field === 'max_qty') {
+          const min = field === 'min_qty' ? val : t.min_qty;
+          const max = field === 'max_qty' ? val : t.max_qty;
+          if (min && max) updated.label = `${min}–${max} ud.`;
+          else if (min && !max) updated.label = `+${min} ud.`;
+        }
+        return updated;
+      }),
+    }));
+  };
+  const removeWholesaleTier = (idx) => setForm(p => ({
+    ...p,
+    wholesale_tiers: p.wholesale_tiers.filter((_, i) => i !== idx),
+  }));
 
   // Live preview price
   const previewPrice = form.price ? formatPrice(Number(form.price)) : 'S/ 0.00';
@@ -346,6 +408,108 @@ export default function ProductForm({ product, categories = [], onSave, onCancel
                 <p className="text-sm text-text-muted line-through">{formatPrice(Number(form.old_price))}</p>
               )}
             </div>
+          </div>
+
+          {/* Wholesale Pricing */}
+          <div className="bg-white rounded-2xl border border-border-light p-5 space-y-4">
+            <div className="flex items-center justify-between">
+              <h3 className="text-sm font-bold text-text-main flex items-center gap-2">
+                <span className="material-symbols-outlined text-lg text-accent">storefront</span>
+                Precios por Mayor
+              </h3>
+              <FormField type="toggle" name="wholesale_enabled" value={form.wholesale_enabled} onChange={toggleWholesale} />
+            </div>
+
+            {form.wholesale_enabled && (
+              <>
+                <p className="text-xs text-text-muted">
+                  Define descuentos o precios fijos por volumen. Si defines precio fijo, se usa en lugar del descuento.
+                </p>
+
+                {form.wholesale_tiers.map((tier, idx) => (
+                  <div key={idx} className="bg-background-soft rounded-xl p-3 space-y-2">
+                    <div className="flex items-center justify-between">
+                      <span className="text-xs font-bold text-accent">{tier.label || `Nivel ${idx + 1}`}</span>
+                      <button type="button" onClick={() => removeWholesaleTier(idx)} className="w-6 h-6 rounded-md flex items-center justify-center text-text-muted hover:text-error hover:bg-red-50 transition-colors">
+                        <span className="material-symbols-outlined text-sm">close</span>
+                      </button>
+                    </div>
+                    <div className="grid grid-cols-2 gap-2">
+                      <div>
+                        <label className="text-[10px] text-text-muted">Mín. uds</label>
+                        <input
+                          type="number"
+                          value={tier.min_qty}
+                          onChange={e => updateWholesaleTier(idx, 'min_qty', e.target.value)}
+                          placeholder="3"
+                          min={1}
+                          className="w-full rounded-lg border border-border-default px-2.5 py-1.5 text-xs focus:border-primary focus:ring-1 focus:ring-primary/20 outline-none"
+                        />
+                      </div>
+                      <div>
+                        <label className="text-[10px] text-text-muted">Máx. uds</label>
+                        <input
+                          type="number"
+                          value={tier.max_qty}
+                          onChange={e => updateWholesaleTier(idx, 'max_qty', e.target.value)}
+                          placeholder="∞"
+                          min={0}
+                          className="w-full rounded-lg border border-border-default px-2.5 py-1.5 text-xs focus:border-primary focus:ring-1 focus:ring-primary/20 outline-none"
+                        />
+                      </div>
+                    </div>
+                    <div className="grid grid-cols-2 gap-2">
+                      <div>
+                        <label className="text-[10px] text-text-muted">% Descuento</label>
+                        <input
+                          type="number"
+                          value={tier.discount_percent}
+                          onChange={e => updateWholesaleTier(idx, 'discount_percent', e.target.value)}
+                          placeholder="15"
+                          min={0}
+                          max={100}
+                          className="w-full rounded-lg border border-border-default px-2.5 py-1.5 text-xs focus:border-primary focus:ring-1 focus:ring-primary/20 outline-none"
+                        />
+                      </div>
+                      <div>
+                        <label className="text-[10px] text-text-muted">Precio fijo (S/)</label>
+                        <input
+                          type="number"
+                          value={tier.fixed_price}
+                          onChange={e => updateWholesaleTier(idx, 'fixed_price', e.target.value)}
+                          placeholder="Opcional"
+                          min={0}
+                          step={0.01}
+                          className="w-full rounded-lg border border-border-default px-2.5 py-1.5 text-xs focus:border-primary focus:ring-1 focus:ring-primary/20 outline-none"
+                        />
+                      </div>
+                    </div>
+                    {/* Preview */}
+                    {form.price && (tier.discount_percent || tier.fixed_price) && (
+                      <div className="text-xs text-right">
+                        <span className="text-text-muted">Precio: </span>
+                        <span className="font-bold text-accent">
+                          {tier.fixed_price
+                            ? formatPrice(Number(tier.fixed_price))
+                            : formatPrice(Number(form.price) * (1 - Number(tier.discount_percent) / 100))
+                          }
+                          /ud.
+                        </span>
+                      </div>
+                    )}
+                  </div>
+                ))}
+
+                <button
+                  type="button"
+                  onClick={addWholesaleTier}
+                  className="w-full py-2 rounded-xl border-2 border-dashed border-border-strong text-xs font-medium text-text-muted hover:border-accent hover:text-accent transition-colors flex items-center justify-center gap-1"
+                >
+                  <span className="material-symbols-outlined text-sm">add</span>
+                  Agregar nivel
+                </button>
+              </>
+            )}
           </div>
 
           {/* Stock & Badge */}

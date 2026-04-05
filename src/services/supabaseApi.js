@@ -42,13 +42,25 @@ export async function getAllProducts() {
 }
 
 export async function getProductBySlug(slug) {
-  const { data, error } = await supabase
-    .from('products')
-    .select('*, product_images(*), product_specs(*), product_colors(*), product_fragrances(*)')
-    .or(`id.eq.${slug},slug.eq.${slug}`)
-    .single();
-  if (error && error.code !== 'PGRST116') throw error;
-  return data ? formatProductFull(data) : null;
+  // Try with wholesale tiers first
+  try {
+    const { data, error } = await supabase
+      .from('products')
+      .select('*, product_images(*), product_specs(*), product_colors(*), product_fragrances(*), product_wholesale_tiers(*)')
+      .or(`id.eq.${slug},slug.eq.${slug}`)
+      .single();
+    if (error && error.code !== 'PGRST116') throw error;
+    return data ? formatProductFull(data) : null;
+  } catch (e) {
+    // Fallback if wholesale_tiers table doesn't exist yet
+    const { data, error } = await supabase
+      .from('products')
+      .select('*, product_images(*), product_specs(*), product_colors(*), product_fragrances(*)')
+      .or(`id.eq.${slug},slug.eq.${slug}`)
+      .single();
+    if (error && error.code !== 'PGRST116') throw error;
+    return data ? formatProductFull(data) : null;
+  }
 }
 
 export async function getProductById(id) {
@@ -149,5 +161,6 @@ function formatProductFull(p) {
     specs: p.product_specs || [],
     colors: p.product_colors ? p.product_colors.map(c => c.hex_color) : [],
     fragance: p.product_fragrances || [], // Note: frontend uses 'fragance'
+    wholesaleTiers: p.product_wholesale_tiers || [],
   };
 }
