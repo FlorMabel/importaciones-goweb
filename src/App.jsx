@@ -18,6 +18,9 @@ const AboutPage = lazy(() => import('./pages/AboutPage.jsx'));
 const ContactPage = lazy(() => import('./pages/ContactPage.jsx'));
 const NotFoundPage = lazy(() => import('./pages/NotFoundPage.jsx'));
 
+// Admin dashboard — completely separate layout
+const AdminApp = lazy(() => import('./admin/AdminApp.jsx'));
+
 function Loading() {
   return (
     <div className="flex items-center justify-center min-h-[60vh]">
@@ -36,12 +39,15 @@ function ScrollToTop() {
   }, [pathname]);
   return null;
 }
-export default function App() {
+
+/**
+ * Store layout — Header, Footer, WhatsApp for public pages
+ */
+function StoreLayout() {
   const { isCartDrawerOpen, setCartDrawerOpen } = useStore();
   
   return (
     <>
-      <ScrollToTop />
       <Header />
       <CartDrawer isOpen={isCartDrawerOpen} onClose={() => setCartDrawerOpen(false)} />
       <main className="flex-grow w-full">
@@ -63,6 +69,26 @@ export default function App() {
       </main>
       <Footer />
       <WhatsAppFloat />
+    </>
+  );
+}
+
+export default function App() {
+  const { pathname } = useLocation();
+  const isAdmin = pathname.startsWith('/admin');
+  
+  return (
+    <>
+      <ScrollToTop />
+      {isAdmin ? (
+        <Suspense fallback={<Loading />}>
+          <Routes>
+            <Route path="/admin/*" element={<AdminApp />} />
+          </Routes>
+        </Suspense>
+      ) : (
+        <StoreLayout />
+      )}
     </>
   );
 }

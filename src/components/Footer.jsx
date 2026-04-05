@@ -107,10 +107,18 @@ export default function Footer() {
       <div className="border-t border-white/10 py-6">
         <div className="max-w-[1440px] mx-auto px-6 lg:px-10 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-white/40">
           <p>© {new Date().getFullYear()} GO SHOPPING. Todos los derechos reservados. RUC: 20601880904</p>
-          <div className="flex gap-6">
+          <div className="flex items-center gap-6">
             <span className="hover:text-white/70 cursor-pointer">Términos</span>
             <span className="hover:text-white/70 cursor-pointer">Privacidad</span>
             <span className="hover:text-white/70 cursor-pointer">Devoluciones</span>
+            <Link
+              to="/admin"
+              className="flex items-center gap-1.5 text-white/20 hover:text-primary transition-colors duration-300 group"
+              title="Panel Administrativo"
+            >
+              <span className="material-symbols-outlined text-sm group-hover:rotate-90 transition-transform duration-500">settings</span>
+              <span className="hidden sm:inline">Admin</span>
+            </Link>
           </div>
         </div>
       </div>

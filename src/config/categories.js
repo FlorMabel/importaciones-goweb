@@ -23,12 +23,12 @@ export const categoriesConfig = [
   },
   {
     "id": "alcancias",
-    "name": "Alcancías",
+    "name": "Alcancías y Cofres Musicales",
     "slug": "alcancias",
     "description": "Alcancías decorativas y funcionales con diseños creativos importados.",
     "icon": "savings",
     "image_url": "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774224555/goshopping/alcancias/alcancia_coque_pvc.webp",
-    "hero_image_url": "https://res.cloudinary.com/dod8hhjoo/image/upload/v1774323218/difusor_fuego_v9ghe9.webp",
+    "hero_image_url": "https://res.cloudinary.com/dod8hhjoo/image/upload/v1775166613/cofre-piano-modelo_jl4dsi.webp",
     "color": "#E8734A",
     "sort_order": 2
   },

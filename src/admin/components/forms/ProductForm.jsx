@@ -1,0 +1,438 @@
+import React, { useState, useEffect, useMemo } from 'react';
+import FormField from '../ui/FormField.jsx';
+import ImageUploader from '../ui/ImageUploader.jsx';
+import StatusBadge from '../ui/StatusBadge.jsx';
+import { slugify } from '../../utils/slugify.js';
+import { validateForm, required, minLength, minValue, isSlug } from '../../utils/validators.js';
+import { formatPrice } from '../../utils/formatters.js';
+import { useMediaUpload } from '../../hooks/useMediaUpload.js';
+
+const EMPTY_PRODUCT = {
+  id: '',
+  name: '',
+  slug: '',
+  category_id: '',
+  price: '',
+  old_price: '',
+  currency: 'PEN',
+  badge: '',
+  description: '',
+  rating: 0,
+  reviews: 0,
+  stock: 10,
+  is_new: false,
+  is_on_sale: false,
+  sale_percent: '',
+  status: 'active',
+  images: [],
+  specs: [],
+  colors: [],
+  fragrances: [],
+  tags: [],
+};
+
+const VALIDATION_RULES = {
+  name: [required, minLength(2)],
+  slug: [required, isSlug],
+  category_id: [required],
+  price: [required, minValue(0)],
+};
+
+export default function ProductForm({ product, categories = [], onSave, onCancel, saving = false }) {
+  const isEditing = !!product?.id;
+  const [form, setForm] = useState(EMPTY_PRODUCT);
+  const [errors, setErrors] = useState({});
+  const [autoSlug, setAutoSlug] = useState(true);
+  const { upload, uploading, progress } = useMediaUpload();
+
+  // Initialize form
+  useEffect(() => {
+    if (product) {
+      const images = (product.product_images || [])
+        .sort((a, b) => a.sort_order - b.sort_order)
+        .map(i => i.image_url);
+      const specs = (product.product_specs || []).map(s => ({ label: s.label, value: s.value }));
+      const colors = (product.product_colors || []).map(c => c.hex_color);
+      const fragrances = (product.product_fragrances || []).map(f => ({ name: f.name, description: f.description || '' }));
+      const tags = (product.product_tags || product.tags || []).map(t => typeof t === 'string' ? t : t.tag);
+
+      setForm({
+        ...EMPTY_PRODUCT,
+        ...product,
+        old_price: product.old_price || '',
+        sale_percent: product.sale_percent || '',
+        badge: product.badge || '',
+        images, specs, colors, fragrances, tags,
+      });
+      setAutoSlug(false);
+    } else {
+      setForm(EMPTY_PRODUCT);
+      setAutoSlug(true);
+    }
+  }, [product]);
+
+  const setField = (value, name) => {
+    setForm(prev => {
+      const next = { ...prev, [name]: value };
+      // Auto-generate slug from name
+      if (name === 'name' && autoSlug) {
+        next.slug = slugify(value);
+        if (!isEditing) next.id = next.slug;
+      }
+      return next;
+    });
+    // Clear error on change
+    if (errors[name]) {
+      setErrors(prev => ({ ...prev, [name]: null }));
+    }
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const { valid, errors: newErrors } = validateForm(form, VALIDATION_RULES);
+    setErrors(newErrors);
+    if (!valid) return;
+
+    // Prepare data
+    const data = {
+      id: form.id || form.slug,
+      name: form.name,
+      slug: form.slug,
+      category_id: form.category_id,
+      price: Number(form.price),
+      old_price: form.old_price ? Number(form.old_price) : null,
+      currency: form.currency || 'PEN',
+      badge: form.badge || null,
+      description: form.description || '',
+      rating: Number(form.rating) || 0,
+      reviews: Number(form.reviews) || 0,
+      stock: Number(form.stock) || 0,
+      is_new: !!form.is_new,
+      is_on_sale: !!form.is_on_sale,
+      sale_percent: form.sale_percent ? Number(form.sale_percent) : null,
+      status: form.status || 'active',
+      images: form.images,
+      specs: form.specs.filter(s => s.label && s.value),
+      colors: form.colors.filter(Boolean),
+      fragrances: form.fragrances.filter(f => f.name),
+      tags: form.tags.filter(Boolean),
+    };
+
+    onSave?.(data);
+  };
+
+  // Category options
+  const categoryOptions = useMemo(() =>
+    categories.map(c => ({ value: c.id, label: c.name })),
+    [categories]
+  );
+
+  // Spec management
+  const addSpec = () => setForm(p => ({ ...p, specs: [...p.specs, { label: '', value: '' }] }));
+  const updateSpec = (idx, field, val) => {
+    setForm(p => ({
+      ...p,
+      specs: p.specs.map((s, i) => i === idx ? { ...s, [field]: val } : s),
+    }));
+  };
+  const removeSpec = (idx) => setForm(p => ({ ...p, specs: p.specs.filter((_, i) => i !== idx) }));
+
+  // Color management
+  const addColor = () => setForm(p => ({ ...p, colors: [...p.colors, '#000000'] }));
+  const updateColor = (idx, val) => {
+    setForm(p => ({ ...p, colors: p.colors.map((c, i) => i === idx ? val : c) }));
+  };
+  const removeColor = (idx) => setForm(p => ({ ...p, colors: p.colors.filter((_, i) => i !== idx) }));
+
+  // Tag management
+  const [tagInput, setTagInput] = useState('');
+  const addTag = () => {
+    if (!tagInput.trim()) return;
+    setForm(p => ({ ...p, tags: [...new Set([...p.tags, tagInput.trim()])] }));
+    setTagInput('');
+  };
+  const removeTag = (idx) => setForm(p => ({ ...p, tags: p.tags.filter((_, i) => i !== idx) }));
+
+  // Live preview price
+  const previewPrice = form.price ? formatPrice(Number(form.price)) : 'S/ 0.00';
+
+  return (
+    <form onSubmit={handleSubmit} className="space-y-6">
+      {/* Header with status */}
+      <div className="flex items-center justify-between flex-wrap gap-3">
+        <div>
+          <h2 className="text-xl font-bold text-text-main">
+            {isEditing ? 'Editar Producto' : 'Nuevo Producto'}
+          </h2>
+          {isEditing && <p className="text-xs text-text-muted mt-0.5">ID: {form.id}</p>}
+        </div>
+        <div className="flex items-center gap-3">
+          <StatusBadge status={form.status} size="md" />
+          <select
+            value={form.status}
+            onChange={e => setField(e.target.value, 'status')}
+            className="text-xs border border-border-default rounded-lg px-2 py-1.5 bg-white"
+          >
+            <option value="active">Activo</option>
+            <option value="inactive">Inactivo</option>
+            <option value="draft">Borrador</option>
+          </select>
+        </div>
+      </div>
+
+      {/* Main grid */}
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        {/* Left column — main fields */}
+        <div className="lg:col-span-2 space-y-5">
+          {/* Basic info */}
+          <div className="bg-white rounded-2xl border border-border-light p-5 space-y-4">
+            <h3 className="text-sm font-bold text-text-main flex items-center gap-2">
+              <span className="material-symbols-outlined text-lg text-primary">info</span>
+              Información básica
+            </h3>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <FormField label="Nombre" name="name" value={form.name} onChange={setField} error={errors.name} required />
+              <FormField
+                label="Slug"
+                name="slug"
+                value={form.slug}
+                onChange={(v, n) => { setAutoSlug(false); setField(v, n); }}
+                error={errors.slug}
+                helper="URL: /producto/slug"
+                required
+              />
+            </div>
+            <FormField
+              label="Categoría"
+              name="category_id"
+              type="select"
+              value={form.category_id}
+              onChange={setField}
+              options={categoryOptions}
+              error={errors.category_id}
+              required
+            />
+            <FormField
+              label="Descripción"
+              name="description"
+              type="textarea"
+              value={form.description}
+              onChange={setField}
+              rows={4}
+              placeholder="Describe el producto..."
+            />
+          </div>
+
+          {/* Images */}
+          <div className="bg-white rounded-2xl border border-border-light p-5 space-y-4">
+            <h3 className="text-sm font-bold text-text-main flex items-center gap-2">
+              <span className="material-symbols-outlined text-lg text-primary">image</span>
+              Imágenes
+            </h3>
+            <ImageUploader
+              images={form.images}
+              onChange={(imgs) => setForm(p => ({ ...p, images: imgs }))}
+              onUpload={upload}
+              uploading={uploading}
+              progress={progress}
+            />
+          </div>
+
+          {/* Specs */}
+          <div className="bg-white rounded-2xl border border-border-light p-5 space-y-4">
+            <div className="flex items-center justify-between">
+              <h3 className="text-sm font-bold text-text-main flex items-center gap-2">
+                <span className="material-symbols-outlined text-lg text-primary">tune</span>
+                Especificaciones
+              </h3>
+              <button type="button" onClick={addSpec} className="text-xs font-bold text-primary hover:underline">
+                + Agregar
+              </button>
+            </div>
+            {form.specs.map((spec, idx) => (
+              <div key={idx} className="flex items-start gap-2">
+                <input
+                  value={spec.label}
+                  onChange={e => updateSpec(idx, 'label', e.target.value)}
+                  placeholder="Etiqueta"
+                  className="flex-1 rounded-xl border border-border-default px-3 py-2 text-sm focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none"
+                />
+                <input
+                  value={spec.value}
+                  onChange={e => updateSpec(idx, 'value', e.target.value)}
+                  placeholder="Valor"
+                  className="flex-1 rounded-xl border border-border-default px-3 py-2 text-sm focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none"
+                />
+                <button type="button" onClick={() => removeSpec(idx)} className="w-8 h-8 mt-0.5 rounded-lg flex items-center justify-center text-text-muted hover:text-error hover:bg-red-50 transition-colors">
+                  <span className="material-symbols-outlined text-lg">close</span>
+                </button>
+              </div>
+            ))}
+          </div>
+
+          {/* Colors */}
+          <div className="bg-white rounded-2xl border border-border-light p-5 space-y-4">
+            <div className="flex items-center justify-between">
+              <h3 className="text-sm font-bold text-text-main flex items-center gap-2">
+                <span className="material-symbols-outlined text-lg text-primary">palette</span>
+                Colores disponibles
+              </h3>
+              <button type="button" onClick={addColor} className="text-xs font-bold text-primary hover:underline">
+                + Agregar
+              </button>
+            </div>
+            <div className="flex flex-wrap gap-2">
+              {form.colors.map((color, idx) => (
+                <div key={idx} className="flex items-center gap-1 bg-background-soft rounded-lg px-2 py-1.5">
+                  <input
+                    type="color"
+                    value={color}
+                    onChange={e => updateColor(idx, e.target.value)}
+                    className="w-7 h-7 rounded cursor-pointer border-0"
+                  />
+                  <span className="text-xs text-text-secondary font-mono">{color}</span>
+                  <button type="button" onClick={() => removeColor(idx)} className="w-5 h-5 rounded flex items-center justify-center text-text-muted hover:text-error transition-colors">
+                    <span className="material-symbols-outlined text-sm">close</span>
+                  </button>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Tags */}
+          <div className="bg-white rounded-2xl border border-border-light p-5 space-y-4">
+            <h3 className="text-sm font-bold text-text-main flex items-center gap-2">
+              <span className="material-symbols-outlined text-lg text-primary">label</span>
+              Tags
+            </h3>
+            <div className="flex items-center gap-2">
+              <input
+                value={tagInput}
+                onChange={e => setTagInput(e.target.value)}
+                onKeyDown={e => { if (e.key === 'Enter') { e.preventDefault(); addTag(); } }}
+                placeholder="Agregar tag..."
+                className="flex-1 rounded-xl border border-border-default px-3 py-2 text-sm focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none"
+              />
+              <button type="button" onClick={addTag} className="px-3 py-2 rounded-xl bg-background-soft text-sm font-medium text-text-secondary hover:bg-border-light transition-colors">
+                Agregar
+              </button>
+            </div>
+            <div className="flex flex-wrap gap-2">
+              {form.tags.map((tag, idx) => (
+                <span key={idx} className="flex items-center gap-1 bg-accent/10 text-accent text-xs font-medium px-2.5 py-1 rounded-full">
+                  {tag}
+                  <button type="button" onClick={() => removeTag(idx)} className="hover:text-error transition-colors">
+                    <span className="material-symbols-outlined text-xs">close</span>
+                  </button>
+                </span>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* Right column — sidebar */}
+        <div className="space-y-5">
+          {/* Pricing */}
+          <div className="bg-white rounded-2xl border border-border-light p-5 space-y-4">
+            <h3 className="text-sm font-bold text-text-main flex items-center gap-2">
+              <span className="material-symbols-outlined text-lg text-primary">payments</span>
+              Precio
+            </h3>
+            <FormField label="Precio (PEN)" name="price" type="number" value={form.price} onChange={setField} error={errors.price} required min={0} step={0.1} />
+            <FormField label="Precio anterior" name="old_price" type="number" value={form.old_price} onChange={setField} min={0} step={0.1} helper="Deja vacío si no está en oferta" />
+            <div className="pt-2 border-t border-border-light">
+              <p className="text-2xl font-bold text-primary">{previewPrice}</p>
+              {form.old_price && (
+                <p className="text-sm text-text-muted line-through">{formatPrice(Number(form.old_price))}</p>
+              )}
+            </div>
+          </div>
+
+          {/* Stock & Badge */}
+          <div className="bg-white rounded-2xl border border-border-light p-5 space-y-4">
+            <h3 className="text-sm font-bold text-text-main flex items-center gap-2">
+              <span className="material-symbols-outlined text-lg text-primary">inventory</span>
+              Inventario
+            </h3>
+            <FormField label="Stock" name="stock" type="number" value={form.stock} onChange={setField} min={0} />
+            <FormField label="Badge" name="badge" value={form.badge} onChange={setField} placeholder="ej: NUEVO, OFERTA, TOP VENTAS" />
+          </div>
+
+          {/* Toggles */}
+          <div className="bg-white rounded-2xl border border-border-light p-5 space-y-4">
+            <h3 className="text-sm font-bold text-text-main flex items-center gap-2">
+              <span className="material-symbols-outlined text-lg text-primary">toggle_on</span>
+              Opciones
+            </h3>
+            <div className="flex items-center justify-between">
+              <span className="text-sm text-text-secondary">Producto nuevo</span>
+              <FormField type="toggle" name="is_new" value={form.is_new} onChange={setField} />
+            </div>
+            <div className="flex items-center justify-between">
+              <span className="text-sm text-text-secondary">En oferta</span>
+              <FormField type="toggle" name="is_on_sale" value={form.is_on_sale} onChange={setField} />
+            </div>
+            {form.is_on_sale && (
+              <FormField label="% Descuento" name="sale_percent" type="number" value={form.sale_percent} onChange={setField} min={0} max={100} />
+            )}
+          </div>
+
+          {/* Rating (read-only for reference) */}
+          <div className="bg-white rounded-2xl border border-border-light p-5 space-y-4">
+            <h3 className="text-sm font-bold text-text-main flex items-center gap-2">
+              <span className="material-symbols-outlined text-lg text-primary">star</span>
+              Valoración
+            </h3>
+            <FormField label="Rating" name="rating" type="number" value={form.rating} onChange={setField} min={0} max={5} step={0.1} />
+            <FormField label="Reviews" name="reviews" type="number" value={form.reviews} onChange={setField} min={0} />
+          </div>
+
+          {/* Live preview card */}
+          <div className="bg-white rounded-2xl border border-border-light p-5 space-y-3">
+            <h3 className="text-sm font-bold text-text-main flex items-center gap-2">
+              <span className="material-symbols-outlined text-lg text-primary">preview</span>
+              Vista previa
+            </h3>
+            <div className="rounded-xl overflow-hidden border border-border-light">
+              <div className="aspect-[4/3] bg-background-soft flex items-center justify-center p-3">
+                {form.images[0] ? (
+                  <img src={form.images[0]} alt="" className="w-full h-full object-contain" />
+                ) : (
+                  <span className="material-symbols-outlined text-4xl text-text-muted/30">image</span>
+                )}
+              </div>
+              <div className="p-3">
+                {form.badge && (
+                  <span className="inline-block text-[10px] font-bold text-white bg-accent px-2 py-0.5 rounded-full uppercase mb-1.5">
+                    {form.badge}
+                  </span>
+                )}
+                <p className="text-sm font-bold text-text-main truncate">{form.name || 'Nombre del producto'}</p>
+                <p className="text-sm font-bold text-primary mt-0.5">{previewPrice}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Action buttons */}
+      <div className="flex items-center justify-end gap-3 pt-4 border-t border-border-light">
+        <button
+          type="button"
+          onClick={onCancel}
+          className="px-5 py-2.5 rounded-xl text-sm font-medium text-text-secondary hover:bg-background-soft transition-colors"
+        >
+          Cancelar
+        </button>
+        <button
+          type="submit"
+          disabled={saving}
+          className="px-6 py-2.5 rounded-xl bg-primary text-white text-sm font-bold hover:bg-primary-dark transition-colors flex items-center gap-2 shadow-soft disabled:opacity-50"
+        >
+          {saving && <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />}
+          {isEditing ? 'Guardar cambios' : 'Crear producto'}
+        </button>
+      </div>
+    </form>
+  );
+}
