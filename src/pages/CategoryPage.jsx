@@ -71,7 +71,7 @@ export default function CategoryPage() {
                   onClick={() => navigate(`/categoria/${c.slug}`)}
                   className="group relative overflow-hidden rounded-2xl aspect-square cursor-pointer shadow-sm"
                 >
-                  <div className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" style={{ backgroundImage: `url('${c.image_url || c.image}')` }}></div>
+                  <div className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" style={{ backgroundImage: `url('${c.image}')` }}></div>
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent"></div>
                   <div className="absolute bottom-0 left-0 p-5 w-full">
                     <span className="material-symbols-outlined text-white text-xl mb-1">{c.icon}</span>
@@ -106,7 +106,7 @@ export default function CategoryPage() {
       {/* Hero Banner */}
       <section
         className="relative h-[160px] md:h-[280px] w-full bg-cover bg-center flex items-center justify-center"
-        style={{ backgroundImage: `url('${category.hero_image_url || category.image_url || category.heroImage || category.image}')` }}
+        style={{ backgroundImage: `url('${category.heroImage}')` }}
       >
         <div className="absolute inset-0 bg-black/45"></div>
         <div className="relative z-10 text-center text-white px-4">

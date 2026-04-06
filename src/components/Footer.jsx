@@ -65,7 +65,13 @@ export default function Footer() {
               <li><Link to="/" className="hover:text-primary transition-colors">Inicio</Link></li>
               <li><Link to="/novedades" className="hover:text-primary transition-colors">Novedades</Link></li>
               <li><Link to="/ofertas" className="hover:text-primary transition-colors">Ofertas</Link></li>
-              <li><Link to="/nosotros" className="hover:text-primary transition-colors">Nosotros</Link></li>
+              <li>
+                <Link to="/nosotros" className="hover:text-primary transition-colors">Nosotros</Link>
+                <div className="pl-3 mt-1 space-y-1 border-l border-white/5">
+                  <Link to="/terminos-y-condiciones#terminos" className="block text-[10px] text-white/40 hover:text-primary transition-colors">● Marco Legal</Link>
+                  <Link to="/terminos-y-condiciones#clausulas" className="block text-[10px] text-white/40 hover:text-primary transition-colors">● Cláusulas Especiales</Link>
+                </div>
+              </li>
               <li><Link to="/contacto" className="hover:text-primary transition-colors">Contacto</Link></li>
             </ul>
           </div>
@@ -108,7 +114,8 @@ export default function Footer() {
         <div className="max-w-[1440px] mx-auto px-6 lg:px-10 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-white/40">
           <p>© {new Date().getFullYear()} GO SHOPPING. Todos los derechos reservados. RUC: 20601880904</p>
           <div className="flex items-center gap-6">
-            <span className="hover:text-white/70 cursor-pointer">Términos</span>
+            <Link to="/terminos-y-condiciones#terminos" className="hover:text-white/70 transition-colors">Términos</Link>
+            <Link to="/terminos-y-condiciones#clausulas" className="hover:text-white/70 transition-colors">Cláusulas</Link>
             <span className="hover:text-white/70 cursor-pointer">Privacidad</span>
             <span className="hover:text-white/70 cursor-pointer">Devoluciones</span>
             <Link

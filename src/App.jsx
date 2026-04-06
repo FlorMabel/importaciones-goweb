@@ -17,6 +17,7 @@ const DealsPage = lazy(() => import('./pages/DealsPage.jsx'));
 const AboutPage = lazy(() => import('./pages/AboutPage.jsx'));
 const ContactPage = lazy(() => import('./pages/ContactPage.jsx'));
 const NotFoundPage = lazy(() => import('./pages/NotFoundPage.jsx'));
+const TermsPage = lazy(() => import('./pages/TermsPage.jsx'));
 
 // Admin dashboard — completely separate layout
 const AdminApp = lazy(() => import('./admin/AdminApp.jsx'));
@@ -33,10 +34,17 @@ function Loading() {
 }
 
 function ScrollToTop() {
-  const { pathname } = useLocation();
+  const { pathname, hash } = useLocation();
   useEffect(() => {
-    window.scrollTo({ top: 0, behavior: 'instant' });
-  }, [pathname]);
+    if (hash) {
+      const el = document.getElementById(hash.replace('#', ''));
+      if (el) {
+        setTimeout(() => el.scrollIntoView({ behavior: 'smooth' }), 100);
+      }
+    } else {
+      window.scrollTo({ top: 0, behavior: 'instant' });
+    }
+  }, [pathname, hash]);
   return null;
 }
 
@@ -63,6 +71,7 @@ function StoreLayout() {
             <Route path="/ofertas" element={<DealsPage />} />
             <Route path="/nosotros" element={<AboutPage />} />
             <Route path="/contacto" element={<ContactPage />} />
+            <Route path="/terminos-y-condiciones" element={<TermsPage />} />
             <Route path="*" element={<NotFoundPage />} />
           </Routes>
         </Suspense>

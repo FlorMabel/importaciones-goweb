@@ -281,7 +281,7 @@ export default function HomePage() {
                        <div className="relative">
                          <div className="absolute inset-0 bg-primary/20 blur-2xl rounded-full scale-110"></div>
                          <img 
-                           src={cat.image_url} 
+                           src={cat.image} 
                            alt={cat.name} 
                            className="size-28 md:size-48 object-cover rounded-full shadow-strong border-4 border-white/30 hover:scale-105 transition-transform duration-700 z-10 relative" 
                            loading="lazy" 

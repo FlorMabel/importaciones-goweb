@@ -1,5 +1,6 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
+import { Link } from 'react-router-dom';
 
 export default function AboutPage() {
   return (
@@ -51,6 +52,30 @@ export default function AboutPage() {
                   <span className="text-sm text-text-main">{item.text}</span>
                 </div>
               ))}
+            </div>
+          </div>
+          
+          <div className="mt-20 pt-16 border-t border-border-light text-center">
+            <span className="text-[10px] font-bold text-primary tracking-[0.3em] uppercase mb-4 block">Marco Legal</span>
+            <h2 className="font-serif text-2xl md:text-3xl font-bold text-accent mb-6 italic">Términos, Condiciones y Políticas</h2>
+            <p className="text-sm text-text-muted max-w-2xl mx-auto mb-8 leading-relaxed">
+              Cumplimos con toda la normativa legal vigente de la República del Perú. Importaciones Puno S.R.L. (RUC 20601880904) garantiza la transparencia y seguridad en cada una de sus transacciones.
+            </p>
+            <div className="flex flex-wrap items-center justify-center gap-4">
+              <Link 
+                to="/terminos-y-condiciones#terminos"
+                className="inline-flex items-center gap-2 bg-accent hover:bg-accent-dark text-white text-xs font-bold py-4 px-10 rounded-full transition-all duration-300 shadow-soft uppercase tracking-widest"
+              >
+                Términos y Condiciones
+                <span className="material-symbols-outlined text-sm">gavel</span>
+              </Link>
+              <Link 
+                to="/terminos-y-condiciones#clausulas"
+                className="inline-flex items-center gap-2 bg-white hover:bg-beige-soft text-accent border border-accent/20 text-xs font-bold py-4 px-10 rounded-full transition-all duration-300 shadow-soft uppercase tracking-widest"
+              >
+                Cláusulas Especiales
+                <span className="material-symbols-outlined text-sm">shield</span>
+              </Link>
             </div>
           </div>
         </div>

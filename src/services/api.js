@@ -7,7 +7,7 @@ export async function getCategories() {
     .select('*')
     .order('sort_order', { ascending: true });
   if (error) throw error;
-  return data;
+  return data.map(formatCategory);
 }
 
 export async function getCategoryById(id) {
@@ -17,7 +17,17 @@ export async function getCategoryById(id) {
     .or(`id.eq.${id},slug.eq.${id}`)
     .single();
   if (error && error.code !== 'PGRST116') throw error;
-  return data || null;
+  return data ? formatCategory(data) : null;
+}
+
+// Helper to ensure category properties are consistent
+function formatCategory(c) {
+  return {
+    ...c,
+    // Ensure both names exists if storefront uses different versions
+    image: c.image_url || c.image,
+    heroImage: c.hero_image_url || c.heroImage || c.image_url || c.image
+  };
 }
 
 export async function getProductsByCategory(slug) {
