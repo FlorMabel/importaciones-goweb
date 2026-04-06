@@ -117,23 +117,9 @@ export default function Header() {
             </div>
           </div>
           <Link to="/novedades" className="text-text-main hover:text-accent transition-colors text-sm font-medium">Novedades</Link>
-          <div className="relative group">
-            <Link to="/nosotros" className="text-text-main hover:text-accent transition-colors text-sm font-medium flex items-center gap-1 group-hover:text-primary transition-all">
-              Nosotros <span className="material-symbols-outlined text-sm group-hover:rotate-180 transition-transform duration-300">expand_more</span>
-            </Link>
-            <div className="absolute top-full left-0 pt-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
-              <div className="bg-white rounded-2xl shadow-xl border border-gray-100 p-2 w-52 overflow-hidden">
-                <Link to="/terminos-y-condiciones#terminos" className="flex items-center gap-2 p-3 rounded-xl hover:bg-background-soft text-xs font-bold text-text-main transition-colors group/sub">
-                   <span className="material-symbols-outlined text-[16px] text-primary">gavel</span>
-                   Marco Legal
-                </Link>
-                <Link to="/terminos-y-condiciones#clausulas" className="flex items-center gap-2 p-3 rounded-xl hover:bg-background-soft text-xs font-bold text-text-main transition-colors group/sub">
-                   <span className="material-symbols-outlined text-[16px] text-primary">shield</span>
-                   Cláusulas Especiales
-                </Link>
-              </div>
-            </div>
-          </div>
+          <Link to="/nosotros" className="text-text-main hover:text-accent transition-colors text-sm font-medium">
+            Nosotros
+          </Link>
           <Link to="/contacto" className="text-text-main hover:text-accent transition-colors text-sm font-medium">Contacto</Link>
         </nav>
 
@@ -257,20 +243,7 @@ export default function Header() {
                 <a onClick={() => navTo('/novedades')} className="block py-3 px-4 rounded-xl text-sm font-medium hover:bg-background-soft cursor-pointer">Novedades</a>
                 <a onClick={() => navTo('/ofertas')} className="block py-3 px-4 rounded-xl text-sm font-medium hover:bg-background-soft cursor-pointer">Ofertas</a>
                 
-                <div className="group/nav-item">
-                  <a onClick={() => navTo('/nosotros')} className="flex items-center justify-between py-3 px-4 rounded-xl text-sm font-medium hover:bg-background-soft cursor-pointer group-hover/nav-item:text-primary">
-                    Nosotros
-                    <span className="material-symbols-outlined text-sm">expand_more</span>
-                  </a>
-                  <div className="pl-8 space-y-1 mt-1">
-                    <a onClick={() => navTo('/terminos-y-condiciones#terminos')} className="block py-2 text-xs text-text-muted hover:text-primary cursor-pointer flex items-center gap-2">
-                      <span className="size-1 bg-primary rounded-full"></span> Marco Legal
-                    </a>
-                    <a onClick={() => navTo('/terminos-y-condiciones#clausulas')} className="block py-2 text-xs text-text-muted hover:text-primary cursor-pointer flex items-center gap-2">
-                      <span className="size-1 bg-primary rounded-full"></span> Cláusulas Especiales
-                    </a>
-                  </div>
-                </div>
+                <a onClick={() => navTo('/nosotros')} className="block py-3 px-4 rounded-xl text-sm font-medium hover:bg-background-soft cursor-pointer">Nosotros</a>
 
                 <a onClick={() => navTo('/contacto')} className="block py-3 px-4 rounded-xl text-sm font-medium hover:bg-background-soft cursor-pointer">Contacto</a>
               </div>

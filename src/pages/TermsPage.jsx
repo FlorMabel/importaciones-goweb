@@ -13,17 +13,21 @@ export default function TermsPage() {
     { title: "7. EMBALAJE", content: "Gratis hasta 5 kg. Peso mayor: costo adicional obligatorio. El pedido no será despachado sin pago completo, incluyendo embalaje." },
     { title: "8. PRODUCTOS Y USO", content: "El cliente acepta que: Los productos deben utilizarse conforme a su finalidad. Algunos productos (ej. humidificadores, quemadores, esencias) implican riesgos inherentes si son mal utilizados. ⚠️ Go Shopping no se responsabiliza por: Daños por uso indebido, Manipulación incorrecta, Instalación incorrecta, Uso en condiciones no recomendadas." },
     { title: "9. GARANTÍAS Y EXCLUSIONES", content: "Salvo indicación expresa: Los productos se venden “tal cual” (as-is). No existe garantía adicional más allá de la legal mínima aplicable. Se excluye responsabilidad por: Daños indirectos, Lucro cesante, Daños consecuenciales, Pérdida de oportunidad." },
-    { title: "10. DEVOLUCIONES Y REEMBOLSOS", content: "Condiciones estrictas: Plazo máximo: 24 horas desde la compra. Producto: Sin uso, Sin daños, Con empaque original, Sin manipulación externa. El cliente asume: Costos de devolución, Riesgos del envío de retorno. Go Shopping puede rechazar devoluciones unilateralmente si no se cumplen condiciones." },
+    { id: "devoluciones", title: "10. DEVOLUCIONES Y REEMBOLSOS", content: "Condiciones estrictas: Plazo máximo: 24 horas desde la compra. Producto: Sin uso, Sin daños, Con empaque original, Sin manipulación externa. El cliente asume: Costos de devolución, Riesgos del envío de retorno. Go Shopping puede rechazar devoluciones unilateralmente si no se cumplen condiciones." },
     { title: "11. CLIENTES EN PROVINCIA", content: "Retiro obligatorio en máximo 3 días calendario. ⚠️ La empresa no se responsabiliza por: Abandono del paquete, Retenciones, Daños en agencia, Devociones por no recojo. No hay obligación de: Reenvío, Reembolso." },
     { title: "12. LIMITACIÓN DE RESPONSABILIDAD", content: "En todos los casos, la responsabilidad máxima de Go Shopping se limita al: 👉 Monto efectivamente pagado por el cliente." },
     { title: "13. PROPIEDAD INTELECTUAL", content: "Todo el contenido es propiedad de la empresa o sus proveedores. Prohibido: Copiar, Reproducir, Distribuir, Usar comercialmente, Sin autorización expresa." },
     { title: "14. PRUEBAS DIGITALES Y VALIDEZ", content: "El cliente acepta como medios probatorios válidos: Correos electrónicos, WhatsApp, Videos, Registros del sistema, Comprobantes digitales." },
     { title: "15. FUERZA MAYOR", content: "Go Shopping no será responsable por incumplimientos derivados de: Desastres naturales, Paros, Fallas logísticas, Problemas de importación, Actos gubernamentales." },
-    { title: "16. PROTECCIÓN DE DATOS PERSONALES", content: "Conforme a la Ley N° 29733: Uso limitado a gestión comercial, Posible uso para marketing (con aceptación del usuario), Compartición solo con proveedores necesarios. El usuario puede ejercer derechos ARCO mediante contacto oficial." },
-    { title: "17. MODIFICACIONES", content: "Go Shopping puede modificar estos términos en cualquier momento. El uso continuo implica aceptación automática." },
-    { title: "18. JURISDICCIÓN Y LEY APLICABLE", content: "Este contrato se rige por las leyes de la República del Perú. Cualquier controversia será resuelta en: 👉 Juzgados de Puno, renunciando el usuario a cualquier otro fuero." },
-    { title: "19. CONTACTO OFICIAL", content: "📧 imporpuno@gmail.com | 📱 962 810 439" },
-    { title: "20. CLÁUSULA DE ACEPTACIÓN TOTAL", content: "El usuario declara haber leído, comprendido y aceptado la totalidad de las condiciones sin reservas, incluyendo limitaciones de responsabilidad y exclusiones." }
+    { id: "privacidad", title: "16. PROTECCIÓN DE DATOS PERSONALES", content: "Conforme a la Ley N° 29733: Uso limitado a gestión comercial, Posible uso para marketing (con aceptación del usuario), Compartición solo con proveedores necesarios. Podrás ejercer en cualquier momento tus derechos de acceso, rectificación, cancelación y oposición (ARCO) contactándonos por correo electrónico importergo@proton.me o enviándonos un mensaje por WhatsApp."},
+    { title: "17. USO DE LOS DATOS PERSONALES", content:"Los datos personales que nos proporciones serán utilizados exclusivamente para gestionar tus pedidos, brindarte atención al cliente y mantener la comunicación contigo. Esta información es proporcionada de forma voluntaria por el usuario al momento del registro o al realizar una compra. Su recopilación nos permite ofrecerte servicios personalizados, mejorar nuestras ofertas y comunicar promociones o actualizaciones relevantes."},
+    { title: "18. COMPARTICIÓN DE DATOS PERSONALES", content:"No compartiremos tu información personal con terceros sin tu consentimiento, salvo que exista una obligación legal. No obstante, podremos compartir datos con proveedores de servicios de confianza que nos asisten en la operación del sitio web y en la prestación de servicios al usuario, siempre bajo estrictos acuerdos de confidencialidad."},
+    { title: "19. SEGURIDAD DE LA INFORMACION", content: "Implementamos medidas de seguridad técnicas y organizativas para proteger tu información contra accesos no autorizados, pérdidas o alteraciones. Utilizamos cookies y tecnologías similares para mejorar la experiencia del usuario en nuestro sitio. Puedes gestionar el uso de cookies desde la configuración de tu navegador, aunque esto podría afectar ciertas funcionalidades del sitio."},
+    { title: "20. MODIFICACIONES", content: "Go Shopping puede modificar estos términos en cualquier momento. El uso continuo implica aceptación automática." },
+    { title: "21. JURISDICCIÓN Y LEY APLICABLE", content: "Este contrato se rige por las leyes de la República del Perú. Cualquier controversia será resuelta en: 👉 Juzgados de Puno, renunciando el usuario a cualquier otro fuero." },
+    { title: "22. CONTACTO OFICIAL", content: "Correo: imporpuno@gmail.com | Tel. 962 810 439" },
+    { title: "23. CLÁUSULA DE ACEPTACIÓN TOTAL", content: "El usuario declara haber leído, comprendido y aceptado la totalidad de las condiciones sin reservas, incluyendo limitaciones de responsabilidad y exclusiones." },
+    { title: "24. MODIFICACIONES", content: "Nos reservamos el derecho de modificar esta política de privacidad en cualquier momento. Te recomendamos revisar periódicamente esta página para estar informado sobre cualquier cambio. El uso continuado del sitio tras la publicación de cambios implicará tu aceptación de los mismos. Si tienes preguntas sobre esta política, contáctanos en imporpuno@gmail.com."}
   ];
 
   const clauses = [
@@ -80,6 +84,7 @@ export default function TermsPage() {
                 {sections.map((s, idx) => (
                   <motion.div 
                     key={idx}
+                    id={s.id}
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
                     viewport={{ once: true }}

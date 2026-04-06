@@ -67,10 +67,7 @@ export default function Footer() {
               <li><Link to="/ofertas" className="hover:text-primary transition-colors">Ofertas</Link></li>
               <li>
                 <Link to="/nosotros" className="hover:text-primary transition-colors">Nosotros</Link>
-                <div className="pl-3 mt-1 space-y-1 border-l border-white/5">
-                  <Link to="/terminos-y-condiciones#terminos" className="block text-[10px] text-white/40 hover:text-primary transition-colors">● Marco Legal</Link>
-                  <Link to="/terminos-y-condiciones#clausulas" className="block text-[10px] text-white/40 hover:text-primary transition-colors">● Cláusulas Especiales</Link>
-                </div>
+                {/* Sub-enlaces eliminados según solicitud */}
               </li>
               <li><Link to="/contacto" className="hover:text-primary transition-colors">Contacto</Link></li>
             </ul>
@@ -116,16 +113,9 @@ export default function Footer() {
           <div className="flex items-center gap-6">
             <Link to="/terminos-y-condiciones#terminos" className="hover:text-white/70 transition-colors">Términos</Link>
             <Link to="/terminos-y-condiciones#clausulas" className="hover:text-white/70 transition-colors">Cláusulas</Link>
-            <span className="hover:text-white/70 cursor-pointer">Privacidad</span>
-            <span className="hover:text-white/70 cursor-pointer">Devoluciones</span>
-            <Link
-              to="/admin"
-              className="flex items-center gap-1.5 text-white/20 hover:text-primary transition-colors duration-300 group"
-              title="Panel Administrativo"
-            >
-              <span className="material-symbols-outlined text-sm group-hover:rotate-90 transition-transform duration-500">settings</span>
-              <span className="hidden sm:inline">Admin</span>
-            </Link>
+            <Link to="/terminos-y-condiciones#privacidad" className="hover:text-white/70 transition-colors">Privacidad</Link>
+            <Link to="/terminos-y-condiciones#devoluciones" className="hover:text-white/70 transition-colors">Devoluciones</Link>
+
           </div>
         </div>
       </div>
