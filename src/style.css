@@ -33,7 +33,7 @@
   .product-card:hover .image-container img { transform: scale(1.05); }
 
   .product-card .add-btn {
-    @apply absolute bottom-3 right-3 w-10 h-10 rounded-full bg-white shadow-medium flex items-center justify-center
+    @apply absolute bottom-3 right-3 w-10 h-10 rounded-full bg-white shadow-md flex items-center justify-center
            text-text-main hover:bg-primary hover:text-white transition-all duration-300 opacity-0 translate-y-2;
   }
   .product-card:hover .add-btn { @apply opacity-100 translate-y-0; }
