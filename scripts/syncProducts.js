@@ -44,6 +44,7 @@ async function syncProducts() {
       rating: p.rating || 0,
       reviews: p.reviews || 0,
       stock: p.stock || 10,
+      sku: p.sku || null,
       is_new: p.isNew || false,
       is_on_sale: p.isOnSale || false,
       sale_percent: p.salePercent || null

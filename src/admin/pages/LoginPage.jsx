@@ -32,12 +32,16 @@ export default function LoginPage({ onLogin, loading, error }) {
         {/* Card */}
         <div className="bg-white/[0.04] backdrop-blur-xl border border-white/[0.08] rounded-3xl p-8 shadow-2xl">
           {/* Logo */}
-          <div className="text-center mb-8">
-            <div className="w-14 h-14 rounded-2xl bg-primary/20 flex items-center justify-center mx-auto mb-4 ring-1 ring-primary/30">
-              <span className="material-symbols-outlined text-primary text-2xl">diamond</span>
+          <div className="text-center mb-10">
+            <div className="flex items-center justify-center gap-4 mb-4">
+              <img 
+                src="https://res.cloudinary.com/dod8hhjoo/image/upload/v1774224726/goshopping/optimized/logo-768w.webp" 
+                alt="GO" 
+                className="h-16 w-auto object-contain drop-shadow-[0_0_15px_rgba(201,163,79,0.3)]"
+              />
+              <span className="font-serif text-3xl font-medium tracking-[0.1em] text-white">SHOPPING</span>
             </div>
-            <h1 className="text-xl font-bold text-white tracking-wide">GO SHOPPING</h1>
-            <p className="text-xs text-primary font-medium tracking-[0.2em] mt-1">ADMIN PANEL</p>
+            <p className="text-[10px] text-primary font-black tracking-[0.4em] uppercase opacity-80">ADMIN PANEL</p>
           </div>
 
           {/* Form */}

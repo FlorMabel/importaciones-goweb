@@ -33,26 +33,32 @@ export default function Footer() {
           <div className="md:col-span-1">
             <div className="flex items-center gap-3 mb-8">
               <img 
-                src="https://res.cloudinary.com/dod8hhjoo/image/upload/v1774224725/goshopping/optimized/logo-320w.webp" 
-                alt="GO SHOPPING" 
-                className="h-11 w-auto object-contain brightness-0 invert opacity-90 hover:opacity-100 transition-opacity"
+                src="https://res.cloudinary.com/dod8hhjoo/image/upload/v1774224726/goshopping/optimized/logo-768w.webp" 
+                alt="GO" 
+                className="h-10 w-auto object-contain transition-all duration-500 group-hover:scale-105"
               />
-              <span className="font-serif text-2xl font-bold text-white tracking-[0.2em] leading-none">SHOPPING</span>
+              <span className="font-serif text-2xl font-medium tracking-widest text-white leading-none">SHOPPING</span>
             </div>
             <p className="text-white/50 text-sm leading-relaxed mb-10 font-light italic max-w-xs">
               "Importando piezas exclusivas que transforman lo cotidiano en una experiencia extraordinaria."
             </p>
             <div className="flex gap-4">
-              {['facebook', 'instagram', 'tiktok'].map(social => (
+              {[
+                { id: 'facebook', icon: <path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z"/>, url: 'https://www.facebook.com/share/1EM7tnVp3v/' },
+                { id: 'instagram', icon: <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4.01 4.01 0 110-8.019 4.01 4.01 0 010 8.019zm7.846-10.405a1.441 1.441 0 11-2.881 0 1.441 1.441 0 012.881 0z"/>, url: 'https://www.instagram.com/goshopping.oficial' },
+                { id: 'tiktok', icon: <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.2 1.74 2.89 2.89 0 012.31-4.64 2.93 2.93 0 01.88.13V9.4a6.84 6.84 0 00-1 .05A6.33 6.33 0 005 20.1a6.34 6.34 0 0010.86-4.43v-7a8.16 8.16 0 004.77 1.52v-3.4a4.85 4.85 0 01-1.04-.1z"/>, url: 'https://www.tiktok.com/@goshoppin?_r=1&_t=ZS-95KFcvYMToq' }
+              ].map(social => (
                 <a 
-                  key={social}
-                  href={`https://www.${social}.com`} 
+                  key={social.id}
+                  href={social.url} 
                   target="_blank" 
                   rel="noopener noreferrer" 
-                  className="size-10 rounded-full border border-white/10 hover:border-primary hover:text-primary flex items-center justify-center transition-all duration-300"
+                  className="size-10 rounded-full border border-white/10 hover:border-primary hover:text-white flex items-center justify-center transition-all duration-300 group"
                 >
-                  <span className="sr-only">{social}</span>
-                  <div className="size-4 bg-white/20 rounded-full group-hover:bg-primary transition-colors"></div>
+                  <span className="sr-only">{social.id}</span>
+                  <svg className="size-5 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    {social.icon}
+                  </svg>
                 </a>
               ))}
             </div>
@@ -75,12 +81,24 @@ export default function Footer() {
 
           {/* Payments */}
           <div>
-            <h4 className="font-bold text-sm uppercase tracking-wider mb-4">Métodos de Pago</h4>
-            <ul className="space-y-2 text-sm text-white/60">
-              <li className="flex items-center gap-2"><span className="text-primary">●</span> Yape</li>
-              <li className="flex items-center gap-2"><span className="text-primary">●</span> Plin</li>
-              <li className="flex items-center gap-2"><span className="text-primary">●</span> Transferencia Bancaria</li>
-              <li className="flex items-center gap-2"><span className="text-primary">●</span> Depósito</li>
+            <h4 className="font-bold text-sm uppercase tracking-wider mb-6">Métodos de Pago</h4>
+            <ul className="space-y-4 text-xs font-medium text-white/50 uppercase tracking-[0.2em]">
+              <li className="flex items-center gap-3">
+                <span className="size-1.5 rounded-full bg-primary shadow-[0_0_8px_rgba(201,163,79,0.5)]"></span>
+                Yape
+              </li>
+              <li className="flex items-center gap-3">
+                <span className="size-1.5 rounded-full bg-primary shadow-[0_0_8px_rgba(201,163,79,0.5)]"></span>
+                Plin
+              </li>
+              <li className="flex items-center gap-3">
+                <span className="size-1.5 rounded-full bg-primary shadow-[0_0_8px_rgba(201,163,79,0.5)]"></span>
+                Transferencia Bancaria
+              </li>
+              <li className="flex items-center gap-3">
+                <span className="size-1.5 rounded-full bg-primary shadow-[0_0_8px_rgba(201,163,79,0.5)]"></span>
+                Depósito
+              </li>
             </ul>
           </div>
 

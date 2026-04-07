@@ -1,5 +1,6 @@
 import React, { Suspense, lazy, useEffect } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
+import { motion, AnimatePresence } from 'framer-motion';
 import Header from './components/Header.jsx';
 import Footer from './components/Footer.jsx';
 import WhatsAppFloat from './components/WhatsAppFloat.jsx';
@@ -18,6 +19,7 @@ const AboutPage = lazy(() => import('./pages/AboutPage.jsx'));
 const ContactPage = lazy(() => import('./pages/ContactPage.jsx'));
 const NotFoundPage = lazy(() => import('./pages/NotFoundPage.jsx'));
 const TermsPage = lazy(() => import('./pages/TermsPage.jsx'));
+const WishlistPage = lazy(() => import('./pages/WishlistPage.jsx'));
 
 // Admin dashboard — completely separate layout
 const AdminApp = lazy(() => import('./admin/AdminApp.jsx'));
@@ -27,7 +29,7 @@ function Loading() {
     <div className="flex items-center justify-center min-h-[60vh]">
       <div className="flex flex-col items-center gap-4">
         <div className="w-10 h-10 border-4 border-primary/30 border-t-primary rounded-full animate-spin"></div>
-        <p className="text-text-muted text-sm">Cargando...</p>
+        <p className="text-text-muted text-sm italic">Preparando la experiencia...</p>
       </div>
     </div>
   );
@@ -53,27 +55,39 @@ function ScrollToTop() {
  */
 function StoreLayout() {
   const { isCartDrawerOpen, setCartDrawerOpen } = useStore();
+  const location = useLocation();
   
   return (
     <>
       <Header />
       <CartDrawer isOpen={isCartDrawerOpen} onClose={() => setCartDrawerOpen(false)} />
-      <main className="flex-grow w-full">
+      <main className="flex-grow w-full overflow-hidden">
         <Suspense fallback={<Loading />}>
-          <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/categoria" element={<CategoryPage />} />
-            <Route path="/categoria/:slug" element={<CategoryPage />} />
-            <Route path="/producto/:slug" element={<ProductPage />} />
-            <Route path="/carrito" element={<CartPage />} />
-            <Route path="/checkout" element={<CheckoutPage />} />
-            <Route path="/novedades" element={<NewArrivalsPage />} />
-            <Route path="/ofertas" element={<DealsPage />} />
-            <Route path="/nosotros" element={<AboutPage />} />
-            <Route path="/contacto" element={<ContactPage />} />
-            <Route path="/terminos-y-condiciones" element={<TermsPage />} />
-            <Route path="*" element={<NotFoundPage />} />
-          </Routes>
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={location.pathname}
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -10 }}
+              transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+            >
+              <Routes location={location}>
+                <Route path="/" element={<HomePage />} />
+                <Route path="/categoria" element={<CategoryPage />} />
+                <Route path="/categoria/:slug" element={<CategoryPage />} />
+                <Route path="/producto/:slug" element={<ProductPage />} />
+                <Route path="/carrito" element={<CartPage />} />
+                <Route path="/checkout" element={<CheckoutPage />} />
+                <Route path="/favoritos" element={<WishlistPage />} />
+                <Route path="/novedades" element={<NewArrivalsPage />} />
+                <Route path="/ofertas" element={<DealsPage />} />
+                <Route path="/nosotros" element={<AboutPage />} />
+                <Route path="/contacto" element={<ContactPage />} />
+                <Route path="/terminos-y-condiciones" element={<TermsPage />} />
+                <Route path="*" element={<NotFoundPage />} />
+              </Routes>
+            </motion.div>
+          </AnimatePresence>
         </Suspense>
       </main>
       <Footer />

@@ -26,9 +26,13 @@ export default function Sidebar() {
   const sidebarContent = (
     <div className="h-full flex flex-col bg-[#1a1714] text-white/80">
       {/* Logo */}
-      <div className="flex items-center gap-3 px-5 h-16 border-b border-white/[0.06] flex-shrink-0">
-        <div className="w-8 h-8 rounded-lg bg-primary/20 flex items-center justify-center">
-          <span className="material-symbols-outlined text-primary text-lg">diamond</span>
+      <div className="flex items-center gap-3 px-5 h-20 border-b border-white/[0.06] flex-shrink-0">
+        <div className={`transition-all duration-300 ${sidebarOpen ? 'w-10' : 'w-8'} flex flex-shrink-0`}>
+          <img 
+            src="https://res.cloudinary.com/dod8hhjoo/image/upload/v1774224726/goshopping/optimized/logo-768w.webp" 
+            alt="GO" 
+            className="w-full h-auto object-contain"
+          />
         </div>
         {sidebarOpen && (
           <motion.div
@@ -36,8 +40,8 @@ export default function Sidebar() {
             animate={{ opacity: 1, x: 0 }}
             className="flex flex-col"
           >
-            <span className="text-sm font-bold text-white tracking-wide">GO SHOPPING</span>
-            <span className="text-[10px] text-primary font-medium tracking-widest">ADMIN PANEL</span>
+            <span className="font-serif text-sm font-bold text-white tracking-widest leading-none">SHOPPING</span>
+            <span className="text-[9px] text-primary font-black tracking-[0.3em] uppercase mt-1 opacity-70">ADMIN</span>
           </motion.div>
         )}
       </div>

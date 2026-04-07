@@ -10,6 +10,7 @@ import { WHOLESALE_TIERS } from '../../../config/productSchema.js';
 
 const EMPTY_PRODUCT = {
   id: '',
+  sku: '',
   name: '',
   slug: '',
   category_id: '',
@@ -111,6 +112,7 @@ export default function ProductForm({ product, categories = [], onSave, onCancel
     // Prepare data
     const data = {
       id: form.id || form.slug,
+      sku: form.sku || null,
       name: form.name,
       slug: form.slug,
       category_id: form.category_id,
@@ -254,6 +256,7 @@ export default function ProductForm({ product, categories = [], onSave, onCancel
             </h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <FormField label="Nombre" name="name" value={form.name} onChange={setField} error={errors.name} required />
+              <FormField label="SKU (Manual)" name="sku" value={form.sku} onChange={setField} placeholder="ej: GS-ACC-001" />
               <FormField
                 label="Slug"
                 name="slug"

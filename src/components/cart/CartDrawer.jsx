@@ -2,12 +2,27 @@ import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import { useStore } from '../../context/StoreContext';
-import { formatPrice } from '../../utils';
+import { formatPrice, getOptimizedImage } from '../../utils';
+import { getAllProducts } from '../../services/api';
 
 export default function CartDrawer({ isOpen, onClose }) {
   const { cart, removeFromCart, updateCartQuantity, getCartTotal } = useStore();
+  const [recommendations, setRecommendations] = React.useState([]);
   const navigate = useNavigate();
   const total = getCartTotal();
+
+  React.useEffect(() => {
+    if (isOpen) {
+      getAllProducts().then(prods => {
+        // Pick 3 random products that are not in the cart
+        const cartIds = cart.map(i => i.id);
+        const filtered = prods.filter(p => !cartIds.includes(p.id))
+                              .sort(() => Math.random() - 0.5)
+                              .slice(0, 3);
+        setRecommendations(filtered);
+      });
+    }
+  }, [isOpen, cart]);
 
   const handleCheckout = () => {
     onClose();
@@ -72,30 +87,31 @@ export default function CartDrawer({ isOpen, onClose }) {
                   {cart.map((item) => (
                     <motion.div 
                       layout
-                      initial={{ opacity: 0, y: 10 }}
-                      animate={{ opacity: 1, y: 0 }}
+                      initial={{ opacity: 0, scale: 0.95 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      exit={{ opacity: 0, scale: 0.95 }}
                       key={`${item.id}-${item.variant}`} 
-                      className="flex gap-4 group"
+                      className="flex gap-4 group bg-beige-soft/20 p-3 rounded-[1.5rem] border border-transparent hover:border-beige-strong/30 hover:bg-white transition-all"
                     >
-                      <div className="size-24 rounded-2xl bg-beige-light border border-border-light overflow-hidden p-2 flex-shrink-0 cursor-pointer" onClick={() => { onClose(); navigate(`/producto/${item.id}`); }}>
-                        <img src={item.images?.[0] || ''} className="w-full h-full object-contain mix-blend-multiply group-hover:scale-110 transition-transform duration-500" alt="" />
+                      <div className="size-20 rounded-xl bg-white border border-border-light overflow-hidden p-2 flex-shrink-0 cursor-pointer" onClick={() => { onClose(); navigate(`/producto/${item.id}`); }}>
+                        <img src={getOptimizedImage(item.images?.[0] || '', 200)} className="w-full h-full object-contain mix-blend-multiply group-hover:scale-110 transition-transform duration-500" alt="" />
                       </div>
                       <div className="flex-1 min-w-0">
                         <div className="flex justify-between items-start gap-2">
-                          <h4 className="text-sm font-bold text-text-main leading-tight truncate group-hover:text-primary transition-colors cursor-pointer" onClick={() => { onClose(); navigate(`/producto/${item.id}`); }}>
+                          <h4 className="text-xs font-bold text-text-main leading-tight truncate px-1 group-hover:text-primary transition-colors cursor-pointer" onClick={() => { onClose(); navigate(`/producto/${item.id}`); }}>
                             {item.name}
                           </h4>
                           <button 
                             onClick={() => removeFromCart(item.id, item.variant)}
-                            className="text-text-muted/40 hover:text-red-500 transition-colors"
+                            className="size-6 rounded-full hover:bg-red-50 text-text-muted/40 hover:text-red-500 transition-all flex items-center justify-center"
                           >
                             <span className="material-symbols-outlined text-sm">close</span>
                           </button>
                         </div>
-                        {item.variant && <p className="text-[10px] uppercase tracking-widest text-primary font-bold mt-1">{item.variant}</p>}
+                        {item.variant && <p className="text-[9px] uppercase tracking-widest text-primary font-black mt-1 px-1">{item.variant}</p>}
                         
-                        <div className="flex items-center justify-between mt-4">
-                          <div className="flex items-center border border-border-default rounded-lg bg-white overflow-hidden">
+                        <div className="flex items-center justify-between mt-3 px-1">
+                          <div className="flex items-center border border-border-default rounded-full bg-white overflow-hidden scale-90 origin-left">
                             <button 
                               onClick={() => updateCartQuantity(item.id, item.qty - 1, item.variant)}
                               className="size-7 flex items-center justify-center text-text-muted hover:bg-beige-soft transition-colors"
@@ -110,11 +126,36 @@ export default function CartDrawer({ isOpen, onClose }) {
                               <span className="material-symbols-outlined text-xs">add</span>
                             </button>
                           </div>
-                          <span className="text-sm font-bold text-accent">{formatPrice(Number(item.price || 0) * Number(item.qty || 0))}</span>
+                          <span className="text-sm font-bold text-accent italic">{formatPrice(Number(item.price || 0) * Number(item.qty || 0))}</span>
                         </div>
                       </div>
                     </motion.div>
                   ))}
+
+                  {/* Recommendations (Cross-selling) */}
+                  {recommendations.length > 0 && (
+                    <div className="pt-8 border-t border-dashed border-border-light">
+                      <p className="text-[10px] font-bold text-text-muted uppercase tracking-[0.2em] mb-4">También te puede interesar</p>
+                      <div className="space-y-3">
+                        {recommendations.map(r => (
+                          <div 
+                            key={r.id} 
+                            onClick={() => { onClose(); navigate(`/producto/${r.slug}`); }}
+                            className="flex items-center gap-3 p-2 rounded-xl hover:bg-beige-soft/40 cursor-pointer group transition-all"
+                          >
+                            <div className="size-12 rounded-lg bg-white border border-border-light overflow-hidden p-1 flex-shrink-0">
+                              <img src={getOptimizedImage(r.images?.[0], 100)} className="w-full h-full object-contain mix-blend-multiply group-hover:scale-110 transition-transform" alt="" />
+                            </div>
+                            <div className="flex-1 min-w-0">
+                              <p className="text-[11px] font-bold text-text-main truncate">{r.name}</p>
+                              <p className="text-[10px] text-primary font-bold">{formatPrice(r.price)}</p>
+                            </div>
+                            <span className="material-symbols-outlined text-text-muted opacity-0 group-hover:opacity-100 transition-opacity text-sm">arrow_forward</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  )}
                 </div>
               )}
             </div>

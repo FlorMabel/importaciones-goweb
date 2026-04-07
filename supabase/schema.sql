@@ -26,6 +26,7 @@ CREATE TABLE products (
   rating DECIMAL(2,1) DEFAULT 0,
   reviews INT DEFAULT 0,
   stock INT DEFAULT 0,
+  sku TEXT,                -- Código de inventario manual
   is_new BOOLEAN DEFAULT false,
   is_on_sale BOOLEAN DEFAULT false,
   sale_percent INT,

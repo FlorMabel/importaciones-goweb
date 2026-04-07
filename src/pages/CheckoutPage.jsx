@@ -38,7 +38,17 @@ export default function CheckoutPage() {
   }, [cart, navigate]);
 
   if (loading) {
-    return <div className="flex items-center justify-center min-h-[60vh]"><div className="w-10 h-10 border-4 border-primary/30 border-t-primary rounded-full animate-spin"></div></div>;
+    return (
+      <div className="max-w-[1440px] mx-auto px-4 lg:px-20 py-24 animate-pulse">
+        <div className="flex flex-col gap-12">
+          <div className="h-20 w-1/3 bg-gray-100 rounded-3xl"></div>
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
+            <div className="lg:col-span-7 h-[600px] bg-gray-50 rounded-[3rem]"></div>
+            <div className="lg:col-span-5 h-[400px] bg-gray-50 rounded-[3rem]"></div>
+          </div>
+        </div>
+      </div>
+    );
   }
 
   if (cart.length === 0) {
@@ -232,13 +242,21 @@ export default function CheckoutPage() {
                 <div className="space-y-6 mb-10 max-h-[400px] overflow-y-auto custom-scrollbar pr-4">
                   {cart.map(item => (
                     <div key={`${item.id}__${item.variant || ''}`} className="flex items-center gap-5 group">
-                      <div className="size-16 rounded-[1.2rem] bg-beige-light border border-border-light overflow-hidden flex-shrink-0 p-2 group-hover:scale-105 transition-transform">
+                      <div className="size-16 rounded-[1.2rem] bg-beige-light border border-border-light overflow-hidden flex-shrink-0 p-2 group-hover:scale-105 transition-transform relative">
                         <img src={item.images?.[0] || ''} className="w-full h-full object-contain mix-blend-multiply" alt="" />
+                        {item.stock <= 0 && (
+                          <div className="absolute inset-0 bg-primary/10 flex items-center justify-center">
+                            <span className="bg-primary text-white text-[7px] font-black uppercase tracking-tighter px-1 rounded-sm">Pre-orden</span>
+                          </div>
+                        )}
                       </div>
                       <div className="flex-1 min-w-0">
                         <h4 className="text-xs font-bold text-text-main truncate group-hover:text-primary transition-colors">{item.name}</h4>
                         {item.variant && <p className="text-[9px] text-primary font-bold uppercase tracking-widest mt-0.5">{item.variant}</p>}
-                        <p className="text-[10px] text-text-muted mt-1">Cantidad de {item.qty}</p>
+                        <div className="flex items-center gap-2 mt-1">
+                          <p className="text-[10px] text-text-muted">Cantidad {item.qty}</p>
+                          {item.stock <= 0 && <span className="text-[9px] text-primary font-bold italic">• Ingreso programado</span>}
+                        </div>
                       </div>
                       <div className="text-right">
                         <p className="text-sm font-bold text-accent">{formatPrice(item.price * item.qty)}</p>
@@ -271,12 +289,24 @@ export default function CheckoutPage() {
                    </div>
                 </div>
 
-                <div className="mt-10 p-6 bg-beige-light rounded-[2rem] border border-border-light space-y-4">
+                <div className="mt-10 p-6 bg-beige-light rounded-[2rem] border border-border-light space-y-6">
                   <div className="flex items-start gap-4">
-                    <span className="material-symbols-outlined text-primary">verified_user</span>
-                    <p className="text-[10px] text-text-muted leading-relaxed font-medium">
-                      Tu pedido está protegido. Al confirmar, un personal shopper te guiará para finalizar el pago y coordinar la entrega.
-                    </p>
+                    <span className="material-symbols-outlined text-primary text-xl">verified_user</span>
+                    <div>
+                      <h4 className="text-[10px] font-bold text-accent uppercase tracking-widest mb-1">Pago 100% Seguro</h4>
+                      <p className="text-[10px] text-text-muted leading-relaxed font-medium">
+                        Tu información está encriptada. El pago se coordina directamente para tu total seguridad.
+                      </p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-4">
+                    <span className="material-symbols-outlined text-primary text-xl">support_agent</span>
+                    <div>
+                      <h4 className="text-[10px] font-bold text-accent uppercase tracking-widest mb-1">Asesoría 24/7</h4>
+                      <p className="text-[10px] text-text-muted leading-relaxed font-medium">
+                        Al confirmar, un personal shopper te contactará inmediatamente para guiarte en el proceso.
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>

@@ -6,6 +6,7 @@ import { formatPrice } from '../utils';
 import { useStore } from '../context/StoreContext';
 import { useToast } from '../context/ToastContext';
 import ProductCard from '../components/ProductCard';
+import SkeletonProduct from '../components/skeletons/SkeletonProduct';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const HERO_VIDEOS = [
@@ -25,22 +26,36 @@ export default function HomePage() {
   const { showToast } = useToast();
 
   useEffect(() => {
-    Promise.all([getCategories(), getDeals(), getNewArrivals(), getAllProducts()])
-      .then(([cats, d, na, all]) => {
+    const fetchData = async () => {
+      try {
+        const [cats, d, na, all] = await Promise.all([
+          getCategories(), 
+          getDeals(), 
+          getNewArrivals(), 
+          getAllProducts()
+        ]);
         setCategories(cats);
         setDeals(d);
         setNewArrivals(na);
         setAllProducts(all || []);
+      } catch (error) {
+        console.error("Error fetching home data:", error);
+      } finally {
         setLoading(false);
-      });
+      }
+    };
+    fetchData();
   }, []);
+
+  const preOrderProducts = allProducts.filter(p => p.stock <= 0).slice(0, 8);
 
   if (loading) {
     return (
-      <div className="flex items-center justify-center min-h-[60vh]">
-        <div className="flex flex-col items-center gap-4">
-          <div className="w-10 h-10 border-4 border-primary/30 border-t-primary rounded-full animate-spin"></div>
-          <p className="text-text-muted text-sm">Cargando...</p>
+      <div className="max-w-[1440px] mx-auto px-4 lg:px-20 py-12 md:py-24">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+          {Array.from({ length: 8 }).map((_, i) => (
+            <SkeletonProduct key={i} />
+          ))}
         </div>
       </div>
     );
@@ -139,8 +154,8 @@ export default function HomePage() {
             transition={{ duration: 2, repeat: Infinity }}
             className="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 hidden md:flex flex-col items-center gap-2 opacity-50"
           >
-            <span className="text-[10px] text-white uppercase tracking-[0.2em]">Scroll</span>
-            <div className="w-[1px] h-12 bg-gradient-to-b from-white to-transparent"></div>
+            <span className="text-[10px] text-white uppercase tracking-[0.4em] font-medium">Desliza</span>
+            <div className="w-[1px] h-14 bg-gradient-to-b from-white via-white/50 to-transparent"></div>
           </motion.div>
         </div>
       </section>
@@ -319,31 +334,58 @@ export default function HomePage() {
       </section>
 
       {/* Featured Products / Deals */}
-      <section className="py-12 px-6 md:px-10 lg:px-20 bg-white">
+      <section className="py-24 px-6 md:px-10 lg:px-20 bg-white">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-10">
-            <span className="text-primary font-bold tracking-[0.2em] text-xs uppercase mb-2 block">NUESTRA SELECCIÓN</span>
-            <h2 className="font-serif text-3xl md:text-4xl font-bold text-accent">Productos Destacados</h2>
+          <div className="text-center mb-16">
+            <span className="text-primary font-bold tracking-[0.3em] text-[10px] md:text-xs uppercase mb-3 block">LO MÁS DESEADO</span>
+            <h2 className="font-serif text-3xl md:text-6xl font-bold text-accent tracking-tighter">Ofertas Exclusivas</h2>
           </div>
           <div className="relative w-full overflow-hidden group py-4">
-            <div className="flex w-max animate-scroll group-hover:[animation-play-state:paused] gap-4 md:gap-6">
+            <div className="flex w-max animate-scroll group-hover:[animation-play-state:paused] gap-4 md:gap-8">
               {[...featuredProducts, ...featuredProducts].map((p, i) => (
-                <div key={`${p.id}-${i}`} className="w-[170px] md:w-[280px] shrink-0">
+                <div key={`${p.id}-${i}`} className="w-[180px] md:w-[320px] shrink-0">
                   <ProductCard product={p} index={0} />
                 </div>
               ))}
             </div>
           </div>
-          <div className="text-center mt-8">
-            <button
-              onClick={() => navigate('/ofertas')}
-              className="text-primary text-xs font-bold uppercase tracking-wider hover:text-primary-dark flex items-center gap-1 mx-auto"
-            >
-              Ver todas las ofertas <span className="material-symbols-outlined text-sm">arrow_forward</span>
-            </button>
-          </div>
         </div>
       </section>
+
+      {/* Pre-orders / Coming Soon Section */}
+      {preOrderProducts.length > 0 && (
+        <section className="py-24 px-6 md:px-10 lg:px-20 bg-accent-dark text-white overflow-hidden relative">
+          <div className="absolute top-0 right-0 w-1/3 h-full bg-primary/5 blur-[120px] rounded-full pointer-events-none"></div>
+          <div className="max-w-[1440px] mx-auto relative z-10">
+            <div className="flex flex-col md:flex-row justify-between items-end gap-6 mb-16">
+              <div className="max-w-2xl">
+                <span className="text-primary font-bold tracking-[0.3em] text-[10px] md:text-xs uppercase mb-4 block">Importaciones en Camino</span>
+                <h2 className="font-serif text-3xl md:text-6xl font-bold leading-none tracking-tighter mb-6 italic">Próximos Ingresos</h2>
+                <p className="text-white/50 font-light text-base md:text-lg leading-relaxed">
+                  Asegura tus piezas favoritas antes de que lleguen al país. Los productos en pre-orden tienen un precio especial de lanzamiento.
+                </p>
+              </div>
+              <button 
+                onClick={() => navigate('/categoria')}
+                className="bg-white/10 hover:bg-white text-white hover:text-accent font-bold px-8 py-4 rounded-full text-xs uppercase tracking-widest transition-all backdrop-blur-md border border-white/20"
+              >
+                Ver Todo el Tránsito
+              </button>
+            </div>
+
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-10">
+              {preOrderProducts.map((p) => (
+                <div key={p.id} className="relative group">
+                  <div className="absolute top-4 left-4 z-20">
+                    <span className="bg-primary px-3 py-1 rounded-full text-[9px] font-black uppercase tracking-widest text-white shadow-glow">Importación</span>
+                  </div>
+                  <ProductCard product={p} darkTheme={true} />
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
 
 

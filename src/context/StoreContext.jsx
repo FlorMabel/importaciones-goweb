@@ -179,6 +179,7 @@ export function StoreProvider({ children }) {
 
   const value = {
     cart: state.cart,
+    wishlist: state.wishlist,
     isCartDrawerOpen: state.isCartDrawerOpen,
     setCartDrawerOpen,
     addToCart,

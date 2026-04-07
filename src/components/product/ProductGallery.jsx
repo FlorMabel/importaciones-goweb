@@ -1,13 +1,28 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 export default function ProductGallery({ images = [], activeIndex = 0, onSelect, badge, isNew }) {
+  const [zoomPos, setZoomPos] = useState({ x: 0, y: 0 });
+  const [isZooming, setIsZooming] = useState(false);
+
   if (!images || images.length === 0) return null;
+
+  const handleMouseMove = (e) => {
+    const { left, top, width, height } = e.currentTarget.getBoundingClientRect();
+    const x = ((e.pageX - left) / width) * 100;
+    const y = ((e.pageY - window.scrollY - top) / height) * 100;
+    setZoomPos({ x, y });
+  };
 
   return (
     <div className="flex flex-col gap-6">
       {/* Main Image Viewport */}
-      <div className="relative aspect-[4/5] bg-beige-light rounded-2xl md:rounded-[2.5rem] overflow-hidden border border-border-light group cursor-zoom-in">
+      <div 
+        className="relative aspect-[4/5] bg-beige-light rounded-2xl md:rounded-[2.5rem] overflow-hidden border border-border-light group cursor-zoom-in"
+        onMouseMove={handleMouseMove}
+        onMouseEnter={() => setIsZooming(true)}
+        onMouseLeave={() => setIsZooming(false)}
+      >
         <AnimatePresence mode="wait">
           <motion.img
             key={activeIndex}
@@ -16,13 +31,14 @@ export default function ProductGallery({ images = [], activeIndex = 0, onSelect,
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.95 }}
             transition={{ duration: 0.6, ease: [0.43, 0.13, 0.23, 0.96] }}
-            className="w-full h-full object-contain mix-blend-multiply p-4 md:p-8"
+            className={`w-full h-full object-contain mix-blend-multiply p-4 md:p-8 transition-transform duration-200 ${isZooming ? 'scale-[2.5] md:scale-[3]' : 'scale-100'}`}
+            style={isZooming ? { transformOrigin: `${zoomPos.x}% ${zoomPos.y}%` } : {}}
             alt="Vista de producto"
           />
         </AnimatePresence>
 
         {/* Badges */}
-        <div className="absolute top-8 left-8 flex flex-col gap-3">
+        <div className="absolute top-8 left-8 flex flex-col gap-3 pointer-events-none">
           {badge && (
             <motion.span 
               initial={{ x: -20, opacity: 0 }}

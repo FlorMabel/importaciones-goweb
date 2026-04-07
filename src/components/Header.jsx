@@ -19,9 +19,10 @@ export default function Header() {
   const [searchResults, setSearchResults] = useState([]);
   const [categories, setCategories] = useState([]);
   
-  const { getCartCount, setCartDrawerOpen } = useStore();
+  const { getCartCount, setCartDrawerOpen, wishlist } = useStore();
   const navigate = useNavigate();
   const cartCount = getCartCount();
+  const wishlistCount = wishlist.length;
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 20);
@@ -83,13 +84,13 @@ export default function Header() {
 
       <header className={`glass-header sticky top-0 z-50 w-full border-b transition-all duration-500 ${isScrolled ? 'h-14 lg:h-16 scrolled border-gray-200/50' : 'h-16 lg:h-24 border-transparent'}`}>
         <div className="mx-auto max-w-[1440px] px-4 lg:px-10 h-16 lg:h-20 flex items-center justify-between">
-          <Link to="/" className="flex items-center gap-2 group">
+          <Link to="/" className="flex items-center gap-3 group">
             <img 
               src="https://res.cloudinary.com/dod8hhjoo/image/upload/v1774224726/goshopping/optimized/logo-768w.webp" 
-              alt="GO SHOPPING" 
-              className="h-10 lg:h-11 w-auto object-contain transition-transform duration-500 group-hover:scale-105"
+              alt="GO" 
+              className="h-10 lg:h-12 w-auto object-contain transition-transform duration-500 group-hover:scale-110 drop-shadow-md"
             />
-            <span className="text-text-main font-serif text-lg lg:text-xl font-bold tracking-tight">SHOPPING</span>
+            <span className="font-serif text-xl lg:text-2xl font-medium tracking-widest text-text-main group-hover:text-primary transition-colors">SHOPPING</span>
           </Link>
 
         <nav className="hidden lg:flex items-center gap-10">
@@ -126,30 +127,72 @@ export default function Header() {
         </nav>
 
         <div className="flex items-center gap-4 lg:gap-6">
-          <button onClick={() => setIsSearchOpen(true)} className="size-10 flex items-center justify-center text-text-main/70 hover:text-accent transition-all active:scale-90">
+          <motion.button 
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+            onClick={() => setIsSearchOpen(true)} 
+            className="size-10 flex items-center justify-center text-text-main/70 hover:text-accent transition-all"
+            aria-label="Buscar"
+          >
             <span className="material-symbols-outlined text-[24px]">search</span>
-          </button>
-          <button 
+          </motion.button>
+
+          <motion.button 
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+            onClick={() => navTo('/favoritos')}
+            className="hidden xs:flex size-10 items-center justify-center text-text-main/70 hover:text-accent transition-all relative"
+            aria-label="Favoritos"
+          >
+            <span className="material-symbols-outlined text-[24px]">favorite</span>
+            {wishlistCount > 0 && (
+              <motion.span 
+                initial={{ scale: 0 }}
+                animate={{ scale: 1 }}
+                className="absolute top-1 right-1 size-4 bg-primary text-white text-[9px] font-bold rounded-full flex items-center justify-center shadow-soft"
+              >
+                {wishlistCount}
+              </motion.span>
+            )}
+          </motion.button>
+
+          <motion.button 
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
             onClick={() => setCartDrawerOpen(true)}
-            className="size-10 flex items-center justify-center text-text-main/70 hover:text-accent transition-all relative active:scale-90"
+            className="size-10 flex items-center justify-center text-text-main/70 hover:text-accent transition-all relative"
+            aria-label="Carrito"
           >
             <span className="material-symbols-outlined text-[26px]">shopping_bag</span>
             {cartCount > 0 && (
-              <span className="absolute top-1 right-1 size-5 bg-primary text-white text-[10px] font-bold rounded-full flex items-center justify-center shadow-soft">
+              <motion.span 
+                key={cartCount}
+                initial={{ scale: 0.5, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                className="absolute top-1 right-1 size-5 bg-primary text-white text-[10px] font-bold rounded-full flex items-center justify-center shadow-soft"
+              >
                 {cartCount}
-              </span>
+              </motion.span>
             )}
-          </button>
+          </motion.button>
+
           <Link 
             to="/admin" 
-            className="hidden sm:flex items-center justify-center size-10 rounded-full hover:bg-background-soft group active:scale-90 transition-all"
+            className="hidden sm:flex items-center justify-center size-10 rounded-full hover:bg-background-soft group active:scale-95 transition-all text-text-main/70"
             title="Panel de Administración"
           >
-            <span className="material-symbols-outlined text-[24px] text-text-main/70 group-hover:rotate-12 transition-transform">admin_panel_settings</span>
+            <span className="material-symbols-outlined text-[24px] group-hover:rotate-12 transition-transform">admin_panel_settings</span>
           </Link>
-          <button onClick={() => setIsDrawerOpen(true)} className="lg:hidden size-10 flex items-center justify-center text-text-main/70 hover:text-accent transition-all active:scale-90">
+
+          <motion.button 
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+            onClick={() => setIsDrawerOpen(true)} 
+            className="lg:hidden size-10 flex items-center justify-center text-text-main/70 hover:text-accent transition-all"
+            aria-label="Menú"
+          >
             <span className="material-symbols-outlined text-[26px]">menu</span>
-          </button>
+          </motion.button>
         </div>
       </div>
 
@@ -184,6 +227,23 @@ export default function Header() {
               </div>
               
               <div className="mt-6 max-h-[60vh] overflow-y-auto custom-scrollbar -mx-2 px-2">
+                {searchQuery.length === 0 && (
+                  <div className="py-4">
+                    <p className="text-[10px] font-bold text-text-muted uppercase tracking-[0.2em] mb-4">Lo más buscado</p>
+                    <div className="flex flex-wrap gap-2">
+                      {['Anillos', 'Humidificadores', 'Esencias', 'Relojes', 'Cuadros'].map(term => (
+                        <button 
+                          key={term}
+                          onClick={() => { setSearchQuery(term); handleSearch(term); }}
+                          className="px-4 py-2 bg-beige-soft/50 rounded-full text-xs text-text-secondary hover:bg-primary hover:text-white transition-all font-medium"
+                        >
+                          {term}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+                )}
+                
                 {searchResults.length === 0 && searchQuery.length >= 2 && (
                   <div className="py-12 text-center">
                     <span className="material-symbols-outlined text-4xl text-text-muted/20 mb-2">search_off</span>
