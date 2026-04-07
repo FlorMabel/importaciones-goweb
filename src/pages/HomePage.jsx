@@ -105,12 +105,12 @@ export default function HomePage() {
                   </span>
                 </div>
 
-                <h1 className="text-white font-serif text-3xl md:text-7xl leading-[1.1] mb-4 md:mb-6">
+                <h1 className="text-white font-serif text-4xl md:text-8xl leading-[1] mb-6 md:mb-8 font-extrabold tracking-tighter">
                   Donde la exclusividad <br />
-                  <span className="text-primary italic">encuentra su lugar</span>
+                  <span className="text-primary italic font-light">encuentra su lugar</span>
                 </h1>
 
-                <p className="text-white/70 text-sm md:text-xl font-light mb-6 md:mb-10 max-w-xl leading-relaxed">
+                <p className="text-white/80 text-base md:text-2xl font-light mb-8 md:mb-12 max-w-2xl leading-relaxed tracking-tight">
                   Seleccionamos piezas únicas traídas de todo el mundo para aquellos que no se conforman con lo ordinario.
                 </p>
 
@@ -146,7 +146,7 @@ export default function HomePage() {
       </section>
 
     {/* Trust Badges - Horizontal scroll mobile, grid desktop */}
-    <section className="bg-beige-soft py-6 md:py-12 px-4 md:px-10 lg:px-20 relative z-30">
+    <section className="bg-white py-12 md:py-24 px-4 md:px-10 lg:px-20 relative z-30">
       <div className="max-w-6xl mx-auto">
         <div className="flex overflow-x-auto gap-3 md:grid md:grid-cols-3 md:gap-6 pb-2 md:pb-0 [&::-webkit-scrollbar]:hidden" style={{ scrollbarWidth: 'none' }}>
           {[
@@ -160,14 +160,14 @@ export default function HomePage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
-              className="group flex items-center gap-3 p-4 md:p-6 bg-white rounded-2xl md:rounded-3xl shadow-soft border border-border-light shrink-0 min-w-[240px] md:min-w-0"
+              className="group flex flex-col md:flex-row items-center md:items-start gap-4 md:gap-6 p-8 md:p-10 bg-beige-soft/30 rounded-[2.5rem] border border-border-light/40 shrink-0 min-w-[280px] md:min-w-0 transition-all duration-500 hover:bg-white hover:shadow-strong active:scale-95"
             >
-              <div className="size-10 md:size-12 rounded-xl md:rounded-2xl bg-beige-soft flex items-center justify-center text-primary shrink-0">
-                <span className="material-symbols-outlined text-xl md:text-2xl">{t.icon}</span>
+              <div className="size-14 md:size-16 rounded-2xl bg-white shadow-soft flex items-center justify-center text-primary shrink-0 group-hover:scale-110 transition-transform duration-500">
+                <span className="material-symbols-outlined text-2xl md:text-3xl">{t.icon}</span>
               </div>
-              <div className="flex flex-col text-left">
-                <h3 className="text-xs md:text-sm font-bold text-accent mb-0.5 md:mb-2 tracking-wide uppercase">{t.title}</h3>
-                <p className="text-[10px] md:text-xs text-text-muted leading-relaxed">{t.desc}</p>
+              <div className="flex flex-col text-center md:text-left">
+                <h3 className="text-sm md:text-base font-bold text-accent mb-2 tracking-tight uppercase tracking-widest">{t.title}</h3>
+                <p className="text-[11px] md:text-sm text-text-muted/80 leading-relaxed font-light">{t.desc}</p>
               </div>
             </motion.div>
           ))}
@@ -176,8 +176,8 @@ export default function HomePage() {
     </section>
 
       {/* Categories */}
-      <section className="py-8 md:py-12 px-4 md:px-10 lg:px-20 bg-background-soft">
-        <div className="max-w-7xl mx-auto">
+      <section className="py-16 md:py-24 px-4 md:px-10 lg:px-20 bg-background-soft">
+        <div className="max-w-[1440px] mx-auto">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -240,8 +240,8 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Category Rows Section (Color Palette: 60% Beige, 20% Gold, 20% Purple) */}
-      <section className="py-8 md:py-12 px-4 md:px-10 lg:px-20 bg-background-soft">
+      {/* Category Rows Section */}
+      <section className="py-12 md:py-20 px-4 md:px-10 lg:px-20 bg-background-soft">
         <div className="max-w-[1400px] mx-auto flex flex-col gap-6 md:gap-12">
           {productsByCategory.map((cat, idx) => {
             const colors = [

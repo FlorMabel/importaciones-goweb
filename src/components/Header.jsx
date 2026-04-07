@@ -83,70 +83,72 @@ export default function Header() {
 
       <header className={`glass-header sticky top-0 z-50 w-full border-b transition-all duration-500 ${isScrolled ? 'h-14 lg:h-16 scrolled border-gray-200/50' : 'h-16 lg:h-24 border-transparent'}`}>
         <div className="mx-auto max-w-[1440px] px-4 lg:px-10 h-16 lg:h-20 flex items-center justify-between">
-          <Link to="/" className="flex items-center gap-2">
+          <Link to="/" className="flex items-center gap-2 group">
             <img 
               src="https://res.cloudinary.com/dod8hhjoo/image/upload/v1774224726/goshopping/optimized/logo-768w.webp" 
               alt="GO SHOPPING" 
-              className="h-10 lg:h-12 w-auto object-contain"
+              className="h-10 lg:h-11 w-auto object-contain transition-transform duration-500 group-hover:scale-105"
             />
             <span className="text-text-main font-serif text-lg lg:text-xl font-bold tracking-tight">SHOPPING</span>
           </Link>
 
-        <nav className="hidden lg:flex items-center gap-8">
-          <Link to="/" className="text-text-main hover:text-accent transition-colors text-sm font-medium">Inicio</Link>
+        <nav className="hidden lg:flex items-center gap-10">
+          <Link to="/" className="text-text-main/80 hover:text-accent transition-colors text-sm font-semibold tracking-tight">Inicio</Link>
           <div className="relative group" id="mega-menu-trigger">
-            <span className="text-text-main hover:text-accent transition-colors text-sm font-medium cursor-pointer flex items-center gap-1">
-              Tienda <span className="material-symbols-outlined text-sm">expand_more</span>
+            <span className="text-text-main/80 hover:text-accent transition-colors text-sm font-semibold tracking-tight cursor-pointer flex items-center gap-1">
+              Tienda <span className="material-symbols-outlined text-[18px] opacity-40">expand_more</span>
             </span>
-            <div className="absolute top-full left-1/2 -translate-x-1/2 pt-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
-              <div className="bg-white rounded-2xl shadow-xl border border-gray-100 p-4 w-[380px] grid grid-cols-1 gap-1">
+            <div className="absolute top-full left-1/2 -translate-x-1/2 pt-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+              <div className="bg-white rounded-3xl shadow-strong border border-border-light p-4 w-[420px] grid grid-cols-1 gap-1">
                 {categories.map(c => (
                   <Link
                     key={c.id}
                     to={`/categoria/${c.slug}`}
-                    className="flex items-center gap-3 p-3 rounded-xl hover:bg-background-soft transition-colors group/item"
+                    className="flex items-center gap-4 p-4 rounded-2xl hover:bg-beige-soft/50 transition-all group/item"
                   >
-                    <span className="material-symbols-outlined text-lg" style={{ color: c.color }}>{c.icon}</span>
+                    <div className="size-10 rounded-full bg-beige-soft flex items-center justify-center text-primary group-hover/item:bg-white transition-colors">
+                      <span className="material-symbols-outlined text-[20px]" style={{ color: c.color }}>{c.icon}</span>
+                    </div>
                     <div>
                       <p className="text-sm font-bold text-text-main group-hover/item:text-accent transition-colors">{c.name}</p>
-                      <p className="text-[11px] text-text-muted line-clamp-1">{c.description}</p>
+                      <p className="text-[11px] text-text-muted/70 line-clamp-1">{c.description}</p>
                     </div>
                   </Link>
                 ))}
               </div>
             </div>
           </div>
-          <Link to="/novedades" className="text-text-main hover:text-accent transition-colors text-sm font-medium">Novedades</Link>
-          <Link to="/nosotros" className="text-text-main hover:text-accent transition-colors text-sm font-medium">
+          <Link to="/novedades" className="text-text-main/80 hover:text-accent transition-colors text-sm font-semibold tracking-tight">Novedades</Link>
+          <Link to="/nosotros" className="text-text-main/80 hover:text-accent transition-colors text-sm font-semibold tracking-tight">
             Nosotros
           </Link>
-          <Link to="/contacto" className="text-text-main hover:text-accent transition-colors text-sm font-medium">Contacto</Link>
+          <Link to="/contacto" className="text-text-main/80 hover:text-accent transition-colors text-sm font-semibold tracking-tight">Contacto</Link>
         </nav>
 
-        <div className="flex items-center gap-3 lg:gap-5">
-          <button onClick={() => setIsSearchOpen(true)} className="text-text-main hover:text-accent transition-colors">
-            <span className="material-symbols-outlined text-[22px]">search</span>
+        <div className="flex items-center gap-4 lg:gap-6">
+          <button onClick={() => setIsSearchOpen(true)} className="size-10 flex items-center justify-center text-text-main/70 hover:text-accent transition-all active:scale-90">
+            <span className="material-symbols-outlined text-[24px]">search</span>
           </button>
           <button 
             onClick={() => setCartDrawerOpen(true)}
-            className="text-text-main hover:text-accent transition-colors relative"
+            className="size-10 flex items-center justify-center text-text-main/70 hover:text-accent transition-all relative active:scale-90"
           >
-            <span className="material-symbols-outlined text-[24px]">shopping_bag</span>
+            <span className="material-symbols-outlined text-[26px]">shopping_bag</span>
             {cartCount > 0 && (
-              <span className="absolute -top-1 -right-2 size-4.5 bg-primary text-white text-[9px] font-bold rounded-full flex items-center justify-center">
+              <span className="absolute top-1 right-1 size-5 bg-primary text-white text-[10px] font-bold rounded-full flex items-center justify-center shadow-soft">
                 {cartCount}
               </span>
             )}
           </button>
           <Link 
             to="/admin" 
-            className="text-text-main hover:text-accent transition-all duration-300 flex items-center justify-center size-10 rounded-full hover:bg-background-soft group"
+            className="hidden sm:flex items-center justify-center size-10 rounded-full hover:bg-background-soft group active:scale-90 transition-all"
             title="Panel de Administración"
           >
-            <span className="material-symbols-outlined text-[22px] group-hover:rotate-12 transition-transform">admin_panel_settings</span>
+            <span className="material-symbols-outlined text-[24px] text-text-main/70 group-hover:rotate-12 transition-transform">admin_panel_settings</span>
           </Link>
-          <button onClick={() => setIsDrawerOpen(true)} className="lg:hidden text-text-main hover:text-accent transition-colors">
-            <span className="material-symbols-outlined text-[24px]">menu</span>
+          <button onClick={() => setIsDrawerOpen(true)} className="lg:hidden size-10 flex items-center justify-center text-text-main/70 hover:text-accent transition-all active:scale-90">
+            <span className="material-symbols-outlined text-[26px]">menu</span>
           </button>
         </div>
       </div>

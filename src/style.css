@@ -3,20 +3,42 @@
 @tailwind utilities;
 
 @layer base {
-  html { scroll-behavior: smooth; }
-  body { -webkit-tap-highlight-color: transparent; }
+  html { 
+    scroll-behavior: smooth; 
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+  body { 
+    @apply bg-white text-text-main font-sans lg:font-display;
+    -webkit-tap-highlight-color: transparent; 
+  }
+  
+  /* Apple Tactile Feedback Global */
+  button:active, 
+  a:active, 
+  .clickable:active {
+    transform: scale(0.97);
+    transition: transform 0.1s ease-out;
+  }
+  
+  button, 
+  a, 
+  .clickable {
+    transition: transform 0.2s ease-out, background-color 0.2s ease, opacity 0.2s ease, box-shadow 0.2s ease;
+  }
 }
 
 @layer components {
-  /* Glass Header */
+  /* Glass Header (Apple-tier blur) */
   .glass-header {
-    background: rgba(255, 255, 255, 0.7);
-    backdrop-filter: blur(20px) saturate(180%);
-    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    background: rgba(255, 255, 255, 0.65);
+    backdrop-filter: saturate(180%) blur(25px);
+    -webkit-backdrop-filter: saturate(180%) blur(25px);
   }
   .glass-header.scrolled {
-    background: rgba(255, 255, 255, 0.9);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.03);
+    background: rgba(255, 255, 255, 0.85);
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.05); /* Ultra subtle border instead of shadow */
   }
 
   /* Product Card */

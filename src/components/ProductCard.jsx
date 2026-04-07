@@ -34,7 +34,7 @@ export default function ProductCard({ product, index }) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ delay: index * 0.05 }}
-      className="group relative bg-white rounded-xl md:rounded-[2rem] border border-border-light overflow-hidden hover:shadow-strong transition-all duration-700 h-full flex flex-col"
+      className="group relative bg-white rounded-[2rem] md:rounded-[2.5rem] border border-border-light/60 overflow-hidden hover:shadow-strong transition-all duration-700 h-full flex flex-col active:scale-[0.98]"
     >
       {/* Image Section */}
       <div 
@@ -64,19 +64,19 @@ export default function ProductCard({ product, index }) {
         {/* Quick Add Button */}
         <button
           onClick={handleAddToCart}
-          className="absolute bottom-3 right-3 md:bottom-6 md:right-6 size-10 md:size-12 rounded-full bg-white shadow-medium flex items-center justify-center text-accent opacity-100 md:opacity-0 md:group-hover:opacity-100 translate-y-0 md:translate-y-4 md:group-hover:translate-y-0 transition-all duration-500 hover:bg-primary hover:text-white z-10"
+          className="absolute bottom-4 right-4 md:bottom-6 md:right-6 size-12 md:size-14 rounded-full bg-white/90 backdrop-blur-md shadow-strong flex items-center justify-center text-accent opacity-100 md:opacity-0 md:group-hover:opacity-100 translate-y-0 md:translate-y-4 md:group-hover:translate-y-0 transition-all duration-500 hover:bg-primary hover:text-white active:scale-90 z-10"
           aria-label="Añadir rápido"
         >
-          <span className="material-symbols-outlined text-lg md:text-xl italic">add_shopping_cart</span>
+          <span className="material-symbols-outlined text-xl md:text-2xl italic">add_shopping_cart</span>
         </button>
       </div>
 
       {/* Info Section */}
       <div className="p-3 md:p-6 flex flex-col flex-1">
         <div className="flex-1">
-          <p className="text-[10px] uppercase tracking-[0.3em] text-text-muted mb-2 font-bold">{product.category}</p>
+          <p className="text-[10px] uppercase tracking-[0.2em] text-text-muted/60 mb-2 font-semibold italic">{product.category}</p>
           <h3 
-            className="text-sm md:text-base font-bold text-text-main group-hover:text-primary transition-colors cursor-pointer mb-2 line-clamp-1 md:line-clamp-2 leading-snug"
+            className="text-sm md:text-lg font-bold text-text-main group-hover:text-primary transition-colors cursor-pointer mb-3 line-clamp-1 md:line-clamp-2 leading-tight tracking-tight"
             onClick={() => navigate(`/producto/${product.slug}`)}
           >
             {product.name}
@@ -101,9 +101,9 @@ export default function ProductCard({ product, index }) {
         {/* Pricing */}
         <div className="flex items-center justify-between mt-auto pt-4 border-t border-border-light/50">
           <div className="flex items-baseline gap-2">
-            <span className="text-base md:text-lg font-bold text-accent">{formatPrice(displayPrice)}</span>
+            <span className="text-lg md:text-2xl font-bold text-accent tracking-tighter">{formatPrice(displayPrice)}</span>
             {displayOldPrice && (
-              <span className="text-xs text-text-muted line-through opacity-60">
+              <span className="text-xs md:text-sm text-text-muted/40 line-through font-light">
                 {formatPrice(displayOldPrice)}
               </span>
             )}

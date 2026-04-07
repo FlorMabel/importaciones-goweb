@@ -88,10 +88,10 @@ export default function TermsPage() {
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
                     viewport={{ once: true }}
-                    className="border-l-2 border-primary/20 pl-6 py-2"
+                    className="border-l-4 border-primary/10 pl-8 py-4 transition-all hover:border-primary duration-500"
                   >
-                    <h2 className="font-serif text-xl font-bold text-accent mb-3 uppercase tracking-wide">{s.title}</h2>
-                    <p className="text-sm line-height-relaxed">{s.content}</p>
+                    <h2 className="font-serif text-2xl font-bold text-accent mb-4 uppercase tracking-tighter leading-none italic">{s.title}</h2>
+                    <p className="text-base md:text-lg line-height-loose font-light text-text-secondary/90">{s.content}</p>
                   </motion.div>
                 ))}
               </div>

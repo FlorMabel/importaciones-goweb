@@ -31,16 +31,16 @@ export default function Footer() {
           {/* Brand */}
           {/* Brand */}
           <div className="md:col-span-1">
-            <div className="flex items-center gap-3 mb-6">
+            <div className="flex items-center gap-3 mb-8">
               <img 
                 src="https://res.cloudinary.com/dod8hhjoo/image/upload/v1774224725/goshopping/optimized/logo-320w.webp" 
                 alt="GO SHOPPING" 
-                className="h-10 w-auto object-contain brightness-0 invert"
+                className="h-11 w-auto object-contain brightness-0 invert opacity-90 hover:opacity-100 transition-opacity"
               />
-              <span className="font-serif text-xl font-bold text-white tracking-widest">SHOPPING</span>
+              <span className="font-serif text-2xl font-bold text-white tracking-[0.2em] leading-none">SHOPPING</span>
             </div>
-            <p className="text-white/40 text-sm leading-relaxed mb-8 font-light italic">
-              "Importando piezas que transforman lo cotidiano en algo extraordinario."
+            <p className="text-white/50 text-sm leading-relaxed mb-10 font-light italic max-w-xs">
+              "Importando piezas exclusivas que transforman lo cotidiano en una experiencia extraordinaria."
             </p>
             <div className="flex gap-4">
               {['facebook', 'instagram', 'tiktok'].map(social => (
@@ -107,15 +107,17 @@ export default function Footer() {
       </div>
 
       {/* Copyright */}
-      <div className="border-t border-white/10 py-6">
-        <div className="max-w-[1440px] mx-auto px-6 lg:px-10 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-white/40">
-          <p>© {new Date().getFullYear()} GO SHOPPING. Todos los derechos reservados. RUC: 20601880904</p>
-          <div className="flex items-center gap-6">
-            <Link to="/terminos-y-condiciones#terminos" className="hover:text-white/70 transition-colors">Términos</Link>
-            <Link to="/terminos-y-condiciones#clausulas" className="hover:text-white/70 transition-colors">Cláusulas</Link>
-            <Link to="/terminos-y-condiciones#privacidad" className="hover:text-white/70 transition-colors">Privacidad</Link>
-            <Link to="/terminos-y-condiciones#devoluciones" className="hover:text-white/70 transition-colors">Devoluciones</Link>
-
+      <div className="border-t border-white/5 py-12">
+        <div className="max-w-[1440px] mx-auto px-6 lg:px-10 flex flex-col md:flex-row justify-between items-center gap-8">
+          <div className="text-center md:text-left">
+            <p className="text-[11px] text-white/30 uppercase tracking-[0.3em] font-medium">&copy; {new Date().getFullYear()} GO SHOPPING Store. Todos los derechos reservados.</p>
+            <p className="text-[10px] text-white/20 mt-1 uppercase tracking-widest">Importaciones Puno S.R.L. | RUC 20601880904</p>
+          </div>
+          <div className="flex flex-wrap justify-center items-center gap-x-8 gap-y-4">
+            <Link to="/terminos-y-condiciones#terminos" className="text-[11px] text-white/40 hover:text-primary transition-all uppercase tracking-widest font-semibold">Términos</Link>
+            <Link to="/terminos-y-condiciones#clausulas" className="text-[11px] text-white/40 hover:text-primary transition-all uppercase tracking-widest font-semibold">Cláusulas</Link>
+            <Link to="/terminos-y-condiciones#privacidad" className="text-[11px] text-white/40 hover:text-primary transition-all uppercase tracking-widest font-semibold">Privacidad</Link>
+            <Link to="/terminos-y-condiciones#devoluciones" className="text-[11px] text-white/40 hover:text-primary transition-all uppercase tracking-widest font-semibold">Devoluciones</Link>
           </div>
         </div>
       </div>

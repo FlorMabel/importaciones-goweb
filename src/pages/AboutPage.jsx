@@ -10,8 +10,8 @@ export default function AboutPage() {
         <title>Nosotros | GO SHOPPING</title>
         <meta name="description" content="Conoce la historia y valores de GO SHOPPING, tu tienda premium de productos importados." />
       </Helmet>
-      <section className="py-20 px-4 md:px-10 lg:px-20 bg-white overflow-hidden">
-        <div className="max-w-5xl mx-auto">
+      <section className="py-24 md:py-32 px-4 md:px-10 lg:px-20 bg-white overflow-hidden">
+        <div className="max-w-[1440px] mx-auto">
           {/* Main Info */}
           <div className="text-center mb-20 relative">
             <div className="absolute -top-10 left-1/2 -translate-x-1/2 text-[120px] font-serif font-black text-accent/5 select-none pointer-events-none">
@@ -127,10 +127,10 @@ export default function AboutPage() {
             </div>
           </div>
           
-          <div className="mt-20 pt-16 border-t border-border-light text-center">
-            <span className="text-[10px] font-bold text-primary tracking-[0.4em] uppercase mb-4 block">Marco Legal</span>
-            <h2 className="font-serif text-2xl md:text-3xl font-bold text-accent mb-6 italic">Términos, Condiciones y Políticas</h2>
-            <p className="text-sm text-text-muted max-w-2xl mx-auto mb-10 leading-relaxed font-light">
+          <div className="mt-32 pt-24 border-t border-border-light text-center">
+            <span className="text-[12px] font-bold text-primary tracking-[0.5em] uppercase mb-6 block">Marco Legal</span>
+            <h2 className="font-serif text-3xl md:text-5xl font-bold text-accent mb-10 italic tracking-tighter">Términos, Condiciones y Políticas</h2>
+            <p className="text-base md:text-lg text-text-muted max-w-3xl mx-auto mb-16 leading-relaxed font-light">
               Cumplimos con toda la normativa legal vigente de la República del Perú. Importaciones Puno S.R.L. (RUC 20601880904) garantiza la transparencia y seguridad en cada una de sus transacciones.
             </p>
             <div className="flex flex-wrap items-center justify-center gap-6">
