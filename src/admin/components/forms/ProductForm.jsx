@@ -6,6 +6,7 @@ import { slugify } from '../../utils/slugify.js';
 import { validateForm, required, minLength, minValue, isSlug } from '../../utils/validators.js';
 import { formatPrice } from '../../utils/formatters.js';
 import { useMediaUpload } from '../../hooks/useMediaUpload.js';
+import { useToast } from '../../../context/ToastContext.jsx';
 import { WHOLESALE_TIERS } from '../../../config/productSchema.js';
 
 const EMPTY_PRODUCT = {
@@ -33,6 +34,7 @@ const EMPTY_PRODUCT = {
   tags: [],
   wholesale_tiers: [],
   wholesale_enabled: false,
+  variants: [],
 };
 
 const VALIDATION_RULES = {
@@ -47,6 +49,7 @@ export default function ProductForm({ product, categories = [], onSave, onCancel
   const [form, setForm] = useState(EMPTY_PRODUCT);
   const [errors, setErrors] = useState({});
   const [autoSlug, setAutoSlug] = useState(true);
+  const { showToast } = useToast();
   const { upload, uploading, progress } = useMediaUpload();
 
   // Initialize form
@@ -79,6 +82,7 @@ export default function ProductForm({ product, categories = [], onSave, onCancel
         images, specs, colors, fragrances, tags,
         wholesale_tiers,
         wholesale_enabled: wholesale_tiers.length > 0,
+        variants: (product.product_variants || []).sort((a,b) => a.name.localeCompare(b.name)),
       });
       setAutoSlug(false);
     } else {
@@ -88,11 +92,17 @@ export default function ProductForm({ product, categories = [], onSave, onCancel
   }, [product]);
 
   const setField = (value, name) => {
+    let finalValue = value;
+    // Auto-correct slug for lowercase, numbers and 'ñ'
+    if (name === 'slug') {
+      finalValue = value.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-ñ]/g, '');
+    }
+
     setForm(prev => {
-      const next = { ...prev, [name]: value };
+      const next = { ...prev, [name]: finalValue };
       // Auto-generate slug from name
       if (name === 'name' && autoSlug) {
-        next.slug = slugify(value);
+        next.slug = slugify(finalValue);
         if (!isEditing) next.id = next.slug;
       }
       return next;
@@ -107,7 +117,11 @@ export default function ProductForm({ product, categories = [], onSave, onCancel
     e.preventDefault();
     const { valid, errors: newErrors } = validateForm(form, VALIDATION_RULES);
     setErrors(newErrors);
-    if (!valid) return;
+    
+    if (!valid) {
+      showToast('Por favor, revisa los campos marcados en rojo', 'error');
+      return;
+    }
 
     // Prepare data
     const data = {
@@ -136,6 +150,7 @@ export default function ProductForm({ product, categories = [], onSave, onCancel
       wholesale_tiers: form.wholesale_enabled
         ? form.wholesale_tiers.filter(t => t.label && (t.discount_percent || t.fixed_price))
         : [],
+      variants: form.variants.filter(v => v.name && v.price),
     };
 
     onSave?.(data);
@@ -215,6 +230,22 @@ export default function ProductForm({ product, categories = [], onSave, onCancel
   const removeWholesaleTier = (idx) => setForm(p => ({
     ...p,
     wholesale_tiers: p.wholesale_tiers.filter((_, i) => i !== idx),
+  }));
+
+  // Variant management
+  const addVariant = () => setForm(p => ({
+    ...p,
+    variants: [...p.variants, { name: '', price: p.price, stock: p.stock }],
+  }));
+  const updateVariant = (idx, field, val) => {
+    setForm(p => ({
+      ...p,
+      variants: p.variants.map((v, i) => i === idx ? { ...v, [field]: val } : v),
+    }));
+  };
+  const removeVariant = (idx) => setForm(p => ({
+    ...p,
+    variants: p.variants.filter((_, i) => i !== idx),
   }));
 
   // Live preview price
@@ -523,6 +554,66 @@ export default function ProductForm({ product, categories = [], onSave, onCancel
             </h3>
             <FormField label="Stock" name="stock" type="number" value={form.stock} onChange={setField} min={0} />
             <FormField label="Badge" name="badge" value={form.badge} onChange={setField} placeholder="ej: NUEVO, OFERTA, TOP VENTAS" />
+          </div>
+
+          {/* Variants (Tallas y Precios) */}
+          <div className="bg-white rounded-2xl border border-border-light p-5 space-y-4 font-display">
+            <div className="flex items-center justify-between">
+              <h3 className="text-sm font-bold text-text-main flex items-center gap-2">
+                <span className="material-symbols-outlined text-lg text-accent">straighten</span>
+                Tallas y Precios
+              </h3>
+              <button type="button" onClick={addVariant} className="text-xs font-bold text-primary hover:underline">
+                + Agregar Talla
+              </button>
+            </div>
+            
+            {form.variants.length === 0 ? (
+              <p className="text-xs text-text-muted italic bg-background-soft p-3 rounded-xl border border-dashed border-border-default">
+                Este producto no tiene tallas específicas. Usará el precio general.
+              </p>
+            ) : (
+              <div className="space-y-3">
+                {form.variants.map((variant, idx) => (
+                  <div key={idx} className="bg-background-soft rounded-xl p-3 border border-border-light relative group">
+                    <button 
+                      type="button" 
+                      onClick={() => removeVariant(idx)}
+                      className="absolute -top-2 -right-2 w-6 h-6 bg-white border border-border-default rounded-full flex items-center justify-center text-text-muted hover:text-error shadow-sm opacity-0 group-hover:opacity-100 transition-opacity"
+                    >
+                      <span className="material-symbols-outlined text-sm">close</span>
+                    </button>
+                    
+                    <div className="grid grid-cols-2 gap-3">
+                      <div>
+                        <label className="text-[10px] uppercase font-bold text-text-muted mb-1 block">Talla</label>
+                        <input
+                          type="text"
+                          value={variant.name}
+                          onChange={e => updateVariant(idx, 'name', e.target.value)}
+                          placeholder="ej: S, M, L"
+                          className="w-full rounded-lg border border-border-default px-2.5 py-1.5 text-xs focus:border-primary outline-none"
+                        />
+                      </div>
+                      <div>
+                        <label className="text-[10px] uppercase font-bold text-text-muted mb-1 block">Precio (S/)</label>
+                        <input
+                          type="number"
+                          value={variant.price}
+                          onChange={e => updateVariant(idx, 'price', e.target.value)}
+                          step="0.1"
+                          className="w-full rounded-lg border border-border-default px-2.5 py-1.5 text-xs focus:border-primary outline-none"
+                        />
+                      </div>
+                    </div>
+                    <div className="mt-2 text-[10px] text-text-muted flex items-center gap-1">
+                      <span className="material-symbols-outlined text-[12px]">inventory_2</span>
+                      ID Talla: {variant.id || 'Nuevo'}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            )}
           </div>
 
           {/* Toggles */}

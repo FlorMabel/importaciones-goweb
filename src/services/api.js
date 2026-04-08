@@ -55,7 +55,7 @@ export async function getAllProducts() {
 export async function getProductBySlug(slug) {
   const { data, error } = await supabase
     .from('products')
-    .select('*, product_images(*), product_specs(*), product_colors(*), product_fragrances(*), product_wholesale_tiers(*)')
+    .select('*, product_images(*), product_specs(*), product_colors(*), product_fragrances(*), product_wholesale_tiers(*), product_variants(*)')
     .or(`id.eq.${slug},slug.eq.${slug}`)
     .single();
   if (error && error.code !== 'PGRST116') throw error;
@@ -146,7 +146,7 @@ function formatProduct(p) {
     
   return {
     ...p,
-    variants: p.variants || [],
+    variants: (p.product_variants || []).sort((a,b) => a.name.localeCompare(b.name)),
     category: p.category_id,
     oldPrice: p.old_price,
     isNew: p.is_new,

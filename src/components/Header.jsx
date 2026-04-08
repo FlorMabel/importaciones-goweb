@@ -124,6 +124,7 @@ export default function Header() {
             Nosotros
           </Link>
           <Link to="/contacto" className="text-text-main/80 hover:text-accent transition-colors text-sm font-semibold tracking-tight">Contacto</Link>
+          <Link to="/seguimiento" className="text-text-main/80 hover:text-accent transition-colors text-sm font-semibold tracking-tight">Seguimiento</Link>
         </nav>
 
         <div className="flex items-center gap-4 lg:gap-6">
@@ -308,6 +309,7 @@ export default function Header() {
                 <a onClick={() => navTo('/nosotros')} className="block py-3 px-4 rounded-xl text-sm font-medium hover:bg-background-soft cursor-pointer">Nosotros</a>
 
                 <a onClick={() => navTo('/contacto')} className="block py-3 px-4 rounded-xl text-sm font-medium hover:bg-background-soft cursor-pointer">Contacto</a>
+                <a onClick={() => navTo('/seguimiento')} className="block py-3 px-4 rounded-xl text-sm font-medium hover:bg-background-soft cursor-pointer">Seguimiento de Pedido</a>
               </div>
               <div className="mt-6">
                 <a href="https://wa.me/51962810439" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 bg-green-600 hover:bg-green-700 text-white text-sm font-bold py-3 rounded-full transition-colors w-full">

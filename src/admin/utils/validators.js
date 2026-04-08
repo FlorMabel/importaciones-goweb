@@ -18,7 +18,7 @@ export const minValue = (min) => (v) =>
   v !== '' && Number(v) < min ? `Mínimo ${min}` : null;
 
 export const isSlug = (v) =>
-  v && !/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(v) ? 'Solo minúsculas, números y guiones' : null;
+  v && !/^[a-z0-9ñ]+(?:-[a-z0-9ñ]+)*$/.test(v) ? 'Solo minúsculas, números y guiones' : null;
 
 export const isUrl = (v) => {
   if (!v) return null;

@@ -76,6 +76,7 @@ export default function Footer() {
                 {/* Sub-enlaces eliminados según solicitud */}
               </li>
               <li><Link to="/contacto" className="hover:text-primary transition-colors">Contacto</Link></li>
+              <li><Link to="/seguimiento" className="hover:text-primary transition-colors">Seguimiento de Pedido</Link></li>
             </ul>
           </div>
 

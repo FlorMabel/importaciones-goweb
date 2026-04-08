@@ -117,6 +117,7 @@ export default function CheckoutPage() {
         + ` *Productos:*\n${orderLines}\n\n`
         + ` Envío: ${shipping === 0 ? 'GRATIS' : `S/ ${shipping.toFixed(2)}`}\n`
         + ` *TOTAL: S/ ${grandTotal.toFixed(2)}*\n\n`
+        + `🚚 *Sigue tu pedido aquí:* ${window.location.origin}/seguimiento?id=${orderData.id}&phone=${phone}\n\n`
         + `_Adjunto mi voucher de pago_ `;
 
       window.open(`https://wa.me/51962810439?text=${encodeURIComponent(msg)}`, '_blank');
@@ -138,175 +139,211 @@ export default function CheckoutPage() {
   return (
     <>
       <Helmet><title>Checkout | GO SHOPPING</title></Helmet>
-      <div className="bg-beige-soft min-h-screen">
-        <div className="max-w-[1440px] mx-auto px-4 md:px-6 lg:px-10 py-8 md:py-12 lg:py-20">
+      <div className="bg-background-soft min-h-screen font-display antialiased text-text-main">
+        <div className="max-w-[1200px] mx-auto px-5 md:px-10 py-10 md:py-16">
           <div className="mb-12">
-            <span className="text-primary font-bold tracking-[0.3em] text-[10px] uppercase mb-1 block">Pasarela de</span>
-            <h1 className="text-3xl md:text-5xl font-serif font-bold text-accent italic">Finalizar Pedido</h1>
+            <span className="text-muted font-bold tracking-[0.2em] text-[10px] uppercase mb-1 block">Pasarela de</span>
+            <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-accent italic">Finalizar Pedido</h1>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
             {/* Left: Form */}
-            <div className="lg:col-span-7">
-              <form onSubmit={handleSubmit} className="space-y-8">
-                {/* Shipping Info Card */}
-                <div className="bg-white rounded-2xl md:rounded-[2.5rem] p-5 md:p-8 lg:p-10 shadow-soft border border-border-light relative overflow-hidden">
-                  <div className="flex items-center gap-4 mb-8">
-                    <div className="size-10 rounded-2xl bg-accent/5 flex items-center justify-center text-accent">
-                      <span className="material-symbols-outlined">local_shipping</span>
+            <div className="lg:col-span-7 space-y-8">
+              <form onSubmit={handleSubmit} className="space-y-10">
+                <div className="bg-surface-light rounded-[2.5rem] p-8 md:p-10 border border-border-light shadow-soft transition-shadow hover:shadow-medium">
+                  <div className="flex items-center gap-4 mb-10">
+                    <div className="w-12 h-12 rounded-2xl bg-background-soft flex items-center justify-center text-accent">
+                      <span className="material-symbols-outlined text-2xl">local_shipping</span>
                     </div>
-                    <h3 className="text-xl font-bold text-accent">Detalles del Destinatario</h3>
+                    <div>
+                      <h3 className="text-xl font-bold text-accent tracking-tight">Detalles de Envío</h3>
+                      <p className="text-sm text-text-muted">¿Dónde entregaremos tu pedido?</p>
+                    </div>
                   </div>
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div className="md:col-span-2">
-                       <label className="block text-[10px] uppercase tracking-widest font-bold text-text-muted mb-2 ml-1">Nombre de Cliente *</label>
-                       <input type="text" required value={form.name} onChange={onChange('name')} className="w-full bg-beige-light border-border-light rounded-xl md:rounded-2xl px-4 py-3 md:py-4 text-sm focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all placeholder:text-text-muted/40" placeholder="Ej: Julian Casablancas" />
+                       <label className="block text-[10px] uppercase tracking-widest font-bold text-text-muted mb-2 ml-1">Nombre completo</label>
+                       <input type="text" required value={form.name} onChange={onChange('name')} className="w-full bg-background-soft border-transparent rounded-2xl px-5 py-4 text-base focus:bg-white focus:ring-4 focus:ring-primary/10 focus:border-primary transition-all duration-200" placeholder="Ej: Julian Casablancas" />
                     </div>
                     
                     <div>
-                       <label className="block text-[10px] uppercase tracking-widest font-bold text-text-muted mb-2 ml-1">Contacto Directo *</label>
-                       <input type="tel" required value={form.phone} onChange={onChange('phone')} className="w-full bg-beige-light border-border-light rounded-xl md:rounded-2xl px-4 py-3 md:py-4 text-sm focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all placeholder:text-text-muted/40" placeholder="+51 999 999 999" />
+                       <label className="block text-[10px] uppercase tracking-widest font-bold text-text-muted mb-2 ml-1">Teléfono móvil</label>
+                       <input type="tel" required value={form.phone} onChange={onChange('phone')} className="w-full bg-background-soft border-transparent rounded-2xl px-5 py-4 text-base focus:bg-white focus:ring-4 focus:ring-primary/10 focus:border-primary transition-all duration-200" placeholder="999 999 999" />
                     </div>
 
                     <div>
-                       <label className="block text-[10px] uppercase tracking-widest font-bold text-text-muted mb-2 ml-1">Departamento *</label>
-                       <select required value={form.dept} onChange={onChange('dept')} className="w-full bg-beige-light border-border-light rounded-xl md:rounded-2xl px-4 py-3 md:py-4 text-sm focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all appearance-none cursor-pointer">
-                         <option value="">Seleccionar Ubicación</option>
-                         {DEPARTAMENTOS.map(d => <option key={d} value={d}>{d}</option>)}
-                       </select>
+                       <label className="block text-xs font-semibold text-gray-500 mb-2 ml-1">Departamento</label>
+                       <div className="relative">
+                         <select required value={form.dept} onChange={onChange('dept')} className="w-full bg-gray-50 border-transparent rounded-2xl px-5 py-4 text-base focus:bg-white focus:ring-4 focus:ring-blue-500/10 focus:border-blue-500 transition-all appearance-none cursor-pointer">
+                           <option value="">Seleccionar</option>
+                           {DEPARTAMENTOS.map(d => <option key={d} value={d}>{d}</option>)}
+                         </select>
+                         <span className="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none">expand_more</span>
+                       </div>
                     </div>
 
                     <div>
-                       <label className="block text-[10px] uppercase tracking-widest font-bold text-text-muted mb-2 ml-1">Distrito / Ciudad *</label>
-                       <input type="text" required value={form.city} onChange={onChange('city')} className="w-full bg-beige-light border-border-light rounded-xl md:rounded-2xl px-4 py-3 md:py-4 text-sm focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all placeholder:text-text-muted/40" placeholder="Tu distrito" />
+                       <label className="block text-xs font-semibold text-gray-500 mb-2 ml-1">Distrito / Ciudad</label>
+                       <input type="text" required value={form.city} onChange={onChange('city')} className="w-full bg-gray-50 border-transparent rounded-2xl px-5 py-4 text-base focus:bg-white focus:ring-4 focus:ring-blue-500/10 focus:border-blue-500 transition-all duration-200" placeholder="Tu distrito" />
                     </div>
 
                     <div className="md:col-span-2">
-                       <label className="block text-[10px] uppercase tracking-widest font-bold text-text-muted mb-2 ml-1">Dirección Exacta / Referencias *</label>
-                       <input type="text" required value={form.address} onChange={onChange('address')} className="w-full bg-beige-light border-border-light rounded-xl md:rounded-2xl px-4 py-3 md:py-4 text-sm focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all placeholder:text-text-muted/40" placeholder="Ciudad, Calle, Nº de casa y referencia" />
+                       <label className="block text-xs font-semibold text-gray-500 mb-2 ml-1">Dirección y Referencias</label>
+                       <input type="text" required value={form.address} onChange={onChange('address')} className="w-full bg-gray-50 border-transparent rounded-2xl px-5 py-4 text-base focus:bg-white focus:ring-4 focus:ring-blue-500/10 focus:border-blue-500 transition-all duration-200" placeholder="Ej: Av. Larco 123, frente al parque" />
                     </div>
                   </div>
                 </div>
 
-                {/* Payment Methods Card */}
-                <div className="bg-white rounded-2xl md:rounded-[2.5rem] p-5 md:p-8 lg:p-10 shadow-soft border border-border-light relative overflow-hidden">
-                   <div className="flex items-center gap-4 mb-8">
-                    <div className="size-10 rounded-2xl bg-accent/5 flex items-center justify-center text-accent">
-                      <span className="material-symbols-outlined">account_balance_wallet</span>
+                <div className="bg-surface-light rounded-[2.5rem] p-8 md:p-10 border border-border-light shadow-soft transition-shadow hover:shadow-medium">
+                   <div className="flex items-center gap-4 mb-10">
+                    <div className="w-12 h-12 rounded-2xl bg-background-soft flex items-center justify-center text-accent">
+                      <span className="material-symbols-outlined text-2xl">account_balance_wallet</span>
                     </div>
-                    <h3 className="text-xl font-bold text-accent">Preferencia de Pago</h3>
+                    <div>
+                      <h3 className="text-xl font-bold text-accent tracking-tight">Método de Pago</h3>
+                      <p className="text-sm text-text-muted">Selecciona tu billetera digital</p>
+                    </div>
                   </div>
 
                   <div className="grid grid-cols-2 gap-4">
                     {[
-                      { id: 'yape', name: 'Yape', desc: 'Confirmación instantánea' },
-                      { id: 'plin', name: 'Plin', desc: 'Transferencia directa' }
+                      { 
+                        id: 'yape', 
+                        name: 'Yape', 
+                        desc: 'Pago al instante',
+                        logo: 'https://res.cloudinary.com/dod8hhjoo/image/upload/v1775624260/logo_yape_p7ahcl.webp'
+                      },
+                      { 
+                        id: 'plin', 
+                        name: 'Plin', 
+                        desc: 'Transferencia fácil',
+                        logo: 'https://res.cloudinary.com/dod8hhjoo/image/upload/v1775624260/logo_plin_sajhqs.webp'
+                      }
                     ].map(p => (
-                      <label key={p.id} className={`group flex flex-col p-4 md:p-6 rounded-2xl md:rounded-[2rem] border-2 cursor-pointer transition-all duration-300 relative ${payment === p.id ? 'border-primary bg-primary/5 ring-4 ring-primary/5' : 'border-border-light bg-beige-light hover:border-border-strong'}`}>
-                        <div className="flex justify-between items-start mb-4">
-                           <div className={`size-5 rounded-full border-2 flex items-center justify-center transition-colors ${payment === p.id ? 'border-primary bg-primary' : 'border-border-strong bg-white'}`}>
-                             {payment === p.id && <div className="size-2 bg-white rounded-full"></div>}
-                           </div>
-                           <span className="material-symbols-outlined text-text-muted/20 group-hover:text-primary/30 transition-colors">qr_code_2</span>
-                        </div>
+                      <label key={p.id} className={`group flex items-center gap-4 px-4 py-3 rounded-2xl border-2 transition-all duration-300 relative ${payment === p.id ? 'border-primary bg-primary/5 ring-4 ring-primary/5' : 'border-border-light bg-background-soft/50 hover:border-border-strong cursor-pointer'}`}>
                         <input type="radio" name="payment" value={p.id} checked={payment === p.id} onChange={() => setPayment(p.id)} className="sr-only" />
-                        <span className={`font-bold block ${payment === p.id ? 'text-primary' : 'text-text-main'}`}>{p.name}</span>
-                        <span className="text-[10px] text-text-muted font-medium uppercase tracking-widest mt-1">{p.desc}</span>
+                        
+                        {/* Logo ampliado un 20% adicional */}
+                        <div className="w-12 h-12 rounded-xl bg-white p-2 flex items-center justify-center shrink-0 shadow-sm">
+                          <img src={p.logo} alt={p.name} className="w-full h-full object-contain" />
+                        </div>
+
+                        <div className="flex-1">
+                          <span className={`text-base font-bold block leading-none transition-colors ${payment === p.id ? 'text-text-main' : 'text-text-muted'}`}>{p.name}</span>
+                          <span className="text-[10px] text-text-muted font-bold uppercase tracking-wider mt-0.5 block">{p.desc}</span>
+                        </div>
+
+                        <div className={`w-5 h-5 rounded-full border-2 flex items-center justify-center transition-all ${payment === p.id ? 'border-primary bg-primary' : 'border-border-strong bg-white'}`}>
+                           {payment === p.id && <div className="w-1.5 h-1.5 bg-white rounded-full"></div>}
+                        </div>
                       </label>
                     ))}
                   </div>
+
+                  {/* Bloque Informativo Estilo Apple con Paleta Brand */}
+                  <div className="mt-10 p-8 rounded-[2rem] bg-background-soft border border-border-light space-y-6">
+                    <div>
+                      <h4 className="text-lg font-bold text-accent mb-1">Finaliza tu pago</h4>
+                      <p className="text-sm text-text-muted font-medium italic">Envía el monto total al siguiente número:</p>
+                    </div>
+
+                    <div className="flex flex-col items-center justify-center py-6 bg-white rounded-3xl border border-primary/20 shadow-soft group hover:border-primary transition-colors cursor-pointer">
+                      <span className="text-[10px] font-bold text-primary uppercase tracking-[0.3em] mb-2">Número Autorizado</span>
+                      <span className="text-4xl font-black tracking-tighter text-text-main select-all group-hover:scale-105 transition-transform">962 810 439</span>
+                    </div>
+
+                    <div className="space-y-4">
+                      <h5 className="text-[10px] font-black text-text-muted uppercase tracking-[0.2em] pt-2">Pasos a seguir:</h5>
+                      <ul className="space-y-5">
+                        <li className="flex items-start gap-4">
+                          <div className="w-7 h-7 rounded-full bg-primary text-white text-xs font-black flex items-center justify-center shrink-0 shadow-soft">1</div>
+                          <p className="text-sm text-text-secondary font-medium leading-snug pt-0.5">Usa <b>Yape o Plin</b> para enviar el monto total al número de arriba.</p>
+                        </li>
+                        <li className="flex items-start gap-4">
+                          <div className="w-7 h-7 rounded-full bg-primary text-white text-xs font-black flex items-center justify-center shrink-0 shadow-soft">2</div>
+                          <p className="text-sm text-text-secondary font-medium leading-snug pt-0.5">Toma una <b>captura de pantalla</b> de tu comprobante.</p>
+                        </li>
+                        <li className="flex items-start gap-4">
+                          <div className="w-7 h-7 rounded-full bg-primary text-white text-xs font-black flex items-center justify-center shrink-0 shadow-soft">3</div>
+                          <p className="text-sm text-text-secondary font-medium leading-snug pt-0.5">Dale al botón verde para <b>enviar la captura</b> por WhatsApp.</p>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
                 </div>
 
-                {/* Final Button */}
-                <button 
-                  type="submit" 
-                  disabled={loading}
-                  className="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-5 md:py-6 rounded-2xl md:rounded-3xl transition-all shadow-glow flex flex-col items-center justify-center gap-1 disabled:opacity-50 relative overflow-hidden group"
-                >
-                  <div className="absolute inset-0 bg-white/10 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000 ease-in-out"></div>
-                  <div className="flex items-center gap-3">
-                    <span className="material-symbols-outlined animate-bounce">send</span>
-                    <span className="uppercase tracking-[0.2em] text-xs">Confirmar por WhatsApp</span>
-                  </div>
-                  <span className="text-[10px] opacity-80 font-light italic">Se enviará el detalle de tu selección</span>
-                </button>
+                <div className="space-y-6">
+                  <button 
+                    type="submit" 
+                    disabled={loading}
+                    className="w-full bg-[#25D366] hover:bg-[#20bd5a] text-white font-black py-5 md:py-7 rounded-[2.5rem] transition-all duration-300 shadow-strong hover:shadow-glow active:scale-95 flex flex-col items-center justify-center gap-1 disabled:opacity-50 group relative overflow-hidden"
+                  >
+                    <div className="flex items-center gap-4">
+                      <span className="material-symbols-outlined text-3xl transition-transform group-hover:translate-x-1">send</span>
+                      <span className="text-xl uppercase tracking-widest">Enviar Pedido</span>
+                    </div>
+                    <span className="text-[10px] text-white/90 font-bold uppercase tracking-[0.2em] italic">Redirección segura a WhatsApp Business</span>
+                  </button>
+                  
+                  <p className="text-center text-[10px] text-text-muted font-bold max-w-xs mx-auto leading-relaxed border-t border-border-light pt-6">
+                    <span className="material-symbols-outlined text-xs inline-block align-middle mr-1">security</span>
+                    Sincronización manual verificada para tu total satisfacción.
+                  </p>
+                </div>
               </form>
             </div>
 
-            {/* Right: Summary */}
-            <div className="lg:col-span-5 lg:sticky lg:top-32">
-              <div className="bg-white rounded-2xl md:rounded-[2.5rem] p-6 md:p-10 shadow-strong border border-border-light">
-                <h3 className="font-serif text-2xl font-bold text-accent mb-8 italic">Resumen de Pedido</h3>
+            <div className="lg:col-span-5 lg:sticky lg:top-10">
+              <div className="bg-surface-light rounded-[3rem] p-8 md:p-10 border border-border-light shadow-soft transition-shadow hover:shadow-medium">
+                <h3 className="text-2xl font-bold text-accent italic tracking-tight mb-10">Resumen Luxury</h3>
                 
                 <div className="space-y-6 mb-10 max-h-[400px] overflow-y-auto custom-scrollbar pr-4">
                   {cart.map(item => (
-                    <div key={`${item.id}__${item.variant || ''}`} className="flex items-center gap-5 group">
-                      <div className="size-16 rounded-[1.2rem] bg-beige-light border border-border-light overflow-hidden flex-shrink-0 p-2 group-hover:scale-105 transition-transform relative">
-                        <img src={item.images?.[0] || ''} className="w-full h-full object-contain mix-blend-multiply" alt="" />
-                        {item.stock <= 0 && (
-                          <div className="absolute inset-0 bg-primary/10 flex items-center justify-center">
-                            <span className="bg-primary text-white text-[7px] font-black uppercase tracking-tighter px-1 rounded-sm">Pre-orden</span>
-                          </div>
-                        )}
+                    <div key={`${item.id}__${item.variant || ''}`} className="flex items-center gap-4 group">
+                      <div className="w-16 h-16 rounded-2xl bg-white border border-gray-100 overflow-hidden flex-shrink-0 p-2 shadow-sm">
+                        <img src={item.images?.[0] || ''} className="w-full h-full object-contain mix-blend-multiply transition-transform group-hover:scale-110" alt="" />
                       </div>
                       <div className="flex-1 min-w-0">
-                        <h4 className="text-xs font-bold text-text-main truncate group-hover:text-primary transition-colors">{item.name}</h4>
-                        {item.variant && <p className="text-[9px] text-primary font-bold uppercase tracking-widest mt-0.5">{item.variant}</p>}
-                        <div className="flex items-center gap-2 mt-1">
-                          <p className="text-[10px] text-text-muted">Cantidad {item.qty}</p>
-                          {item.stock <= 0 && <span className="text-[9px] text-primary font-bold italic">• Ingreso programado</span>}
+                        <h4 className="text-sm font-semibold text-gray-900 truncate">{item.name}</h4>
+                        <div className="flex items-center gap-2 mt-0.5">
+                          <span className="text-[11px] text-gray-400 font-medium">Cant. {item.qty}</span>
+                          {item.variant && (
+                            <span className="text-[10px] font-bold text-blue-500 uppercase tracking-wider bg-blue-50 px-1.5 py-0.5 rounded-md">{item.variant}</span>
+                          )}
                         </div>
                       </div>
                       <div className="text-right">
-                        <p className="text-sm font-bold text-accent">{formatPrice(item.price * item.qty)}</p>
+                        <p className="text-sm font-bold text-gray-900">{formatPrice(item.price * item.qty)}</p>
                       </div>
                     </div>
                   ))}
                 </div>
 
-                <div className="space-y-4 pt-6 border-t border-border-light">
-                   <div className="flex justify-between text-xs font-medium">
-                     <span className="text-text-muted uppercase tracking-widest">Subtotal de Compra</span>
+                <div className="space-y-5 pt-8 border-t border-border-light">
+                   <div className="flex justify-between text-xs font-bold uppercase tracking-widest">
+                     <span className="text-text-muted">Valor de Selección</span>
                      <span className="text-text-main">{formatPrice(total)}</span>
                    </div>
-                   <div className="flex justify-between text-xs font-medium">
-                     <span className="text-text-muted uppercase tracking-widest">Logística de Envío</span>
-                     <span className={`font-bold ${shipping === 0 ? 'text-green-600' : 'text-text-main'}`}>
+                   <div className="flex justify-between text-xs font-bold uppercase tracking-widest">
+                     <span className="text-text-muted">Gestión de Envío</span>
+                     <span className={`font-black ${shipping === 0 ? 'text-success' : 'text-text-main'}`}>
                        {shipping === 0 ? 'CORTESÍA' : formatPrice(shipping)}
                      </span>
                    </div>
                    
-                   <div className="pt-6 mt-4 border-t-2 border-border-light flex justify-between items-baseline">
-                     <div>
-                       <p className="text-[10px] font-bold text-primary uppercase tracking-[0.3em] mb-1">Total a Invertir</p>
-                       <p className="font-serif text-3xl font-bold text-accent">Pago Final</p>
-                     </div>
-                     <div className="text-right">
-                       <p className="text-3xl font-bold text-accent">{formatPrice(grandTotal)}</p>
-                       <p className="text-[9px] text-text-muted italic">Incluye impuestos y gestión</p>
-                     </div>
+                   <div className="pt-8 mt-4 border-t-2 border-dashed border-border-light flex justify-between items-baseline">
+                     <p className="text-xl font-black text-accent uppercase tracking-tighter">Total Inversión</p>
+                     <p className="text-4xl font-black tracking-tighter text-text-main">{formatPrice(grandTotal)}</p>
                    </div>
                 </div>
 
-                <div className="mt-10 p-6 bg-beige-light rounded-[2rem] border border-border-light space-y-6">
-                  <div className="flex items-start gap-4">
-                    <span className="material-symbols-outlined text-primary text-xl">verified_user</span>
-                    <div>
-                      <h4 className="text-[10px] font-bold text-accent uppercase tracking-widest mb-1">Pago 100% Seguro</h4>
-                      <p className="text-[10px] text-text-muted leading-relaxed font-medium">
-                        Tu información está encriptada. El pago se coordina directamente para tu total seguridad.
-                      </p>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-4">
-                    <span className="material-symbols-outlined text-primary text-xl">support_agent</span>
-                    <div>
-                      <h4 className="text-[10px] font-bold text-accent uppercase tracking-widest mb-1">Asesoría 24/7</h4>
-                      <p className="text-[10px] text-text-muted leading-relaxed font-medium">
-                        Al confirmar, un personal shopper te contactará inmediatamente para guiarte en el proceso.
-                      </p>
-                    </div>
+                <div className="mt-10 space-y-6">
+                  <div className="flex items-start gap-4 p-4 rounded-2xl bg-gray-50/50">
+                    <span className="material-symbols-outlined text-blue-500">verified_user</span>
+                    <p className="text-[11px] text-gray-400 leading-relaxed font-medium">
+                      Tu información está protegida. La transferencia es directa para tu total seguridad.
+                    </p>
                   </div>
                 </div>
               </div>

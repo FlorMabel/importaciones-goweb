@@ -20,6 +20,7 @@ const ContactPage = lazy(() => import('./pages/ContactPage.jsx'));
 const NotFoundPage = lazy(() => import('./pages/NotFoundPage.jsx'));
 const TermsPage = lazy(() => import('./pages/TermsPage.jsx'));
 const WishlistPage = lazy(() => import('./pages/WishlistPage.jsx'));
+const TrackingPage = lazy(() => import('./pages/TrackingPage.jsx'));
 
 // Admin dashboard — completely separate layout
 const AdminApp = lazy(() => import('./admin/AdminApp.jsx'));
@@ -83,6 +84,7 @@ function StoreLayout() {
                 <Route path="/ofertas" element={<DealsPage />} />
                 <Route path="/nosotros" element={<AboutPage />} />
                 <Route path="/contacto" element={<ContactPage />} />
+                <Route path="/seguimiento" element={<TrackingPage />} />
                 <Route path="/terminos-y-condiciones" element={<TermsPage />} />
                 <Route path="*" element={<NotFoundPage />} />
               </Routes>

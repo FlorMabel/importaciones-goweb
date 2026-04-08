@@ -118,7 +118,7 @@ export async function upsert(table, data) {
 // PRODUCTOS (con relaciones)
 // ─────────────────────────────────────────────
 
-const PRODUCT_SELECT = '*, product_images(*), product_specs(*), product_colors(*), product_fragrances(*), product_tags:product_tags(tag), product_wholesale_tiers(*)';
+const PRODUCT_SELECT = '*, product_images(*), product_specs(*), product_colors(*), product_fragrances(*), product_tags:product_tags(tag), product_wholesale_tiers(*), product_variants(*)';
 const PRODUCT_SELECT_FALLBACK = '*, product_images(*), product_specs(*), product_colors(*), product_fragrances(*), product_tags:product_tags(tag)';
 
 export async function getProducts(opts = {}) {
@@ -147,7 +147,7 @@ export async function getProduct(id) {
 }
 
 export async function saveProduct(productData, relatedData = {}) {
-  const { images, specs, colors, fragrances, tags, wholesale_tiers, ...product } = productData;
+  const { images, specs, colors, fragrances, tags, wholesale_tiers, variants, ...product } = productData;
   
   // Upsert product
   const saved = await upsert('products', product);
@@ -221,6 +221,21 @@ export async function saveProduct(productData, relatedData = {}) {
           discount_percent: t.discount_percent ? Number(t.discount_percent) : null,
           fixed_price: t.fixed_price ? Number(t.fixed_price) : null,
           sort_order: i,
+        }))
+      );
+    }
+  }
+  
+  // Sync variants
+  if (variants !== undefined) {
+    await supabase.from('product_variants').delete().eq('product_id', pid);
+    if (variants.length > 0) {
+      await supabase.from('product_variants').insert(
+        variants.map(v => ({
+          product_id: pid,
+          name: v.name,
+          price: Number(v.price) || 0,
+          stock: v.stock !== '' ? Number(v.stock) : 0,
         }))
       );
     }
