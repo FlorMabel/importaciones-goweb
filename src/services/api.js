@@ -1,4 +1,3 @@
-// import { supabase } from './supabase.js';
 import { supabase } from './supabase.js';
 
 export async function getCategories() {
@@ -152,6 +151,7 @@ function formatProduct(p) {
     isNew: p.is_new,
     isOnSale: p.is_on_sale,
     salePercent: p.sale_percent,
+    wholesaleEnabled: p.wholesale_enabled === true,
     images
   };
 }

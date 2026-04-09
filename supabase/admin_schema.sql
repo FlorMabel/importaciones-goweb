@@ -1,13 +1,9 @@
 -- =====================================================
--- ADMIN DASHBOARD — Tablas adicionales
--- Ejecutar en el SQL Editor de Supabase
+-- ADMIN DASHBOARD SCHEMA & WHOLESALE PRICING
+-- Esquema de administración y precios por mayor
 -- =====================================================
 
--- 1. Status en productos (active/inactive/draft)
-ALTER TABLE products ADD COLUMN IF NOT EXISTS status TEXT DEFAULT 'active' 
-  CHECK (status IN ('active', 'inactive', 'draft'));
-
--- 2. Usuarios Admin
+-- Usuarios Admin
 CREATE TABLE IF NOT EXISTS admin_users (
   id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
   email TEXT UNIQUE NOT NULL,
@@ -18,55 +14,49 @@ CREATE TABLE IF NOT EXISTS admin_users (
   last_login TIMESTAMPTZ
 );
 
--- 3. Logs de actividad
+-- Logs de actividad
 CREATE TABLE IF NOT EXISTS activity_logs (
   id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
   user_id UUID REFERENCES admin_users(id) ON DELETE SET NULL,
-  action TEXT NOT NULL,         -- 'create', 'update', 'delete'
-  entity_type TEXT NOT NULL,    -- 'product', 'category', 'order'
+  action TEXT NOT NULL,
+  entity_type TEXT NOT NULL,
   entity_id TEXT,
   details JSONB,
   created_at TIMESTAMPTZ DEFAULT now()
 );
 
--- 4. Configuración general
+-- Configuración general del sitio
 CREATE TABLE IF NOT EXISTS site_settings (
   key TEXT PRIMARY KEY,
   value JSONB,
   updated_at TIMESTAMPTZ DEFAULT now()
 );
 
--- =====================================================
--- RLS Policies (Row Level Security)
--- Permitir acceso completo con service_role o anon key
--- En producción, restringir al rol autenticado
--- =====================================================
+-- Precios por mayor personalizados
+CREATE TABLE IF NOT EXISTS product_wholesale_tiers (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  product_id TEXT REFERENCES products(id) ON DELETE CASCADE,
+  label TEXT NOT NULL,
+  min_qty INT NOT NULL,
+  max_qty INT,
+  discount_percent DECIMAL(5,2),
+  fixed_price DECIMAL(10,2),
+  sort_order INT DEFAULT 0
+);
 
--- Admin users: lectura pública, escritura servicio
+-- RLS Policies
 ALTER TABLE admin_users ENABLE ROW LEVEL SECURITY;
-CREATE POLICY "admin_users_read" ON admin_users FOR SELECT USING (true);
-CREATE POLICY "admin_users_write" ON admin_users FOR ALL USING (true);
+CREATE POLICY "admin_users_all" ON admin_users FOR ALL USING (true);
 
--- Activity logs: acceso completo
 ALTER TABLE activity_logs ENABLE ROW LEVEL SECURITY;
 CREATE POLICY "activity_logs_all" ON activity_logs FOR ALL USING (true);
 
--- Site settings: acceso completo
 ALTER TABLE site_settings ENABLE ROW LEVEL SECURITY;
 CREATE POLICY "site_settings_all" ON site_settings FOR ALL USING (true);
 
--- =====================================================
--- Índices de rendimiento
--- =====================================================
-CREATE INDEX IF NOT EXISTS idx_products_category ON products(category_id);
-CREATE INDEX IF NOT EXISTS idx_products_status ON products(status);
-CREATE INDEX IF NOT EXISTS idx_products_name ON products(name);
-CREATE INDEX IF NOT EXISTS idx_orders_status ON orders(status);
-CREATE INDEX IF NOT EXISTS idx_orders_created ON orders(created_at DESC);
-CREATE INDEX IF NOT EXISTS idx_activity_logs_created ON activity_logs(created_at DESC);
+ALTER TABLE product_wholesale_tiers ENABLE ROW LEVEL SECURITY;
+CREATE POLICY "wholesale_tiers_all" ON product_wholesale_tiers FOR ALL USING (true);
 
--- =====================================================
--- Insertar primer admin (cambiar email según necesites)
--- =====================================================
--- INSERT INTO admin_users (email, name, role) VALUES
---   ('tu-email@gmail.com', 'Administrador', 'admin');
+-- Índices
+CREATE INDEX IF NOT EXISTS idx_activity_logs_created ON activity_logs(created_at DESC);
+CREATE INDEX IF NOT EXISTS idx_wholesale_product ON product_wholesale_tiers(product_id);

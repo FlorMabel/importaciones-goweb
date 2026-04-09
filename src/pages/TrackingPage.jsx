@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { useSearchParams } from 'react-router-dom';
 import { supabase } from '../services/supabase';
+import { motion, AnimatePresence } from 'framer-motion';
 
 // Mapeado de estados según requerimiento
 const STATUS_STEPS = {
@@ -147,15 +148,26 @@ export default function TrackingPage() {
             <div className="bg-white rounded-[2.5rem] p-8 md:p-12 shadow-sm border border-gray-100 animate-slide-up">
               <div className="space-y-10">
                 {/* Header Resultado */}
-                <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-gray-50 pb-8">
+                <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-gray-50 pb-8 relative">
                   <div>
-                    <span className="text-[10px] font-black text-[#D4AF37] uppercase tracking-[0.3em] mb-1 block">Detalles del Pedido</span>
-                    <h3 className="text-2xl font-bold tracking-tighter">ID: {order.id.split('-')[0]}...</h3>
+                    <h3 className="text-2xl font-bold tracking-tighter">Pedido {order.id.split('-')[0]}</h3>
                     <p className="text-gray-400 text-sm font-medium mt-1">Realizado el {new Date(order.created_at).toLocaleDateString()}</p>
+                    <span className="text-xl font-black text-[#6B21A8] block mt-4 animate-bounce-subtle">
+                      ¡Hola, {order.customer_name.split(' ')[0]}! 👋
+                    </span>
                   </div>
-                  <div className="bg-[#6B21A8]/5 px-4 py-2 rounded-xl">
-                    <span className="text-[#6B21A8] text-xs font-bold uppercase tracking-widest">{STEPS.find(s => s.id === currentStep)?.label}</span>
-                  </div>
+                  <motion.div 
+                    initial={{ scale: 0.9, opacity: 0 }}
+                    animate={{ scale: 1, opacity: 1 }}
+                    className="bg-[#6B21A8]/5 px-4 py-2 rounded-xl flex items-center gap-2"
+                  >
+                    <span className="text-[#6B21A8] text-xs font-bold uppercase tracking-widest">
+                      {order.status === 'pending' || order.status === 'verifying' ? 'Validando tu pago... ❤️' :
+                       order.status === 'paid' ? '¡Confirmado! ✨' :
+                       order.status === 'shipped' ? '¡En camino! 🚚' :
+                       STEPS.find(s => s.id === currentStep)?.label}
+                    </span>
+                  </motion.div>
                 </div>
 
                 {/* Timeline visual */}
@@ -197,14 +209,37 @@ export default function TrackingPage() {
 
                 {/* Mensajes de Ayuda */}
                 <div className="mt-20 pt-10 border-t border-gray-50 space-y-4">
+                  <AnimatePresence mode="wait">
+                    {order.status === 'shipped' && (
+                      <motion.div 
+                        initial={{ x: -100, opacity: 0 }}
+                        animate={{ x: 0, opacity: 1 }}
+                        exit={{ x: 100, opacity: 0 }}
+                        className="flex flex-col items-center justify-center p-8 bg-purple-50 rounded-[2rem] border border-purple-100 text-center mb-6"
+                      >
+                         <motion.span 
+                          animate={{ x: [-10, 10, -10] }}
+                          transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+                          className="material-symbols-outlined text-6xl text-[#6B21A8] mb-4"
+                         >
+                           local_shipping
+                         </motion.span>
+                         <h4 className="text-xl font-bold text-[#6B21A8] mb-2">¡Tu paquete ya está viajando!</h4>
+                         <p className="text-sm text-purple-700 font-medium">Muchas gracias por tu confianza en nosotros. ¡Esperamos que lo disfrutes mucho! ❤️</p>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+
                   <div className="flex items-start gap-4 p-5 rounded-2xl bg-gray-50/50">
                     <span className="material-symbols-outlined text-[#6B21A8]">info</span>
                     <div>
-                      <h4 className="text-xs font-bold uppercase tracking-widest mb-1">Información de interés</h4>
+                      <h4 className="text-xs font-bold uppercase tracking-widest mb-1">Nota para {order.customer_name.split(' ')[0]}</h4>
                       <p className="text-xs text-gray-500 leading-relaxed font-medium">
-                        {order.status === 'verifying' 
-                          ? "Si ya realizaste el pago, estamos validando tu comprobante con el banco. Te notificaremos pronto." 
-                          : "Actualizamos el progreso de tu pedido en tiempo real para que sepas exactamente dónde está."}
+                        {order.status === 'pending' || order.status === 'verifying' 
+                          ? "Estamos validando tu comprobante con el banco para confirmar tu pedido lo antes posible. ¡Gracias por tu paciencia!" 
+                          : order.status === 'paid'
+                          ? "¡Todo listo! Tu pago ha sido verificado. Ahora estamos preparando tu pedido con mucho cariño para que llegue perfecto."
+                          : "Tu pedido ya está en manos de la empresa de transporte. ¡Falta muy poco para que lo tengas contigo!"}
                       </p>
                     </div>
                   </div>

@@ -6,8 +6,11 @@ import { getWholesalePrices } from '../../config/productSchema'
  * 
  * @param {number} price - Precio base del producto
  * @param {Array} customTiers - Tiers personalizados del producto (de product_wholesale_tiers)
+ * @param {boolean} enabled - Indica si la opción de mayorista está activa para este producto
  */
-export default function WholesalePricing({ price, customTiers }) {
+export default function WholesalePricing({ price, customTiers, enabled = false }) {
+  if (!enabled) return null
+
   // Si hay tiers personalizados del admin, usarlos
   const tiers = customTiers && customTiers.length > 0
     ? customTiers

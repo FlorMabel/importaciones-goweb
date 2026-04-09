@@ -1,9 +1,11 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
+import { useNavigate } from 'react-router-dom'
 import { useStore } from '../../context/StoreContext'
 import { useToast } from '../../context/ToastContext'
 
 export default function QuantitySelector({ product, selectedVariant }) {
+  const navigate = useNavigate()
   const [quantity, setQuantity] = useState(1)
   const [fragQtys, setFragQtys] = useState({})
   const { addToCart } = useStore()
@@ -34,6 +36,27 @@ export default function QuantitySelector({ product, selectedVariant }) {
     if (added) {
       showToast('¡Selecciones de lujo añadidas al carrito!')
       setFragQtys({}) // Reset after adding
+    } else {
+      showToast('Por favor, selecciona un aroma para continuar', 'warning')
+    }
+  }
+
+  const handleBuyNow = () => {
+    addToCart(product, quantity, selectedVariant?.name)
+    navigate('/checkout')
+  }
+
+  const handleBuyNowFragrances = () => {
+    let added = false
+    Object.entries(fragQtys).forEach(([fragName, qty]) => {
+      if (qty > 0) {
+        addToCart(product, qty, fragName)
+        added = true
+      }
+    })
+    
+    if (added) {
+      navigate('/checkout')
     } else {
       showToast('Por favor, selecciona un aroma para continuar', 'warning')
     }
@@ -89,7 +112,7 @@ export default function QuantitySelector({ product, selectedVariant }) {
           })}
         </div>
 
-        <div className="flex gap-3 mt-4">
+        <div className="flex flex-col gap-3 mt-4">
           <button
             onClick={handleAddFragrances}
             disabled={totalSelected === 0}
@@ -98,8 +121,13 @@ export default function QuantitySelector({ product, selectedVariant }) {
             <span className="material-symbols-outlined text-sm">shopping_cart</span>
             Agregar seleccionados {totalSelected > 0 && `(${totalSelected})`}
           </button>
-          <button className="w-14 h-14 shrink-0 flex items-center justify-center border border-border-color rounded-xl hover:border-accent hover:text-accent transition-colors bg-white shadow-sm">
-            <span className="material-symbols-outlined">favorite</span>
+          
+          <button
+            onClick={handleBuyNowFragrances}
+            disabled={totalSelected === 0}
+            className="w-full py-4 px-8 rounded-xl border-2 border-accent text-accent hover:bg-accent hover:text-white font-bold text-sm transition-all flex items-center justify-center gap-3 disabled:opacity-50"
+          >
+            Comprar Ahora
           </button>
         </div>
       </div>
@@ -139,7 +167,10 @@ export default function QuantitySelector({ product, selectedVariant }) {
           <span className="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
         </button>
 
-        <button className="w-full py-5 px-8 rounded-2xl border-2 border-accent text-accent hover:bg-accent hover:text-white font-bold text-sm transition-all flex items-center justify-center gap-3">
+        <button 
+          onClick={handleBuyNow}
+          className="w-full py-5 px-8 rounded-2xl border-2 border-accent text-accent hover:bg-accent hover:text-white font-bold text-sm transition-all flex items-center justify-center gap-3"
+        >
           Comprar Ahora
         </button>
       </div>

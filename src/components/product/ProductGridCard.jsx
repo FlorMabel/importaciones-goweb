@@ -1,19 +1,21 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import StarRating from './StarRating';
-import { useStore } from '../context/StoreContext';
-import { useToast } from '../context/ToastContext';
-import { formatPrice, getOptimizedImage } from '../utils';
-import { getProductById } from '../services/api';
+import StarRating from '../StarRating';
+import { useStore } from '../../context/StoreContext';
+import { useToast } from '../../context/ToastContext';
+import { formatPrice, getOptimizedImage } from '../../utils';
+import { getProductById } from '../../services/api';
 
 export default function ProductCard({ product, index, darkTheme = false }) {
   const navigate = useNavigate();
-  const { addToCart } = useStore();
+  const { addToCart, toggleWishlist, isInWishlist } = useStore();
   const { showToast } = useToast();
   const [selectedVariant, setSelectedVariant] = useState(
     product.variants && product.variants.length > 0 ? product.variants[0] : null
   );
+
+  const inWishlist = isInWishlist(product.id);
 
   const displayPrice = selectedVariant ? selectedVariant.price : product.price;
   const displayOldPrice = selectedVariant ? selectedVariant.oldPrice : product.oldPrice;
@@ -26,6 +28,12 @@ export default function ProductCard({ product, index, darkTheme = false }) {
     e.stopPropagation();
     addToCart(product, 1, selectedVariant?.name);
     showToast(`${product.name} añadido al carrito`);
+  };
+
+  const handleToggleWishlist = (e) => {
+    e.stopPropagation();
+    toggleWishlist(product.id);
+    showToast(inWishlist ? 'Eliminado de favoritos' : 'Añadido a favoritos');
   };
 
   return (
@@ -42,7 +50,7 @@ export default function ProductCard({ product, index, darkTheme = false }) {
     >
       {/* Image Section */}
       <div 
-        className={`relative aspect-[4/5] overflow-hidden cursor-pointer p-3 md:p-6 transition-colors duration-700 ${
+        className={`relative aspect-square overflow-hidden cursor-pointer p-2 md:p-4 transition-colors duration-700 ${
           darkTheme ? 'bg-white/[0.03]' : 'bg-beige-light'
         }`}
         onClick={() => navigate(`/producto/${product.slug}`)}
@@ -63,11 +71,26 @@ export default function ProductCard({ product, index, darkTheme = false }) {
             </span>
           )}
           {product.isOnSale && (
-             <span className="bg-red-600 text-white text-[9px] font-bold px-3 py-1.5 rounded-full uppercase tracking-[0.2em] shadow-soft">
-               {product.salePercent}% OFF
-             </span>
+            <span className="bg-red-600 text-white text-[9px] font-bold px-3 py-1.5 rounded-full uppercase tracking-[0.2em] shadow-soft">
+              {product.salePercent}% OFF
+            </span>
           )}
         </div>
+
+        {/* Wishlist Button */}
+        <button
+          onClick={handleToggleWishlist}
+          className={`absolute top-4 right-4 size-10 rounded-full backdrop-blur-md shadow-soft flex items-center justify-center transition-all duration-300 z-10 ${
+            inWishlist 
+              ? 'bg-primary text-white scale-110' 
+              : 'bg-white/80 text-accent hover:bg-primary hover:text-white'
+          }`}
+          aria-label={inWishlist ? 'Quitar de favoritos' : 'Añadir a favoritos'}
+        >
+          <span className={`material-symbols-outlined text-xl ${inWishlist ? 'fill-1' : ''}`}>
+            favorite
+          </span>
+        </button>
 
         {/* Quick Add Button */}
         <button

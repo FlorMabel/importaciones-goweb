@@ -81,7 +81,7 @@ export default function ProductForm({ product, categories = [], onSave, onCancel
         badge: product.badge || '',
         images, specs, colors, fragrances, tags,
         wholesale_tiers,
-        wholesale_enabled: wholesale_tiers.length > 0,
+        wholesale_enabled: product.wholesale_enabled === true,
         variants: (product.product_variants || []).sort((a,b) => a.name.localeCompare(b.name)),
       });
       setAutoSlug(false);
@@ -147,6 +147,7 @@ export default function ProductForm({ product, categories = [], onSave, onCancel
       colors: form.colors.filter(Boolean),
       fragrances: form.fragrances.filter(f => f.name),
       tags: form.tags.filter(Boolean),
+      wholesale_enabled: !!form.wholesale_enabled,
       wholesale_tiers: form.wholesale_enabled
         ? form.wholesale_tiers.filter(t => t.label && (t.discount_percent || t.fixed_price))
         : [],

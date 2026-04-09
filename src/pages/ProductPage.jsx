@@ -6,7 +6,7 @@ import { formatPrice } from '../utils';
 import { useStore } from '../context/StoreContext';
 import { useToast } from '../context/ToastContext';
 import StarRating from '../components/StarRating';
-import ProductCard from '../components/product/ProductCard';
+import ProductDetailView from '../components/product/ProductDetailView';
 
 export default function ProductPage() {
   const { slug } = useParams();
@@ -107,7 +107,7 @@ export default function ProductPage() {
           No se pudo cargar el producto.
         </p>
       )}
-      {product && <ProductCard product={product} />}
+      {product && <ProductDetailView product={product} />}
     </div>
   );
 }

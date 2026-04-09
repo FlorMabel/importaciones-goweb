@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { useStore } from '../context/StoreContext';
 import { getProductsByIds } from '../services/api';
-import ProductCard from '../components/ProductCard';
+import ProductGridCard from '../components/product/ProductGridCard';
 import SkeletonProduct from '../components/skeletons/SkeletonProduct';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
@@ -68,7 +68,7 @@ export default function WishlistPage() {
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0, scale: 0.9 }}
                 >
-                  <ProductCard product={p} index={i % 4} />
+                  <ProductGridCard product={p} index={i % 4} />
                 </motion.div>
               ))}
             </AnimatePresence>

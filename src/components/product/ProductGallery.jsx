@@ -18,7 +18,7 @@ export default function ProductGallery({ images = [], activeIndex = 0, onSelect,
     <div className="flex flex-col gap-6">
       {/* Main Image Viewport */}
       <div 
-        className="relative aspect-[4/5] bg-beige-light rounded-2xl md:rounded-[2.5rem] overflow-hidden border border-border-light group cursor-zoom-in"
+        className="relative aspect-square bg-beige-light rounded-2xl md:rounded-[3rem] overflow-hidden border border-border-light group cursor-zoom-in"
         onMouseMove={handleMouseMove}
         onMouseEnter={() => setIsZooming(true)}
         onMouseLeave={() => setIsZooming(false)}
@@ -31,14 +31,14 @@ export default function ProductGallery({ images = [], activeIndex = 0, onSelect,
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.95 }}
             transition={{ duration: 0.6, ease: [0.43, 0.13, 0.23, 0.96] }}
-            className={`w-full h-full object-contain mix-blend-multiply p-4 md:p-8 transition-transform duration-200 ${isZooming ? 'scale-[2.5] md:scale-[3]' : 'scale-100'}`}
+            className={`w-full h-full object-contain mix-blend-multiply p-2 md:p-4 transition-transform duration-200 ${isZooming ? 'scale-[2.5] md:scale-[3]' : 'scale-100'}`}
             style={isZooming ? { transformOrigin: `${zoomPos.x}% ${zoomPos.y}%` } : {}}
             alt="Vista de producto"
           />
         </AnimatePresence>
 
         {/* Badges */}
-        <div className="absolute top-8 left-8 flex flex-col gap-3 pointer-events-none">
+        <div className="absolute top-4 left-4 md:top-6 md:left-6 flex flex-col gap-2 pointer-events-none">
           {badge && (
             <motion.span 
               initial={{ x: -20, opacity: 0 }}

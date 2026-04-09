@@ -18,6 +18,7 @@
 | 🎬 **Animaciones Pro** | Transiciones suaves, staggered cards y micro-interacciones premium |
 | 🚀 **Performance** | Código dividido (Code Splitting), Memoización y fetch eficiente |
 | 💳 **Checkout Seguro** | Proceso de compra local optimizado con envío final vía WhatsApp |
+| ⚡ **Compra Rápida** | Botón "Comprar Ahora" para flujo directo al pago sin pasos intermedio |
 
 ---
 
@@ -175,6 +176,18 @@ Capa de datos asíncrona con **caché en memoria** unificado:
 | `text-muted` | `#827a68` | Texto secundario |
 | `border-color` | `#e4e2dd` | Bordes |
 | Footer BG | `#3B2066` | Fondo del footer |
+
+---
+
+## 🚀 Mejoras Recientes (UX/UI Revamp)
+
+Se han implementado una serie de ajustes de precisión para elevar el look & feel premium de la tienda:
+
+- **Contenedores Max-Focus**: Reducción global del ancho máximo a `1152px` (max-w-6xl) para una lectura más cómoda y centrada.
+- **Tarjetas Square View**: Actualización de `ProductGridCard` a formato `aspect-square`, eliminando espacios en blanco y maximizando el tamaño de los productos.
+- **Layout Compacto**: Reducción de hasta un 80% en espacios muertos (padding vertical) en las secciones de Beneficios, Categorías e Impacto Visual.
+- **Breadcrumbs Funcionales**: Navegación de migas de pan operativa en la vista detallada para un retorno fluido a categorías e inicio.
+- **One-Click Buy**: Implementación del botón "Comprar Ahora" con redirección automática al Checkout.
 
 ---
 

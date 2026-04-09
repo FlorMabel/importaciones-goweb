@@ -1,3 +1,4 @@
+import { useNavigate } from 'react-router-dom'
 import { useProductGallery } from '../../hooks/useProductGallery'
 import ProductGallery from './ProductGallery'
 import WholesalePricing from './WholesalePricing'
@@ -8,8 +9,12 @@ import QuantitySelector from './QuantitySelector'
 import VariantSelector from './VariantSelector'
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import { useStore } from '../../context/StoreContext'
+import { useToast } from '../../context/ToastContext'
+import { formatPrice } from '../../utils'
 
 export default function ProductCard({ product }) {
+  const navigate = useNavigate()
   const { activeIndex, selectVariant, selectColor } =
     useProductGallery(product.images, product.colors)
 
@@ -40,12 +45,22 @@ export default function ProductCard({ product }) {
 
   useEffect(() => {
     const handleScroll = () => {
-      // Show sticky bar after scrolling past the main buy button (approx 600-800px)
       setShowStickyBar(window.scrollY > 700)
     }
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
+
+
+  const { addToCart, toggleWishlist, isInWishlist } = useStore()
+  const { showToast } = useToast()
+
+  const inWishlist = isInWishlist(product.id)
+
+  const handleToggleWishlist = () => {
+    toggleWishlist(product.id)
+    showToast(inWishlist ? 'Eliminado de favoritos' : 'Añadido a favoritos')
+  }
 
   const displayPrice = selectedVariant ? selectedVariant.price : product.price
   const displayOldPrice = selectedVariant ? selectedVariant.oldPrice : product.oldPrice
@@ -53,9 +68,17 @@ export default function ProductCard({ product }) {
   return (
     <>
       <nav className="text-sm text-text-muted mb-6 flex items-center gap-1.5">
-        <span className="hover:text-primary cursor-pointer transition-colors">Inicio</span>
+        <span 
+          className="hover:text-primary cursor-pointer transition-colors"
+          onClick={() => navigate('/')}
+        >
+          Inicio
+        </span>
         <span>›</span>
-        <span className="hover:text-primary cursor-pointer transition-colors capitalize">
+        <span 
+          className="hover:text-primary cursor-pointer transition-colors capitalize"
+          onClick={() => navigate(`/categoria/${product.category}`)}
+        >
           {product.category}
         </span>
         <span>›</span>
@@ -79,9 +102,25 @@ export default function ProductCard({ product }) {
               {product.category}
             </p>
 
-            <h1 className="font-serif text-2xl md:text-5xl font-bold text-accent leading-none italic">
-              {product.name}
-            </h1>
+            <div className="flex justify-between items-start gap-4">
+              <h1 className="font-serif text-2xl md:text-5xl font-bold text-accent leading-none italic flex-1">
+                {product.name}
+              </h1>
+              
+              <button
+                onClick={handleToggleWishlist}
+                className={`size-12 md:size-14 rounded-full border flex items-center justify-center transition-all duration-300 transform active:scale-90 ${
+                  inWishlist 
+                    ? 'bg-primary border-primary text-white shadow-glow' 
+                    : 'bg-white border-border-light text-accent hover:border-primary hover:text-primary'
+                }`}
+                title={inWishlist ? 'Quitar de favoritos' : 'Añadir a favoritos'}
+              >
+                <span className={`material-symbols-outlined text-2xl md:text-3xl ${inWishlist ? 'fill-1' : ''}`}>
+                  favorite
+                </span>
+              </button>
+            </div>
 
             <div className="flex items-center gap-4 border-b border-border-light pb-6">
               <div className="flex items-center gap-1 text-primary">
@@ -110,7 +149,7 @@ export default function ProductCard({ product }) {
             </div>
             {product.isOnSale && displayOldPrice && (
               <p className="text-[10px] font-bold text-red-600 uppercase tracking-widest">
-                Ahorra S/ {Number(displayOldPrice - displayPrice).toFixed(2)} hoy
+                Ahorra S/ {Number(displayOldPrice - displayPrice).toFixed(2) } hoy
               </p>
             )}
           </div>
@@ -121,7 +160,11 @@ export default function ProductCard({ product }) {
             </p>
           </div>
 
-          <WholesalePricing price={product.price} customTiers={product.wholesaleTiers} />
+          <WholesalePricing 
+            price={product.price} 
+            customTiers={product.wholesaleTiers} 
+            enabled={product.wholesaleEnabled} 
+          />
           
           <div className="space-y-6">
             {product.images?.length > 1 && (
@@ -138,8 +181,10 @@ export default function ProductCard({ product }) {
               onSelect={handleSelectVariant}
             />
 
-            <div className="pt-4 border-t border-border-light">
-              <StockBadge stock={product.stock} />
+            <div className="pt-4 border-t border-border-light flex flex-col gap-6">
+              <div className="flex items-center justify-between">
+                <StockBadge stock={product.stock} />
+              </div>
               <QuantitySelector product={product} selectedVariant={selectedVariant} />
             </div>
           </div>

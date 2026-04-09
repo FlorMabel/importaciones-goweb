@@ -2,7 +2,7 @@ import React, { useState, useEffect, useMemo } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { getProductsByCategory, getCategoryById, getCategories } from '../services/api';
-import ProductCard from '../components/ProductCard';
+import ProductGridCard from '../components/product/ProductGridCard';
 import SkeletonProduct from '../components/skeletons/SkeletonProduct';
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -261,7 +261,7 @@ export default function CategoryPage() {
                       exit={{ opacity: 0, scale: 0.9 }}
                       transition={{ duration: 0.3 }}
                     >
-                      <ProductCard product={p} index={i % 4} />
+                      <ProductGridCard product={p} index={i % 4} />
                     </motion.div>
                   ))}
                 </AnimatePresence>

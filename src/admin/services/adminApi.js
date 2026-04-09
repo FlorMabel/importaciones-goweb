@@ -119,100 +119,104 @@ export async function upsert(table, data) {
 // ─────────────────────────────────────────────
 
 const PRODUCT_SELECT = '*, product_images(*), product_specs(*), product_colors(*), product_fragrances(*), product_tags:product_tags(tag), product_wholesale_tiers(*), product_variants(*)';
-const PRODUCT_SELECT_FALLBACK = '*, product_images(*), product_specs(*), product_colors(*), product_fragrances(*), product_tags:product_tags(tag)';
 
 export async function getProducts(opts = {}) {
-  try {
-    return await getAll('products', {
-      ...opts,
-      select: PRODUCT_SELECT,
-      searchColumns: opts.searchColumns || ['name', 'slug', 'description'],
-    });
-  } catch (e) {
-    // Fallback if wholesale_tiers table doesn't exist yet
-    return getAll('products', {
-      ...opts,
-      select: PRODUCT_SELECT_FALLBACK,
-      searchColumns: opts.searchColumns || ['name', 'slug', 'description'],
-    });
-  }
+  return getAll('products', {
+    ...opts,
+    select: PRODUCT_SELECT,
+    searchColumns: opts.searchColumns || ['name', 'slug', 'description'],
+  });
 }
 
 export async function getProduct(id) {
-  try {
-    return await getById('products', id, PRODUCT_SELECT);
-  } catch (e) {
-    return getById('products', id, PRODUCT_SELECT_FALLBACK);
-  }
+  return getById('products', id, PRODUCT_SELECT);
 }
 
 export async function saveProduct(productData, relatedData = {}) {
   const { images, specs, colors, fragrances, tags, wholesale_tiers, variants, ...product } = productData;
   
-  // Upsert product
+  // 1. Upsert product (base table)
+  // wholesale_enabled is included in ...product
   const saved = await upsert('products', product);
   const pid = saved.id;
 
-  // Sync images
+  // 2. Sync images
   if (images !== undefined) {
-    await supabase.from('product_images').delete().eq('product_id', pid);
+    const { error: delErr } = await supabase.from('product_images').delete().eq('product_id', pid);
+    if (delErr) throw new Error(`Error al borrar imágenes: ${delErr.message}`);
+    
     if (images.length > 0) {
-      await supabase.from('product_images').insert(
+      const { error: insErr } = await supabase.from('product_images').insert(
         images.map((url, i) => ({ product_id: pid, image_url: url, sort_order: i }))
       );
+      if (insErr) throw new Error(`Error al guardar imágenes: ${insErr.message}`);
     }
   }
 
-  // Sync specs
+  // 3. Sync specs
   if (specs !== undefined) {
-    await supabase.from('product_specs').delete().eq('product_id', pid);
+    const { error: delErr } = await supabase.from('product_specs').delete().eq('product_id', pid);
+    if (delErr) throw new Error(`Error al borrar especificaciones: ${delErr.message}`);
+    
     if (specs.length > 0) {
-      await supabase.from('product_specs').insert(
+      const { error: insErr } = await supabase.from('product_specs').insert(
         specs.map(s => ({ product_id: pid, label: s.label, value: s.value }))
       );
+      if (insErr) throw new Error(`Error al guardar especificaciones: ${insErr.message}`);
     }
   }
 
-  // Sync colors
+  // 4. Sync colors
   if (colors !== undefined) {
-    await supabase.from('product_colors').delete().eq('product_id', pid);
+    const { error: delErr } = await supabase.from('product_colors').delete().eq('product_id', pid);
+    if (delErr) throw new Error(`Error al borrar colores: ${delErr.message}`);
+    
     if (colors.length > 0) {
-      await supabase.from('product_colors').insert(
+      const { error: insErr } = await supabase.from('product_colors').insert(
         colors.map(c => ({ product_id: pid, hex_color: c }))
       );
+      if (insErr) throw new Error(`Error al guardar colores: ${insErr.message}`);
     }
   }
 
-  // Sync fragrances
+  // 5. Sync fragrances
   if (fragrances !== undefined) {
-    await supabase.from('product_fragrances').delete().eq('product_id', pid);
+    const { error: delErr } = await supabase.from('product_fragrances').delete().eq('product_id', pid);
+    if (delErr) throw new Error(`Error al borrar fragancias: ${delErr.message}`);
+    
     if (fragrances.length > 0) {
-      await supabase.from('product_fragrances').insert(
+      const { error: insErr } = await supabase.from('product_fragrances').insert(
         fragrances.map(f => ({
           product_id: pid,
           name: typeof f === 'string' ? f : f.name,
           description: typeof f === 'string' ? '' : (f.description || ''),
         }))
       );
+      if (insErr) throw new Error(`Error al guardar fragancias: ${insErr.message}`);
     }
   }
 
-  // Sync tags
+  // 6. Sync tags
   if (tags !== undefined) {
-    await supabase.from('product_tags').delete().eq('product_id', pid);
+    const { error: delErr } = await supabase.from('product_tags').delete().eq('product_id', pid);
+    if (delErr) throw new Error(`Error al borrar etiquetas: ${delErr.message}`);
+    
     if (tags.length > 0) {
-      await supabase.from('product_tags').insert(
+      const { error: insErr } = await supabase.from('product_tags').insert(
         tags.map(t => ({ product_id: pid, tag: t }))
       );
+      if (insErr) throw new Error(`Error al guardar etiquetas: ${insErr.message}`);
     }
   }
 
-  // Sync wholesale tiers
+  // 7. Sync wholesale tiers
   if (wholesale_tiers !== undefined) {
-    await supabase.from('product_wholesale_tiers').delete().eq('product_id', pid);
+    const { error: delErr } = await supabase.from('product_wholesale_tiers').delete().eq('product_id', pid);
+    if (delErr) throw new Error(`Error al borrar niveles mayoristas: ${delErr.message}`);
+    
     const validTiers = wholesale_tiers.filter(t => t.label && (t.discount_percent || t.fixed_price));
     if (validTiers.length > 0) {
-      await supabase.from('product_wholesale_tiers').insert(
+      const { error: insErr } = await supabase.from('product_wholesale_tiers').insert(
         validTiers.map((t, i) => ({
           product_id: pid,
           label: t.label,
@@ -223,21 +227,25 @@ export async function saveProduct(productData, relatedData = {}) {
           sort_order: i,
         }))
       );
+      if (insErr) throw new Error(`Error al guardar niveles mayoristas: ${insErr.message}`);
     }
   }
   
-  // Sync variants
+  // 8. Sync variants
   if (variants !== undefined) {
-    await supabase.from('product_variants').delete().eq('product_id', pid);
+    const { error: delErr } = await supabase.from('product_variants').delete().eq('product_id', pid);
+    if (delErr) throw new Error(`Error al borrar tallas: ${delErr.message}`);
+    
     if (variants.length > 0) {
-      await supabase.from('product_variants').insert(
+      const { error: insErr } = await supabase.from('product_variants').insert(
         variants.map(v => ({
           product_id: pid,
           name: v.name,
           price: Number(v.price) || 0,
-          stock: v.stock !== '' ? Number(v.stock) : 0,
+          stock: v.stock !== '' && v.stock !== undefined ? Number(v.stock) : 0,
         }))
       );
+      if (insErr) throw new Error(`Error al guardar tallas: ${insErr.message}`);
     }
   }
 

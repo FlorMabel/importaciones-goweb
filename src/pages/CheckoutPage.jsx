@@ -25,7 +25,7 @@ export default function CheckoutPage() {
   const { cart, clearCart, getCartTotal } = useStore();
   const { showToast } = useToast();
   const [loading, setLoading] = useState(false);
-  const [form, setForm] = useState({ name: '', phone: '', dept: '', city: '', address: '' });
+  const [form, setForm] = useState({ name: '', phone: '', dni: '', dept: '', city: '', address: '' });
   const [payment, setPayment] = useState('yape');
 
   useEffect(() => {
@@ -62,13 +62,13 @@ export default function CheckoutPage() {
   }
 
   const total = getCartTotal();
-  const shipping = total >= 150 ? 0 : 15;
+  const shipping = total >= 400 ? 0 : 5;
   const grandTotal = total + shipping;
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
-    const { name, phone, dept, city, address } = form;
+    const { name, phone, dni, dept, city, address } = form;
 
     try {
       // 1. Push order to Supabase database
@@ -77,6 +77,7 @@ export default function CheckoutPage() {
         .insert({
           customer_name: name,
           customer_phone: phone,
+          customer_dni: dni,
           department: dept,
           city: city,
           address: address,
@@ -113,7 +114,7 @@ export default function CheckoutPage() {
 
       const msg = `🛍️ *NUEVO PEDIDO - GO SHOPPING*\n\n`
         + ` *ID:* ${orderData.id.split('-')[0]}\n`
-        + ` *Cliente:* ${sanitize(name)}\n *Teléfono:* ${sanitize(phone)}\n *Ubicación:* ${sanitize(city)}, ${sanitize(dept)}\n🏠 *Dirección:* ${sanitize(address)}\n💳 *Pago:* ${payment.toUpperCase()}\n\n`
+        + ` *Cliente:* ${sanitize(name)}\n *Teléfono:* ${sanitize(phone)}\n *DNI:* ${sanitize(dni)}\n *Ubicación:* ${sanitize(city)}, ${sanitize(dept)}\n🏠 *Dirección/Agencia:* ${sanitize(address)}\n💳 *Pago:* ${payment.toUpperCase()}\n\n`
         + ` *Productos:*\n${orderLines}\n\n`
         + ` Envío: ${shipping === 0 ? 'GRATIS' : `S/ ${shipping.toFixed(2)}`}\n`
         + ` *TOTAL: S/ ${grandTotal.toFixed(2)}*\n\n`
@@ -173,6 +174,11 @@ export default function CheckoutPage() {
                     </div>
 
                     <div>
+                       <label className="block text-[10px] uppercase tracking-widest font-bold text-text-muted mb-2 ml-1">DNI / RUC</label>
+                       <input type="text" required value={form.dni} onChange={onChange('dni')} className="w-full bg-background-soft border-transparent rounded-2xl px-5 py-4 text-base focus:bg-white focus:ring-4 focus:ring-primary/10 focus:border-primary transition-all duration-200" placeholder="Ej: 70605040" />
+                    </div>
+
+                    <div>
                        <label className="block text-xs font-semibold text-gray-500 mb-2 ml-1">Departamento</label>
                        <div className="relative">
                          <select required value={form.dept} onChange={onChange('dept')} className="w-full bg-gray-50 border-transparent rounded-2xl px-5 py-4 text-base focus:bg-white focus:ring-4 focus:ring-blue-500/10 focus:border-blue-500 transition-all appearance-none cursor-pointer">
@@ -189,8 +195,8 @@ export default function CheckoutPage() {
                     </div>
 
                     <div className="md:col-span-2">
-                       <label className="block text-xs font-semibold text-gray-500 mb-2 ml-1">Dirección y Referencias</label>
-                       <input type="text" required value={form.address} onChange={onChange('address')} className="w-full bg-gray-50 border-transparent rounded-2xl px-5 py-4 text-base focus:bg-white focus:ring-4 focus:ring-blue-500/10 focus:border-blue-500 transition-all duration-200" placeholder="Ej: Av. Larco 123, frente al parque" />
+                       <label className="block text-xs font-semibold text-gray-500 mb-2 ml-1">Dirección, Referencias y Agencia de Transporte</label>
+                       <input type="text" required value={form.address} onChange={onChange('address')} className="w-full bg-gray-50 border-transparent rounded-2xl px-5 py-4 text-base focus:bg-white focus:ring-4 focus:ring-blue-500/10 focus:border-blue-500 transition-all duration-200" placeholder="Ej: Av. Larco 123 (Shalom / Olva / Provincia)" />
                     </div>
                   </div>
                 </div>

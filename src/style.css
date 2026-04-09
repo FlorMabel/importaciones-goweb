@@ -151,4 +151,13 @@
 
   /* Thumb buttons */
   .thumb-btn.active { border-color: #c9a34f; }
+
+  /* Bounce Subtle */
+  .animate-bounce-subtle {
+    animation: bounce-subtle 3s ease-in-out infinite;
+  }
+  @keyframes bounce-subtle {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+  }
 }
