@@ -88,6 +88,7 @@ CREATE TABLE IF NOT EXISTS product_tags (
 -- Pedidos
 CREATE TABLE IF NOT EXISTS orders (
   id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  order_serial BIGINT GENERATED ALWAYS AS IDENTITY (START WITH 100),
   customer_name TEXT NOT NULL,
   customer_phone TEXT NOT NULL,
   customer_dni TEXT,

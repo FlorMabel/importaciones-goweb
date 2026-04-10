@@ -8,6 +8,7 @@ import OrderDetail from '../components/forms/OrderDetail.jsx';
 import { useDebounce } from '../hooks/useDebounce.js';
 import * as adminApi from '../services/adminApi.js';
 import { formatPrice, timeAgo } from '../utils/formatters.js';
+import { formatOrderNumber } from '../../utils/order.js';
 import { useToast } from '../../context/ToastContext.jsx';
 
 export default function OrdersPage() {
@@ -78,7 +79,7 @@ export default function OrdersPage() {
     {
       key: 'id',
       label: 'Pedido',
-      render: (val) => <span className="font-mono text-xs">#{val?.slice(0, 8)}</span>,
+      render: (_, row) => <span className="font-mono text-xs font-bold text-accent">{formatOrderNumber(row)}</span>,
     },
     {
       key: 'customer_name',

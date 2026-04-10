@@ -1,6 +1,7 @@
 import React from 'react';
 import StatusBadge from '../ui/StatusBadge.jsx';
 import { formatPrice, formatDate } from '../../utils/formatters.js';
+import { formatOrderNumber } from '../../../utils/order.js';
 
 const STATUS_OPTIONS = [
   { value: 'pending',   label: 'Pendiente' },
@@ -20,7 +21,7 @@ export default function OrderDetail({ order, onStatusChange, loading }) {
       {/* Header */}
       <div className="flex items-start justify-between flex-wrap gap-3">
         <div>
-          <h2 className="text-lg font-bold text-text-main">Pedido #{order.id?.slice(0, 8)}</h2>
+          <h2 className="text-lg font-bold text-text-main">{formatOrderNumber(order)}</h2>
           <p className="text-xs text-text-muted">{formatDate(order.created_at)}</p>
         </div>
         <div className="flex items-center gap-3">

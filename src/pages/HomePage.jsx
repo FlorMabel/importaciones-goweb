@@ -10,9 +10,7 @@ import SkeletonProduct from '../components/skeletons/SkeletonProduct';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const HERO_VIDEOS = [
-  "/videos/video_vista%20de%20anillos.mp4",
-  "/videos/video_esencias%20en%20muestra.mp4",
-  "/videos/video_casco%20de%20perro.mp4"
+  "https://res.cloudinary.com/dod8hhjoo/video/upload/f_webm/v1775769958/free-tools_media-merger_mnry2ciu6li9_0_as4er7.mp4"
 ];
 
 export default function HomePage() {
@@ -94,6 +92,7 @@ export default function HomePage() {
               src={HERO_VIDEOS[currentVideo]}
               autoPlay
               muted
+              loop
               playsInline
               onEnded={() => setCurrentVideo((prev) => (prev + 1) % HERO_VIDEOS.length)}
               className="absolute inset-0 w-full h-full object-cover z-0"
@@ -120,12 +119,12 @@ export default function HomePage() {
                   </span>
                 </div>
 
-                <h1 className="text-white font-serif text-4xl md:text-8xl leading-[1] mb-6 md:mb-8 font-extrabold tracking-tighter">
+                <h1 className="text-white font-serif text-3xl md:text-6xl leading-[1] mb-4 md:mb-6 font-extrabold tracking-tighter">
                   Donde la exclusividad <br />
                   <span className="text-primary italic font-light">encuentra su lugar</span>
                 </h1>
 
-                <p className="text-white/80 text-base md:text-2xl font-light mb-8 md:mb-12 max-w-2xl leading-relaxed tracking-tight">
+                <p className="text-white/80 text-sm md:text-lg font-light mb-8 md:mb-10 max-w-xl leading-relaxed tracking-tight">
                   Seleccionamos piezas únicas traídas de todo el mundo para aquellos que no se conforman con lo ordinario.
                 </p>
 

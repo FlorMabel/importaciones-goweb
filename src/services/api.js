@@ -141,7 +141,6 @@ function formatProduct(p) {
     ? p.product_images.sort((a,b)=>a.sort_order - b.sort_order).map(i => i.image_url)
     : [];
     
-  // const local = productsConfig.find(lp => lp.id === p.id || lp.slug === p.slug);
     
   return {
     ...p,

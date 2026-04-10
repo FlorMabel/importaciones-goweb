@@ -57,11 +57,6 @@ export default function TopBar({ user, onLogout }) {
           <span className="material-symbols-outlined text-xl">storefront</span>
         </a>
 
-        {/* Notifications */}
-        <button className="w-9 h-9 rounded-xl flex items-center justify-center text-text-muted hover:text-primary hover:bg-primary/10 transition-colors relative">
-          <span className="material-symbols-outlined text-xl">notifications</span>
-          <span className="absolute top-1.5 right-1.5 w-2 h-2 bg-primary rounded-full" />
-        </button>
 
         {/* Profile */}
         <div className="flex items-center gap-2 pl-3 ml-1 border-l border-border-light">

@@ -99,17 +99,8 @@ graph TD
 
 ---
 
-## 🛒 Catálogo & Sincronización
+El catálogo se gestiona dinámicamente mediante **Supabase** como única fuente de verdad. La administración de productos y categorías se realiza a través del panel de control integrado.
 
-El catálogo se define localmente en `/src/config/products.js` como **Source of Truth** y se sincroniza con Supabase mediante scripts automatizados.
-
-### Scripts de Mantenimiento (`scripts/`)
-
-| Script | Descripción |
-|--------|-------------|
-| `node scripts/syncProducts.js` | Sincroniza el catálogo local con la base de datos Supabase. |
-| `node scripts/uploadImages.js` | Sube imágenes de `/public/images/` a Cloudinary automáticamente. |
-| `node scripts/syncCategories.js` | Sincroniza la estructura de categorías. |
 
 ---
 
@@ -144,19 +135,6 @@ El catálogo se define localmente en `/src/config/products.js` como **Source of 
 }
 ```
 
-### Data API (`services/api.js`)
-
-Capa de datos asíncrona con **caché en memoria** unificado:
-
-- `getCategories()` — Fetch de `categories.json`
-- `getProductsByCategory(slug)` — Fetch de `products/{slug}.json`
-- `getProductBySlug(slug)` / `getProductById(id)` — Búsqueda unificada (categorías + all.json)
-- `getProductsByIds(ids[])` — Batch fetch para Cart/Checkout
-- `getDeals()` / `getNewArrivals()`
-- `searchProducts(query)` — Búsqueda sobre `search.json`
-- `getRelatedProducts(productId, limit)` — Productos relacionados
-
-> **Nota:** `getAllProductsUnified()` fusiona todos los JSONs por categoría con `all.json` para resolver discrepancias de slugs entre archivos.
 
 ---
 
@@ -226,15 +204,11 @@ npm install
 npm run dev
 ```
 
-### Scripts Disponibles
-
 | Comando | Descripción |
 |---------|-------------|
 | `npm run dev` | Servidor de desarrollo con HMR → `http://localhost:5173/` |
 | `npm run build` | Build de producción → `dist/` |
 | `npm run preview` | Previsualizar build de producción |
-| `node scripts/syncProducts.js` | Sincroniza catálogo local -> Supabase |
-| `node scripts/uploadImages.js` | Sincroniza imágenes locales -> Cloudinary |
 
 ---
 

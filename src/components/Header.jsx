@@ -69,12 +69,12 @@ export default function Header() {
       <div className="bg-accent text-white overflow-hidden py-1.5">
         <motion.div
           animate={{ x: ["100%", "-100%"] }}
-          transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
+          transition={{ duration: 35, repeat: Infinity, ease: "linear" }}
           className="whitespace-nowrap flex items-center gap-16 text-[10px] font-light tracking-[0.2em] uppercase opacity-90"
         >
           <span>Envíos gratis a todo el Perú en compras mayores a S/400</span>
           <span className="text-white/40">•</span>
-          <span>Lima • Arequipa • Cusco • Chiclayo • Chimbote • Huanuco • Huancayo • Ica • Piura • Pucallpa • Puno • Tarapoto</span>
+          <span>Lima • Arequipa • Tacna • Cusco • Chimbote • Abancay • Huancayo • Ica • Camana • Pucallpa • Puno • Tarapoto</span>
           <span className="text-white/40">•</span>
           <span>Pago 100% Seguro: Yape, Plin o Transferencia Bancaria</span>
           <span className="text-white/40">•</span>

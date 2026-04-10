@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { useSearchParams } from 'react-router-dom';
 import { supabase } from '../services/supabase';
+import { formatOrderNumber } from '../utils/order';
 import { motion, AnimatePresence } from 'framer-motion';
 
 // Mapeado de estados según requerimiento
@@ -41,10 +42,18 @@ export default function TrackingPage() {
     setLoading(true);
     setError(null);
     setOrder(null);
-
     try {
-      // Mejora UX: Buscamos por teléfono y filtramos en memoria por el prefijo del ID
-      // Esto evita errores de tipo UUID en PostgreSQL al usar IDs cortos
+
+      // Intentamos extraer el serial si el formato es GS-YYMMDD-XXXXX
+      let serialToSearch = null;
+      if (orderId.includes('-')) {
+        const parts = orderId.split('-');
+        const lastPart = parts[parts.length - 1];
+        if (!isNaN(lastPart)) {
+          serialToSearch = parseInt(lastPart, 10);
+        }
+      }
+
       const { data: ordersData, error: queryError } = await supabase
         .from('orders')
         .select('*')
@@ -53,10 +62,13 @@ export default function TrackingPage() {
 
       if (queryError) throw queryError;
 
-      // Buscamos el pedido cuyo ID comience con lo ingresado (soporta ID corto y ID completo)
-      const data = ordersData?.find(o => 
-        o.id.toLowerCase().startsWith(orderId.trim().toLowerCase())
-      ) || null;
+      // Buscamos el pedido:
+      // 1. Por serial si lo detectamos en el input
+      // 2. Por prefijo de UUID (soporte legado)
+      const data = ordersData?.find(o => {
+        if (serialToSearch && o.order_serial === serialToSearch) return true;
+        return o.id.toLowerCase().startsWith(orderId.trim().toLowerCase());
+      }) || null;
 
       if (queryError || !data) {
         throw new Error('No encontramos tu pedido. Por favor, revisa que el ID y el número de teléfono sean correctos.');
@@ -150,7 +162,7 @@ export default function TrackingPage() {
                 {/* Header Resultado */}
                 <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-gray-50 pb-8 relative">
                   <div>
-                    <h3 className="text-2xl font-bold tracking-tighter">Pedido {order.id.split('-')[0]}</h3>
+                    <h3 className="text-2xl font-bold tracking-tighter">{formatOrderNumber(order)}</h3>
                     <p className="text-gray-400 text-sm font-medium mt-1">Realizado el {new Date(order.created_at).toLocaleDateString()}</p>
                     <span className="text-xl font-black text-[#6B21A8] block mt-4 animate-bounce-subtle">
                       ¡Hola, {order.customer_name.split(' ')[0]}! 👋

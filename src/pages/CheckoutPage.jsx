@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { getProductsByIds } from '../services/api';
 import { formatPrice, getItemPrice } from '../utils';
+import { formatOrderNumber } from '../utils/order';
 import { useStore } from '../context/StoreContext';
 import { useToast } from '../context/ToastContext';
 import { supabase } from '../services/supabase';
@@ -112,13 +113,15 @@ export default function CheckoutPage() {
         `• ${item.name}${item.variant ? ` (${item.variant})` : ''} x${item.qty} = S/ ${(item.price * item.qty).toFixed(2)}`
       ).join('\n');
 
+      const formattedId = formatOrderNumber(orderData);
+
       const msg = `🛍️ *NUEVO PEDIDO - GO SHOPPING*\n\n`
-        + ` *ID:* ${orderData.id.split('-')[0]}\n`
+        + ` *ID:* ${formattedId}\n`
         + ` *Cliente:* ${sanitize(name)}\n *Teléfono:* ${sanitize(phone)}\n *DNI:* ${sanitize(dni)}\n *Ubicación:* ${sanitize(city)}, ${sanitize(dept)}\n🏠 *Dirección/Agencia:* ${sanitize(address)}\n💳 *Pago:* ${payment.toUpperCase()}\n\n`
         + ` *Productos:*\n${orderLines}\n\n`
         + ` Envío: ${shipping === 0 ? 'GRATIS' : `S/ ${shipping.toFixed(2)}`}\n`
         + ` *TOTAL: S/ ${grandTotal.toFixed(2)}*\n\n`
-        + `🚚 *Sigue tu pedido aquí:* ${window.location.origin}/seguimiento?id=${orderData.id}&phone=${phone}\n\n`
+        + `🚚 *Sigue tu pedido aquí:* ${window.location.origin}/seguimiento?id=${formattedId}&phone=${phone}\n\n`
         + `_Adjunto mi voucher de pago_ `;
 
       window.open(`https://wa.me/51962810439?text=${encodeURIComponent(msg)}`, '_blank');
