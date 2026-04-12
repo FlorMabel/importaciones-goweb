@@ -10,7 +10,7 @@ import SkeletonProduct from '../components/skeletons/SkeletonProduct';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const HERO_VIDEOS = [
-  "https://res.cloudinary.com/dod8hhjoo/video/upload/f_webm/v1775769958/free-tools_media-merger_mnry2ciu6li9_0_as4er7.mp4"
+  "https://res.cloudinary.com/dod8hhjoo/video/v1775769958/free-tools_media-merger_mnry2ciu6li9_0_as4er7.mp4"
 ];
 
 export default function HomePage() {
