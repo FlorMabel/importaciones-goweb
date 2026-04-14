@@ -2,6 +2,94 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  /* 👑 LUXURY PALETTE (60-20-20 Rule) */
+  --primary: #c9a34f;
+  --primary-dark: #a8842f;
+  --primary-soft: #e6d3a3;
+
+  --accent: #4B2E6F;
+  --accent-dark: #2e1b47;
+  --accent-soft: #6d4ca3;
+
+  /* 🧱 BASES (60% Beige) */
+  --bg-light: #FAFAFA;
+  --bg-soft: #F5F3EF;
+  --bg-strong: #EFE9DF;
+  --bg-dark: #14110f;
+
+  /* 🧾 SURFACES */
+  --surface-light: #ffffff;
+  --surface-soft: #fcfaf7;
+  --surface-dark: #1f1b17;
+
+  /* 🔤 TYPOGRAPHY */
+  --text-main: #171512;
+  --text-secondary: #5f584b;
+  --text-muted: #827a68;
+  --text-inverse: #ffffff;
+
+  /* 🔲 BORDERS */
+  --border-light: #e8e6e1;
+  --border-default: #e4e2dd;
+  --border-strong: #cfcac1;
+
+  /* 💎 SHADOWS (Reduced opacity for dark mode compatibility) */
+  --shadow-color: rgba(0,0,0,0.06);
+  --surface-light-rgb: 255, 255, 255;
+}
+
+.dark {
+  --bg-light: #121212;
+  --bg-soft: #1A1A1A;
+  --bg-strong: #222222;
+  --bg-dark: #000000;
+
+  --surface-light: #1E1E1E;
+  --surface-soft: #252525;
+  --surface-dark: #121212;
+
+  --text-main: #F5F3EF;
+  --text-secondary: #D1CFCA;
+  --text-muted: #A19D94;
+  --text-inverse: #171512;
+
+  --border-light: #2D2D2D;
+  --border-default: #333333;
+  --border-strong: #444444;
+
+  --accent: #8E7CC3;
+  --accent-soft: #BCAEDD;
+  
+  --shadow-color: rgba(0,0,0,0.4);
+  --surface-light-rgb: 0, 0, 0;
+}
+
+* {
+  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
+
+/* 🔄 NON-INVASIVE OVERRIDES FOR EXISTING COMPONENTS */
+.dark .bg-white {
+  background-color: var(--surface-light) !important;
+}
+
+.dark .border-gray-100, 
+.dark .border-gray-200, 
+.dark .border-border-light {
+  border-color: var(--border-light) !important;
+}
+
+.dark .shadow-md,
+.dark .shadow-lg,
+.dark .shadow-strong {
+  box-shadow: 0 4px 20px var(--shadow-color) !important;
+}
+
+.dark .text-text-main {
+  color: var(--text-main) !important;
+}
+
 @layer base {
   html { 
     scroll-behavior: smooth; 
@@ -10,7 +98,7 @@
     text-rendering: optimizeLegibility;
   }
   body { 
-    @apply bg-white text-text-main font-sans lg:font-display;
+    @apply bg-background-soft text-text-main font-sans lg:font-display transition-colors duration-300;
     -webkit-tap-highlight-color: transparent; 
   }
   
@@ -32,13 +120,13 @@
 @layer components {
   /* Glass Header (Apple-tier blur) */
   .glass-header {
-    background: rgba(255, 255, 255, 0.65);
+    background: rgba(var(--surface-light-rgb, 255, 255, 255), 0.65);
     backdrop-filter: saturate(180%) blur(25px);
     -webkit-backdrop-filter: saturate(180%) blur(25px);
   }
   .glass-header.scrolled {
-    background: rgba(255, 255, 255, 0.85);
-    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.05); /* Ultra subtle border instead of shadow */
+    background: rgba(var(--surface-light-rgb, 255, 255, 255), 0.85);
+    box-shadow: 0 1px 0 var(--border-light); /* Ultra subtle border instead of shadow */
   }
 
   /* Product Card */
@@ -62,7 +150,7 @@
 
   .variant-badge {
     @apply absolute top-3 left-3 text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider;
-    background: #4B2E6F;
+    background: var(--accent);
   }
   .variant-badge.bg-red-600 { background: #dc2626; }
 
@@ -104,7 +192,7 @@
 
   /* Skeleton Loader for perceived performance */
   .skeleton-loader {
-    background: linear-gradient(90deg, #f5f3ef 25%, #efe9df 50%, #f5f3ef 75%);
+    background: linear-gradient(90deg, var(--bg-soft) 25%, var(--bg-strong) 50%, var(--bg-soft) 75%);
     background-size: 200% 100%;
     animation: skeleton-shimmer 1.5s ease-in-out infinite;
     border-radius: 1rem;
@@ -123,8 +211,8 @@
   /* Custom Scrollbar */
   .custom-scrollbar::-webkit-scrollbar { width: 5px; }
   .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
-  .custom-scrollbar::-webkit-scrollbar-thumb { background: #d1cfc9; border-radius: 10px; }
-  .custom-scrollbar::-webkit-scrollbar-thumb:hover { background: #b1af9e; }
+  .custom-scrollbar::-webkit-scrollbar-thumb { background: var(--border-strong); border-radius: 10px; }
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover { background: var(--primary); }
 
   .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
   .scrollbar-hide::-webkit-scrollbar { display: none; }
@@ -150,7 +238,7 @@
   .product-zoom-container { cursor: zoom-in; }
 
   /* Thumb buttons */
-  .thumb-btn.active { border-color: #c9a34f; }
+  .thumb-btn.active { border-color: var(--primary); }
 
   /* Bounce Subtle */
   .animate-bounce-subtle {

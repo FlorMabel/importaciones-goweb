@@ -16,40 +16,40 @@ export default {
     extend: {
       colors: {
         // 👑 LUXURY PALETTE (60-20-20 Rule)
-        primary: "#c9a34f",      // 20% Dorado (Luxury & CTAs)
-        "primary-dark": "#a8842f",
-        "primary-soft": "#e6d3a3",
+        primary: "var(--primary)",      // 20% Dorado (Luxury & CTAs)
+        "primary-dark": "var(--primary-dark)",
+        "primary-soft": "var(--primary-soft)",
 
-        accent: "#4B2E6F",       // 20% Morado (Prestige & Badges)
-        "accent-dark": "#2e1b47",
-        "accent-soft": "#6d4ca3",
+        accent: "var(--accent)",       // 20% Morado (Prestige & Badges)
+        "accent-dark": "var(--accent-dark)",
+        "accent-soft": "var(--accent-soft)",
 
         // 🧱 BASES (60% Beige)
         beige: {
-          light: "#FAFAFA",
-          soft: "#F5F3EF",       // 60% Beige Base
-          strong: "#EFE9DF",
+          light: "var(--bg-light)",
+          soft: "var(--bg-soft)",       // 60% Beige Base
+          strong: "var(--bg-strong)",
         },
 
-        "background-light": "#FAFAFA",
-        "background-soft": "#F5F3EF",
-        "background-dark": "#14110f",
+        "background-light": "var(--bg-light)",
+        "background-soft": "var(--bg-soft)",
+        "background-dark": "var(--bg-dark)",
 
         // 🧾 SURFACES (Luxury layers)
-        "surface-light": "#ffffff",
-        "surface-soft": "#fcfaf7",
-        "surface-dark": "#1f1b17",
+        "surface-light": "var(--surface-light)",
+        "surface-soft": "var(--surface-soft)",
+        "surface-dark": "var(--surface-dark)",
 
         // 🔤 TYPOGRAPHY
-        "text-main": "#171512",
-        "text-secondary": "#5f584b",
-        "text-muted": "#827a68",
-        "text-inverse": "#ffffff",
+        "text-main": "var(--text-main)",
+        "text-secondary": "var(--text-secondary)",
+        "text-muted": "var(--text-muted)",
+        "text-inverse": "var(--text-inverse)",
 
         // 🔲 BORDERS
-        "border-light": "#e8e6e1",
-        "border-default": "#e4e2dd",
-        "border-strong": "#cfcac1",
+        "border-light": "var(--border-light)",
+        "border-default": "var(--border-default)",
+        "border-strong": "var(--border-strong)",
 
         // 🚨 STATES
         success: "#16a34a",
@@ -64,11 +64,11 @@ export default {
 
       // 💎 SOMBRAS PRO (clave para ecommerce)
       boxShadow: {
-        soft: "0 2px 8px rgba(0,0,0,0.06)",
+        soft: "0 2px 8px var(--shadow-color)",
         medium: "0 4px 14px rgba(0,0,0,0.1)",
         strong: "0 10px 25px rgba(0,0,0,0.15)",
 
-        glow: "0 0 0 2px #c9a34f, 0 4px 12px rgba(0,0,0,0.15)",
+        glow: "0 0 0 2px var(--primary), 0 4px 12px rgba(0,0,0,0.15)",
       },
 
       // ✨ ANIMACIONES MÁS PREMIUM

@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import Header from './components/Header.jsx';
 import Footer from './components/Footer.jsx';
 import WhatsAppFloat from './components/WhatsAppFloat.jsx';
+import ThemeToggle from './components/ThemeToggle.jsx';
 import CartDrawer from './components/cart/CartDrawer.jsx';
 import { useStore } from './context/StoreContext.jsx';
 
@@ -94,6 +95,7 @@ function StoreLayout() {
       </main>
       <Footer />
       <WhatsAppFloat />
+      <ThemeToggle />
     </>
   );
 }
