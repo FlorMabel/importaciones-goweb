@@ -290,17 +290,15 @@ export default function HomePage() {
                     </p>
                   </div>
                   
-                  {cat.image_url && (
-                    <div className="my-4 md:my-10 flex justify-center items-center z-10 relative">
-                       <div className="relative">
-                         <div className="absolute inset-0 bg-primary/20 blur-2xl rounded-full scale-110"></div>
-                         <img 
-                           src={cat.image} 
-                           alt={cat.name} 
-                           className="size-28 md:size-48 object-cover rounded-full shadow-strong border-4 border-white/30 hover:scale-105 transition-transform duration-700 z-10 relative" 
-                           loading="lazy" 
-                         />
-                       </div>
+                  {cat.image && (
+                    <div className="absolute top-0 right-0 w-3/4 h-full z-0 overflow-hidden pointer-events-none">
+                      <div className="absolute inset-0 bg-gradient-to-l from-transparent to-current opacity-40 z-10 pointer-events-none" style={{ color: colorClass.includes('bg-accent') ? '#4B2E6F' : colorClass.includes('bg-primary') ? '#c9a34f' : '#F5F3EF' }}></div>
+                      <img 
+                        src={cat.image} 
+                        alt="" 
+                        className="w-full h-full object-cover object-center scale-110 group-hover/hero:scale-125 transition-transform duration-[2s] ease-out opacity-20 group-hover/hero:opacity-40"
+                        loading="lazy"
+                      />
                     </div>
                   )}
 
