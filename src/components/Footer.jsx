@@ -6,18 +6,18 @@ export default function Footer() {
     <footer className="bg-accent-dark text-white pt-16">
       {/* Luxury Trust Bar */}
       <div className="max-w-[1440px] mx-auto px-6 lg:px-10 pb-16">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div className="flex overflow-x-auto md:grid md:grid-cols-4 gap-8 pb-4 md:pb-0 snap-x snap-mandatory scrollbar-hide">
           {[
             { icon: 'verified', title: 'AUTENTICIDAD', desc: '100% Importados' },
             { icon: 'local_shipping', title: 'TRANSPORTE', desc: 'Envío Asegurado' },
             { icon: 'support_agent', title: 'ATENCIÓN', desc: 'Soporte 24/7' },
             { icon: 'history_edu', title: 'GARANTÍA', desc: 'Total' },
           ].map((t, i) => (
-            <div key={t.icon} className="flex flex-col items-center md:items-start gap-4 text-center md:text-left group cursor-default">
+            <div key={t.icon} className="flex flex-col items-center md:items-start gap-4 text-center md:text-left group cursor-default shrink-0 w-[240px] md:w-auto snap-center">
               <div className="size-12 rounded-full border border-white/10 flex items-center justify-center text-primary group-hover:scale-110 group-hover:border-primary transition-all duration-500">
                 <span className="material-symbols-outlined text-2xl">{t.icon}</span>
               </div>
-              <div>
+              <div className="w-full">
                 <p className="text-xs font-bold uppercase tracking-[0.2em] mb-1">{t.title}</p>
                 <p className="text-[10px] text-white/40 uppercase tracking-widest">{t.desc}</p>
               </div>
