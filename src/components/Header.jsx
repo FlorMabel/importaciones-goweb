@@ -84,13 +84,13 @@ export default function Header() {
 
       <header className={`glass-header sticky top-0 z-50 w-full border-b transition-all duration-500 ${isScrolled ? 'h-14 lg:h-16 scrolled border-gray-200/50' : 'h-16 lg:h-24 border-transparent'}`}>
         <div className="mx-auto max-w-[1440px] px-4 lg:px-10 h-16 lg:h-20 flex items-center justify-between">
-          <Link to="/" className="flex items-center gap-3 group">
+          <Link to="/" className="flex items-center gap-2 sm:gap-3 group shrink-0">
             <img 
               src="https://res.cloudinary.com/dod8hhjoo/image/upload/v1774224726/goshopping/optimized/logo-768w.webp" 
               alt="GO" 
-              className="h-10 lg:h-12 w-auto object-contain transition-transform duration-500 group-hover:scale-110 drop-shadow-md"
+              className="h-9 lg:h-12 w-auto object-contain transition-transform duration-500 group-hover:scale-110 drop-shadow-md"
             />
-            <span className="font-serif text-xl lg:text-2xl font-medium tracking-widest text-text-main group-hover:text-primary transition-colors">SHOPPING</span>
+            <span className="font-serif text-base sm:text-xl lg:text-2xl font-medium tracking-normal sm:tracking-widest text-text-main group-hover:text-primary transition-colors">SHOPPING</span>
           </Link>
 
         <nav className="hidden lg:flex items-center gap-10">
@@ -127,7 +127,7 @@ export default function Header() {
           <Link to="/seguimiento" className="text-text-main/80 hover:text-accent transition-colors text-sm font-semibold tracking-tight">Seguimiento</Link>
         </nav>
 
-        <div className="flex items-center gap-4 lg:gap-6">
+        <div className="flex items-center gap-2 xs:gap-3 sm:gap-4 lg:gap-6">
           <motion.button 
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
