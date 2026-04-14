@@ -69,6 +69,11 @@
   transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
 }
 
+.dark .mix-blend-multiply,
+.dark [class*="mix-blend-multiply"] {
+  mix-blend-mode: normal !important;
+}
+
 /* 🔄 NON-INVASIVE OVERRIDES FOR EXISTING COMPONENTS */
 .dark .bg-white {
   background-color: var(--surface-light) !important;
@@ -143,8 +148,8 @@
   .product-card:hover .image-container img { transform: scale(1.05); }
 
   .product-card .add-btn {
-    @apply absolute bottom-3 right-3 w-10 h-10 rounded-full bg-white shadow-md flex items-center justify-center
-           text-text-main hover:bg-primary hover:text-white transition-all duration-300 opacity-0 translate-y-2;
+    @apply absolute bottom-3 right-3 w-10 h-10 rounded-full bg-white dark:bg-accent shadow-md flex items-center justify-center
+           text-text-main dark:text-white hover:bg-primary hover:text-white transition-all duration-300 opacity-0 translate-y-2;
   }
   .product-card:hover .add-btn { @apply opacity-100 translate-y-0; }
 

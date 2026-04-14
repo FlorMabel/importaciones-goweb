@@ -292,11 +292,11 @@ export default function HomePage() {
                   
                   {cat.image && (
                     <div className="absolute top-0 right-0 w-3/4 h-full z-0 overflow-hidden pointer-events-none">
-                      <div className="absolute inset-0 bg-gradient-to-l from-transparent to-current opacity-40 z-10 pointer-events-none" style={{ color: colorClass.includes('bg-accent') ? '#4B2E6F' : colorClass.includes('bg-primary') ? '#c9a34f' : '#F5F3EF' }}></div>
+                      <div className="absolute inset-0 bg-gradient-to-l from-transparent to-current opacity-40 z-10 pointer-events-none" style={{ color: colorClass.includes('bg-accent') ? 'var(--accent)' : colorClass.includes('bg-primary') ? 'var(--primary)' : 'var(--bg-soft)' }}></div>
                       <img 
                         src={cat.image} 
                         alt="" 
-                        className="w-full h-full object-cover object-center scale-110 group-hover/hero:scale-125 transition-transform duration-[2s] ease-out opacity-20 group-hover/hero:opacity-40"
+                        className="w-full h-full object-cover object-center scale-110 group-hover/hero:scale-125 transition-transform duration-[2s] ease-out opacity-20 group-hover/hero:opacity-40 dark:opacity-40 dark:group-hover/hero:opacity-60"
                         loading="lazy"
                       />
                     </div>
