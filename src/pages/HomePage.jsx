@@ -10,7 +10,10 @@ import SkeletonProduct from '../components/skeletons/SkeletonProduct';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const HERO_VIDEOS = [
-  "https://res.cloudinary.com/dod8hhjoo/video/upload/q_auto:best,f_auto/v1775769958/free-tools_media-merger_mnry2ciu6li9_0_as4er7.mp4"
+  "https://res.cloudinary.com/dod8hhjoo/video/upload/v1776209017/video_dog_cat_lentes_ni%C3%B1o_trimmed_cpubk9.mp4",
+  "https://res.cloudinary.com/dod8hhjoo/video/upload/v1776209017/video_vitrina_anillos_u0yzrf.mp4",
+  "https://res.cloudinary.com/dod8hhjoo/video/upload/v1776209019/video_difusor_neobxk.mp4",
+  "https://res.cloudinary.com/dod8hhjoo/video/upload/v1776209019/video_moto_dog_ci8lz5.mp4"
 ];
 
 export default function HomePage() {
