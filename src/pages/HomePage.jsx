@@ -10,10 +10,11 @@ import SkeletonProduct from '../components/skeletons/SkeletonProduct';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const HERO_VIDEOS = [
-  "https://res.cloudinary.com/dod8hhjoo/video/upload/v1776209017/video_dog_cat_lentes_ni%C3%B1o_trimmed_cpubk9.mp4",
-  "https://res.cloudinary.com/dod8hhjoo/video/upload/v1776209017/video_vitrina_anillos_u0yzrf.mp4",
-  "https://res.cloudinary.com/dod8hhjoo/video/upload/v1776209019/video_difusor_neobxk.mp4",
-  "https://res.cloudinary.com/dod8hhjoo/video/upload/v1776209019/video_moto_dog_ci8lz5.mp4"
+  "/videos/video_dog_cat_lentes_niño_trimmed.mp4",
+  "/videos/video_vitrina_anillos.mp4",
+  "/videos/video_difusor.mp4",
+  "/videos/video_moto_dog.mp4"
+  
 ];
 
 export default function HomePage() {
@@ -25,6 +26,16 @@ export default function HomePage() {
   const [currentVideo, setCurrentVideo] = useState(0);
   const navigate = useNavigate();
   const { showToast } = useToast();
+
+  const nextVideo = () => {
+    setCurrentVideo((prev) => (prev + 1) % HERO_VIDEOS.length);
+  };
+
+  // Robust rotation: Safety timer fallback (25s) if video gets stuck or fails on mobile
+  useEffect(() => {
+    const timer = setTimeout(nextVideo, 25000);
+    return () => clearTimeout(timer);
+  }, [currentVideo]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -88,23 +99,24 @@ export default function HomePage() {
           <AnimatePresence mode="wait">
             <motion.video
               key={HERO_VIDEOS[currentVideo]}
-              initial={{ opacity: 0, scale: 1.1 }}
+              initial={{ opacity: 0, scale: 1.05 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0 }}
-              transition={{ duration: 1.5 }}
+              transition={{ duration: 1.2, ease: "easeOut" }}
               src={HERO_VIDEOS[currentVideo]}
               autoPlay
               muted
-              loop
               playsInline
-              onEnded={() => setCurrentVideo((prev) => (prev + 1) % HERO_VIDEOS.length)}
-              className="absolute inset-0 w-full h-full object-cover z-0"
+              onEnded={nextVideo}
+              onError={nextVideo}
+              className="absolute inset-0 w-full h-full object-cover z-0 contrast-[1.05] brightness-[0.9] saturate-[1.1]"
+              loading="eager"
             />
           </AnimatePresence>
 
-          {/* LUXURY OVERLAY */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-black/40 z-10"></div>
-          <div className="absolute inset-0 bg-black/10 backdrop-blur-[2px] z-[5]"></div>
+          {/* LUXURY OVERLAY - Optimized for sharpness */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-black/30 z-10"></div>
+          <div className="absolute inset-0 bg-black/5 z-[5]"></div>
 
           {/* CONTENIDO ELEVADO */}
           <div className="container mx-auto px-5 lg:px-20 z-20 relative pt-16 md:pt-20">
