@@ -130,7 +130,7 @@ export default function HomePage() {
                 <div className="flex items-center gap-3 mb-6">
                   <span className="h-[1px] w-8 bg-primary"></span>
                   <span className="text-white font-bold uppercase tracking-[0.2em] text-[10px] md:text-xs">
-                    Curaduría Global Certificada
+                    Lo Mejor en Tendencias: Nacionales e Importados
                   </span>
                 </div>
 
