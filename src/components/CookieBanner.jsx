@@ -57,7 +57,6 @@ export default function CookieBanner() {
             </div>
             <div>
               <h3 className="font-serif text-xl font-bold text-accent italic">Tu Privacidad</h3>
-              <p className="text-[10px] text-text-muted font-bold uppercase tracking-widest leading-none">Gestión de Cookies</p>
             </div>
           </div>
 
@@ -152,7 +151,7 @@ export default function CookieBanner() {
 
           <div className="mt-8 pt-4 border-t border-border-light text-center">
             <Link 
-              to="/privacy-policy" 
+              to="/terminos-y-condiciones#privacidad" 
               className="text-[9px] text-text-muted font-bold uppercase tracking-widest hover:text-primary transition-colors underline underline-offset-4"
             >
               Política de Privacidad
