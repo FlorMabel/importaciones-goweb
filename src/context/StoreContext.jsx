@@ -1,16 +1,18 @@
 import React, { createContext, useContext, useReducer, useEffect, useCallback } from 'react';
 import { calculateUnitPrice } from '../config/productSchema';
+import { useCookieConsent } from './CookieConsentContext';
+import { loadCart, persistCart } from '../utils/cartPersistence';
 
 const STORAGE_KEY = 'goshopping_store';
 
-function loadState() {
+function loadLegacyState() {
   try {
     const raw = localStorage.getItem(STORAGE_KEY);
     return raw ? JSON.parse(raw) : {};
   } catch { return {}; }
 }
 
-const saved = loadState();
+const saved = loadLegacyState();
 const initialState = {
   cart: saved.cart || [],
   wishlist: saved.wishlist || [],
@@ -114,6 +116,8 @@ function storeReducer(state, action) {
         recentlyViewed: [id, ...state.recentlyViewed.filter(i => i !== id)].slice(0, 10),
       };
     }
+    case 'SYNC_CART':
+      return { ...state, cart: action.payload };
     case 'TOGGLE_DARK_MODE':
       return { ...state, darkMode: !state.darkMode };
     default:
@@ -124,17 +128,32 @@ function storeReducer(state, action) {
 const StoreContext = createContext(null);
 
 export function StoreProvider({ children }) {
+  const { isFunctionalAllowed, consentStatus } = useCookieConsent();
   const [state, dispatch] = useReducer(storeReducer, initialState);
 
-  // Persist to localStorage
+  // Re-load cart when consent status changes
+  useEffect(() => {
+    if (consentStatus !== 'pending') {
+      const syncedCart = loadCart(isFunctionalAllowed);
+      dispatch({ type: 'SYNC_CART', payload: syncedCart });
+    }
+  }, [consentStatus, isFunctionalAllowed]);
+
+  // Persist cart to Cookies/LS based on consent
+  useEffect(() => {
+    if (consentStatus !== 'pending') {
+      persistCart(state.cart, isFunctionalAllowed);
+    }
+  }, [state.cart, isFunctionalAllowed, consentStatus]);
+
+  // Persist non-functional items to localStorage
   useEffect(() => {
     localStorage.setItem(STORAGE_KEY, JSON.stringify({
-      cart: state.cart,
       wishlist: state.wishlist,
       recentlyViewed: state.recentlyViewed,
       darkMode: state.darkMode,
     }));
-  }, [state]);
+  }, [state.wishlist, state.recentlyViewed, state.darkMode]);
 
   // Dark mode class
   const addToCart = useCallback((product, qty = 1, variant = null) => {

@@ -7,15 +7,21 @@ import { ToastProvider } from './context/ToastContext.jsx';
 import App from './App.jsx';
 import './style.css';
 
+import { CookieConsentProvider } from './context/CookieConsentContext.jsx';
+import CookieBanner from './components/CookieBanner.jsx';
+
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <HelmetProvider>
       <BrowserRouter>
-        <StoreProvider>
-          <ToastProvider>
-            <App />
-          </ToastProvider>
-        </StoreProvider>
+        <CookieConsentProvider>
+          <StoreProvider>
+            <ToastProvider>
+              <App />
+              <CookieBanner />
+            </ToastProvider>
+          </StoreProvider>
+        </CookieConsentProvider>
       </BrowserRouter>
     </HelmetProvider>
   </React.StrictMode>

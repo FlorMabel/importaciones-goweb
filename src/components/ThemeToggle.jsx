@@ -29,7 +29,7 @@ export default function ThemeToggle() {
   };
 
   return (
-    <div className="fixed bottom-20 right-6 lg:bottom-10 lg:right-10 z-[60]">
+    <div className="fixed bottom-20 right-6 lg:bottom-10 lg:right-10 z-[60] hidden lg:block">
       <motion.button
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}

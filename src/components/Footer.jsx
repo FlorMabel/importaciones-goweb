@@ -1,7 +1,9 @@
-  import React from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
+import { useCookieConsent } from '../context/CookieConsentContext';
 
 export default function Footer() {
+  const { reopenBanner } = useCookieConsent();
   return (
     <footer className="bg-accent-dark text-white pt-16">
       {/* Luxury Trust Bar */}
@@ -137,6 +139,12 @@ export default function Footer() {
             <Link to="/terminos-y-condiciones#clausulas" className="text-[11px] text-white/40 hover:text-primary transition-all uppercase tracking-widest font-semibold">Cláusulas</Link>
             <Link to="/terminos-y-condiciones#privacidad" className="text-[11px] text-white/40 hover:text-primary transition-all uppercase tracking-widest font-semibold">Privacidad</Link>
             <Link to="/terminos-y-condiciones#devoluciones" className="text-[11px] text-white/40 hover:text-primary transition-all uppercase tracking-widest font-semibold">Devoluciones</Link>
+            <button 
+              onClick={() => reopenBanner()} 
+              className="text-[11px] text-white/40 hover:text-primary transition-all uppercase tracking-widest font-semibold cursor-pointer outline-none"
+            >
+              Gestionar cookies
+            </button>
           </div>
         </div>
       </div>
