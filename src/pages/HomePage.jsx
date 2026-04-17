@@ -129,18 +129,18 @@ export default function HomePage() {
               >
                 <div className="flex items-center gap-3 mb-6">
                   <span className="h-[1px] w-8 bg-primary"></span>
-                  <span className="text-white font-bold uppercase tracking-[0.2em] text-[9px] md:text-xs">
-                    Colecciones de Prestigio
+                  <span className="text-white font-bold uppercase tracking-[0.2em] text-[10px] md:text-xs">
+                    Curaduría Global Certificada
                   </span>
                 </div>
 
                 <h1 className="text-white font-serif text-3xl md:text-6xl leading-[1] mb-4 md:mb-6 font-extrabold tracking-tighter">
-                  Donde la exclusividad <br />
-                  <span className="text-primary italic font-light">encuentra su lugar</span>
+                  Piezas exclusivas que <br />
+                  <span className="text-primary italic font-light">definen tu estilo</span>
                 </h1>
 
                 <p className="text-white/80 text-sm md:text-lg font-light mb-8 md:mb-10 max-w-xl leading-relaxed tracking-tight">
-                  Seleccionamos piezas únicas traídas de todo el mundo para aquellos que no se conforman con lo ordinario.
+                  Importamos lo extraordinario. Cada objeto ha sido seleccionado bajo criterios de diseño, calidad y distinción mundial.
                 </p>
 
                 <div className="flex flex-wrap gap-3">
@@ -148,7 +148,7 @@ export default function HomePage() {
                     onClick={() => navigate('/categoria/anillos')}
                     className="bg-primary hover:bg-primary-dark text-white text-xs md:text-sm font-bold py-3.5 px-6 md:py-4 md:px-10 rounded-full transition-all duration-300 flex items-center gap-2 shadow-glow group"
                   >
-                    <span>Explorar Catálogo</span>
+                    <span>Ver Nueva Colección</span>
                     <span className="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
                   </button>
                   <button
@@ -196,7 +196,7 @@ export default function HomePage() {
               </div>
               <div className="flex flex-col text-center md:text-left">
                 <h3 className="text-xs font-bold text-accent mb-1 tracking-tight uppercase tracking-widest">{t.title}</h3>
-                <p className="text-[9px] md:text-xs text-text-muted/80 leading-relaxed font-light">{t.desc}</p>
+                <p className="text-[9px] md:text-xs text-text-muted/80 leading-relaxed font-bold italic">{t.desc}</p>
               </div>
             </motion.div>
           ))}
@@ -214,8 +214,8 @@ export default function HomePage() {
             className="flex justify-between items-end mb-10"
           >
             <div>
-              <span className="text-primary font-bold tracking-[0.2em] text-[10px] uppercase mb-2 block">Explora</span>
-              <h2 className="font-serif text-3xl md:text-5xl font-bold text-accent italic">Categorías</h2>
+              <span className="text-primary font-bold tracking-[0.2em] text-[10px] uppercase mb-2 block">Descubrir</span>
+              <h2 className="font-serif text-3xl md:text-5xl font-bold text-accent italic">Colecciones por Estilo</h2>
             </div>
             <div className="flex gap-3">
               <button 

@@ -41,7 +41,7 @@ export default function CartPage() {
   }
 
   const total = getCartTotal();
-  const shipping = total >= 150 ? 0 : 15;
+  const shipping = total >= 400 ? 0 : 5;
 
   const handleUpdateQty = (id, variant, newQty) => {
     updateCartQuantity(id, newQty, variant);
@@ -157,6 +157,22 @@ export default function CartPage() {
                   >
                     Regresar a la Colección
                   </button>
+                </div>
+
+                {/* Trust Badges in Cart */}
+                <div className="mt-8 pt-8 border-t border-border-light flex justify-between gap-4 grayscale opacity-60">
+                   <div className="flex flex-col items-center gap-1">
+                      <span className="material-symbols-outlined text-xl">shield</span>
+                      <span className="text-[8px] font-bold uppercase tracking-widest">Pago Seguro</span>
+                   </div>
+                   <div className="flex flex-col items-center gap-1">
+                      <span className="material-symbols-outlined text-xl">package_2</span>
+                      <span className="text-[8px] font-bold uppercase tracking-widest">Garantía FlorMabel</span>
+                   </div>
+                   <div className="flex flex-col items-center gap-1">
+                      <span className="material-symbols-outlined text-xl">verified</span>
+                      <span className="text-[8px] font-bold uppercase tracking-widest">Original</span>
+                   </div>
                 </div>
               </div>
             </div>

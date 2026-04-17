@@ -149,8 +149,14 @@ export default function ProductCard({ product }) {
             </div>
             {product.isOnSale && displayOldPrice && (
               <p className="text-[10px] font-bold text-red-600 uppercase tracking-widest">
-                Ahorra S/ {Number(displayOldPrice - displayPrice).toFixed(2) } hoy
+                Ahorra S/ {Number(displayOldPrice - displayPrice).toFixed(2) } hoy • Oferta por tiempo limitado
               </p>
+            )}
+            {product.stock > 0 && product.stock <= 5 && (
+              <div className="flex items-center gap-2 text-red-600 animate-pulse">
+                <span className="material-symbols-outlined text-sm">error</span>
+                <span className="text-[10px] font-black uppercase tracking-widest">¡Solo quedan {product.stock} unidades disponibles!</span>
+              </div>
             )}
           </div>
 
@@ -165,6 +171,24 @@ export default function ProductCard({ product }) {
             customTiers={product.wholesaleTiers} 
             enabled={product.wholesaleEnabled} 
           />
+
+          {/* Trust Badges Section */}
+          <div className="grid grid-cols-2 gap-3 pb-2">
+            <div className="flex items-center gap-3 p-3 bg-white border border-border-light rounded-xl">
+              <span className="material-symbols-outlined text-primary text-xl">verified_user</span>
+              <div>
+                <p className="text-[9px] font-bold text-accent uppercase tracking-tighter">Calidad Premium</p>
+                <p className="text-[8px] text-text-muted">Importación Certificada</p>
+              </div>
+            </div>
+            <div className="flex items-center gap-3 p-3 bg-white border border-border-light rounded-xl">
+              <span className="material-symbols-outlined text-primary text-xl">local_shipping</span>
+              <div>
+                <p className="text-[9px] font-bold text-accent uppercase tracking-tighter">Envío Asegurado</p>
+                <p className="text-[8px] text-text-muted">A todo el Perú</p>
+              </div>
+            </div>
+          </div>
           
           <div className="space-y-6">
             {product.images?.length > 1 && (
